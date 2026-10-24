@@ -113,7 +113,8 @@ if ($phase === 'all' || $phase === 'smoke') {
         $r = run_test('allocation-sweep', [PHP_BINARY, '-n', "$package/bench/verify.php", 'faults'], 900, null,
             ['PHP_BUILD_ROOT' => $bridge, 'GUARD_FAULT_PROFILES' => $legacyProfile, 'GUARD_SAFETY_OUT' => $faultOut]);
         $faultData = is_file("$faultOut/report.json") ? json_decode(file_get_contents("$faultOut/report.json"), true, 64, JSON_THROW_ON_ERROR) : null;
-        if (in_array('inconclusive', array_column($faultData['results'] ?? [], 'status'), true)) { $r['termination'] = 'child-inconclusive'; }
+        $childStatuses = array_column($faultData['results'] ?? [], 'status');
+        if (!in_array('fail', $childStatuses, true) && in_array('inconclusive', $childStatuses, true)) { $r['termination'] = 'child-inconclusive'; }
         save_test($r, $r['exit'] === 0 && ($faultData['status'] ?? '') === 'tested-scoped-cases',
             ['measurement' => $faultData, 'baseline_limitation' => 'allocation-counter API absent in unpatched releases']);
     }
@@ -200,6 +201,9 @@ if (in_array($phase, ['all', 'suite', 'regressions', 'followup'], true)) {
         ($counts['Tests borked'] ?? 0) === 0, ['counts' => $counts, 'adverse' => $adverse, 'timeouts' => array_keys($timeouts),
         'corpus_revision' => $m['official_revision'], 'corpus_inventory' => count($inventory), 'selection' => $selection,
         'test_timeouts_are_inconclusive_safety_results' => true, 'slow_tests_excluded' => false,
+        'explicit_slow_test_exclusion' => false,
+        'upstream_asan_and_perf_sensitive_skips' => $variant === 'sanitized',
+        'suite_allocator' => $variant === 'sanitized' ? 'tracked-malloc-with-memory-limits' : 'zend',
         'controller' => 'tested-runtime']);
 }
 echo "report=$out/report.json\n";

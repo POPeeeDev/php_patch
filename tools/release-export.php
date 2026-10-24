@@ -25,6 +25,17 @@ function export_file(string $from, string $to): void {
     if (!is_dir(dirname($to))) { mkdir(dirname($to), 0755, true); }
     file_put_contents($to, normalized(file_get_contents($from)));
 }
+function allocation_counts(string $directory): array {
+    $counts = ['pass' => 0, 'fail' => 0, 'inconclusive' => 0]; $adverse = [];
+    foreach (glob("$directory/faults/faults-*/results.json") as $file) {
+        foreach (json_decode(file_get_contents($file), true, 64, JSON_THROW_ON_ERROR) as $case) {
+            $status = $case['pass'] ? 'pass' : ($case['termination'] !== 'completed' || in_array($case['exit'], [126, 127], true) ? 'inconclusive' : 'fail');
+            ++$counts[$status];
+            if ($status !== 'pass') { $adverse[] = ['classification' => $status, ...$case]; }
+        }
+    }
+    return ['counts' => $counts, 'adverse' => $adverse, 'basis' => 'per-case-outcomes;known-failure-not-hidden-by-another-inconclusive-case'];
+}
 $rows = []; $sources = [];
 foreach (['8.2', '8.3', '8.4', '8.5'] as $branch) {
     foreach ([['unpatched', 'release'], ['official', 'release'], ['candidate', 'release'], ['official', 'sanitized'], ['candidate', 'sanitized']] as [$profile, $variant]) {
@@ -62,6 +73,8 @@ foreach (['8.2', '8.3', '8.4', '8.5'] as $branch) {
             'build_sha256' => $report['build']['binary_sha256'],
             'service' => $effective['service']['details']['measurement']['scenarios'] ?? null,
             'allocation_sweep' => $effective['allocation-sweep']['details']['measurement'] ?? null];
+        $rows[$id]['allocation_cases'] = allocation_counts(dirname($followup ?: $latest));
+        $rows[$id]['original_allocation_cases'] = allocation_counts(dirname($latest));
         if ($rows[$id]['service']) {
             foreach ($rows[$id]['service'] as &$scenario) { unset($scenario['samples']); }
             unset($scenario);
@@ -80,6 +93,13 @@ foreach (['8.2', '8.3', '8.4', '8.5'] as $branch) {
             $diagnosticId = "$id/diagnostic-followups/" . basename(dirname($diagnostic));
             $sources[$diagnosticId] = [dirname($diagnostic), $p];
             $rows[$id]['diagnostic_followups'][] = "$diagnosticId/report.json";
+        }
+        if ($variant === 'sanitized') {
+            foreach (glob($p['row'] . '/sanitized-detectors/*/report.json') as $diagnostic) {
+                $diagnosticId = "$id/detector-diagnostics/" . basename(dirname($diagnostic));
+                $sources[$diagnosticId] = [dirname($diagnostic), $p];
+                $rows[$id]['diagnostic_followups'][] = "$diagnosticId/report.json";
+            }
         }
     }
 }

@@ -29,7 +29,7 @@ function record(array $run, bool $expected, array $details = []): void
 {
     global $report, $reportPath, $out;
     if (is_file($reportPath)) { $report = json_decode(file_get_contents($reportPath), true, 64, JSON_THROW_ON_ERROR); }
-    $status = $run['termination'] !== 'completed' || in_array($run['exit'], [126, 127], true) ? 'inconclusive' : ($expected ? 'pass' : 'fail');
+    $status = safety_result_status($run, $expected, $details['known_failures'] ?? 0);
     $entry = array_diff_key($run, ['out' => 1, 'err' => 1]);
     $entry['status'] = $status; $entry['details'] = $details;
     $report['results'][$run['id']] = $entry;
@@ -107,7 +107,7 @@ if (enabled('faults')) {
     foreach (['upstream', 'strict', 'recoverable', 'sanitized-upstream', 'sanitized'] as $profile) {
         $selected = getenv('GUARD_FAULT_PROFILES');
         if ($selected !== false && !in_array($profile, explode(',', $selected), true)) { continue; }
-        $sweep = []; $ok = true; $inconclusive = false; $start = hrtime(true);
+        $sweep = []; $ok = true; $inconclusive = false; $knownFailures = 0; $start = hrtime(true);
         $dir = "$out/faults-$profile"; mkdir($dir, 0700); mkdir("$dir/sessions", 0700);
         $build = dirname(safety_php($profile), 3);
         $include = array_map(static fn($p) => '-I' . $p, [$build, "$build/main", "$build/Zend", $source, "$source/main", "$source/Zend", "$source/TSRM"]);
@@ -149,6 +149,7 @@ if (enabled('faults')) {
             $pass = $r['termination'] === 'completed' && in_array($r['exit'], $allowed, true) && $clean;
             if ($r['exit'] === 0 && !str_contains($r['out'], 'GUARD_COMPLETE')) { $pass = false; }
             $inconclusive = $inconclusive || $r['termination'] !== 'completed' || in_array($r['exit'], [126, 127], true);
+            if (!$pass && $r['termination'] === 'completed' && !in_array($r['exit'], [126, 127], true)) { ++$knownFailures; }
             $ok = $ok && $pass;
             $sweep[] = ['allocation' => $n, 'phase' => $faultPhase, 'kind' => $kind, 'exit' => $r['exit'], 'termination' => $r['termination'],
                 'sanitizer_diagnostic' => !$clean, 'entered' => str_contains($r['out'] . $r['err'], 'GUARD_BODY_ENTERED'),
@@ -159,6 +160,7 @@ if (enabled('faults')) {
         record(['id' => "fault-sweep-$profile", 'exit' => 0, 'termination' => $inconclusive ? 'some-timeouts-or-launch-failures' : 'completed',
             'metrics' => ['wall_ms' => (hrtime(true) - $start) / 1e6], 'out' => '', 'err' => '', 'log' => "faults-$profile/results.json"], $ok,
             ['cases' => count($sweep), 'passed' => count(array_filter($sweep, static fn($c) => $c['pass'])),
+                'known_failures' => $knownFailures, 'has_inconclusive_cases' => $inconclusive,
                 'entered' => count(array_filter($sweep, static fn($c) => $c['entered'])),
                 'exits' => array_count_values(array_column($sweep, 'exit')), 'calibrated_upper_ordinals' => $bounds,
                 'scope' => '64-spaced-ordinals-per-workload-per-startup-or-body-phase;121-is-upstream-injected-OOM-status']);

@@ -89,3 +89,10 @@ function safety_diagnostic(string $text): bool
 {
     return (bool)preg_match('/ERROR: AddressSanitizer|SUMMARY: AddressSanitizer|UndefinedBehaviorSanitizer|runtime error:|AddressSanitizer:DEADLYSIGNAL/', $text);
 }
+
+function safety_result_status(array $run, bool $expected, int $knownFailures = 0): string
+{
+    if ($knownFailures > 0) { return 'fail'; }
+    if ($run['termination'] !== 'completed' || in_array($run['exit'], [126, 127], true)) { return 'inconclusive'; }
+    return $expected ? 'pass' : 'fail';
+}

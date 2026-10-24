@@ -107,10 +107,25 @@ direction, with one worker. Run it separately for both
 profiles to investigate differences; its results never replace full-suite counts.
 Tests missing from a timed-out row remain unobserved, not successful controls.
 
+To investigate sanitizer reporting separately, after the instrumented native
+checks have produced probe modules, run `php -n tools/release-detectors.php 8.5`
+(or another branch). This replays the six detector checks on both binaries with
+the original reporting settings, then without symbolization/UBSan stack traces.
+Both modes keep fault detection enabled. These diagnostic reports do not replace
+full-run results or establish that the guard prevents the injected errors.
+
+`php -n tools/check-harness.php` checks result-classification rules.
+`php -n tools/check-supervisor.php` checks private process groups, exit-versus-signal
+handling, deadlines, and 1,000 command launches. It can also take the path of an
+earlier supervisor binary to compare the same checks. A known failure takes
+precedence over an inconclusive case when aggregating allocation-sweep results;
+both kinds of case remain individually recorded.
+
 Each row uses an isolated working copy of the **same official-release corpus**
 on its branch, including when testing the unpatched binary. New fixed-behavior
 expectations can fail on the unpatched binary without demonstrating memory
-corruption. No slow-test exclusion or passing-test-only selection is used. Tests
+corruption. No explicit slow-test exclusion or passing-test-only selection is used;
+the instrumented runner's own ASan/performance-sensitive skips remain enabled. Tests
 requiring absent extensions can skip; inspect counts and status files.
 The tested runtime also drives the upstream runner, so version-dependent PHP
 constants in the runner match the executable under test.
@@ -139,13 +154,15 @@ not a production or shared service host. These scripts do not remove arbitrary
 host IPC objects or raise kernel limits. Resource-exhaustion failures do not
 establish a native memory-safety defect, and must remain in the evidence.
 
-Sanitizer suites/probes use system allocation for better object coverage.
-Soft-limit and FPM tests use Zend allocation so memory limits remain active;
-ASan then cannot observe every Zend suballocation. LeakSanitizer is disabled.
-Upstream `--asan` likewise selects `USE_ZEND_ALLOC=0`. Some OOM PHPT files do not
-skip in that mode even though their expected output depends on PHP memory limits;
-their failures/timeouts are not direct evidence of a guard regression. The suite
-is retained without filtering those cases, and incomplete coverage is reported.
+Sanitizer detector/mutation probes use system allocation for better object
+coverage. Soft-limit and FPM tests use Zend allocation; ASan then cannot observe
+every Zend suballocation. LeakSanitizer is disabled. In all four pinned official
+runners, `--asan` sets `USE_ZEND_ALLOC=0`, `USE_TRACKED_ALLOC=1`, `SKIP_ASAN=1`,
+and `SKIP_PERF_SENSITIVE=1`. This tracked-malloc implementation still checks PHP
+memory limits. The allocation sweep also enables tracked malloc. OOM PHPT
+timeouts must not be explained as disabled memory limits: they are bounded,
+incomplete executions requiring paired investigation. No further exclusions are
+added by this package, and incomplete coverage is reported.
 Unpatched releases lack the official allocation-counter API and do not run that
 sweep; their common-corpus and service tests remain.
 

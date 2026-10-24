@@ -49,7 +49,7 @@
 | Alignment | An address requirement for a C type. Access through a misaligned pointer can violate the language's rules. |
 | Assertion | A programmed condition checked by a debug build. A failed assertion terminates the process. |
 | Backtrace | A record of the call sequence leading to an error. |
-| Backport | Adapting a newer change to an older source branch. This package targets one specific development revision. |
+| Backport | Adapting a newer change to an older source branch. This package pins four release inputs and separately retains one historical development experiment. |
 | Baseline/control | The reference configuration used to attribute differences to the candidate. Here the upstream control already contains vendor fixes. |
 | Binary | A compiled executable or library. |
 | BORK/Borked | An upstream test whose definition or setup could not be interpreted correctly. It is not a passed runtime test. |
@@ -148,6 +148,9 @@
 | BORKED | An upstream test could not be set up or interpreted correctly; this is not a successful test. |
 | Paired observation | The same test has a recorded outcome for both the official and candidate binary. |
 | Inconclusive | The test did not establish the required result, for example because of a timeout or supervisor setup failure. |
+| Symbolization | Converting raw instruction addresses into function names and source locations in a diagnostic. Disabling it does not disable the sanitizer's memory-error checks. |
+| Tracked malloc | PHP's wrapper around system allocation that records ownership sizes and checks memory limits; selected by the pinned upstream ASan runners. |
+| Process group | An operating-system grouping used by the supervisor to terminate a command and its descendants without intentionally targeting unrelated jobs. It is not an isolation sandbox. |
 | `PHP_GIT` | Local upstream Git checkout supplying the pinned commits for isolated build sources. |
 | `RELEASE_WORK_ROOT` | Absolute directory for generated release sources, builds, and evidence. |
 | `RELEASE_JOBS` | Number of parallel compiler or upstream test workers per active row. |

@@ -92,6 +92,30 @@ still running; their final bounded outcomes and partial-coverage accounting are
 not yet published. The normal-build counts above are not instrumented results.
 Do not interpret this interim report as a completed sanitizer comparison.
 
+### Investigated native differences
+
+The PHP 8.5 debug allocation sweep found the same assertion in official and
+candidate builds: callback workload, body-phase allocation ordinal 9,
+`zif_array_map`, `ext/standard/array.c:6913`, condition `ret == SUCCESS`.
+Both terminated with signal 6 / status 134. This is a reproduced debug assertion
+under injected OOM, not demonstrated memory corruption or an additional CVE.
+The guard does not prevent it. The normal builds do not enable that assertion.
+
+On PHP 8.5 the candidate's five intentionally faulty detector probes emitted
+their expected diagnostics but exceeded the 20-second bound while reporting.
+A paired replay reproduced the difference with original reporting settings.
+With ASan symbolization and UBSan stack traces disabled, all six checks completed
+as expected on both binaries. This narrows the observed delay to the reporting
+configuration; its underlying cause is not established. Detector sensitivity
+is not evidence that the lifecycle guard prevents these injected errors.
+The earlier PHP 8.3 official bounds-detector timeout did not recur in the paired
+diagnostic replay with either reporting configuration.
+
+The pinned upstream `--asan` runners enable tracked malloc, memory-limit
+checking, and their own ASan/performance-sensitive skip conditions. OOM PHPT
+timeouts are not explained by disabled memory limits. An earlier interim build
+document stated otherwise; source inspection corrected that explanation.
+
 ## Harness corrections and retained evidence
 
 Initial attempts exposed an older PHP 8.2 FastCGI client API, a cross-version
@@ -110,6 +134,18 @@ attempts, not PHP safety findings. Later runs use a per-run supervisor binary
 with a recorded hash and more specific setup diagnostics. Reruns do not remove
 earlier reports. Tests do not delete arbitrary host IPC resources or raise
 kernel limits; use a disposable isolated test machine for full reproduction.
+
+One launch failure was localized to `setpgid`: the supervisor exited 126 before
+PHP ran. The setup now accepts an error only if the required private process
+group already exists, otherwise it still fails closed. Both the earlier and
+updated supervisors passed 1,000 subsequent launches and five process/exit/time
+checks, so those stress runs alone do not establish the original race's cause.
+
+An aggregation defect initially labeled the PHP 8.5 official sweep inconclusive
+because a setup failure occurred alongside the definite assertion failure.
+The corrected harness gives known failures precedence while retaining individual
+inconclusive cases. Eight classification checks passed. Exported per-case
+counts expose this distinction without rewriting the original report.
 
 ## Claims ledger
 
