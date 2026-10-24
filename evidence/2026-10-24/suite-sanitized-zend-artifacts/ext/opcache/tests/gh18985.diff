@@ -1,0 +1,10 @@
+--
+     L0005 0004 JMP 0007
+     L0006 0005 T1 = QM_ASSIGN string("C")
+     L0006 0006 JMP 0007
+013- L0003 0007 ECHO T1
+013+ L0006 0007 ECHO T1
+     L0010 0008 RETURN int(1)
+     LIVE RANGES:
+          1: 0006 - 0007 (tmp/var)
+--

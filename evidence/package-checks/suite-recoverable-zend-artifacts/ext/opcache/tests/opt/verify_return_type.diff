@@ -1,0 +1,77 @@
+--
+          ; (lines=3, args=0, vars=0, tmps=1)
+          ; (after optimizer)
+          ; %s
+011- 0000 V0 = NEW 0 string("stdClass")
+011+ 0000 T0 = NEW 0 string("stdClass")
+     0001 DO_FCALL
+013- 0002 RETURN V0
+013+ 0002 RETURN T0
+     LIVE RANGES:
+          0: 0001 - 0002 (new)
+     
+--
+          ; (lines=3, args=0, vars=0, tmps=1)
+          ; (after optimizer)
+          ; php-src/ext/opcache/tests/opt/verify_return_type.php:43-45
+021- 0000 V0 = NEW 0 string("ArrayObject")
+021+ 0000 T0 = NEW 0 string("ArrayObject")
+     0001 DO_FCALL
+023- 0002 RETURN V0
+023+ 0002 RETURN T0
+     LIVE RANGES:
+          0: 0001 - 0002 (new)
+     
+--
+          ; (after optimizer)
+          ; php-src/ext/opcache/tests/opt/verify_return_type.php:7-9
+     0000 INIT_METHOD_CALL 0 THIS string("getIntOrFloat")
+039- 0001 V0 = DO_UCALL
+040- 0002 RETURN V0
+039+ 0001 T0 = DO_UCALL
+040+ 0002 RETURN T0
+     
+     Test2::getInt:
+          ; (lines=1, args=0, vars=0, tmps=0)
+--
+     0000 RETURN int(42)
+     
+     Test2::getInt2:
+049-      ; (lines=3, args=0, vars=0, tmps=1)
+049+      ; (lines=4, args=0, vars=0, tmps=1)
+          ; (after optimizer)
+          ; php-src/ext/opcache/tests/opt/verify_return_type.php:16-18
+     0000 INIT_METHOD_CALL 0 THIS string("getInt")
+053- 0001 V0 = DO_FCALL
+054- 0002 RETURN V0
+053+ 0001 T0 = DO_UCALL
+054+ 0002 VERIFY_RETURN_TYPE T0
+055+ 0003 RETURN T0
+056+ LIVE RANGES:
+057+      0: 0002 - 0003 (tmp/var)
+     
+     Test2::getIntOrFloat:
+          ; (lines=2, args=1, vars=1, tmps=0)
+--
+     0000 CV0($i) = RECV 1
+     0001 INIT_METHOD_CALL 1 THIS string("getIntOrFloat")
+     0002 SEND_VAR CV0($i) 1
+070- 0003 V1 = DO_FCALL
+071- 0004 VERIFY_RETURN_TYPE V1
+072- 0005 RETURN V1
+073+ 0003 T1 = DO_UCALL
+074+ 0004 VERIFY_RETURN_TYPE T1
+075+ 0005 RETURN T1
+076+ LIVE RANGES:
+077+      1: 0004 - 0005 (tmp/var)
+     
+     Test3::getBool:
+          ; (lines=1, args=0, vars=0, tmps=0)
+--
+          ; (lines=2, args=0, vars=0, tmps=1)
+          ; (after optimizer)
+          ; php-src/ext/opcache/tests/opt/verify_return_type.php:34-36
+084- 0000 V0 = QM_ASSIGN bool(true)
+085- 0001 RETURN bool(true)
+089+ 0000 T0 = VERIFY_RETURN_TYPE bool(true)
+090+ 0001 RETURN T0

@@ -1,0 +1,8 @@
+bool(true)
+resource(4) of type (stream filter)
+
+Warning: fwrite(): Unprocessed filter buckets remaining on input brigade in php-src/ext/standard/tests/filters/stream_filter_register_mock_class_filter.php on line 16
+int(0)
+[Sat Oct 24 10:04:54 2026]  Script:  'php-src/ext/standard/tests/filters/stream_filter_register_mock_class_filter.php'
+php-src/main/streams/filter.c(72) :  Freeing 0x0000000115e914b0 (48 bytes), script=php-src/ext/standard/tests/filters/stream_filter_register_mock_class_filter.php
+=== Total 1 memory leaks detected ===

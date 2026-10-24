@@ -1,0 +1,203 @@
+--- a/Zend/zend_alloc.h
++++ b/Zend/zend_alloc.h
+@@ -61,6 +61,17 @@
+ 
+ #define ZEND_HAS_OOM() (UNEXPECTED(EG(delayed_oom).state != ZEND_OOM_STATE_NONE))
+ 
++/* Local experimental policy; disabled in ordinary builds. */
++#ifndef ZEND_OOM_GUARD_MODE
++# define ZEND_OOM_GUARD_MODE 0
++#endif
++#if ZEND_OOM_GUARD_MODE < 0 || ZEND_OOM_GUARD_MODE > 2
++# error "GUARD OOM mode must be 0 (upstream), 1 (strict), or 2 (recoverable)"
++#endif
++#if ZEND_OOM_GUARD_MODE && (defined(ZTS) || defined(ZEND_WIN32))
++# error "The experimental GUARD OOM guard is limited to POSIX NTS builds"
++#endif
++
+ #if ZEND_DEBUG
+ typedef struct _zend_mm_debug_info {
+ 	size_t             size;
+@@ -77,6 +88,22 @@
+ 
+ BEGIN_EXTERN_C()
+ 
++#if ZEND_OOM_GUARD_MODE
++ZEND_API ZEND_NORETURN void zend_oom_guard_retire(void);
++ZEND_API void zend_oom_guard_consumer_barrier(void);
++# define ZEND_OOM_GUARD_HARD_RETIRE() zend_oom_guard_retire()
++# define ZEND_OOM_GUARD_CONSUMER() zend_oom_guard_consumer_barrier()
++#else
++# define ZEND_OOM_GUARD_HARD_RETIRE() ((void) 0)
++# define ZEND_OOM_GUARD_CONSUMER() ((void) 0)
++#endif
++#if ZEND_OOM_GUARD_MODE == 1
++# define ZEND_OOM_GUARD_RETIRE() zend_oom_guard_retire()
++#else
++/* Mode 2 retains upstream GC, delayed OOM, and VM safe-point handling. */
++# define ZEND_OOM_GUARD_RETIRE() ((void) 0)
++#endif
++
+ ZEND_API ZEND_ATTRIBUTE_MALLOC char*  ZEND_FASTCALL zend_strndup(const char *s, size_t length);
+ 
+ ZEND_API ZEND_ATTRIBUTE_MALLOC void*  ZEND_FASTCALL _emalloc(size_t size ZEND_FILE_LINE_DC ZEND_FILE_LINE_ORIG_DC) ZEND_ATTRIBUTE_ALLOC_SIZE(1);
+--- a/Zend/zend_alloc.c
++++ b/Zend/zend_alloc.c
+@@ -406,9 +406,27 @@
+ }
+ 
+ ZEND_NORETURN static ZEND_COLD void zend_out_of_memory(void);
++
++#if ZEND_OOM_GUARD_MODE
++ZEND_API ZEND_NORETURN void zend_oom_guard_retire(void)
++{
++	/* No allocation, formatting, refcount changes, callbacks, or userland cleanup. */
++	_exit(137);
++}
++
++ZEND_API void zend_oom_guard_consumer_barrier(void)
++{
++#if ZEND_OOM_GUARD_MODE == 1
++	if (ZEND_HAS_OOM()) {
++		zend_oom_guard_retire();
++	}
++#endif
++}
++#endif
+ 
+ static ZEND_COLD void zend_mm_delayed_verror(const char *format, va_list args)
+ {
++	ZEND_OOM_GUARD_RETIRE();
+ 	if (ZEND_HAS_OOM()) {
+ 		return;
+ 	}
+@@ -484,6 +502,8 @@
+ ZEND_NORETURN static ZEND_COLD void zend_mm_hard_limit_error(zend_mm_heap *heap,
+ 		size_t add_size ZEND_FILE_LINE_DC)
+ {
++	/* Recoverable mode retains the vendor diagnostic and its terminal _exit(). */
++	ZEND_OOM_GUARD_RETIRE();
+ 	zend_string *script_filename = NULL;
+ 	uint32_t script_lineno = 0;
+ 
+@@ -530,6 +550,7 @@
+ #if ZEND_MM_LIMIT
+ 	/* Is the soft limit exceeded or going to be exceeded? */
+ 	if (UNEXPECTED(heap->limit < heap->real_size || add_size > heap->limit - heap->real_size)) {
++		ZEND_OOM_GUARD_RETIRE();
+ 		if (gc && zend_mm_gc(heap)) {
+ 			if (did_gc) {
+ 				*did_gc = true;
+@@ -3399,6 +3420,7 @@
+ 
+ ZEND_NORETURN static ZEND_COLD void zend_out_of_memory(void)
+ {
++	ZEND_OOM_GUARD_HARD_RETIRE();
+ 	fprintf(stderr, "Out of memory\n");
+ 	abort();
+ }
+@@ -3428,6 +3450,7 @@
+  * arbitrary allocation rather than only at the ones large enough to reach the
+  * limit. */
+ static zend_never_inline ZEND_COLD zend_result tracked_max_allocs_error(zend_mm_heap *heap, size_t add_size ZEND_FILE_LINE_DC) {
++	ZEND_OOM_GUARD_RETIRE();
+ 	zend_mm_max_allocs_reached = true;
+ 
+ 	if (!ZEND_HAS_OOM()) {
+@@ -4011,6 +4034,7 @@
+ 
+ ZEND_API void ZEND_FASTCALL zend_handle_delayed_oom(void)
+ {
++	ZEND_OOM_GUARD_CONSUMER();
+ 	zend_oom_info *info = &EG(delayed_oom);
+ 	zend_execute_data *execute_data = EG(current_execute_data);
+ 
+--- a/Zend/zend.c
++++ b/Zend/zend.c
+@@ -1450,6 +1450,7 @@
+ ZEND_API ZEND_COLD void zend_error_zstr_at(
+ 		int orig_type, zend_string *error_filename, uint32_t error_lineno, zend_string *message)
+ {
++	ZEND_OOM_GUARD_CONSUMER();
+ 	zval params[4];
+ 	zval retval;
+ 	zval orig_user_error_handler;
+--- a/main/main.c
++++ b/main/main.c
+@@ -1287,6 +1287,20 @@
+ /* }}} */
+ 
+ static void clear_last_error(void) {
++	ZEND_OOM_GUARD_CONSUMER();
++#if ZEND_OOM_GUARD_MODE
++	/* Detach both published references before releasing either owned string. */
++	zend_string *message = PG(last_error_message);
++	zend_string *file = PG(last_error_file);
++	PG(last_error_message) = NULL;
++	PG(last_error_file) = NULL;
++	if (message) {
++		zend_string_release(message);
++	}
++	if (file) {
++		zend_string_release(file);
++	}
++#else
+ 	if (PG(last_error_message)) {
+ 		zend_string_release(PG(last_error_message));
+ 		PG(last_error_message) = NULL;
+@@ -1295,6 +1309,7 @@
+ 		zend_string_release(PG(last_error_file));
+ 		PG(last_error_file) = NULL;
+ 	}
++#endif
+ }
+ 
+ #if ZEND_DEBUG
+@@ -1326,6 +1341,7 @@
+  extended error handling function */
+ static ZEND_COLD void php_error_cb(int orig_type, zend_string *error_filename, const uint32_t error_lineno, zend_string *message)
+ {
++	ZEND_OOM_GUARD_CONSUMER();
+ 	bool display;
+ 	int type = orig_type & E_ALL;
+ 	zend_string *backtrace = ZSTR_EMPTY_ALLOC();
+@@ -1942,6 +1958,7 @@
+ /* {{{ php_request_shutdown */
+ void php_request_shutdown(void *dummy)
+ {
++	ZEND_OOM_GUARD_CONSUMER();
+ 	bool report_memleaks;
+ 
+ 	EG(flags) |= EG_FLAGS_IN_SHUTDOWN;
+@@ -2040,6 +2057,13 @@
+ 	zend_arena_destroy(CG(arena));
+ 	zend_interned_strings_deactivate();
+ 	clear_last_error();
++#if ZEND_OOM_GUARD_MODE
++	/* Check selected native roots before the request heap is reclaimed. */
++	if (PG(last_error_message) != NULL || PG(last_error_file) != NULL ||
++			!Z_ISUNDEF(EG(last_fatal_error_backtrace))) {
++		zend_oom_guard_retire();
++	}
++#endif
+ 	zend_try {
+ 		shutdown_memory_manager(CG(unclean_shutdown) || !report_memleaks, 0);
+ 	} zend_end_try();
+--- a/ext/session/session.c
++++ b/ext/session/session.c
+@@ -289,6 +289,7 @@
+ 
+ static zend_result php_session_decode(const zend_string *data)
+ {
++	ZEND_OOM_GUARD_CONSUMER();
+ 	ZEND_ASSERT(PS(serializer));
+ 	zend_result result = SUCCESS;
+ 	zend_try {
+@@ -3251,6 +3252,7 @@
+ 
+ static zend_result php_session_rfc1867_callback(unsigned int event, void *event_data, void **extra)
+ {
++	ZEND_OOM_GUARD_CONSUMER();
+ 	php_session_rfc1867_progress *progress;
+ 	zend_result retval = SUCCESS;
+ 

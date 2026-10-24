@@ -1,0 +1,429 @@
+{
+    "schema": "php-oom-lifecycle-package-validation/1",
+    "utc": "2026-10-24T14:50:04+00:00",
+    "source_revision": "022073187266c934fea9d5aafd9dde49cc09d449",
+    "native_transformation": "identifier-only; exact resulting source comparison passed",
+    "source_files": {
+        "Zend/zend_alloc.h": "9d45809f260cc04f2f3be91201bd3314a57baafa226b57ffc52cdcee59fa3aff",
+        "Zend/zend_alloc.c": "bccd824da46fca30e513cdddc49151aaa157823b7ea1ad6721fd3b46f17852ee",
+        "Zend/zend.c": "b1b243e580dbf7577387858df4788d9cd253fc1fb891dd796c1e455d594e595a",
+        "main/main.c": "544476a9fd5b29f54fd1d2a2302eb95b550b70ecd628ae0ca97f035bf111a24f",
+        "ext/session/session.c": "108641e114c1d6d767feb163d7e35c5e6d177324cbc8a12fcbad358580432d31"
+    },
+    "fresh_build": {
+        "profile": "recoverable",
+        "guard_mode": 2,
+        "php_sha256": "0de3227cc7f307374ab54ce89aff6f1b54a3abcc895fc451c9aaddb98730702c",
+        "fpm_sha256": "0e7422277c1322002745460f4fbe2f43c33b7bb12b795a64cabb3ca02a4df34f"
+    },
+    "native_and_workload_checks_passed": true,
+    "release_suite_terminated_normally": true,
+    "release_suite_counts_match_recorded_candidate": false,
+    "release_suite_adverse_results_match_recorded_candidate": false,
+    "additional_permission_failures_reproduced_with_control": true,
+    "permission_test_followup": {
+        "reason": "Temporary source directory inherited a group outside the test users memberships; the filesystem cleared the set-group-ID bit.",
+        "intervention": "Changed only the test directory group to the test users primary group; no PHP source or expected output was changed.",
+        "results": {
+            "group-control-before": {
+                "ext/standard/tests/file/006_variation2.phpt": "FAILED",
+                "ext/standard/tests/file/chmod_basic.phpt": "FAILED"
+            },
+            "group-candidate-after": {
+                "ext/standard/tests/file/006_variation2.phpt": "PASSED",
+                "ext/standard/tests/file/chmod_basic.phpt": "PASSED"
+            },
+            "group-control-after": {
+                "ext/standard/tests/file/006_variation2.phpt": "PASSED",
+                "ext/standard/tests/file/chmod_basic.phpt": "PASSED"
+            }
+        },
+        "full_suite_result_rewritten": false
+    },
+    "results": {
+        "compile-recoverable-probe": {
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 273.785,
+                "user_ms": 232.745,
+                "system_ms": 83.231,
+                "peak_rss_bytes": 47136768,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "status": "pass",
+            "details": []
+        },
+        "recoverable-soft-oom": {
+            "exit": 255,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 17.898,
+                "user_ms": 9.573,
+                "system_ms": 6.416,
+                "peak_rss_bytes": 10072064,
+                "exit": 255,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "status": "pass",
+            "details": {
+                "scope": "soft-OOM-preserves-vendor-request-shutdown"
+            }
+        },
+        "recoverable-retire-raw": {
+            "exit": 137,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 355.277,
+                "user_ms": 6.942,
+                "system_ms": 4.769,
+                "peak_rss_bytes": 5742592,
+                "exit": 137,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "status": "pass",
+            "details": {
+                "scope": "hard-allocation-failure-or-selected-dirty-root-still-retires"
+            }
+        },
+        "recoverable-retire-dirty": {
+            "exit": 137,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 13.493,
+                "user_ms": 7.083,
+                "system_ms": 4.564,
+                "peak_rss_bytes": 5611520,
+                "exit": 137,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "status": "pass",
+            "details": {
+                "scope": "hard-allocation-failure-or-selected-dirty-root-still-retires"
+            }
+        },
+        "aliased-roots-recoverable": {
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 367.524,
+                "user_ms": 8.539,
+                "system_ms": 4.943,
+                "peak_rss_bytes": 5726208,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "status": "pass",
+            "details": {
+                "scope": "two-valid-owned-references-to-one-allocation-detached-and-released"
+            }
+        },
+        "fault-sweep-recoverable": {
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 11838.297506
+            },
+            "status": "pass",
+            "details": {
+                "cases": 384,
+                "passed": 384,
+                "entered": 301,
+                "exits": {
+                    "121": 265,
+                    "0": 119
+                },
+                "calibrated_upper_ordinals": {
+                    "startup": {
+                        "array": 2048,
+                        "session": 512,
+                        "callbacks": 1024
+                    },
+                    "body": {
+                        "array": 2048,
+                        "session": 64,
+                        "callbacks": 512
+                    }
+                },
+                "scope": "64-spaced-ordinals-per-workload-per-startup-or-body-phase;121-is-upstream-injected-OOM-status"
+            }
+        },
+        "compile-service-control": {
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 253.502,
+                "user_ms": 221.414,
+                "system_ms": 78.951,
+                "peak_rss_bytes": 44195840,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "status": "pass",
+            "details": []
+        },
+        "fpm-recoverable-max0": {
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 1346.34,
+                "user_ms": 135.048,
+                "system_ms": 182.592,
+                "peak_rss_bytes": 17747968,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "status": "pass",
+            "details": {
+                "measurement": {
+                    "healthy": {
+                        "requests": 81,
+                        "fault_requests": 0,
+                        "normal_failures": 0,
+                        "unexpected_fault_successes": 0,
+                        "shutdown_callbacks": 81,
+                        "unique_workers": 1,
+                        "worker_changes": 0,
+                        "elapsed_ms": 42.246799,
+                        "normal_latency_ms": {
+                            "p50": 0.484486,
+                            "p95": 0.692693,
+                            "max": 0.80784
+                        },
+                        "next_normal_after_fault_ms": {
+                            "p50": null,
+                            "p95": null,
+                            "max": null
+                        }
+                    },
+                    "soft": {
+                        "requests": 81,
+                        "fault_requests": 10,
+                        "normal_failures": 0,
+                        "unexpected_fault_successes": 0,
+                        "shutdown_callbacks": 81,
+                        "unique_workers": 1,
+                        "worker_changes": 0,
+                        "elapsed_ms": 114.747866,
+                        "normal_latency_ms": {
+                            "p50": 0.546326,
+                            "p95": 1.032577,
+                            "max": 1.279389
+                        },
+                        "next_normal_after_fault_ms": {
+                            "p50": 0.983054,
+                            "p95": 1.279389,
+                            "max": 1.279389
+                        }
+                    },
+                    "fatal": {
+                        "requests": 81,
+                        "fault_requests": 10,
+                        "normal_failures": 0,
+                        "unexpected_fault_successes": 0,
+                        "shutdown_callbacks": 81,
+                        "unique_workers": 1,
+                        "worker_changes": 0,
+                        "elapsed_ms": 41.406538,
+                        "normal_latency_ms": {
+                            "p50": 0.482594,
+                            "p95": 0.650393,
+                            "max": 0.834618
+                        },
+                        "next_normal_after_fault_ms": {
+                            "p50": 0.478338,
+                            "p95": 0.705218,
+                            "max": 0.705218
+                        }
+                    },
+                    "hard": {
+                        "requests": 81,
+                        "fault_requests": 10,
+                        "normal_failures": 0,
+                        "unexpected_fault_successes": 0,
+                        "shutdown_callbacks": 71,
+                        "unique_workers": 11,
+                        "worker_changes": 10,
+                        "elapsed_ms": 60.391517,
+                        "normal_latency_ms": {
+                            "p50": 0.512796,
+                            "p95": 2.321614,
+                            "max": 3.236788
+                        },
+                        "next_normal_after_fault_ms": {
+                            "p50": 2.263536,
+                            "p95": 3.236788,
+                            "max": 3.236788
+                        }
+                    }
+                },
+                "scope": "local-single-worker-sequential-FastCGI-not-production-load"
+            }
+        },
+        "mutations-recoverable-malloc": {
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 382.43,
+                "user_ms": 94.413,
+                "system_ms": 274.263,
+                "peak_rss_bytes": 6651904,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "status": "pass",
+            "details": {
+                "measurement": {
+                    "seed": 104729,
+                    "mutations": {
+                        "json": 2048,
+                        "serialization": 2048,
+                        "session": 2048
+                    },
+                    "valid_roundtrips": 4096,
+                    "status": "completed",
+                    "scope": "deterministic-local-input-mutations-not-exhaustive-fuzzing"
+                }
+            }
+        },
+        "mutations-recoverable-zend": {
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 322.81,
+                "user_ms": 63.642,
+                "system_ms": 245.478,
+                "peak_rss_bytes": 6483968,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "status": "pass",
+            "details": {
+                "measurement": {
+                    "seed": 104729,
+                    "mutations": {
+                        "json": 2048,
+                        "serialization": 2048,
+                        "session": 2048
+                    },
+                    "valid_roundtrips": 4096,
+                    "status": "completed",
+                    "scope": "deterministic-local-input-mutations-not-exhaustive-fuzzing"
+                }
+            }
+        },
+        "tla-recoverable": {
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 994.623,
+                "user_ms": 1861.808,
+                "system_ms": 288.896,
+                "peak_rss_bytes": 156180480,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "status": "pass",
+            "details": {
+                "scope": "two-requests-two-roots-20-steps-vendor-safe-point-assumed",
+                "expected_violation": null
+            }
+        },
+        "tla-control-release-first": {
+            "exit": 12,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 675.342,
+                "user_ms": 1393.057,
+                "system_ms": 201.215,
+                "peak_rss_bytes": 103276544,
+                "exit": 12,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "status": "pass",
+            "details": {
+                "scope": "two-requests-two-roots-20-steps-vendor-safe-point-assumed",
+                "expected_violation": "DetachBeforeRelease"
+            }
+        },
+        "tla-control-no-checkpoint": {
+            "exit": 12,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 651.652,
+                "user_ms": 1507.628,
+                "system_ms": 204.161,
+                "peak_rss_bytes": 115154944,
+                "exit": 12,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "status": "pass",
+            "details": {
+                "scope": "two-requests-two-roots-20-steps-vendor-safe-point-assumed",
+                "expected_violation": "NoStaleConsumer"
+            }
+        },
+        "suite-recoverable-zend": {
+            "exit": 1,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 71172.563,
+                "user_ms": 182502.298,
+                "system_ms": 108965.251,
+                "peak_rss_bytes": 281608192,
+                "exit": 1,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "status": "fail",
+            "details": {
+                "counts": {
+                    "Number of tests": 23655,
+                    "Tests skipped": 8804,
+                    "Tests warned": 3,
+                    "Tests failed": 3,
+                    "Tests passed": 14836,
+                    "Tests borked": 2,
+                    "Expected fail": 7
+                },
+                "source_phpt_inventory": 23655,
+                "selection": "upstream-runner-full-discovery-for-built-extensions",
+                "slow_tests_excluded": false,
+                "online_tests": "upstream-default-offline",
+                "allocator": "zend",
+                "adverse_and_expected": {
+                    "tests/security/open_basedir_linkinfo.phpt": "XFAILED",
+                    "Zend/tests/inheritance/interface_constructor_prototype_002.phpt": "XFAILED",
+                    "ext/filter/tests/bug49184.phpt": "XFAILED",
+                    "ext/filter/tests/bug67167.02.phpt": "XFAILED",
+                    "ext/opcache/tests/gh18985.phpt": "XFAILED",
+                    "ext/opcache/tests/opt/verify_return_type.phpt": "XFAILED",
+                    "ext/sockets/tests/mcast_ipv6_send.phpt": "FAILED",
+                    "ext/sockets/tests/mcast_ipv6_recv.phpt": "BORKED",
+                    "ext/sockets/tests/mcast_ipv6_recv_limited.phpt": "BORKED",
+                    "ext/spl/tests/ArrayObject/gh10519.phpt": "XFAILED",
+                    "ext/standard/tests/file/006_variation2.phpt": "FAILED",
+                    "ext/standard/tests/file/chmod_basic.phpt": "FAILED",
+                    "ext/standard/tests/filters/stream_filter_register_class_coerce_consumed_by_ref_param.phpt": "WARNED",
+                    "ext/standard/tests/filters/stream_filter_register_mock_class_filter.phpt": "WARNED",
+                    "sapi/fpm/tests/log-bwd-multiple-msgs-stdout-stderr.phpt": "WARNED"
+                },
+                "asan_heap_object_coverage": "not-full-Zend-suballocation-coverage"
+            }
+        }
+    },
+    "scope": "Fresh recoverable release build, native tests, release allocation sweep, FPM scenarios, two release mutation rows, bounded model, and full release suite. The six-profile historical matrix is retained separately."
+}

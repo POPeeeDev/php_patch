@@ -1,0 +1,71 @@
+TLC2 Version 2.20 of Day Month 20?? (rev: 631a9ef)
+Warning: Please run the Java VM, which executes TLC with a throughput optimized garbage collector, by passing the "-XX:+UseParallelGC" property.
+(Use the -nowarning option to disable this warning.)
+Running breadth-first search Model-Checking with fp 0 and seed 1 with 1 worker on 16 cores with 512MB heap and 64MB offheap memory [pid: 88821] (Mac OS X 26.7.1 x86_64, Eclipse Adoptium 25.0.1 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file models/RequestCleanup.tla
+Parsing file tlc-standard/Naturals.tla (jar:file:tools/tla2tools.jar!/tla2sany/StandardModules/Naturals.tla)
+Parsing file tlc-standard/FiniteSets.tla (jar:file:tools/tla2tools.jar!/tla2sany/StandardModules/FiniteSets.tla)
+Parsing file tlc-standard/Sequences.tla (jar:file:tools/tla2tools.jar!/tla2sany/StandardModules/Sequences.tla)
+Semantic processing of module Naturals
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module Recoverable
+Linting of module Recoverable
+Starting... (2026-10-24 08:43:32)
+Computing initial states...
+Computed 2 initial states...
+Finished computing initial states: 4 distinct states generated at 2026-10-24 08:43:32.
+Error: Invariant DetachBeforeRelease is violated.
+Error: The behavior up to this point is:
+State 1: <Initial predicate>
+/\ request = 1
+/\ badRead = FALSE
+/\ published = {1}
+/\ held = {}
+/\ late = FALSE
+/\ phase = "running"
+/\ soft = FALSE
+/\ fuel = 20
+/\ released = {}
+
+State 2: <Tick line 16, col 14 to line 17, col 91 of module Recoverable>
+/\ request = 1
+/\ badRead = FALSE
+/\ published = {1}
+/\ held = {}
+/\ late = FALSE
+/\ phase = "cleanup"
+/\ soft = FALSE
+/\ fuel = 19
+/\ released = {}
+
+State 3: <Tick line 20, col 11 to line 23, col 71 of module Recoverable>
+/\ request = 1
+/\ badRead = FALSE
+/\ published = {1}
+/\ held = {1}
+/\ late = FALSE
+/\ phase = "held"
+/\ soft = FALSE
+/\ fuel = 18
+/\ released = {}
+
+State 4: <Tick line 24, col 15 to line 26, col 83 of module Recoverable>
+/\ request = 1
+/\ badRead = FALSE
+/\ published = {1}
+/\ held = {}
+/\ late = FALSE
+/\ phase = "held"
+/\ soft = FALSE
+/\ fuel = 17
+/\ released = {1}
+
+40 states generated, 40 distinct states found, 15 states left on queue.
+The depth of the complete state graph search is 4.
+Finished in 00s at (2026-10-24 08:43:32)
+
+--- STDERR ---
+
+--- METRICS ---
+{"wall_ms":1118.568,"user_ms":2236.143,"system_ms":326.281,"peak_rss_bytes":106012672,"exit":12,"signal":0,"termination":"completed"}

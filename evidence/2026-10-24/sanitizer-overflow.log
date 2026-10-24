@@ -1,0 +1,19 @@
+
+--- STDERR ---
+bench/sanitizer_probe.c:34:15: runtime error: signed integer overflow: 2147483647 + 1 cannot be represented in type 'int'
+    #0 0x00010d26d514 in zif_guard_memory_fault sanitizer_probe.c:34
+    #1 0x000106b7d06c in ZEND_DO_ICALL_SPEC_RETVAL_UNUSED_TAILCALL_HANDLER zend_vm_execute.h:54318
+    #2 0x00010621c6c0 in execute_ex zend_vm_execute.h:110617
+    #3 0x00010621de29 in zend_execute zend_vm_execute.h:116055
+    #4 0x0001061cddab in zend_eval_stringl zend_execute_API.c:1439
+    #5 0x0001061ce994 in zend_eval_stringl_ex zend_execute_API.c:1481
+    #6 0x0001061ceb8b in zend_eval_string_ex zend_execute_API.c:1491
+    #7 0x000107224cb3 in do_cli php_cli.c:971
+    #8 0x000107221b7d in do_php_cli php_cli.c:1354
+    #9 0x0001072208c1 in main php_cli_main.c:18
+    #10 0x7ff805c571c7 in start+0xca7 (dyld:x86_64+0x131c7)
+
+SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior bench/sanitizer_probe.c:34:15 
+
+--- METRICS ---
+{"wall_ms":531.393,"user_ms":89.038,"system_ms":154.18,"peak_rss_bytes":69369856,"exit":134,"signal":6,"termination":"completed"}

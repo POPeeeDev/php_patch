@@ -1,0 +1,26 @@
+{
+    "revision": "022073187266c934fea9d5aafd9dde49cc09d449",
+    "files": {
+        "Zend/zend_alloc.h": {
+            "original_sha256": "92130e04c89ef5ce72658c0cbc6c59deafc5b4a3611ca4b666f5bc8e8b46c196",
+            "patched_sha256": "9d45809f260cc04f2f3be91201bd3314a57baafa226b57ffc52cdcee59fa3aff"
+        },
+        "Zend/zend_alloc.c": {
+            "original_sha256": "84da786443570c13d0ef6576db27adc165e6ec722b917a38d09172408458cb0a",
+            "patched_sha256": "bccd824da46fca30e513cdddc49151aaa157823b7ea1ad6721fd3b46f17852ee"
+        },
+        "Zend/zend.c": {
+            "original_sha256": "533711d19fbfcb01a45327318811e7c061fe757e606b9c6c7315e829a382da6a",
+            "patched_sha256": "b1b243e580dbf7577387858df4788d9cd253fc1fb891dd796c1e455d594e595a"
+        },
+        "main/main.c": {
+            "original_sha256": "d0f62b4e7c27bfaf2cb929a0dd586488efc0f31d897f5dcfd0470e67ab57169c",
+            "patched_sha256": "544476a9fd5b29f54fd1d2a2302eb95b550b70ecd628ae0ca97f035bf111a24f"
+        },
+        "ext/session/session.c": {
+            "original_sha256": "ff447516b6a13b2dc311734aa490f7fa596500dbf6ac025bee097b9a734f712b",
+            "patched_sha256": "108641e114c1d6d767feb163d7e35c5e6d177324cbc8a12fcbad358580432d31"
+        }
+    },
+    "patch_sha256": "a79ec54567d3750f13b722ace36014db0b3cf72197ad1a32b9a82f15831c0161"
+}

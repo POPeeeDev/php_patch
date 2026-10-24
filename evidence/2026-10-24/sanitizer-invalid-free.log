@@ -1,0 +1,37 @@
+
+--- STDERR ---
+=================================================================
+==88865==ERROR: AddressSanitizer: attempting free on address which was not malloc()-ed: 0x6020000032f1 in thread T0
+    #0 0x00011562689b in free+0x8b (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0xa689b)
+    #1 0x0001171da3d4 in zif_guard_memory_fault sanitizer_probe.c:30
+    #2 0x00011171706c in ZEND_DO_ICALL_SPEC_RETVAL_UNUSED_TAILCALL_HANDLER zend_vm_execute.h:54318
+    #3 0x000110db66c0 in execute_ex zend_vm_execute.h:110617
+    #4 0x000110db7e29 in zend_execute zend_vm_execute.h:116055
+    #5 0x000110d67dab in zend_eval_stringl zend_execute_API.c:1439
+    #6 0x000110d68994 in zend_eval_stringl_ex zend_execute_API.c:1481
+    #7 0x000110d68b8b in zend_eval_string_ex zend_execute_API.c:1491
+    #8 0x000111dbecb3 in do_cli php_cli.c:971
+    #9 0x000111dbbb7d in do_php_cli php_cli.c:1354
+    #10 0x000111dba8c1 in main php_cli_main.c:18
+    #11 0x7ff805c571c7 in start+0xca7 (dyld:x86_64+0x131c7)
+
+0x6020000032f1 is located 1 bytes inside of 16-byte region [0x6020000032f0,0x602000003300)
+allocated by thread T0 here:
+    #0 0x000115626792 in malloc+0x82 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0xa6792)
+    #1 0x0001171d9fbf in zif_guard_memory_fault sanitizer_probe.c:18
+    #2 0x00011171706c in ZEND_DO_ICALL_SPEC_RETVAL_UNUSED_TAILCALL_HANDLER zend_vm_execute.h:54318
+    #3 0x000110db66c0 in execute_ex zend_vm_execute.h:110617
+    #4 0x000110db7e29 in zend_execute zend_vm_execute.h:116055
+    #5 0x000110d67dab in zend_eval_stringl zend_execute_API.c:1439
+    #6 0x000110d68994 in zend_eval_stringl_ex zend_execute_API.c:1481
+    #7 0x000110d68b8b in zend_eval_string_ex zend_execute_API.c:1491
+    #8 0x000111dbecb3 in do_cli php_cli.c:971
+    #9 0x000111dbbb7d in do_php_cli php_cli.c:1354
+    #10 0x000111dba8c1 in main php_cli_main.c:18
+    #11 0x7ff805c571c7 in start+0xca7 (dyld:x86_64+0x131c7)
+
+SUMMARY: AddressSanitizer: bad-free sanitizer_probe.c:30 in zif_guard_memory_fault
+==88865==ABORTING
+
+--- METRICS ---
+{"wall_ms":566.078,"user_ms":93.683,"system_ms":155.142,"peak_rss_bytes":69427200,"exit":134,"signal":6,"termination":"completed"}

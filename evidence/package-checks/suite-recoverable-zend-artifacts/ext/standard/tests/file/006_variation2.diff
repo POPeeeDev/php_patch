@@ -1,0 +1,56 @@
+--
+     *** Testing fileperms(), chmod() with miscellaneous permissions ***
+     -- Iteration 1 --
+     bool(true)
+006- 107777
+006+ 105777
+     bool(true)
+008- 47777
+008+ 45777
+     -- Iteration 2 --
+     bool(true)
+     100000
+--
+     41111
+     -- Iteration 5 --
+     bool(true)
+026- 107001
+026+ 105001
+     bool(true)
+028- 47001
+028+ 45001
+     -- Iteration 6 --
+     bool(true)
+     100001
+--
+     41411
+     -- Iteration 8 --
+     bool(true)
+041- 107141
+041+ 105141
+     bool(true)
+043- 47141
+043+ 45141
+     -- Iteration 9 --
+     bool(true)
+     100637
+--
+     40637
+     -- Iteration 10 --
+     bool(true)
+051- 103567
+051+ 101567
+     bool(true)
+053- 43567
+053+ 41567
+     -- Iteration 11 --
+     bool(true)
+056- 103567
+056+ 101567
+     bool(true)
+058- 43567
+058+ 41567
+     -- Iteration 12 --
+     TypeError: chmod(): Argument #2 ($permissions) must be of type int, string given
+     TypeError: chmod(): Argument #2 ($permissions) must be of type int, string given
+--

@@ -1,0 +1,5 @@
+GUARD_CONTROL_RETURNED
+--- STDERR ---
+
+--- METRICS ---
+{"wall_ms":1038,"user_ms":87.637,"system_ms":286.408,"peak_rss_bytes":68874240,"exit":0,"signal":0,"termination":"completed"}

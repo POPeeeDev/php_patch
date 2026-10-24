@@ -1,0 +1,22 @@
+     *** Testing gethostbyname() : basic functionality ***
+002- 127.0.%d.1
+002+ php-src/ext/standard/dns.c:305:20: runtime error: load of misaligned address 0x60b000003d1a for type 'char **', which requires 8 byte alignment
+003+ 0x60b000003d1a: note: pointer points here
+004+  00 00  00 00 2a 3d 00 00 b0 60  00 00 00 00 00 00 00 00  00 00 7f 00 00 01 00 00  00 00 00 00 00 00
+005+               ^ 
+006+     #0 0x000111e46635 in php_gethostbyname dns.c:305
+007+     #1 0x000111e45ec5 in zif_gethostbyname dns.c:233
+008+     #2 0x000113695f35 in ZEND_DO_ICALL_SPEC_RETVAL_USED_TAILCALL_HANDLER zend_vm_execute.h:54388
+009+     #3 0x000112d336c0 in execute_ex zend_vm_execute.h:110617
+010+     #4 0x000112d34e29 in zend_execute zend_vm_execute.h:116055
+011+     #5 0x000113d2f94d in zend_execute_script zend.c:1987
+012+     #6 0x000112410125 in php_execute_script_ex main.c:2660
+013+     #7 0x000112410988 in php_execute_script main.c:2700
+014+     #8 0x000113d3baa6 in do_cli php_cli.c:941
+015+     #9 0x000113d38b7d in do_php_cli php_cli.c:1354
+016+     #10 0x000113d378c1 in main php_cli_main.c:18
+017+     #11 0x7ff805c571c7 in start+0xca7 (dyld:x86_64+0x131c7)
+018+ 
+019+ SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior php-src/ext/standard/dns.c:305:20 
+020+ 
+021+ Termsig=6

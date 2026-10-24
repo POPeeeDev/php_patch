@@ -1,0 +1,12 @@
+bool(true)
+resource(4) of type (stream filter)
+
+Warning: Object of class stdClass could not be converted to int in php-src/ext/standard/tests/filters/stream_filter_register_class_coerce_consumed_by_ref_param.php on line 14
+
+Warning: fwrite(): Unprocessed filter buckets remaining on input brigade in php-src/ext/standard/tests/filters/stream_filter_register_class_coerce_consumed_by_ref_param.php on line 14
+int(1)
+
+Warning: Object of class stdClass could not be converted to int in Unknown on line 0
+[Sat Oct 24 10:04:54 2026]  Script:  'php-src/ext/standard/tests/filters/stream_filter_register_class_coerce_consumed_by_ref_param.php'
+php-src/main/streams/filter.c(72) :  Freeing 0x00000001146913c0 (48 bytes), script=php-src/ext/standard/tests/filters/stream_filter_register_class_coerce_consumed_by_ref_param.php
+=== Total 1 memory leaks detected ===

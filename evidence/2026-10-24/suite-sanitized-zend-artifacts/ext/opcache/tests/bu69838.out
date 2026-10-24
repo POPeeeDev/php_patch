@@ -1,0 +1,20 @@
+php-src/ext/standard/dns.c:305:20: runtime error: load of misaligned address 0x60b00000379a for type 'char **', which requires 8 byte alignment
+0x60b00000379a: note: pointer points here
+ 00 00  00 00 aa 37 00 00 b0 60  00 00 00 00 00 00 00 00  00 00 7f 00 00 01 00 00  00 00 00 00 00 00
+              ^ 
+    #0 0x0001106bf635 in php_gethostbyname dns.c:305
+    #1 0x0001106beec5 in zif_gethostbyname dns.c:233
+    #2 0x000111f0ef35 in ZEND_DO_ICALL_SPEC_RETVAL_USED_TAILCALL_HANDLER zend_vm_execute.h:54388
+    #3 0x0001115ac6c0 in execute_ex zend_vm_execute.h:110617
+    #4 0x0001115ade29 in zend_execute zend_vm_execute.h:116055
+    #5 0x0001125a894d in zend_execute_script zend.c:1987
+    #6 0x000110c89125 in php_execute_script_ex main.c:2660
+    #7 0x000110c89988 in php_execute_script main.c:2700
+    #8 0x0001125b4aa6 in do_cli php_cli.c:941
+    #9 0x0001125b1b7d in do_php_cli php_cli.c:1354
+    #10 0x0001125b08c1 in main php_cli_main.c:18
+    #11 0x7ff805c571c7 in start+0xca7 (dyld:x86_64+0x131c7)
+
+SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior php-src/ext/standard/dns.c:305:20 
+
+Termsig=6

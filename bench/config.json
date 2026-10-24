@@ -1,0 +1,13 @@
+{
+    "PolicyVersion": 2,
+    "RecoverableMode": 2,
+    "TestWorkers": 8,
+    "CaseSeconds": 20,
+    "SuiteSeconds": 2400,
+    "AllocationCases": 192,
+    "AllocationPhases": 2,
+    "MaxAllocationOrdinal": 8192,
+    "MutationCases": 2048,
+    "ServiceRequests": 80,
+    "ServiceFaultEvery": 8
+}

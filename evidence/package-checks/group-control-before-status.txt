@@ -1,0 +1,2 @@
+FAILED	php-src/ext/standard/tests/file/006_variation2.phpt
+FAILED	php-src/ext/standard/tests/file/chmod_basic.phpt

@@ -1,0 +1,7 @@
+--
+     int(1)
+     
+     Warning: Object of class stdClass could not be converted to int in Unknown on line 0
+010+ [Sat Oct 24 09:48:11 2026]  Script:  'php-src/ext/standard/tests/filters/stream_filter_register_class_coerce_consumed_by_ref_param.php'
+011+ php-src/main/streams/filter.c(72) :  Freeing 0x00000001156913c0 (48 bytes), script=php-src/ext/standard/tests/filters/stream_filter_register_class_coerce_consumed_by_ref_param.php
+012+ === Total 1 memory leaks detected ===

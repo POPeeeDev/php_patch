@@ -1,0 +1,43 @@
+{
+    "suite-recoverable-zend": {
+        "control": "suite-upstream-zend",
+        "new_adverse_tests": [],
+        "shared_adverse_tests": {
+            "ext/sockets/tests/mcast_ipv6_send.phpt": "FAILED",
+            "ext/sockets/tests/mcast_ipv6_recv.phpt": "BORKED",
+            "ext/sockets/tests/mcast_ipv6_recv_limited.phpt": "BORKED"
+        }
+    },
+    "suite-sanitized-malloc": {
+        "control": "suite-sanitized-upstream-malloc",
+        "new_adverse_tests": [],
+        "shared_adverse_tests": {
+            "Zend/tests/runtime_compile_time_binary_operands.phpt": "FAILED",
+            "ext/opcache/tests/bu69838.phpt": "FAILED",
+            "ext/sockets/tests/mcast_ipv6_send.phpt": "FAILED",
+            "ext/sockets/tests/mcast_ipv6_recv.phpt": "BORKED",
+            "ext/sockets/tests/mcast_ipv6_recv_limited.phpt": "BORKED",
+            "ext/standard/tests/network/gethostbyname_basic003.phpt": "FAILED",
+            "ext/standard/tests/network/gethostbyname_error001.phpt": "FAILED",
+            "ext/standard/tests/network/gethostbyname_error002.phpt": "FAILED",
+            "ext/standard/tests/network/gethostbynamel_basic1.phpt": "FAILED",
+            "ext/standard/tests/network/gethostbyname_basic001.phpt": "FAILED"
+        }
+    },
+    "suite-sanitized-zend": {
+        "control": "suite-sanitized-upstream-zend",
+        "new_adverse_tests": [],
+        "shared_adverse_tests": {
+            "Zend/tests/new_oom.phpt": "FAILED",
+            "ext/opcache/tests/bu69838.phpt": "FAILED",
+            "ext/sockets/tests/mcast_ipv6_send.phpt": "FAILED",
+            "ext/sockets/tests/mcast_ipv6_recv.phpt": "BORKED",
+            "ext/sockets/tests/mcast_ipv6_recv_limited.phpt": "BORKED",
+            "ext/standard/tests/network/gethostbyname_basic003.phpt": "FAILED",
+            "ext/standard/tests/network/gethostbyname_error001.phpt": "FAILED",
+            "ext/standard/tests/network/gethostbyname_error002.phpt": "FAILED",
+            "ext/standard/tests/network/gethostbynamel_basic1.phpt": "FAILED",
+            "ext/standard/tests/network/gethostbyname_basic001.phpt": "FAILED"
+        }
+    }
+}

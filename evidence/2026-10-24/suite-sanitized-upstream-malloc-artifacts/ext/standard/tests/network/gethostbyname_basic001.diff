@@ -1,0 +1,21 @@
+001- bool(true)
+001+ php-src/ext/standard/dns.c:305:20: runtime error: load of misaligned address 0x60e0000bdb43 for type 'char **', which requires 8 byte alignment
+002+ 0x60e0000bdb43: note: pointer points here
+003+  6e  65 74 00 53 db 0b 00 e0  60 00 00 00 00 00 00 00  00 00 00 8a c7 28 3a 00  00 00 00 00 00 00 00
+004+               ^ 
+005+     #0 0x000109d3d625 in php_gethostbyname dns.c:305
+006+     #1 0x000109d3ceb5 in zif_gethostbyname dns.c:233
+007+     #2 0x00010b58ceb5 in ZEND_DO_ICALL_SPEC_RETVAL_USED_TAILCALL_HANDLER zend_vm_execute.h:54388
+008+     #3 0x00010ac2a640 in execute_ex zend_vm_execute.h:110617
+009+     #4 0x00010ac2bda9 in zend_execute zend_vm_execute.h:116055
+010+     #5 0x00010bc268bd in zend_execute_script zend.c:1987
+011+     #6 0x00010a306f95 in php_execute_script_ex main.c:2660
+012+     #7 0x00010a3077f8 in php_execute_script main.c:2700
+013+     #8 0x00010bc32a16 in do_cli php_cli.c:941
+014+     #9 0x00010bc2faed in do_php_cli php_cli.c:1354
+015+     #10 0x00010bc2e831 in main php_cli_main.c:18
+016+     #11 0x7ff805c571c7 in start+0xca7 (dyld:x86_64+0x131c7)
+017+ 
+018+ SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior php-src/ext/standard/dns.c:305:20 
+019+ 
+020+ Termsig=6

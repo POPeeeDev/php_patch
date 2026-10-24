@@ -1,0 +1,1480 @@
+{
+    "schema": "php-oom-lifecycle-recorded-results/1",
+    "recorded_utc": "2026-10-24T14:10:07+00:00",
+    "source_revision": "022073187266c934fea9d5aafd9dde49cc09d449",
+    "php_version": "8.7.0-dev",
+    "status": "failures-found",
+    "platform": "macOS x86_64, non-threaded CLI and FPM",
+    "interpretation": "Recorded implementation tests before identifier-only packaging cleanup. Package validation is recorded separately.",
+    "limits": {
+        "PolicyVersion": 2,
+        "RecoverableMode": 2,
+        "TestWorkers": 8,
+        "CaseSeconds": 20,
+        "SuiteSeconds": 2400,
+        "AllocationCases": 192,
+        "AllocationPhases": 2,
+        "MaxAllocationOrdinal": 8192,
+        "MutationCases": 2048,
+        "ServiceRequests": 80,
+        "ServiceFaultEvery": 8
+    },
+    "results": {
+        "tla-recoverable": {
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 1232.675,
+                "user_ms": 3073.843,
+                "system_ms": 431.172,
+                "peak_rss_bytes": 159432704,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "status": "pass",
+            "details": {
+                "scope": "two-requests-two-roots-20-steps-vendor-safe-point-assumed",
+                "expected_violation": null
+            }
+        },
+        "tla-control-release-first": {
+            "exit": 12,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 1118.568,
+                "user_ms": 2236.143,
+                "system_ms": 326.281,
+                "peak_rss_bytes": 106012672,
+                "exit": 12,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "status": "pass",
+            "details": {
+                "scope": "two-requests-two-roots-20-steps-vendor-safe-point-assumed",
+                "expected_violation": "DetachBeforeRelease"
+            }
+        },
+        "tla-control-no-checkpoint": {
+            "exit": 12,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 1127.553,
+                "user_ms": 2521.437,
+                "system_ms": 346.357,
+                "peak_rss_bytes": 114982912,
+                "exit": 12,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "status": "pass",
+            "details": {
+                "scope": "two-requests-two-roots-20-steps-vendor-safe-point-assumed",
+                "expected_violation": "NoStaleConsumer"
+            }
+        },
+        "compile-sanitizer-controls": {
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 497.635,
+                "user_ms": 373.287,
+                "system_ms": 152.48,
+                "peak_rss_bytes": 43077632,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "status": "pass",
+            "details": []
+        },
+        "sanitizer-normal": {
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 1038,
+                "user_ms": 87.637,
+                "system_ms": 286.408,
+                "peak_rss_bytes": 68874240,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "status": "pass",
+            "details": {
+                "expected_diagnostic": null,
+                "scope": "instrumentation-sensitivity-not-guard-prevention"
+            }
+        },
+        "sanitizer-bounds": {
+            "exit": 134,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 604.874,
+                "user_ms": 95.132,
+                "system_ms": 157.131,
+                "peak_rss_bytes": 69435392,
+                "exit": 134,
+                "signal": 6,
+                "termination": "completed"
+            },
+            "status": "pass",
+            "details": {
+                "expected_diagnostic": "heap-buffer-overflow",
+                "scope": "instrumentation-sensitivity-not-guard-prevention"
+            }
+        },
+        "sanitizer-lifetime": {
+            "exit": 134,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 585.725,
+                "user_ms": 98.529,
+                "system_ms": 156.128,
+                "peak_rss_bytes": 69451776,
+                "exit": 134,
+                "signal": 6,
+                "termination": "completed"
+            },
+            "status": "pass",
+            "details": {
+                "expected_diagnostic": "heap-use-after-free",
+                "scope": "instrumentation-sensitivity-not-guard-prevention"
+            }
+        },
+        "sanitizer-double-free": {
+            "exit": 134,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 554.165,
+                "user_ms": 97.931,
+                "system_ms": 157.582,
+                "peak_rss_bytes": 69423104,
+                "exit": 134,
+                "signal": 6,
+                "termination": "completed"
+            },
+            "status": "pass",
+            "details": {
+                "expected_diagnostic": "double-free",
+                "scope": "instrumentation-sensitivity-not-guard-prevention"
+            }
+        },
+        "sanitizer-invalid-free": {
+            "exit": 134,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 566.078,
+                "user_ms": 93.683,
+                "system_ms": 155.142,
+                "peak_rss_bytes": 69427200,
+                "exit": 134,
+                "signal": 6,
+                "termination": "completed"
+            },
+            "status": "pass",
+            "details": {
+                "expected_diagnostic": "not malloc",
+                "scope": "instrumentation-sensitivity-not-guard-prevention"
+            }
+        },
+        "sanitizer-overflow": {
+            "exit": 134,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 531.393,
+                "user_ms": 89.038,
+                "system_ms": 154.18,
+                "peak_rss_bytes": 69369856,
+                "exit": 134,
+                "signal": 6,
+                "termination": "completed"
+            },
+            "status": "pass",
+            "details": {
+                "expected_diagnostic": "signed integer overflow",
+                "scope": "instrumentation-sensitivity-not-guard-prevention"
+            }
+        },
+        "compile-recoverable-probe": {
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 429.822,
+                "user_ms": 370.299,
+                "system_ms": 126.643,
+                "peak_rss_bytes": 46120960,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "status": "pass",
+            "details": []
+        },
+        "recoverable-soft-oom": {
+            "exit": 255,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 28.373,
+                "user_ms": 15.042,
+                "system_ms": 9.483,
+                "peak_rss_bytes": 10084352,
+                "exit": 255,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "status": "pass",
+            "details": {
+                "scope": "soft-OOM-preserves-vendor-request-shutdown"
+            }
+        },
+        "recoverable-retire-raw": {
+            "exit": 137,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 525.839,
+                "user_ms": 11.87,
+                "system_ms": 9.006,
+                "peak_rss_bytes": 5804032,
+                "exit": 137,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "status": "pass",
+            "details": {
+                "scope": "hard-allocation-failure-or-selected-dirty-root-still-retires"
+            }
+        },
+        "recoverable-retire-dirty": {
+            "exit": 137,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 22.857,
+                "user_ms": 11.411,
+                "system_ms": 8.871,
+                "peak_rss_bytes": 5840896,
+                "exit": 137,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "status": "pass",
+            "details": {
+                "scope": "hard-allocation-failure-or-selected-dirty-root-still-retires"
+            }
+        },
+        "aliased-roots-upstream": {
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 546.392,
+                "user_ms": 13.611,
+                "system_ms": 8.587,
+                "peak_rss_bytes": 5738496,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "status": "pass",
+            "details": {
+                "scope": "two-valid-owned-references-to-one-allocation-detached-and-released"
+            }
+        },
+        "fault-sweep-upstream": {
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 17262.169418
+            },
+            "status": "pass",
+            "details": {
+                "cases": 384,
+                "passed": 384,
+                "entered": 303,
+                "exits": {
+                    "121": 264,
+                    "0": 120
+                },
+                "calibrated_upper_ordinals": {
+                    "startup": {
+                        "array": 2048,
+                        "session": 512,
+                        "callbacks": 1024
+                    },
+                    "body": {
+                        "array": 2048,
+                        "session": 64,
+                        "callbacks": 512
+                    }
+                },
+                "scope": "64-spaced-ordinals-per-workload-per-startup-or-body-phase;121-is-upstream-injected-OOM-status"
+            }
+        },
+        "aliased-roots-strict": {
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 545.05,
+                "user_ms": 13.365,
+                "system_ms": 7.881,
+                "peak_rss_bytes": 5750784,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "status": "pass",
+            "details": {
+                "scope": "two-valid-owned-references-to-one-allocation-detached-and-released"
+            }
+        },
+        "fault-sweep-strict": {
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 15562.461167
+            },
+            "status": "pass",
+            "details": {
+                "cases": 384,
+                "passed": 384,
+                "entered": 303,
+                "exits": {
+                    "137": 267,
+                    "0": 117
+                },
+                "calibrated_upper_ordinals": {
+                    "startup": {
+                        "array": 2048,
+                        "session": 512,
+                        "callbacks": 1024
+                    },
+                    "body": {
+                        "array": 2048,
+                        "session": 64,
+                        "callbacks": 512
+                    }
+                },
+                "scope": "64-spaced-ordinals-per-workload-per-startup-or-body-phase;121-is-upstream-injected-OOM-status"
+            }
+        },
+        "aliased-roots-recoverable": {
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 605.478,
+                "user_ms": 13.163,
+                "system_ms": 8.554,
+                "peak_rss_bytes": 5640192,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "status": "pass",
+            "details": {
+                "scope": "two-valid-owned-references-to-one-allocation-detached-and-released"
+            }
+        },
+        "fault-sweep-recoverable": {
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 15806.417514
+            },
+            "status": "pass",
+            "details": {
+                "cases": 384,
+                "passed": 384,
+                "entered": 303,
+                "exits": {
+                    "121": 264,
+                    "0": 120
+                },
+                "calibrated_upper_ordinals": {
+                    "startup": {
+                        "array": 2048,
+                        "session": 512,
+                        "callbacks": 1024
+                    },
+                    "body": {
+                        "array": 2048,
+                        "session": 64,
+                        "callbacks": 512
+                    }
+                },
+                "scope": "64-spaced-ordinals-per-workload-per-startup-or-body-phase;121-is-upstream-injected-OOM-status"
+            }
+        },
+        "aliased-roots-sanitized-upstream": {
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 753.224,
+                "user_ms": 72.348,
+                "system_ms": 243.862,
+                "peak_rss_bytes": 68988928,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "status": "pass",
+            "details": {
+                "scope": "two-valid-owned-references-to-one-allocation-detached-and-released"
+            }
+        },
+        "fault-sweep-sanitized-upstream": {
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 126688.567267
+            },
+            "status": "fail",
+            "details": {
+                "cases": 384,
+                "passed": 383,
+                "entered": 297,
+                "exits": {
+                    "121": 255,
+                    "0": 128,
+                    "134": 1
+                },
+                "calibrated_upper_ordinals": {
+                    "startup": {
+                        "array": 2048,
+                        "session": 1024,
+                        "callbacks": 2048
+                    },
+                    "body": {
+                        "array": 2048,
+                        "session": 64,
+                        "callbacks": 512
+                    }
+                },
+                "scope": "64-spaced-ordinals-per-workload-per-startup-or-body-phase;121-is-upstream-injected-OOM-status"
+            }
+        },
+        "aliased-roots-sanitized": {
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 853.205,
+                "user_ms": 69.929,
+                "system_ms": 234.076,
+                "peak_rss_bytes": 68980736,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "status": "pass",
+            "details": {
+                "scope": "two-valid-owned-references-to-one-allocation-detached-and-released"
+            }
+        },
+        "fault-sweep-sanitized": {
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 130621.393189
+            },
+            "status": "fail",
+            "details": {
+                "cases": 384,
+                "passed": 383,
+                "entered": 297,
+                "exits": {
+                    "121": 255,
+                    "0": 128,
+                    "134": 1
+                },
+                "calibrated_upper_ordinals": {
+                    "startup": {
+                        "array": 2048,
+                        "session": 1024,
+                        "callbacks": 2048
+                    },
+                    "body": {
+                        "array": 2048,
+                        "session": 64,
+                        "callbacks": 512
+                    }
+                },
+                "scope": "64-spaced-ordinals-per-workload-per-startup-or-body-phase;121-is-upstream-injected-OOM-status"
+            }
+        },
+        "compile-service-control": {
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 328.836,
+                "user_ms": 284.784,
+                "system_ms": 102.967,
+                "peak_rss_bytes": 44343296,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "status": "pass",
+            "details": []
+        },
+        "fpm-upstream-max0": {
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 1008.534,
+                "user_ms": 199.091,
+                "system_ms": 267.165,
+                "peak_rss_bytes": 17793024,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "status": "pass",
+            "details": {
+                "measurement": {
+                    "healthy": {
+                        "requests": 81,
+                        "fault_requests": 0,
+                        "normal_failures": 0,
+                        "unexpected_fault_successes": 0,
+                        "shutdown_callbacks": 81,
+                        "unique_workers": 1,
+                        "worker_changes": 0,
+                        "elapsed_ms": 55.732468,
+                        "normal_latency_ms": {
+                            "p50": 0.642407,
+                            "p95": 0.867784,
+                            "max": 0.941633
+                        },
+                        "next_normal_after_fault_ms": {
+                            "p50": null,
+                            "p95": null,
+                            "max": null
+                        }
+                    },
+                    "soft": {
+                        "requests": 81,
+                        "fault_requests": 10,
+                        "normal_failures": 0,
+                        "unexpected_fault_successes": 0,
+                        "shutdown_callbacks": 81,
+                        "unique_workers": 1,
+                        "worker_changes": 0,
+                        "elapsed_ms": 166.304907,
+                        "normal_latency_ms": {
+                            "p50": 0.88297,
+                            "p95": 1.405674,
+                            "max": 3.330617
+                        },
+                        "next_normal_after_fault_ms": {
+                            "p50": 1.113609,
+                            "p95": 1.491143,
+                            "max": 1.491143
+                        }
+                    },
+                    "fatal": {
+                        "requests": 81,
+                        "fault_requests": 10,
+                        "normal_failures": 0,
+                        "unexpected_fault_successes": 0,
+                        "shutdown_callbacks": 81,
+                        "unique_workers": 1,
+                        "worker_changes": 0,
+                        "elapsed_ms": 58.307412,
+                        "normal_latency_ms": {
+                            "p50": 0.657944,
+                            "p95": 0.953456,
+                            "max": 1.18719
+                        },
+                        "next_normal_after_fault_ms": {
+                            "p50": 0.660187,
+                            "p95": 0.924249,
+                            "max": 0.924249
+                        }
+                    },
+                    "hard": {
+                        "requests": 81,
+                        "fault_requests": 10,
+                        "normal_failures": 0,
+                        "unexpected_fault_successes": 0,
+                        "shutdown_callbacks": 71,
+                        "unique_workers": 11,
+                        "worker_changes": 10,
+                        "elapsed_ms": 89.586395,
+                        "normal_latency_ms": {
+                            "p50": 0.733521,
+                            "p95": 3.624423,
+                            "max": 4.234903
+                        },
+                        "next_normal_after_fault_ms": {
+                            "p50": 3.237255,
+                            "p95": 4.234903,
+                            "max": 4.234903
+                        }
+                    }
+                },
+                "scope": "local-single-worker-sequential-FastCGI-not-production-load"
+            }
+        },
+        "fpm-strict-max0": {
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 529.079,
+                "user_ms": 211.202,
+                "system_ms": 295.125,
+                "peak_rss_bytes": 17608704,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "status": "pass",
+            "details": {
+                "measurement": {
+                    "healthy": {
+                        "requests": 81,
+                        "fault_requests": 0,
+                        "normal_failures": 0,
+                        "unexpected_fault_successes": 0,
+                        "shutdown_callbacks": 81,
+                        "unique_workers": 1,
+                        "worker_changes": 0,
+                        "elapsed_ms": 59.097496,
+                        "normal_latency_ms": {
+                            "p50": 0.678994,
+                            "p95": 0.961282,
+                            "max": 1.160515
+                        },
+                        "next_normal_after_fault_ms": {
+                            "p50": null,
+                            "p95": null,
+                            "max": null
+                        }
+                    },
+                    "soft": {
+                        "requests": 81,
+                        "fault_requests": 10,
+                        "normal_failures": 0,
+                        "unexpected_fault_successes": 0,
+                        "shutdown_callbacks": 71,
+                        "unique_workers": 11,
+                        "worker_changes": 10,
+                        "elapsed_ms": 197.236706,
+                        "normal_latency_ms": {
+                            "p50": 0.779752,
+                            "p95": 3.681452,
+                            "max": 3.918285
+                        },
+                        "next_normal_after_fault_ms": {
+                            "p50": 3.549314,
+                            "p95": 3.918285,
+                            "max": 3.918285
+                        }
+                    },
+                    "fatal": {
+                        "requests": 81,
+                        "fault_requests": 10,
+                        "normal_failures": 0,
+                        "unexpected_fault_successes": 0,
+                        "shutdown_callbacks": 81,
+                        "unique_workers": 1,
+                        "worker_changes": 0,
+                        "elapsed_ms": 59.150685,
+                        "normal_latency_ms": {
+                            "p50": 0.677178,
+                            "p95": 0.929684,
+                            "max": 1.065544
+                        },
+                        "next_normal_after_fault_ms": {
+                            "p50": 0.630034,
+                            "p95": 0.948683,
+                            "max": 0.948683
+                        }
+                    },
+                    "hard": {
+                        "requests": 81,
+                        "fault_requests": 10,
+                        "normal_failures": 0,
+                        "unexpected_fault_successes": 0,
+                        "shutdown_callbacks": 71,
+                        "unique_workers": 11,
+                        "worker_changes": 10,
+                        "elapsed_ms": 89.488615,
+                        "normal_latency_ms": {
+                            "p50": 0.72594,
+                            "p95": 3.59138,
+                            "max": 3.85229
+                        },
+                        "next_normal_after_fault_ms": {
+                            "p50": 3.384437,
+                            "p95": 3.85229,
+                            "max": 3.85229
+                        }
+                    }
+                },
+                "scope": "local-single-worker-sequential-FastCGI-not-production-load"
+            }
+        },
+        "fpm-recoverable-max0": {
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 553.053,
+                "user_ms": 207.893,
+                "system_ms": 283.545,
+                "peak_rss_bytes": 17788928,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "status": "pass",
+            "details": {
+                "measurement": {
+                    "healthy": {
+                        "requests": 81,
+                        "fault_requests": 0,
+                        "normal_failures": 0,
+                        "unexpected_fault_successes": 0,
+                        "shutdown_callbacks": 81,
+                        "unique_workers": 1,
+                        "worker_changes": 0,
+                        "elapsed_ms": 104.837342,
+                        "normal_latency_ms": {
+                            "p50": 0.700005,
+                            "p95": 1.180369,
+                            "max": 41.495491
+                        },
+                        "next_normal_after_fault_ms": {
+                            "p50": null,
+                            "p95": null,
+                            "max": null
+                        }
+                    },
+                    "soft": {
+                        "requests": 81,
+                        "fault_requests": 10,
+                        "normal_failures": 0,
+                        "unexpected_fault_successes": 0,
+                        "shutdown_callbacks": 81,
+                        "unique_workers": 1,
+                        "worker_changes": 0,
+                        "elapsed_ms": 169.978054,
+                        "normal_latency_ms": {
+                            "p50": 0.802408,
+                            "p95": 1.466074,
+                            "max": 9.320664
+                        },
+                        "next_normal_after_fault_ms": {
+                            "p50": 1.168017,
+                            "p95": 1.5638,
+                            "max": 1.5638
+                        }
+                    },
+                    "fatal": {
+                        "requests": 81,
+                        "fault_requests": 10,
+                        "normal_failures": 0,
+                        "unexpected_fault_successes": 0,
+                        "shutdown_callbacks": 81,
+                        "unique_workers": 1,
+                        "worker_changes": 0,
+                        "elapsed_ms": 64.636757,
+                        "normal_latency_ms": {
+                            "p50": 0.729969,
+                            "p95": 1.099884,
+                            "max": 1.128521
+                        },
+                        "next_normal_after_fault_ms": {
+                            "p50": 0.711703,
+                            "p95": 1.099884,
+                            "max": 1.099884
+                        }
+                    },
+                    "hard": {
+                        "requests": 81,
+                        "fault_requests": 10,
+                        "normal_failures": 0,
+                        "unexpected_fault_successes": 0,
+                        "shutdown_callbacks": 71,
+                        "unique_workers": 11,
+                        "worker_changes": 10,
+                        "elapsed_ms": 97.211118,
+                        "normal_latency_ms": {
+                            "p50": 0.799467,
+                            "p95": 3.573737,
+                            "max": 4.700539
+                        },
+                        "next_normal_after_fault_ms": {
+                            "p50": 3.408228,
+                            "p95": 4.700539,
+                            "max": 4.700539
+                        }
+                    }
+                },
+                "scope": "local-single-worker-sequential-FastCGI-not-production-load"
+            }
+        },
+        "fpm-upstream-max1": {
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 3032.192,
+                "user_ms": 1452.004,
+                "system_ms": 1583.901,
+                "peak_rss_bytes": 17473536,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "status": "pass",
+            "details": {
+                "measurement": {
+                    "healthy": {
+                        "requests": 81,
+                        "fault_requests": 0,
+                        "normal_failures": 0,
+                        "unexpected_fault_successes": 0,
+                        "shutdown_callbacks": 81,
+                        "unique_workers": 81,
+                        "worker_changes": 80,
+                        "elapsed_ms": 735.159258,
+                        "normal_latency_ms": {
+                            "p50": 8.857551,
+                            "p95": 11.138866,
+                            "max": 13.060225
+                        },
+                        "next_normal_after_fault_ms": {
+                            "p50": null,
+                            "p95": null,
+                            "max": null
+                        }
+                    },
+                    "soft": {
+                        "requests": 81,
+                        "fault_requests": 10,
+                        "normal_failures": 0,
+                        "unexpected_fault_successes": 0,
+                        "shutdown_callbacks": 81,
+                        "unique_workers": 81,
+                        "worker_changes": 80,
+                        "elapsed_ms": 821.55924,
+                        "normal_latency_ms": {
+                            "p50": 8.748411,
+                            "p95": 10.497797,
+                            "max": 12.847857
+                        },
+                        "next_normal_after_fault_ms": {
+                            "p50": 9.719846,
+                            "p95": 12.847857,
+                            "max": 12.847857
+                        }
+                    },
+                    "fatal": {
+                        "requests": 81,
+                        "fault_requests": 10,
+                        "normal_failures": 0,
+                        "unexpected_fault_successes": 0,
+                        "shutdown_callbacks": 81,
+                        "unique_workers": 81,
+                        "worker_changes": 80,
+                        "elapsed_ms": 695.78069,
+                        "normal_latency_ms": {
+                            "p50": 8.464282,
+                            "p95": 9.274212,
+                            "max": 10.257699
+                        },
+                        "next_normal_after_fault_ms": {
+                            "p50": 8.369981,
+                            "p95": 9.183729,
+                            "max": 9.183729
+                        }
+                    },
+                    "hard": {
+                        "requests": 81,
+                        "fault_requests": 10,
+                        "normal_failures": 0,
+                        "unexpected_fault_successes": 0,
+                        "shutdown_callbacks": 71,
+                        "unique_workers": 81,
+                        "worker_changes": 80,
+                        "elapsed_ms": 630.927458,
+                        "normal_latency_ms": {
+                            "p50": 8.356605,
+                            "p95": 9.018196,
+                            "max": 9.273321
+                        },
+                        "next_normal_after_fault_ms": {
+                            "p50": 3.027208,
+                            "p95": 3.748603,
+                            "max": 3.748603
+                        }
+                    }
+                },
+                "scope": "local-single-worker-sequential-FastCGI-not-production-load"
+            }
+        },
+        "mutations-upstream-malloc": {
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 608.699,
+                "user_ms": 154.168,
+                "system_ms": 430.146,
+                "peak_rss_bytes": 7598080,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "status": "pass",
+            "details": {
+                "measurement": {
+                    "seed": 104729,
+                    "mutations": {
+                        "json": 2048,
+                        "serialization": 2048,
+                        "session": 2048
+                    },
+                    "valid_roundtrips": 4096,
+                    "status": "completed",
+                    "scope": "deterministic-local-input-mutations-not-exhaustive-fuzzing"
+                }
+            }
+        },
+        "mutations-upstream-zend": {
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 699.956,
+                "user_ms": 123.3,
+                "system_ms": 484.72,
+                "peak_rss_bytes": 7172096,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "status": "pass",
+            "details": {
+                "measurement": {
+                    "seed": 104729,
+                    "mutations": {
+                        "json": 2048,
+                        "serialization": 2048,
+                        "session": 2048
+                    },
+                    "valid_roundtrips": 4096,
+                    "status": "completed",
+                    "scope": "deterministic-local-input-mutations-not-exhaustive-fuzzing"
+                }
+            }
+        },
+        "mutations-recoverable-malloc": {
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 690.32,
+                "user_ms": 170.544,
+                "system_ms": 474.448,
+                "peak_rss_bytes": 7462912,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "status": "pass",
+            "details": {
+                "measurement": {
+                    "seed": 104729,
+                    "mutations": {
+                        "json": 2048,
+                        "serialization": 2048,
+                        "session": 2048
+                    },
+                    "valid_roundtrips": 4096,
+                    "status": "completed",
+                    "scope": "deterministic-local-input-mutations-not-exhaustive-fuzzing"
+                }
+            }
+        },
+        "mutations-recoverable-zend": {
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 802.332,
+                "user_ms": 134.138,
+                "system_ms": 517.745,
+                "peak_rss_bytes": 7307264,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "status": "pass",
+            "details": {
+                "measurement": {
+                    "seed": 104729,
+                    "mutations": {
+                        "json": 2048,
+                        "serialization": 2048,
+                        "session": 2048
+                    },
+                    "valid_roundtrips": 4096,
+                    "status": "completed",
+                    "scope": "deterministic-local-input-mutations-not-exhaustive-fuzzing"
+                }
+            }
+        },
+        "mutations-sanitized-upstream-malloc": {
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 2456.037,
+                "user_ms": 1392.462,
+                "system_ms": 941.855,
+                "peak_rss_bytes": 224751616,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "status": "pass",
+            "details": {
+                "measurement": {
+                    "seed": 104729,
+                    "mutations": {
+                        "json": 2048,
+                        "serialization": 2048,
+                        "session": 2048
+                    },
+                    "valid_roundtrips": 4096,
+                    "status": "completed",
+                    "scope": "deterministic-local-input-mutations-not-exhaustive-fuzzing"
+                }
+            }
+        },
+        "mutations-sanitized-upstream-zend": {
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 2071.719,
+                "user_ms": 1234.298,
+                "system_ms": 797.57,
+                "peak_rss_bytes": 75554816,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "status": "pass",
+            "details": {
+                "measurement": {
+                    "seed": 104729,
+                    "mutations": {
+                        "json": 2048,
+                        "serialization": 2048,
+                        "session": 2048
+                    },
+                    "valid_roundtrips": 4096,
+                    "status": "completed",
+                    "scope": "deterministic-local-input-mutations-not-exhaustive-fuzzing"
+                }
+            }
+        },
+        "mutations-sanitized-malloc": {
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 2377.105,
+                "user_ms": 1386.421,
+                "system_ms": 943.055,
+                "peak_rss_bytes": 224702464,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "status": "pass",
+            "details": {
+                "measurement": {
+                    "seed": 104729,
+                    "mutations": {
+                        "json": 2048,
+                        "serialization": 2048,
+                        "session": 2048
+                    },
+                    "valid_roundtrips": 4096,
+                    "status": "completed",
+                    "scope": "deterministic-local-input-mutations-not-exhaustive-fuzzing"
+                }
+            }
+        },
+        "mutations-sanitized-zend": {
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 2288.178,
+                "user_ms": 1321.883,
+                "system_ms": 864.212,
+                "peak_rss_bytes": 75767808,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "status": "pass",
+            "details": {
+                "measurement": {
+                    "seed": 104729,
+                    "mutations": {
+                        "json": 2048,
+                        "serialization": 2048,
+                        "session": 2048
+                    },
+                    "valid_roundtrips": 4096,
+                    "status": "completed",
+                    "scope": "deterministic-local-input-mutations-not-exhaustive-fuzzing"
+                }
+            }
+        },
+        "suite-upstream-zend": {
+            "exit": 1,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 170850.038,
+                "user_ms": 556945.989,
+                "system_ms": 373804.988,
+                "peak_rss_bytes": 281968640,
+                "exit": 1,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "status": "fail",
+            "details": {
+                "counts": {
+                    "Number of tests": 23655,
+                    "Tests skipped": 8804,
+                    "Tests warned": 3,
+                    "Tests failed": 1,
+                    "Tests passed": 14838,
+                    "Tests borked": 2,
+                    "Expected fail": 7
+                },
+                "source_phpt_inventory": 23655,
+                "selection": "upstream-runner-full-discovery-for-built-extensions",
+                "slow_tests_excluded": false,
+                "online_tests": "upstream-default-offline",
+                "allocator": "zend",
+                "adverse_and_expected": {
+                    "tests/security/open_basedir_linkinfo.phpt": "XFAILED",
+                    "Zend/tests/inheritance/interface_constructor_prototype_002.phpt": "XFAILED",
+                    "ext/filter/tests/bug49184.phpt": "XFAILED",
+                    "ext/filter/tests/bug67167.02.phpt": "XFAILED",
+                    "ext/opcache/tests/gh18985.phpt": "XFAILED",
+                    "ext/opcache/tests/opt/verify_return_type.phpt": "XFAILED",
+                    "ext/sockets/tests/mcast_ipv6_send.phpt": "FAILED",
+                    "ext/sockets/tests/mcast_ipv6_recv.phpt": "BORKED",
+                    "ext/sockets/tests/mcast_ipv6_recv_limited.phpt": "BORKED",
+                    "ext/spl/tests/ArrayObject/gh10519.phpt": "XFAILED",
+                    "ext/standard/tests/filters/stream_filter_register_class_coerce_consumed_by_ref_param.phpt": "WARNED",
+                    "ext/standard/tests/filters/stream_filter_register_mock_class_filter.phpt": "WARNED",
+                    "sapi/fpm/tests/log-bwd-multiple-msgs-stdout-stderr.phpt": "WARNED"
+                },
+                "asan_heap_object_coverage": "not-full-Zend-suballocation-coverage"
+            }
+        },
+        "suite-recoverable-zend": {
+            "exit": 1,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 178384.815,
+                "user_ms": 587296.951,
+                "system_ms": 392722.914,
+                "peak_rss_bytes": 282042368,
+                "exit": 1,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "status": "fail",
+            "details": {
+                "counts": {
+                    "Number of tests": 23655,
+                    "Tests skipped": 8804,
+                    "Tests warned": 3,
+                    "Tests failed": 1,
+                    "Tests passed": 14838,
+                    "Tests borked": 2,
+                    "Expected fail": 7
+                },
+                "source_phpt_inventory": 23655,
+                "selection": "upstream-runner-full-discovery-for-built-extensions",
+                "slow_tests_excluded": false,
+                "online_tests": "upstream-default-offline",
+                "allocator": "zend",
+                "adverse_and_expected": {
+                    "tests/security/open_basedir_linkinfo.phpt": "XFAILED",
+                    "Zend/tests/inheritance/interface_constructor_prototype_002.phpt": "XFAILED",
+                    "ext/filter/tests/bug49184.phpt": "XFAILED",
+                    "ext/filter/tests/bug67167.02.phpt": "XFAILED",
+                    "ext/opcache/tests/gh18985.phpt": "XFAILED",
+                    "ext/opcache/tests/opt/verify_return_type.phpt": "XFAILED",
+                    "ext/sockets/tests/mcast_ipv6_send.phpt": "FAILED",
+                    "ext/sockets/tests/mcast_ipv6_recv.phpt": "BORKED",
+                    "ext/sockets/tests/mcast_ipv6_recv_limited.phpt": "BORKED",
+                    "ext/spl/tests/ArrayObject/gh10519.phpt": "XFAILED",
+                    "ext/standard/tests/filters/stream_filter_register_class_coerce_consumed_by_ref_param.phpt": "WARNED",
+                    "ext/standard/tests/filters/stream_filter_register_mock_class_filter.phpt": "WARNED",
+                    "sapi/fpm/tests/log-bwd-multiple-msgs-stdout-stderr.phpt": "WARNED"
+                },
+                "asan_heap_object_coverage": "not-full-Zend-suballocation-coverage"
+            }
+        },
+        "suite-sanitized-upstream-malloc": {
+            "exit": 1,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 1528996.046,
+                "user_ms": 3392195.534,
+                "system_ms": 7095199.032,
+                "peak_rss_bytes": 1806196736,
+                "exit": 1,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "status": "fail",
+            "details": {
+                "counts": {
+                    "Number of tests": 23655,
+                    "Tests skipped": 8892,
+                    "Tests warned": 4,
+                    "Tests failed": 10,
+                    "Tests passed": 14740,
+                    "Tests borked": 2,
+                    "Expected fail": 7
+                },
+                "source_phpt_inventory": 23655,
+                "selection": "upstream-runner-full-discovery-for-built-extensions",
+                "slow_tests_excluded": false,
+                "online_tests": "upstream-default-offline",
+                "allocator": "malloc",
+                "adverse_and_expected": {
+                    "tests/security/open_basedir_linkinfo.phpt": "XFAILED",
+                    "Zend/tests/fibers/gh19983.phpt": "FAILED",
+                    "Zend/tests/inheritance/interface_constructor_prototype_002.phpt": "XFAILED",
+                    "Zend/tests/oom_unserialize_001.phpt": "WARNED",
+                    "Zend/tests/oom_unserialize_012.phpt": "FAILED",
+                    "Zend/tests/runtime_compile_time_binary_operands.phpt": "FAILED",
+                    "ext/filter/tests/bug49184.phpt": "XFAILED",
+                    "ext/filter/tests/bug67167.02.phpt": "XFAILED",
+                    "ext/opcache/tests/bu69838.phpt": "FAILED",
+                    "ext/opcache/tests/gh18985.phpt": "XFAILED",
+                    "ext/opcache/tests/opt/verify_return_type.phpt": "XFAILED",
+                    "ext/sockets/tests/mcast_ipv6_send.phpt": "FAILED",
+                    "ext/sockets/tests/mcast_ipv6_recv.phpt": "BORKED",
+                    "ext/sockets/tests/mcast_ipv6_recv_limited.phpt": "BORKED",
+                    "ext/spl/tests/ArrayObject/gh10519.phpt": "XFAILED",
+                    "ext/standard/tests/filters/stream_filter_register_class_coerce_consumed_by_ref_param.phpt": "WARNED",
+                    "ext/standard/tests/filters/stream_filter_register_mock_class_filter.phpt": "WARNED",
+                    "ext/standard/tests/network/gethostbyname_basic003.phpt": "FAILED",
+                    "ext/standard/tests/network/gethostbyname_error001.phpt": "FAILED",
+                    "ext/standard/tests/network/gethostbyname_error002.phpt": "FAILED",
+                    "ext/standard/tests/network/gethostbynamel_basic1.phpt": "FAILED",
+                    "ext/standard/tests/network/gethostbyname_basic001.phpt": "FAILED",
+                    "sapi/fpm/tests/log-bwd-multiple-msgs-stdout-stderr.phpt": "WARNED"
+                },
+                "asan_heap_object_coverage": "system-allocations"
+            }
+        },
+        "suite-sanitized-malloc": {
+            "exit": 1,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 1031508.288,
+                "user_ms": 2107554.104,
+                "system_ms": 4641900.76,
+                "peak_rss_bytes": 1806172160,
+                "exit": 1,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "status": "fail",
+            "details": {
+                "counts": {
+                    "Number of tests": 23655,
+                    "Tests skipped": 8892,
+                    "Tests warned": 3,
+                    "Tests failed": 8,
+                    "Tests passed": 14743,
+                    "Tests borked": 2,
+                    "Expected fail": 7
+                },
+                "source_phpt_inventory": 23655,
+                "selection": "upstream-runner-full-discovery-for-built-extensions",
+                "slow_tests_excluded": false,
+                "online_tests": "upstream-default-offline",
+                "allocator": "malloc",
+                "adverse_and_expected": {
+                    "tests/security/open_basedir_linkinfo.phpt": "XFAILED",
+                    "Zend/tests/inheritance/interface_constructor_prototype_002.phpt": "XFAILED",
+                    "Zend/tests/runtime_compile_time_binary_operands.phpt": "FAILED",
+                    "ext/filter/tests/bug49184.phpt": "XFAILED",
+                    "ext/filter/tests/bug67167.02.phpt": "XFAILED",
+                    "ext/opcache/tests/bu69838.phpt": "FAILED",
+                    "ext/opcache/tests/gh18985.phpt": "XFAILED",
+                    "ext/opcache/tests/opt/verify_return_type.phpt": "XFAILED",
+                    "ext/sockets/tests/mcast_ipv6_send.phpt": "FAILED",
+                    "ext/sockets/tests/mcast_ipv6_recv.phpt": "BORKED",
+                    "ext/sockets/tests/mcast_ipv6_recv_limited.phpt": "BORKED",
+                    "ext/spl/tests/ArrayObject/gh10519.phpt": "XFAILED",
+                    "ext/standard/tests/filters/stream_filter_register_class_coerce_consumed_by_ref_param.phpt": "WARNED",
+                    "ext/standard/tests/filters/stream_filter_register_mock_class_filter.phpt": "WARNED",
+                    "ext/standard/tests/network/gethostbyname_basic003.phpt": "FAILED",
+                    "ext/standard/tests/network/gethostbyname_error001.phpt": "FAILED",
+                    "ext/standard/tests/network/gethostbyname_error002.phpt": "FAILED",
+                    "ext/standard/tests/network/gethostbynamel_basic1.phpt": "FAILED",
+                    "ext/standard/tests/network/gethostbyname_basic001.phpt": "FAILED",
+                    "sapi/fpm/tests/log-bwd-multiple-msgs-stdout-stderr.phpt": "WARNED"
+                },
+                "asan_heap_object_coverage": "system-allocations"
+            }
+        },
+        "suite-sanitized-upstream-zend": {
+            "exit": 1,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 946365.732,
+                "user_ms": 1783559.627,
+                "system_ms": 4442343.138,
+                "peak_rss_bytes": 815067136,
+                "exit": 1,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "status": "fail",
+            "details": {
+                "counts": {
+                    "Number of tests": 23655,
+                    "Tests skipped": 8840,
+                    "Tests warned": 1,
+                    "Tests failed": 8,
+                    "Tests passed": 14795,
+                    "Tests borked": 2,
+                    "Expected fail": 9
+                },
+                "source_phpt_inventory": 23655,
+                "selection": "upstream-runner-full-discovery-for-built-extensions",
+                "slow_tests_excluded": false,
+                "online_tests": "upstream-default-offline",
+                "allocator": "zend",
+                "adverse_and_expected": {
+                    "tests/security/open_basedir_linkinfo.phpt": "XFAILED",
+                    "Zend/tests/inheritance/interface_constructor_prototype_002.phpt": "XFAILED",
+                    "Zend/tests/new_oom.phpt": "FAILED",
+                    "ext/filter/tests/bug49184.phpt": "XFAILED",
+                    "ext/filter/tests/bug67167.02.phpt": "XFAILED",
+                    "ext/opcache/tests/bu69838.phpt": "FAILED",
+                    "ext/opcache/tests/gh18985.phpt": "XFAILED",
+                    "ext/opcache/tests/opt/verify_return_type.phpt": "XFAILED",
+                    "ext/sockets/tests/mcast_ipv6_send.phpt": "FAILED",
+                    "ext/sockets/tests/mcast_ipv6_recv.phpt": "BORKED",
+                    "ext/sockets/tests/mcast_ipv6_recv_limited.phpt": "BORKED",
+                    "ext/spl/tests/ArrayObject/gh10519.phpt": "XFAILED",
+                    "ext/standard/tests/filters/stream_filter_register_class_coerce_consumed_by_ref_param.phpt": "XFAILED",
+                    "ext/standard/tests/filters/stream_filter_register_mock_class_filter.phpt": "XFAILED",
+                    "ext/standard/tests/network/gethostbyname_basic003.phpt": "FAILED",
+                    "ext/standard/tests/network/gethostbyname_error001.phpt": "FAILED",
+                    "ext/standard/tests/network/gethostbyname_error002.phpt": "FAILED",
+                    "ext/standard/tests/network/gethostbynamel_basic1.phpt": "FAILED",
+                    "ext/standard/tests/network/gethostbyname_basic001.phpt": "FAILED",
+                    "sapi/fpm/tests/log-bwd-multiple-msgs-stdout-stderr.phpt": "WARNED"
+                },
+                "asan_heap_object_coverage": "not-full-Zend-suballocation-coverage"
+            }
+        },
+        "suite-sanitized-zend": {
+            "exit": 1,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 1007323.266,
+                "user_ms": 1934622.461,
+                "system_ms": 4764618.806,
+                "peak_rss_bytes": 815042560,
+                "exit": 1,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "status": "fail",
+            "details": {
+                "counts": {
+                    "Number of tests": 23655,
+                    "Tests skipped": 8840,
+                    "Tests warned": 1,
+                    "Tests failed": 8,
+                    "Tests passed": 14795,
+                    "Tests borked": 2,
+                    "Expected fail": 9
+                },
+                "source_phpt_inventory": 23655,
+                "selection": "upstream-runner-full-discovery-for-built-extensions",
+                "slow_tests_excluded": false,
+                "online_tests": "upstream-default-offline",
+                "allocator": "zend",
+                "adverse_and_expected": {
+                    "tests/security/open_basedir_linkinfo.phpt": "XFAILED",
+                    "Zend/tests/inheritance/interface_constructor_prototype_002.phpt": "XFAILED",
+                    "Zend/tests/new_oom.phpt": "FAILED",
+                    "ext/filter/tests/bug49184.phpt": "XFAILED",
+                    "ext/filter/tests/bug67167.02.phpt": "XFAILED",
+                    "ext/opcache/tests/bu69838.phpt": "FAILED",
+                    "ext/opcache/tests/gh18985.phpt": "XFAILED",
+                    "ext/opcache/tests/opt/verify_return_type.phpt": "XFAILED",
+                    "ext/sockets/tests/mcast_ipv6_send.phpt": "FAILED",
+                    "ext/sockets/tests/mcast_ipv6_recv.phpt": "BORKED",
+                    "ext/sockets/tests/mcast_ipv6_recv_limited.phpt": "BORKED",
+                    "ext/spl/tests/ArrayObject/gh10519.phpt": "XFAILED",
+                    "ext/standard/tests/filters/stream_filter_register_class_coerce_consumed_by_ref_param.phpt": "XFAILED",
+                    "ext/standard/tests/filters/stream_filter_register_mock_class_filter.phpt": "XFAILED",
+                    "ext/standard/tests/network/gethostbyname_basic003.phpt": "FAILED",
+                    "ext/standard/tests/network/gethostbyname_error001.phpt": "FAILED",
+                    "ext/standard/tests/network/gethostbyname_error002.phpt": "FAILED",
+                    "ext/standard/tests/network/gethostbynamel_basic1.phpt": "FAILED",
+                    "ext/standard/tests/network/gethostbyname_basic001.phpt": "FAILED",
+                    "sapi/fpm/tests/log-bwd-multiple-msgs-stdout-stderr.phpt": "WARNED"
+                },
+                "asan_heap_object_coverage": "not-full-Zend-suballocation-coverage"
+            }
+        }
+    },
+    "builds": {
+        "recoverable": {
+            "profile": "recoverable",
+            "mode": 2,
+            "sanitized": false,
+            "php_sha256": "91444b47f6cc9a04d2fda92c466770b6c70655c4172c1d7219ba4964a7b791ba",
+            "fpm_sha256": "03e123472d863ef4fcac0d7e371ebd15cee88d8734a69e0a923259a357eae21a",
+            "utc": "2026-10-24T12:27:03+00:00"
+        },
+        "sanitized": {
+            "profile": "sanitized",
+            "mode": 2,
+            "sanitized": true,
+            "php_sha256": "c0c91fff942bbce1bcf4f25aef8ad6a164fcda2a946bed5b0d5a0fb949370623",
+            "fpm_sha256": "ccb628d6e14eccbc74512740bd77b697d0ba1f1234357294eabf06f6722c91cb",
+            "utc": "2026-10-24T04:12:32+00:00"
+        },
+        "sanitized-upstream": {
+            "profile": "sanitized-upstream",
+            "mode": 0,
+            "sanitized": true,
+            "php_sha256": "1493845d1a3faa9b231c2811f52b19354d00b25e06c18a38ae3f9a02124e6bac",
+            "fpm_sha256": "0d5170b47d09801980ceaf78660a13f74b6d23e9cea849d54bcbfd5e81df58a7",
+            "utc": "2026-10-24T04:15:14+00:00"
+        },
+        "strict": {
+            "profile": "strict",
+            "mode": 1,
+            "sanitized": false,
+            "php_sha256": "a54eab897e31e1aaa3780774d46f7d8d9d1cedbb36778730398036f9847d4943",
+            "fpm_sha256": "a9b6234e57158ab0c6bff3383568917f1e67fb36b7e90cbbfaab1a8672c54dca",
+            "utc": "2026-10-24T04:08:54+00:00"
+        },
+        "upstream": {
+            "profile": "upstream",
+            "mode": 0,
+            "sanitized": false,
+            "php_sha256": "bb8cfc0eb7fb7938254be40650b003de282f65579a6e081ed9f5b15bba5399b1",
+            "fpm_sha256": "87504c1c530eca909bd9ccc7c7e1b0d038fbf526a310360b0bca79b155ca747d",
+            "utc": "2026-10-24T04:08:49+00:00"
+        }
+    }
+}

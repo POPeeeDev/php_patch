@@ -1,0 +1,2 @@
+PASSED	php-src/ext/standard/tests/file/006_variation2.phpt
+PASSED	php-src/ext/standard/tests/file/chmod_basic.phpt
