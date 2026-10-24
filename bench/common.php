@@ -47,7 +47,7 @@ function safety_shared_flags(): array
 
 function safety_run(string $id, array $command, string $out, int $seconds = 20, string $input = '', string $cwd = __DIR__): array
 {
-    $limiter = dirname(__DIR__) . '/work/limit';
+    $limiter = getenv('GUARD_LIMIT_BINARY') ?: dirname(__DIR__) . '/work/limit';
     if (!is_executable($limiter)) { throw new RuntimeException('Build the supervisor first; see BUILD.md'); }
     $p = proc_open([$limiter, (string)$seconds, '33554432', ...$command],
         [0 => ['pipe', 'r'], 1 => ['pipe', 'w'], 2 => ['pipe', 'w']], $pipes, $cwd);

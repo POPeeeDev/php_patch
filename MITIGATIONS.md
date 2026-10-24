@@ -4,9 +4,10 @@ Source review date: 24 October 2026. The comparison concerns the published
 guidance for CVE-2026-109618 and CVE-2026-109619.
 
 The official releases containing the repairs are PHP 8.2.35, 8.3.36, 8.4.27, and
-8.5.12. The experimental candidate uses a later development snapshot already
-containing those repairs. Its measured comparison is therefore an addition to
-patched behavior, not an alternative implementation of the entire vendor repair.
+8.5.12. The release candidate applies the complete official update to its affected
+input and then adds a three-file guard. It is an addition to patched behavior,
+not an alternative implementation of the entire vendor repair. Official release
+code supplies the CVE remediation. Branch-specific results are in [FINDINGS.md](FINDINGS.md).
 
 | Approach | Mechanism | Operational effect | Candidate comparison |
 |---|---|---|---|
@@ -29,7 +30,10 @@ one-request worker recycling. The feature settings are
 The advisory identifies configuration workarounds as incomplete across all
 application, extension, and server paths.
 
-## Measured disruption
+## Historical development-snapshot disruption
+
+The following comparison belongs to the original 8.7 experiment, not the release
+matrix. See [DEVELOPMENT_FINDINGS.md](DEVELOPMENT_FINDINGS.md) for its evidence.
 
 In an 81-request batch, one-request recycling produced 80 worker changes.
 The recoverable candidate and upstream control each produced zero changes in
@@ -50,6 +54,6 @@ production concurrency, throughput, and latency guarantees were not established.
 | Equivalent protection to all published mitigations | Not established |
 | Additional prevention beyond the vendor repair | Not established |
 
-The practical contribution is a testable, opt-in cleanup policy that preserves
+The practical contribution is a testable, additional cleanup policy intended to preserve
 the repaired runtime's service behavior. Its selected-root checks have a narrower
 scope than the upstream reset of request-owned state.

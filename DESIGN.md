@@ -1,5 +1,8 @@
 # Native implementation
 
+This document describes the historical 8.7 development experiment and its modes.
+The release-targeted patch design is in [RELEASE_DESIGN.md](RELEASE_DESIGN.md).
+
 ## Compile-time modes
 
 `ZEND_OOM_GUARD_MODE` selects the implementation. It defaults to 0.

@@ -1,0 +1,88 @@
+diff --git a/Zend/zend_alloc.c b/Zend/zend_alloc.c
+index 9c464a7..363ffbf 100644
+--- a/Zend/zend_alloc.c
++++ b/Zend/zend_alloc.c
+@@ -412,6 +412,11 @@ static ZEND_COLD ZEND_NORETURN void zend_mm_panic(const char *message)
+ 
+ static ZEND_COLD ZEND_NORETURN void zend_out_of_memory(void);
+ 
++ZEND_API ZEND_NORETURN void zend_oom_guard_retire(void)
++{
++	/* No allocation, formatting, refcount changes, or application callbacks. */
++	_exit(137);
++}
+ static ZEND_COLD void zend_mm_delayed_verror(const char *format, va_list args)
+ {
+ 	if (ZEND_HAS_OOM()) {
+@@ -3233,6 +3238,7 @@ ZEND_API void shutdown_memory_manager(bool silent, bool full_shutdown)
+ 
+ static ZEND_COLD ZEND_NORETURN void zend_out_of_memory(void)
+ {
++	zend_oom_guard_retire();
+ 	fprintf(stderr, "Out of memory\n");
+ 	exit(1);
+ }
+diff --git a/Zend/zend_alloc.h b/Zend/zend_alloc.h
+index 315b9f3..9d863d9 100644
+--- a/Zend/zend_alloc.h
++++ b/Zend/zend_alloc.h
+@@ -78,6 +78,13 @@ typedef struct _zend_mm_debug_info {
+ 
+ BEGIN_EXTERN_C()
+ 
++/* Additional lifecycle guard; the official OOM/state fixes are prerequisites. */
++#if defined(ZTS) || defined(ZEND_WIN32)
++# error "The experimental lifecycle guard requires a POSIX NTS build"
++#endif
++ZEND_API ZEND_NORETURN void zend_oom_guard_retire(void);
++ZEND_API void zend_oom_guard_check_request_state(void);
++
+ ZEND_API ZEND_ATTRIBUTE_MALLOC char*  ZEND_FASTCALL zend_strndup(const char *s, size_t length);
+ 
+ ZEND_API ZEND_ATTRIBUTE_MALLOC void*  ZEND_FASTCALL _emalloc(size_t size ZEND_FILE_LINE_DC ZEND_FILE_LINE_ORIG_DC) ZEND_ATTRIBUTE_ALLOC_SIZE(1);
+diff --git a/main/main.c b/main/main.c
+index bc1725f..7c93b61 100644
+--- a/main/main.c
++++ b/main/main.c
+@@ -1270,13 +1270,27 @@ PHPAPI void php_html_puts(const char *str, size_t size)
+ /* }}} */
+ 
+ static void clear_last_error(void) {
+-	if (PG(last_error_message)) {
+-		zend_string_release(PG(last_error_message));
+-		PG(last_error_message) = NULL;
++	/* Unpublish both owned references before either release can run. */
++	zend_string *message = PG(last_error_message);
++	zend_string *file = PG(last_error_file);
++	PG(last_error_message) = NULL;
++	PG(last_error_file) = NULL;
++	if (message) {
++		zend_string_release(message);
+ 	}
+-	if (PG(last_error_file)) {
+-		zend_string_release(PG(last_error_file));
+-		PG(last_error_file) = NULL;
++	if (file) {
++		zend_string_release(file);
++	}
++}
++
++ZEND_API void zend_oom_guard_check_request_state(void)
++{
++	if (PG(last_error_message) != NULL || PG(last_error_file) != NULL
++#if PHP_VERSION_ID >= 80500
++			|| !Z_ISUNDEF(EG(last_fatal_error_backtrace))
++#endif
++	) {
++		zend_oom_guard_retire();
+ 	}
+ }
+ 
+@@ -2019,6 +2033,7 @@ void php_request_shutdown(void *dummy)
+ 	zend_arena_destroy(CG(arena));
+ 	zend_interned_strings_deactivate();
+ 	clear_last_error();
++	zend_oom_guard_check_request_state();
+ 	zend_try {
+ 		shutdown_memory_manager(CG(unclean_shutdown) || !report_memleaks, 0);
+ 	} zend_end_try();

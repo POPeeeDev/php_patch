@@ -1,0 +1,29 @@
+{
+    "schema": "php-release-guard/1",
+    "branch": "8.4",
+    "affected_version": "8.4.26",
+    "official_version": "8.4.27",
+    "affected_revision": "c31ae58ecbedc7a85dac0eee5a6a88da73543e70",
+    "official_revision": "00d8bae801541db0d95a698e108bb4b1b273fe6e",
+    "official_tree": "f5e8a3c5dda5b5fb988ce218b30ee90f0e2f780d",
+    "upstream_patch_sha256": "d923945e69e06994d9ef080caafab73dca699a98ca4347cd27254e8b667b0076",
+    "guard_patch_sha256": "f5b2421ef44abf008d37f19e8ba18798be3d5b94cd90028eeb6681f54b3daed8",
+    "guard_files": {
+        "Zend/zend_alloc.h": {
+            "official_sha256": "045631fd427a555d20c19a4558987251e76053d4558b590bb69f9c8676690728",
+            "candidate_sha256": "4346d8cdfd74ccbb9d7d80bb0489de6331e7fe90480ae305fffeafced08f3690"
+        },
+        "Zend/zend_alloc.c": {
+            "official_sha256": "6c38e82da482a17c46f4f21de509f69d36424a6d9c05330b7b2e4ba7a6c6dc4b",
+            "candidate_sha256": "7c953a91ffd55789e57e61ebdc5d41312943a8dd168e33b96464276e7ccb8a42"
+        },
+        "main/main.c": {
+            "official_sha256": "d307fd53f86c15d6627982401fe03243a29ab8ce45ba47108b862e1293cffb1f",
+            "candidate_sha256": "553c651e2a771fedada1530c407a3ec851c0fdf1f7c3f687d2436204f50cfa0a"
+        }
+    },
+    "kind": "complete-official-release-update-plus-additive-guard",
+    "upstream_security_commits": [
+        "506e87fa7dcdd306975e5b8f8265ee03527aacbf"
+    ]
+}

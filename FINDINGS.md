@@ -1,144 +1,127 @@
-# Recorded findings: 24 October 2026
+# Release comparison findings
 
-## Scope
+## Scope and attribution
 
-The experiment compared an upstream control, a strict retirement control, and a
-recoverable candidate built from one PHP 8.7.0-dev source snapshot. Release and
-sanitizer builds used non-threaded command-line and FPM executables on macOS
-x86_64. The complete six-row source-suite matrix finished within its suite bounds.
-The recorded overall result is **failures found**.
+Measured on macOS 26.7.1 (25G241), Intel x86_64, with Apple Clang 21.0.0.
+These are POSIX non-thread-safe CLI, CGI, and FPM builds, not production deployments.
+The exact affected inputs are 8.2.34, 8.3.35, 8.4.26, and 8.5.11. This does not
+establish support for every older affected patch release.
 
-Machine-readable measurements are in
-[results.json](evidence/2026-10-24/results.json). Public package checks are recorded
-separately in [package-validation.json](evidence/package-validation.json).
+The candidate applies the complete official maintenance update, verifies its
+Git tree, then adds the three-file lifecycle guard. In notation, `C = V + G`:
+the candidate is the official fixed release plus the guard. Vendor security
+repairs must not be attributed to the additional guard. The complete update
+also includes unrelated maintenance fixes.
 
-## Service recovery
+Reproduction is documented in [BUILD.md](BUILD.md); mechanisms and limitations
+are in [RELEASE_DESIGN.md](RELEASE_DESIGN.md). Acronyms and test terminology are
+defined in [GLOSSARY.md](GLOSSARY.md).
 
-A private Unix socket connected the test client to an actual FPM pool containing
-one worker. Each scenario comprised 80 scheduled requests and a final recovery
-probe. The soft-OOM, ordinary-fatal-error, and hard-OOM scenarios each injected
-10 faults. Healthy traffic exercised arrays, garbage collection, sessions,
-serialization, fibers, and JSON.
+## Normal-build comparisons
 
-| Configuration | Healthy worker changes | Soft-OOM worker changes | Soft-OOM batch shutdown callbacks | Hard-OOM worker changes | Unaffected request failures, all scenarios |
-|---|---:|---:|---:|---:|---:|
-| Upstream | 0 | 0 | 81 | 10 | 0 |
-| Strict retirement | 0 | 10 | 71 | 10 | 0 |
-| Recoverable | 0 | 0 | 81 | 10 | 0 |
-| Upstream with `pm.max_requests=1` | 80 | 80 | 81 | 80 | 0 |
+Each branch used the same official-release corpus for all three profiles.
+No slow-test exclusion was enabled. These are the latest complete full-run
+counts, not passing-only selections or counts reconstructed from follow-up tests.
 
-The one-request configuration used 81 distinct workers in each 81-request batch;
-there are 80 changes between consecutive recorded requests. The candidate reused
-the worker after each tested soft OOM and retained shutdown callbacks. Its behavior
-matched the upstream control. A soft-OOM request itself still failed.
+| Branch | Unpatched passed / failed | Official passed / failed | Candidate passed / failed | Skipped in each row |
+|---|---:|---:|---:|---:|
+| 8.2 | 11,012 / 47 | 11,040 / 18 | 11,034 / 24 | 7,723 |
+| 8.3 | 11,607 / 51 | 11,644 / 14 | 11,644 / 14 | 7,994 |
+| 8.4 | 12,511 / 72 | 12,561 / 22 | 12,561 / 22 | 8,664 |
+| 8.5 | 14,273 / 96 | 14,346 / 23 | 14,347 / 22 | 7,900 |
 
-This demonstrates fewer replacements than strict retirement or one-request
-recycling. It does not establish equal security coverage between these mechanisms,
-production throughput, concurrent-request behavior, or external transaction rollback.
+Every normal row also had two BORKED tests. Warnings and expected failures are
+retained in the full reports; the table is not a claim that these suites passed.
 
-## Full upstream discovery
+- **8.3 and 8.4:** official and candidate adverse-status lists were identical.
+- **8.2:** six additional candidate failures were System V message-queue tests.
+  All six failed on both binaries in the sequential paired follow-up. The host
+  had exhausted kernel IPC resources after repeated upstream tests. This does
+  not establish a guard-specific regression or establish IPC safety.
+- **8.5:** the sole differing case was `ext/standard/tests/file/bug36365.phpt`,
+  a 70,000-file directory test. It timed out in the official full run and passed
+  in the candidate full run. Both binaries passed the paired follow-up. No
+  performance or memory-safety improvement is established by that difference.
 
-The source inventory contains 23,655 PHPT files. The upstream runner selected tests
-for the built extensions, retaining its unsupported-platform and offline skips.
-The build tested 25 extensions; 49 extension trees were not built. No slow-test
-exclusion or selected list of positive tests was used.
+Follow-ups are diagnostic evidence only: they do not erase original failures.
+Other adverse outcomes include terminal/socket/IPv6 behavior, kernel IPC resource
+exhaustion, and bounded-time failures. They remain visible rather than being
+silently classified as successful tests.
 
-| Profile / allocator | Passed | Skipped | Failed | Borked | Warned | Expected failure |
+### Tests changed by the recorded security commit
+
+This is an analysis of the full normal-build runs, not a replacement test subset.
+It includes every existing PHPT changed by the security commit recorded in each
+release manifest. Fixed-output expectations can fail on old PHP without being
+a demonstrated exploit or a memory-corruption detector.
+
+| Branch | Commit PHPT files | Unpatched passed / failed | Official passed / failed | Candidate passed / failed | Recorded skips | Not individually recorded |
 |---|---:|---:|---:|---:|---:|---:|
-| Upstream / Zend | 14,838 | 8,804 | 1 | 2 | 3 | 7 |
-| Recoverable / Zend | 14,838 | 8,804 | 1 | 2 | 3 | 7 |
-| Sanitized upstream / system | 14,740 | 8,892 | 10 | 2 | 4 | 7 |
-| Sanitized recoverable / system | 14,743 | 8,892 | 8 | 2 | 3 | 7 |
-| Sanitized upstream / Zend | 14,795 | 8,840 | 8 | 2 | 1 | 9 |
-| Sanitized recoverable / Zend | 14,795 | 8,840 | 8 | 2 | 1 | 9 |
+| 8.2 | 266 | 134 / 31 | 165 / 0 | 165 / 0 | 6 | 95 |
+| 8.3 | 270 | 140 / 31 | 171 / 0 | 171 / 0 | 6 | 93 |
+| 8.4 | 279 | 142 / 33 | 175 / 0 | 175 / 0 | 6 | 98 |
+| 8.5 | 295 | 156 / 34 | 190 / 0 | 190 / 0 | 6 | 99 |
 
-No candidate row added a FAIL, BORK, or LEAK result relative to its matched control.
-[comparison.json](evidence/2026-10-24/comparison.json) lists the shared adverse
-results. Fewer timeouts in one candidate run do not establish a performance fix.
+Not-recorded cases are not counted as passes. The build enables only the
+documented extensions, and upstream discovery does not produce an individual
+status for every file in the inventory.
 
-### Unresolved failures
+## Service and native checks
 
-- Release runs shared one IPv6 multicast failure and two invalid test-setup
-  results. The captured messages identify an invalid/default interface or missing
-  route on the test host.
-- Each sanitizer row reported six DNS-related tests with a UBSan misaligned
-  pointer-load diagnostic in `ext/standard/dns.c`, at lines 273 or 305 in the
-  pinned source. The same diagnostics occurred in both control and candidate.
-- The system-allocator upstream run had three timed-out tests; the candidate had
-  one. Each Zend-allocator sanitizer run timed out in `Zend/tests/new_oom.phpt`.
-  The upstream runner labels these FAIL, but the safety interpretation is
-  inconclusive. They are not counted as successful safety checks.
-- Expected failures and warnings remain separately reported. In these runs,
-  warnings include tests marked as expected failures that unexpectedly passed.
+The latest normal-build native/service checks passed for all four official and
+candidate rows, including valid owned-alias cleanup, soft OOM, deterministic
+mutation workloads, and the 384-case sampled allocation sweeps. Candidate
+fixtures additionally checked the exported guard and dirty-checkpoint retirement.
+The direct checkpoint fixture is not a naturally reached vulnerability chain.
 
-Normalized `.out` and `.diff` files are retained in the per-suite artifact folders.
-Sharing a failure with the control does not make the failure acceptable or show
-that the guard intercepted it.
+Each FPM scenario used one sequential worker and 81 requests, with ten fault
+requests in each fault scenario. All unaffected requests succeeded. Official
+and candidate builds both recorded zero worker changes for healthy, soft-OOM,
+and ordinary fatal-error scenarios, and ten changes for hard-limit failures.
+There was no observed extra churn from the guard in these scenarios. No
+production concurrency, throughput advantage, or latency guarantee was tested.
 
-## Allocation failures and detector controls
+Raw native allocation failure uses `_exit(137)` in the candidate. This is
+immediate retirement, not graceful cleanup: callbacks and buffered output may
+be skipped. Application-level OOM retains the official repaired path.
 
-Each profile ran 384 injected-allocation cases: 192 startup cases and 192 cases
-armed in the application body, spread across array, session, and callback workloads.
-The sweep sampled 64 spaced allocation ordinals per workload and phase, using
-recorded calibration bounds. Across five profiles this produced 1,920 executions.
+## Instrumented outcomes
 
-| Profile | Passed / attempted |
-|---|---:|
-| Upstream | 384 / 384 |
-| Strict | 384 / 384 |
-| Recoverable | 384 / 384 |
-| Sanitized upstream | 383 / 384 |
-| Sanitized recoverable | 383 / 384 |
+All eight instrumented builds compiled successfully. The resumed test rows are
+still running; their final bounded outcomes and partial-coverage accounting are
+not yet published. The normal-build counts above are not instrumented results.
+Do not interpret this interim report as a completed sanitizer comparison.
 
-Both debug builds aborted at body allocation ordinal 9 in the callback workload:
-`zif_array_map` asserted `ret == SUCCESS` at `ext/standard/array.c:7111`.
-This is an unresolved counterexample to unconditional graceful recovery. It is
-an assertion failure, not an AddressSanitizer memory-error diagnosis.
+## Harness corrections and retained evidence
 
-All five intentionally faulty detector controls produced their expected
-diagnostics: heap bounds, use after free, double free, invalid free, and signed
-integer overflow. The valid control passed. These results establish sensitivity
-of the instrumentation; arbitrary probe errors were detected by the sanitizers.
-Valid aliased-root cleanup passed on all five profiles.
+Initial attempts exposed an older PHP 8.2 FastCGI client API, a cross-version
+runner error-mask mismatch, and a five-second FPM startup deadline. The harness
+now supports both client APIs, runs each upstream runner with its tested PHP,
+and allows 30 seconds for FPM startup. Corrected reruns are retained separately.
 
-## Input mutation and model checks
+The first PHP 8.2 candidate build unnecessarily regenerated vendor VM files
+because patch application changed dependency timestamps. The builder now
+normalizes tracked-file timestamps without changing content, verifies source
+identity before building, and rejects tracked changes afterward. The initial
+compiler error is retained, and the corrected candidate build completed.
 
-Eight build/allocator combinations each executed the same 6,144 seeded malformed
-inputs: 2,048 each for JSON, serialization, and session decoding. Every row also
-performed 4,096 valid round-trip checks. All eight rows passed. The 49,152 malformed
-input executions reuse the same corpus; they are not 49,152 distinct inputs.
+Intermittent supervisor setup exits were recorded as failures or inconclusive
+attempts, not PHP safety findings. Later runs use a per-run supervisor binary
+with a recorded hash and more specific setup diagnostics. Reruns do not remove
+earlier reports. Tests do not delete arbitrary host IPC resources or raise
+kernel limits; use a disposable isolated test machine for full reproduction.
 
-The cleanup model explored 240 distinct states. Both negative controls produced
-the intended invariant violation when a modeled protection was removed. The
-model covers the declared finite state space and assumes valid ownership and
-upstream safe-point completion.
+## Claims ledger
 
-## Evidence boundaries
+| Claim | Supported? | Boundary |
+|---|---|---|
+| Candidate builds from each of the four pinned affected inputs | Yes | Complete official update is a prerequisite stage |
+| Selected native cleanup/retirement behavior is exercised | Yes | Valid-ownership and direct-checkpoint fixtures |
+| Additional service churn was observed against the official fix | No | Only the local sequential scenarios measured |
+| All upstream tests passed | No | Failures, skips, setup errors, and time limits remain |
+| Guard independently fixes these CVEs or exceeds vendor protection | Not established | No additional exploit-prevention demonstration |
+| Complete native PHP memory safety is proved | No | Dynamic tests and older bounded models do not prove all C execution |
 
-The system allocator gives ASan visibility into individual allocations. Zend's
-allocator run exercises real PHP memory limits but does not expose every internal
-suballocation boundary to ASan. LeakSanitizer was disabled; MemorySanitizer and
-ThreadSanitizer were not run. Leak freedom, uninitialized-read freedom, and race
-freedom are therefore unestablished. The benchmark did not validate Windows,
-thread-safe PHP, every extension, or production concurrency.
-
-The runtime additions are operational and the measured compatibility result is
-positive. Additional prevention of a demonstrated vulnerability beyond the
-upstream repairs has not been established by these tests.
-
-## Fresh package validation
-
-The public identifiers were compiled in a fresh recoverable CLI/FPM build.
-Native checks, the 384-case release allocation sweep, both release mutation rows,
-the FPM scenarios, and all three model checks passed. The complete release suite
-was also rerun: 14,836 passed, 8,804 skipped, 3 failed, 2 borked, 3 warned, and
-7 expected failures.
-
-The two additional failures were `006_variation2.phpt` and `chmod_basic.phpt`.
-The temporary source directory inherited a filesystem group outside the test
-user's memberships, so attempts to set the group-execution bit were cleared.
-Both tests also failed with the existing upstream control in that directory.
-After changing only the test directory's group to the user's primary group,
-both tests passed with both binaries. The full-suite failure counts are retained;
-the diagnostic reruns do not overwrite them. Details and normalized status files
-are included with the package validation evidence.
+Published mitigation comparisons are in [MITIGATIONS.md](MITIGATIONS.md).
+Earlier 8.7 development results remain in [DEVELOPMENT_FINDINGS.md](DEVELOPMENT_FINDINGS.md)
+and are not substituted for these release-branch measurements.

@@ -1,5 +1,11 @@
 # Source and evidence provenance
 
+This document records the historical 8.7 package. Release manifests under
+`releases/` identify the affected and official commits, complete upstream update,
+guard hashes, and upstream licenses. The release preparation checks the complete
+official Git tree before applying the guard; new run records retain build and
+test identities separately. See [RELEASE_DESIGN.md](RELEASE_DESIGN.md).
+
 ## Source identity
 
 - Upstream project: [php/php-src](https://github.com/php/php-src).

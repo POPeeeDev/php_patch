@@ -5,7 +5,7 @@ $source = safety_source();
 require_once $source . '/sapi/fpm/tests/fcgi.inc';
 [$script, $profile, $root, $maxRequests, $extension] = $argv;
 [$limits] = safety_policy();
-$fpm = dirname(safety_php($profile), 2) . '/fpm/php-fpm';
+$fpm = getenv('GUARD_FPM_BINARY') ?: dirname(safety_php($profile), 2) . '/fpm/php-fpm';
 if (file_exists($root)) { throw new RuntimeException('FPM measurements require a fresh directory'); }
 mkdir($root, 0700, true); mkdir($root . '/sessions', 0700);
 copy(__DIR__ . '/request.php', $root . '/request.php');
@@ -26,7 +26,10 @@ if (!is_resource($p)) { throw new RuntimeException('Cannot start local FPM'); }
 function fpm_request(string $socket, string $root, string $id, string $kind): array
 {
     $start = hrtime(true);
-    $client = new FPM\FastCGI\Client('unix://' . $socket, -1, new FPM\FastCGI\StreamTransport());
+    // PHP 8.2 ships the older client; both use the same FastCGI request protocol.
+    $client = class_exists(FPM\FastCGI\Client::class)
+        ? new FPM\FastCGI\Client('unix://' . $socket, -1, new FPM\FastCGI\StreamTransport())
+        : new Adoy\FastCGI\Client('unix://' . $socket, -1);
     $client->setConnectTimeout(1000); $client->setReadWriteTimeout(2000);
     $query = http_build_query(['id' => $id, 'kind' => $kind]);
     try {
@@ -56,13 +59,14 @@ function percentiles(array $values): array
 $result = ['profile' => $profile, 'max_requests' => (int)$maxRequests, 'workers' => 1,
     'transport' => 'private-unix-socket-fastcgi', 'scenarios' => []];
 try {
-    $deadline = hrtime(true) + 5000000000;
+    $deadline = hrtime(true) + 30000000000;
     do {
         usleep(20000);
         $ready = is_file($socket) || file_exists($socket);
         $state = proc_get_status($p);
     } while (!$ready && $state['running'] && hrtime(true) < $deadline);
-    if (!$ready || !$state['running']) { throw new RuntimeException('Local FPM did not become ready; inspect master.log'); }
+    if (!$ready && $state['running']) { throw new RuntimeException('Local FPM startup timed out; inspect master.log'); }
+    if (!$ready || !$state['running']) { throw new RuntimeException('Local FPM exited before readiness; inspect master.log'); }
     for ($i = 0; $i < 5; $i++) {
         if (!fpm_request($socket, $root, "warmup-$i", 'normal')['ok']) { throw new RuntimeException('FPM warmup failed'); }
     }

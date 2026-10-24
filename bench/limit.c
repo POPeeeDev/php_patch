@@ -43,12 +43,15 @@ int main(int argc, char **argv)
     pid_t child = fork();
     if (child < 0) { return 126; }
     if (child == 0) {
-        if (setpgid(0, 0) != 0 || dup2(out[1], STDOUT_FILENO) < 0 || dup2(err[1], STDERR_FILENO) < 0) { _exit(126); }
+        if (setpgid(0, 0) != 0) { perror("guard supervisor setpgid"); _exit(126); }
+        if (dup2(out[1], STDOUT_FILENO) < 0 || dup2(err[1], STDERR_FILENO) < 0) { perror("guard supervisor dup2"); _exit(126); }
         close(out[0]); close(out[1]); close(err[0]); close(err[1]);
         struct rlimit cpu = {(rlim_t)budget + 1, (rlim_t)budget + 2};
         struct rlimit core = {0, 0};
-        if (setrlimit(RLIMIT_CPU, &cpu) != 0 || setrlimit(RLIMIT_CORE, &core) != 0) { _exit(126); }
+        if (setrlimit(RLIMIT_CPU, &cpu) != 0) { perror("guard supervisor CPU limit"); _exit(126); }
+        if (setrlimit(RLIMIT_CORE, &core) != 0) { perror("guard supervisor core limit"); _exit(126); }
         execvp(argv[3], &argv[3]);
+        perror("guard supervisor exec");
         _exit(127);
     }
     (void)setpgid(child, child);

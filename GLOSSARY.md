@@ -114,7 +114,7 @@
 
 | Name | Meaning |
 |---|---|
-| `ZEND_OOM_GUARD_MODE` | Compile-time selector: 0 upstream, 1 strict retirement, 2 recoverable candidate. |
+| `ZEND_OOM_GUARD_MODE` | Historical 8.7 experiment selector: 0 upstream, 1 strict retirement, 2 recoverable. The release patches do not use this mode selector. |
 | `memory_limit` | PHP's configured memory allowance for a request; `-1` disables that limit. |
 | `memory_hard_limit_percent` | The pinned runtime's higher-limit control used by its hard-OOM handling. |
 | `pm.max_requests` | Maximum requests handled by an FPM worker before replacement; 0 disables this count-based recycling. |
@@ -128,4 +128,28 @@
 | `longjmp()` | A C operation that transfers control to a saved context without ordinary return through intervening calls. |
 | `cgroup` | A Linux control group that can apply resource bounds to a set of processes. |
 | `RLIMIT_AS` | A process address-space limit; reaching it can make underlying allocations fail. |
+
+## Release workflow terms
+
+| Term | Meaning |
+|---|---|
+| Release delta | All file differences between two exact upstream release commits, including maintenance changes unrelated to these CVEs. |
+| Git tree | Git's content identity for an entire versioned directory hierarchy, including paths and file modes. Equality is checked before adding the guard. |
+| Patch series | Patches applied in a specified order: the complete official release delta, then the additional guard. |
+| Corpus | The collection of test files. Each branch uses one fixed official-release corpus for all profiles. |
+| PHPT | PHP's test-file format, including setup, execution, expected output, and optional skip conditions. |
+| CGI | Common Gateway Interface, a protocol and executable interface for a web server to invoke an application. |
+| Unpatched profile | The exact affected release without the upstream update or guard. |
+| Official profile | The exact upstream fixed maintenance release without the additional guard. |
+| Candidate profile | The affected source with the full official update and additional guard applied; reports the fixed PHP version. |
+| Sanitized variant | Debug build instrumented with ASan and UBSan; not sanitization of untrusted input. |
+| Build receipt | A record of source identity, patch hashes, build configuration, and executable hashes. It is evidence, not a formal proof. |
+| IPC | Interprocess communication. System V IPC includes kernel-managed message queues, semaphores, and shared-memory segments that can outlive a PHP process. |
+| BORKED | An upstream test could not be set up or interpreted correctly; this is not a successful test. |
+| Paired observation | The same test has a recorded outcome for both the official and candidate binary. |
+| Inconclusive | The test did not establish the required result, for example because of a timeout or supervisor setup failure. |
+| `PHP_GIT` | Local upstream Git checkout supplying the pinned commits for isolated build sources. |
+| `RELEASE_WORK_ROOT` | Absolute directory for generated release sources, builds, and evidence. |
+| `RELEASE_JOBS` | Number of parallel compiler or upstream test workers per active row. |
+| `zend_oom_guard_check_request_state()` | Release-guard checkpoint checking selected global slots before the request heap is reclaimed. |
 

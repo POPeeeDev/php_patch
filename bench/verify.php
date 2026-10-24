@@ -148,14 +148,15 @@ if (enabled('faults')) {
             $allowed = $profile === 'strict' ? [0, 137] : [0, 121];
             $pass = $r['termination'] === 'completed' && in_array($r['exit'], $allowed, true) && $clean;
             if ($r['exit'] === 0 && !str_contains($r['out'], 'GUARD_COMPLETE')) { $pass = false; }
-            $inconclusive = $inconclusive || $r['termination'] !== 'completed'; $ok = $ok && $pass;
+            $inconclusive = $inconclusive || $r['termination'] !== 'completed' || in_array($r['exit'], [126, 127], true);
+            $ok = $ok && $pass;
             $sweep[] = ['allocation' => $n, 'phase' => $faultPhase, 'kind' => $kind, 'exit' => $r['exit'], 'termination' => $r['termination'],
                 'sanitizer_diagnostic' => !$clean, 'entered' => str_contains($r['out'] . $r['err'], 'GUARD_BODY_ENTERED'),
                 'completed' => str_contains($r['out'], 'GUARD_COMPLETE'), 'shutdown' => str_contains($r['out'], 'GUARD_SHUTDOWN'), 'pass' => $pass];
           }
         }
         file_put_contents("$dir/results.json", json_encode($sweep, JSON_PRETTY_PRINT | JSON_THROW_ON_ERROR) . "\n");
-        record(['id' => "fault-sweep-$profile", 'exit' => 0, 'termination' => $inconclusive ? 'some-timeouts' : 'completed',
+        record(['id' => "fault-sweep-$profile", 'exit' => 0, 'termination' => $inconclusive ? 'some-timeouts-or-launch-failures' : 'completed',
             'metrics' => ['wall_ms' => (hrtime(true) - $start) / 1e6], 'out' => '', 'err' => '', 'log' => "faults-$profile/results.json"], $ok,
             ['cases' => count($sweep), 'passed' => count(array_filter($sweep, static fn($c) => $c['pass'])),
                 'entered' => count(array_filter($sweep, static fn($c) => $c['entered'])),
