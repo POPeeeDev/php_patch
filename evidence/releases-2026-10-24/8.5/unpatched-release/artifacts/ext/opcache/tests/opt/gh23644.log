@@ -1,0 +1,7 @@
+
+---- EXPECTED OUTPUT
+int(1)
+string(2) "ne"
+---- ACTUAL OUTPUT
+Termsig=11
+---- FAILED

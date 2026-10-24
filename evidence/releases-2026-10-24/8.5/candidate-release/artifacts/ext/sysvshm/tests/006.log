@@ -1,0 +1,26 @@
+
+---- EXPECTED OUTPUT
+Warning: shm_remove_var(): Variable key -10 doesn't exist in %s006.php on line %d
+bool(false)
+string(11) "test string"
+bool(true)
+
+Warning: shm_get_var(): Variable key 1 doesn't exist in %s006.php on line %d
+bool(false)
+
+Warning: shm_remove_var(): Variable key 1 doesn't exist in %s006.php on line %d
+bool(false)
+
+Warning: shm_get_var(): Variable key 1 doesn't exist in %s006.php on line %d
+bool(false)
+Done
+---- ACTUAL OUTPUT
+Warning: shm_attach(): Failed for key 0x74049fae: No space left on device in work/releases/8.5/candidate/release-corpus/ext/sysvshm/tests/006.php on line 4
+shm_put_var(): Argument #1 ($shm) must be of type SysvSharedMemory, false given
+
+Fatal error: Uncaught TypeError: shm_remove_var(): Argument #1 ($shm) must be of type SysvSharedMemory, false given in work/releases/8.5/candidate/release-corpus/ext/sysvshm/tests/006.php:12
+Stack trace:
+#0 work/releases/8.5/candidate/release-corpus/ext/sysvshm/tests/006.php(12): shm_remove_var(false, -10)
+#1 {main}
+  thrown in work/releases/8.5/candidate/release-corpus/ext/sysvshm/tests/006.php on line 12
+---- FAILED

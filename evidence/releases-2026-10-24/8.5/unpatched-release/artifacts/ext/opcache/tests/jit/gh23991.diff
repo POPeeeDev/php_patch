@@ -1,0 +1,7 @@
+001- Warning: Undefined variable $undef in %s on line %d
+002- array(1) {
+003-   [0]=>
+004-   array(0) {
+005-   }
+006- }
+001+ ** ERROR: process timed out **

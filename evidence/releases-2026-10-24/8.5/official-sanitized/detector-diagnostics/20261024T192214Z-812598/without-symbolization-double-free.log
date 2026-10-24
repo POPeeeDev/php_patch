@@ -1,0 +1,48 @@
+
+--- STDERR ---
+=================================================================
+==82654==ERROR: AddressSanitizer: attempting double-free on 0x602000003210 in thread T0:
+    #0 0x00010961b89b  (/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/21/lib/darwin/libclang_rt.asan_osx_dynamic.dylib:x86_64h+0xa689b)
+    #1 0x00010b1bec0b  (work/releases/8.5/official/sanitized-tests/20261024T191703Z-all-a278f6/sanitizer_probe.so:x86_64+0xc0b)
+    #2 0x00010583da2c  (work/releases/8.5/official/sanitized-build/sapi/cli/php:x86_64+0x1039c8a2c)
+    #3 0x000104e07b00  (work/releases/8.5/official/sanitized-build/sapi/cli/php:x86_64+0x102f92b00)
+    #4 0x000104e0910e  (work/releases/8.5/official/sanitized-build/sapi/cli/php:x86_64+0x102f9410e)
+    #5 0x000104dba10b  (work/releases/8.5/official/sanitized-build/sapi/cli/php:x86_64+0x102f4510b)
+    #6 0x000104dbae24  (work/releases/8.5/official/sanitized-build/sapi/cli/php:x86_64+0x102f45e24)
+    #7 0x000104dbb01b  (work/releases/8.5/official/sanitized-build/sapi/cli/php:x86_64+0x102f4601b)
+    #8 0x000105ee1666  (work/releases/8.5/official/sanitized-build/sapi/cli/php:x86_64+0x10406c666)
+    #9 0x000105ede486  (work/releases/8.5/official/sanitized-build/sapi/cli/php:x86_64+0x104069486)
+    #10 0x7ff805c571c7  (/usr/lib/dyld:x86_64+0x131c7)
+
+0x602000003210 is located 0 bytes inside of 16-byte region [0x602000003210,0x602000003220)
+freed by thread T0 here:
+    #0 0x00010961b89b  (/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/21/lib/darwin/libclang_rt.asan_osx_dynamic.dylib:x86_64h+0xa689b)
+    #1 0x00010b1bec03  (work/releases/8.5/official/sanitized-tests/20261024T191703Z-all-a278f6/sanitizer_probe.so:x86_64+0xc03)
+    #2 0x00010583da2c  (work/releases/8.5/official/sanitized-build/sapi/cli/php:x86_64+0x1039c8a2c)
+    #3 0x000104e07b00  (work/releases/8.5/official/sanitized-build/sapi/cli/php:x86_64+0x102f92b00)
+    #4 0x000104e0910e  (work/releases/8.5/official/sanitized-build/sapi/cli/php:x86_64+0x102f9410e)
+    #5 0x000104dba10b  (work/releases/8.5/official/sanitized-build/sapi/cli/php:x86_64+0x102f4510b)
+    #6 0x000104dbae24  (work/releases/8.5/official/sanitized-build/sapi/cli/php:x86_64+0x102f45e24)
+    #7 0x000104dbb01b  (work/releases/8.5/official/sanitized-build/sapi/cli/php:x86_64+0x102f4601b)
+    #8 0x000105ee1666  (work/releases/8.5/official/sanitized-build/sapi/cli/php:x86_64+0x10406c666)
+    #9 0x000105ede486  (work/releases/8.5/official/sanitized-build/sapi/cli/php:x86_64+0x104069486)
+    #10 0x7ff805c571c7  (/usr/lib/dyld:x86_64+0x131c7)
+
+previously allocated by thread T0 here:
+    #0 0x00010961b792  (/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/21/lib/darwin/libclang_rt.asan_osx_dynamic.dylib:x86_64h+0xa6792)
+    #1 0x00010b1bea25  (work/releases/8.5/official/sanitized-tests/20261024T191703Z-all-a278f6/sanitizer_probe.so:x86_64+0xa25)
+    #2 0x00010583da2c  (work/releases/8.5/official/sanitized-build/sapi/cli/php:x86_64+0x1039c8a2c)
+    #3 0x000104e07b00  (work/releases/8.5/official/sanitized-build/sapi/cli/php:x86_64+0x102f92b00)
+    #4 0x000104e0910e  (work/releases/8.5/official/sanitized-build/sapi/cli/php:x86_64+0x102f9410e)
+    #5 0x000104dba10b  (work/releases/8.5/official/sanitized-build/sapi/cli/php:x86_64+0x102f4510b)
+    #6 0x000104dbae24  (work/releases/8.5/official/sanitized-build/sapi/cli/php:x86_64+0x102f45e24)
+    #7 0x000104dbb01b  (work/releases/8.5/official/sanitized-build/sapi/cli/php:x86_64+0x102f4601b)
+    #8 0x000105ee1666  (work/releases/8.5/official/sanitized-build/sapi/cli/php:x86_64+0x10406c666)
+    #9 0x000105ede486  (work/releases/8.5/official/sanitized-build/sapi/cli/php:x86_64+0x104069486)
+    #10 0x7ff805c571c7  (/usr/lib/dyld:x86_64+0x131c7)
+
+SUMMARY: AddressSanitizer: double-free (work/releases/8.5/official/sanitized-tests/20261024T191703Z-all-a278f6/sanitizer_probe.so:x86_64+0xc0b) 
+==82654==ABORTING
+
+--- METRICS ---
+{"wall_ms":2459.543,"user_ms":197.856,"system_ms":597.922,"peak_rss_bytes":68177920,"exit":134,"signal":6,"termination":"completed"}

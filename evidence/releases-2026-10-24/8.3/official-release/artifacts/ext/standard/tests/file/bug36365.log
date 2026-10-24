@@ -1,0 +1,8 @@
+
+---- EXPECTED OUTPUT
+int(70002)
+---- ACTUAL OUTPUT
+Warning: mkdir(): File exists in work/releases/8.3/official/release-corpus/ext/standard/tests/file/bug36365.php on line 4
+
+ ** ERROR: process timed out **
+---- FAILED

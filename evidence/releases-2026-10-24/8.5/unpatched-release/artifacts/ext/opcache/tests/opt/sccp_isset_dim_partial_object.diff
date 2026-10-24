@@ -1,0 +1,4 @@
+001- Cannot use object of type P as array
+002- Cannot use object of type P as array
+001+ bool(false)
+002+ bool(true)

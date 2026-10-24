@@ -1,0 +1,7 @@
+
+--- STDERR ---
+=================================================================
+==73568==ERROR: AddressSanitizer: attempting free on address which was not malloc()-ed: 0x602000003231 in thread T0
+
+--- METRICS ---
+{"wall_ms":20271.289,"user_ms":190.058,"system_ms":609.84,"peak_rss_bytes":68157440,"exit":137,"signal":9,"termination":"timeout"}

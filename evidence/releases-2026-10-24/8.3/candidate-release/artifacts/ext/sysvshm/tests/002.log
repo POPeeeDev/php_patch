@@ -1,0 +1,34 @@
+
+---- EXPECTED OUTPUT
+shm_attach(): Argument #2 ($size) must be greater than 0
+shm_attach(): Argument #2 ($size) must be greater than 0
+shm_attach(): Argument #2 ($size) must be greater than 0
+shm_attach(): Argument #2 ($size) must be greater than 0
+shm_attach(): Argument #2 ($size) must be greater than 0
+object(SysvSharedMemory)#%d (0) {
+}
+object(SysvSharedMemory)#%d (0) {
+}
+object(SysvSharedMemory)#%d (0) {
+}
+object(SysvSharedMemory)#%d (0) {
+}
+object(SysvSharedMemory)#%d (0) {
+}
+Done
+---- ACTUAL OUTPUT
+shm_attach(): Argument #2 ($size) must be greater than 0
+shm_attach(): Argument #2 ($size) must be greater than 0
+shm_attach(): Argument #2 ($size) must be greater than 0
+shm_attach(): Argument #2 ($size) must be greater than 0
+shm_attach(): Argument #2 ($size) must be greater than 0
+
+Warning: shm_attach(): Failed for key 0x7404f923: No space left on device in work/releases/8.3/candidate/release-corpus/ext/sysvshm/tests/002.php on line 35
+bool(false)
+
+Fatal error: Uncaught TypeError: shm_remove(): Argument #1 ($shm) must be of type SysvSharedMemory, false given in work/releases/8.3/candidate/release-corpus/ext/sysvshm/tests/002.php:36
+Stack trace:
+#0 work/releases/8.3/candidate/release-corpus/ext/sysvshm/tests/002.php(36): shm_remove(false)
+#1 {main}
+  thrown in work/releases/8.3/candidate/release-corpus/ext/sysvshm/tests/002.php on line 36
+---- FAILED

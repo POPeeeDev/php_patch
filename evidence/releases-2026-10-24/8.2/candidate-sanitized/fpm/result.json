@@ -1,0 +1,3336 @@
+{
+    "profile": "candidate",
+    "max_requests": 0,
+    "workers": 1,
+    "transport": "private-unix-socket-fastcgi",
+    "scenarios": {
+        "healthy": {
+            "requests": 81,
+            "fault_requests": 0,
+            "normal_failures": 0,
+            "unexpected_fault_successes": 0,
+            "shutdown_callbacks": 81,
+            "unique_workers": 1,
+            "worker_changes": 0,
+            "elapsed_ms": 174.045202,
+            "normal_latency_ms": {
+                "p50": 2.010433,
+                "p95": 3.077894,
+                "max": 3.618229
+            },
+            "next_normal_after_fault_ms": {
+                "p50": null,
+                "p95": null,
+                "max": null
+            },
+            "samples": [
+                {
+                    "id": "healthy-1",
+                    "kind": "gc",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.691821,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-2",
+                    "kind": "session",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.439118,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-3",
+                    "kind": "serialization",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.125235,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-4",
+                    "kind": "fiber",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.04311,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-5",
+                    "kind": "json",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.224101,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-6",
+                    "kind": "array",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.413528,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-7",
+                    "kind": "normal",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.645208,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-8",
+                    "kind": "gc",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.877549,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-9",
+                    "kind": "session",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.86601,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-10",
+                    "kind": "serialization",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.053232,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-11",
+                    "kind": "fiber",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.000742,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-12",
+                    "kind": "json",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.555005,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-13",
+                    "kind": "array",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.253609,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-14",
+                    "kind": "normal",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.821038,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-15",
+                    "kind": "gc",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.015883,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-16",
+                    "kind": "session",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.015113,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-17",
+                    "kind": "serialization",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.746145,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-18",
+                    "kind": "fiber",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.939848,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-19",
+                    "kind": "json",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.64756,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-20",
+                    "kind": "array",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.233044,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-21",
+                    "kind": "normal",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.720255,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-22",
+                    "kind": "gc",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.131529,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-23",
+                    "kind": "session",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.772718,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-24",
+                    "kind": "serialization",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.739255,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-25",
+                    "kind": "fiber",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.955579,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-26",
+                    "kind": "json",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.840116,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-27",
+                    "kind": "array",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 3.077894,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-28",
+                    "kind": "normal",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.575554,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-29",
+                    "kind": "gc",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 3.323795,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-30",
+                    "kind": "session",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 3.618229,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-31",
+                    "kind": "serialization",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.140348,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-32",
+                    "kind": "fiber",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.443696,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-33",
+                    "kind": "json",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.956413,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-34",
+                    "kind": "array",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.189357,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-35",
+                    "kind": "normal",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.572268,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-36",
+                    "kind": "gc",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.237836,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-37",
+                    "kind": "session",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.983752,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-38",
+                    "kind": "serialization",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.906201,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-39",
+                    "kind": "fiber",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.72265,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-40",
+                    "kind": "json",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.723942,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-41",
+                    "kind": "array",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.482611,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-42",
+                    "kind": "normal",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.751545,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-43",
+                    "kind": "gc",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.814375,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-44",
+                    "kind": "session",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.776301,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-45",
+                    "kind": "serialization",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.707582,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-46",
+                    "kind": "fiber",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.00187,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-47",
+                    "kind": "json",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.823839,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-48",
+                    "kind": "array",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.310373,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-49",
+                    "kind": "normal",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.38518,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-50",
+                    "kind": "gc",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 3.140632,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-51",
+                    "kind": "session",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 3.037353,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-52",
+                    "kind": "serialization",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 3.101578,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-53",
+                    "kind": "fiber",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.942862,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-54",
+                    "kind": "json",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.985554,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-55",
+                    "kind": "array",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.389761,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-56",
+                    "kind": "normal",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.849856,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-57",
+                    "kind": "gc",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.989448,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-58",
+                    "kind": "session",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.945746,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-59",
+                    "kind": "serialization",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.636762,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-60",
+                    "kind": "fiber",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.962014,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-61",
+                    "kind": "json",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.843049,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-62",
+                    "kind": "array",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.676614,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-63",
+                    "kind": "normal",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.477436,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-64",
+                    "kind": "gc",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.3684,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-65",
+                    "kind": "session",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.994718,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-66",
+                    "kind": "serialization",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.017164,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-67",
+                    "kind": "fiber",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.113717,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-68",
+                    "kind": "json",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.880599,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-69",
+                    "kind": "array",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.661098,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-70",
+                    "kind": "normal",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.260975,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-71",
+                    "kind": "gc",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.580175,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-72",
+                    "kind": "session",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.08103,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-73",
+                    "kind": "serialization",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.396043,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-74",
+                    "kind": "fiber",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.126114,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-75",
+                    "kind": "json",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.790315,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-76",
+                    "kind": "array",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.082745,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-77",
+                    "kind": "normal",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.825186,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-78",
+                    "kind": "gc",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.79943,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-79",
+                    "kind": "session",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.889483,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-80",
+                    "kind": "serialization",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.010433,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "healthy-recovery",
+                    "kind": "normal",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.64317,
+                    "error": null,
+                    "shutdown": true
+                }
+            ]
+        },
+        "soft": {
+            "requests": 81,
+            "fault_requests": 10,
+            "normal_failures": 0,
+            "unexpected_fault_successes": 0,
+            "shutdown_callbacks": 81,
+            "unique_workers": 1,
+            "worker_changes": 0,
+            "elapsed_ms": 255.263089,
+            "normal_latency_ms": {
+                "p50": 1.979118,
+                "p95": 3.293046,
+                "max": 3.463683
+            },
+            "next_normal_after_fault_ms": {
+                "p50": 2.017465,
+                "p95": 3.28501,
+                "max": 3.28501
+            },
+            "samples": [
+                {
+                    "id": "soft-1",
+                    "kind": "gc",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.693962,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-2",
+                    "kind": "session",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.228823,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-3",
+                    "kind": "serialization",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.804838,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-4",
+                    "kind": "fiber",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.796446,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-5",
+                    "kind": "json",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.892509,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-6",
+                    "kind": "array",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.185153,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-7",
+                    "kind": "normal",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.886828,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-8",
+                    "kind": "soft",
+                    "status": 500,
+                    "ok": false,
+                    "pid": 25225,
+                    "ms": 11.270505,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-9",
+                    "kind": "session",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.259334,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-10",
+                    "kind": "serialization",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.98984,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-11",
+                    "kind": "fiber",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.861114,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-12",
+                    "kind": "json",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.629946,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-13",
+                    "kind": "array",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.255881,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-14",
+                    "kind": "normal",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.921195,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-15",
+                    "kind": "gc",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.753075,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-16",
+                    "kind": "soft",
+                    "status": 500,
+                    "ok": false,
+                    "pid": 25225,
+                    "ms": 9.806562,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-17",
+                    "kind": "serialization",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.833424,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-18",
+                    "kind": "fiber",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.805646,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-19",
+                    "kind": "json",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.816948,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-20",
+                    "kind": "array",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.543721,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-21",
+                    "kind": "normal",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.821017,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-22",
+                    "kind": "gc",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.37729,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-23",
+                    "kind": "session",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.062474,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-24",
+                    "kind": "soft",
+                    "status": 500,
+                    "ok": false,
+                    "pid": 25225,
+                    "ms": 10.066955,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-25",
+                    "kind": "fiber",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.99035,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-26",
+                    "kind": "json",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.712751,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-27",
+                    "kind": "array",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.59323,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-28",
+                    "kind": "normal",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.210089,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-29",
+                    "kind": "gc",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 3.354785,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-30",
+                    "kind": "session",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 3.330271,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-31",
+                    "kind": "serialization",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.90886,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-32",
+                    "kind": "soft",
+                    "status": 500,
+                    "ok": false,
+                    "pid": 25225,
+                    "ms": 10.362915,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-33",
+                    "kind": "json",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.41455,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-34",
+                    "kind": "array",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.305312,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-35",
+                    "kind": "normal",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.924495,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-36",
+                    "kind": "gc",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.784425,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-37",
+                    "kind": "session",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.622874,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-38",
+                    "kind": "serialization",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.750043,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-39",
+                    "kind": "fiber",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.184576,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-40",
+                    "kind": "soft",
+                    "status": 500,
+                    "ok": false,
+                    "pid": 25225,
+                    "ms": 10.381884,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-41",
+                    "kind": "array",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 3.28501,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-42",
+                    "kind": "normal",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.736075,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-43",
+                    "kind": "gc",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 3.293046,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-44",
+                    "kind": "session",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 3.463683,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-45",
+                    "kind": "serialization",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.618846,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-46",
+                    "kind": "fiber",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.846191,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-47",
+                    "kind": "json",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.741227,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-48",
+                    "kind": "soft",
+                    "status": 500,
+                    "ok": false,
+                    "pid": 25225,
+                    "ms": 10.227057,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-49",
+                    "kind": "normal",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.017667,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-50",
+                    "kind": "gc",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.971767,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-51",
+                    "kind": "session",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.861617,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-52",
+                    "kind": "serialization",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.741606,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-53",
+                    "kind": "fiber",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.771703,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-54",
+                    "kind": "json",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.721987,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-55",
+                    "kind": "array",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.488321,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-56",
+                    "kind": "soft",
+                    "status": 500,
+                    "ok": false,
+                    "pid": 25225,
+                    "ms": 10.044369,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-57",
+                    "kind": "gc",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.947642,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-58",
+                    "kind": "session",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.442885,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-59",
+                    "kind": "serialization",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.979118,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-60",
+                    "kind": "fiber",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.133599,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-61",
+                    "kind": "json",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.896185,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-62",
+                    "kind": "array",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.316482,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-63",
+                    "kind": "normal",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.61779,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-64",
+                    "kind": "soft",
+                    "status": 500,
+                    "ok": false,
+                    "pid": 25225,
+                    "ms": 9.97239,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-65",
+                    "kind": "session",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.845984,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-66",
+                    "kind": "serialization",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.800794,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-67",
+                    "kind": "fiber",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.006513,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-68",
+                    "kind": "json",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.706378,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-69",
+                    "kind": "array",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.34067,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-70",
+                    "kind": "normal",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.743049,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-71",
+                    "kind": "gc",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.743285,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-72",
+                    "kind": "soft",
+                    "status": 500,
+                    "ok": false,
+                    "pid": 25225,
+                    "ms": 10.282164,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-73",
+                    "kind": "serialization",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.017465,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-74",
+                    "kind": "fiber",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.240056,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-75",
+                    "kind": "json",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.0322,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-76",
+                    "kind": "array",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 3.074504,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-77",
+                    "kind": "normal",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.659036,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-78",
+                    "kind": "gc",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.18751,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-79",
+                    "kind": "session",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.836771,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-80",
+                    "kind": "soft",
+                    "status": 500,
+                    "ok": false,
+                    "pid": 25225,
+                    "ms": 10.205249,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "soft-recovery",
+                    "kind": "normal",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.788776,
+                    "error": null,
+                    "shutdown": true
+                }
+            ]
+        },
+        "fatal": {
+            "requests": 81,
+            "fault_requests": 10,
+            "normal_failures": 0,
+            "unexpected_fault_successes": 0,
+            "shutdown_callbacks": 81,
+            "unique_workers": 1,
+            "worker_changes": 0,
+            "elapsed_ms": 184.082259,
+            "normal_latency_ms": {
+                "p50": 2.127917,
+                "p95": 3.023514,
+                "max": 3.930833
+            },
+            "next_normal_after_fault_ms": {
+                "p50": 1.982468,
+                "p95": 2.896717,
+                "max": 2.896717
+            },
+            "samples": [
+                {
+                    "id": "fatal-1",
+                    "kind": "gc",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.041845,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-2",
+                    "kind": "session",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.003592,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-3",
+                    "kind": "serialization",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.874589,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-4",
+                    "kind": "fiber",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.558056,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-5",
+                    "kind": "json",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.366676,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-6",
+                    "kind": "array",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 3.556678,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-7",
+                    "kind": "normal",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.127268,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-8",
+                    "kind": "fatal",
+                    "status": 500,
+                    "ok": false,
+                    "pid": 25225,
+                    "ms": 2.666698,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-9",
+                    "kind": "session",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.982468,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-10",
+                    "kind": "serialization",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.155812,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-11",
+                    "kind": "fiber",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.900582,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-12",
+                    "kind": "json",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.973252,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-13",
+                    "kind": "array",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.227323,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-14",
+                    "kind": "normal",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.770921,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-15",
+                    "kind": "gc",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.980523,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-16",
+                    "kind": "fatal",
+                    "status": 500,
+                    "ok": false,
+                    "pid": 25225,
+                    "ms": 2.611331,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-17",
+                    "kind": "serialization",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.055368,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-18",
+                    "kind": "fiber",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.862923,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-19",
+                    "kind": "json",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.734865,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-20",
+                    "kind": "array",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.393301,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-21",
+                    "kind": "normal",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.245054,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-22",
+                    "kind": "gc",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.095635,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-23",
+                    "kind": "session",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.009955,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-24",
+                    "kind": "fatal",
+                    "status": 500,
+                    "ok": false,
+                    "pid": 25225,
+                    "ms": 1.94271,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-25",
+                    "kind": "fiber",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.952529,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-26",
+                    "kind": "json",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.749248,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-27",
+                    "kind": "array",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.404723,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-28",
+                    "kind": "normal",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.817163,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-29",
+                    "kind": "gc",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.973124,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-30",
+                    "kind": "session",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.805392,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-31",
+                    "kind": "serialization",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.955318,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-32",
+                    "kind": "fatal",
+                    "status": 500,
+                    "ok": false,
+                    "pid": 25225,
+                    "ms": 2.083596,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-33",
+                    "kind": "json",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.914081,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-34",
+                    "kind": "array",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.356884,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-35",
+                    "kind": "normal",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.619231,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-36",
+                    "kind": "gc",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.873306,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-37",
+                    "kind": "session",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 3.930833,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-38",
+                    "kind": "serialization",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 3.324056,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-39",
+                    "kind": "fiber",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.955817,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-40",
+                    "kind": "fatal",
+                    "status": 500,
+                    "ok": false,
+                    "pid": 25225,
+                    "ms": 2.011074,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-41",
+                    "kind": "array",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.29065,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-42",
+                    "kind": "normal",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.00918,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-43",
+                    "kind": "gc",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.986163,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-44",
+                    "kind": "session",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.127917,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-45",
+                    "kind": "serialization",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.993967,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-46",
+                    "kind": "fiber",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.122893,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-47",
+                    "kind": "json",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.185372,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-48",
+                    "kind": "fatal",
+                    "status": 500,
+                    "ok": false,
+                    "pid": 25225,
+                    "ms": 2.322245,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-49",
+                    "kind": "normal",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.298898,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-50",
+                    "kind": "gc",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.22454,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-51",
+                    "kind": "session",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.700213,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-52",
+                    "kind": "serialization",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.814994,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-53",
+                    "kind": "fiber",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.785871,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-54",
+                    "kind": "json",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.178892,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-55",
+                    "kind": "array",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.990788,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-56",
+                    "kind": "fatal",
+                    "status": 500,
+                    "ok": false,
+                    "pid": 25225,
+                    "ms": 3.228497,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-57",
+                    "kind": "gc",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.896717,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-58",
+                    "kind": "session",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.823481,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-59",
+                    "kind": "serialization",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.972243,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-60",
+                    "kind": "fiber",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 3.023514,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-61",
+                    "kind": "json",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.907067,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-62",
+                    "kind": "array",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.305358,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-63",
+                    "kind": "normal",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.761471,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-64",
+                    "kind": "fatal",
+                    "status": 500,
+                    "ok": false,
+                    "pid": 25225,
+                    "ms": 2.057845,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-65",
+                    "kind": "session",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.252196,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-66",
+                    "kind": "serialization",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.792842,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-67",
+                    "kind": "fiber",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.949383,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-68",
+                    "kind": "json",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.869608,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-69",
+                    "kind": "array",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.590929,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-70",
+                    "kind": "normal",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.202112,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-71",
+                    "kind": "gc",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.301361,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-72",
+                    "kind": "fatal",
+                    "status": 500,
+                    "ok": false,
+                    "pid": 25225,
+                    "ms": 1.910233,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-73",
+                    "kind": "serialization",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.871622,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-74",
+                    "kind": "fiber",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.754845,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-75",
+                    "kind": "json",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.335156,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-76",
+                    "kind": "array",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.201815,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-77",
+                    "kind": "normal",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.419589,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-78",
+                    "kind": "gc",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.667443,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-79",
+                    "kind": "session",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.637793,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-80",
+                    "kind": "fatal",
+                    "status": 500,
+                    "ok": false,
+                    "pid": 25225,
+                    "ms": 2.254861,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "fatal-recovery",
+                    "kind": "normal",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.939019,
+                    "error": null,
+                    "shutdown": true
+                }
+            ]
+        },
+        "hard": {
+            "requests": 81,
+            "fault_requests": 10,
+            "normal_failures": 0,
+            "unexpected_fault_successes": 0,
+            "shutdown_callbacks": 71,
+            "unique_workers": 11,
+            "worker_changes": 10,
+            "elapsed_ms": 1665.159876,
+            "normal_latency_ms": {
+                "p50": 2.704586,
+                "p95": 80.658762,
+                "max": 89.95076
+            },
+            "next_normal_after_fault_ms": {
+                "p50": 79.502031,
+                "p95": 89.95076,
+                "max": 89.95076
+            },
+            "samples": [
+                {
+                    "id": "hard-1",
+                    "kind": "gc",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.002615,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-2",
+                    "kind": "session",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.036127,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-3",
+                    "kind": "serialization",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.389991,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-4",
+                    "kind": "fiber",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.011814,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-5",
+                    "kind": "json",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.756186,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-6",
+                    "kind": "array",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 2.223573,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-7",
+                    "kind": "normal",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25225,
+                    "ms": 1.690775,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-8",
+                    "kind": "hard",
+                    "status": 0,
+                    "ok": false,
+                    "pid": 25225,
+                    "ms": 62.954622,
+                    "error": "Adoy\\FastCGI\\ForbiddenException: Not in white list. Check listen.allowed_clients.",
+                    "shutdown": false
+                },
+                {
+                    "id": "hard-9",
+                    "kind": "session",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25234,
+                    "ms": 78.032045,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-10",
+                    "kind": "serialization",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25234,
+                    "ms": 2.251564,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-11",
+                    "kind": "fiber",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25234,
+                    "ms": 2.314085,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-12",
+                    "kind": "json",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25234,
+                    "ms": 2.471879,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-13",
+                    "kind": "array",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25234,
+                    "ms": 2.730121,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-14",
+                    "kind": "normal",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25234,
+                    "ms": 1.903621,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-15",
+                    "kind": "gc",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25234,
+                    "ms": 2.989835,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-16",
+                    "kind": "hard",
+                    "status": 0,
+                    "ok": false,
+                    "pid": 25234,
+                    "ms": 63.458081,
+                    "error": "Adoy\\FastCGI\\ForbiddenException: Not in white list. Check listen.allowed_clients.",
+                    "shutdown": false
+                },
+                {
+                    "id": "hard-17",
+                    "kind": "serialization",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25238,
+                    "ms": 75.00691,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-18",
+                    "kind": "fiber",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25238,
+                    "ms": 2.272201,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-19",
+                    "kind": "json",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25238,
+                    "ms": 1.914901,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-20",
+                    "kind": "array",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25238,
+                    "ms": 2.373472,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-21",
+                    "kind": "normal",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25238,
+                    "ms": 1.798363,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-22",
+                    "kind": "gc",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25238,
+                    "ms": 2.807226,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-23",
+                    "kind": "session",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25238,
+                    "ms": 2.637037,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-24",
+                    "kind": "hard",
+                    "status": 0,
+                    "ok": false,
+                    "pid": 25238,
+                    "ms": 69.376926,
+                    "error": "Adoy\\FastCGI\\ForbiddenException: Not in white list. Check listen.allowed_clients.",
+                    "shutdown": false
+                },
+                {
+                    "id": "hard-25",
+                    "kind": "fiber",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25240,
+                    "ms": 75.94524,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-26",
+                    "kind": "json",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25240,
+                    "ms": 2.173102,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-27",
+                    "kind": "array",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25240,
+                    "ms": 3.073749,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-28",
+                    "kind": "normal",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25240,
+                    "ms": 2.196943,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-29",
+                    "kind": "gc",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25240,
+                    "ms": 2.995165,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-30",
+                    "kind": "session",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25240,
+                    "ms": 2.704586,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-31",
+                    "kind": "serialization",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25240,
+                    "ms": 3.225251,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-32",
+                    "kind": "hard",
+                    "status": 0,
+                    "ok": false,
+                    "pid": 25240,
+                    "ms": 72.289281,
+                    "error": "Adoy\\FastCGI\\ForbiddenException: Not in white list. Check listen.allowed_clients.",
+                    "shutdown": false
+                },
+                {
+                    "id": "hard-33",
+                    "kind": "json",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25241,
+                    "ms": 89.95076,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-34",
+                    "kind": "array",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25241,
+                    "ms": 3.072696,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-35",
+                    "kind": "normal",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25241,
+                    "ms": 2.79226,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-36",
+                    "kind": "gc",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25241,
+                    "ms": 2.826987,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-37",
+                    "kind": "session",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25241,
+                    "ms": 2.486295,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-38",
+                    "kind": "serialization",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25241,
+                    "ms": 2.188794,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-39",
+                    "kind": "fiber",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25241,
+                    "ms": 3.223032,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-40",
+                    "kind": "hard",
+                    "status": 0,
+                    "ok": false,
+                    "pid": 25241,
+                    "ms": 68.529906,
+                    "error": "Adoy\\FastCGI\\ForbiddenException: Not in white list. Check listen.allowed_clients.",
+                    "shutdown": false
+                },
+                {
+                    "id": "hard-41",
+                    "kind": "array",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25242,
+                    "ms": 79.502031,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-42",
+                    "kind": "normal",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25242,
+                    "ms": 2.089525,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-43",
+                    "kind": "gc",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25242,
+                    "ms": 2.18642,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-44",
+                    "kind": "session",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25242,
+                    "ms": 2.707184,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-45",
+                    "kind": "serialization",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25242,
+                    "ms": 3.098585,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-46",
+                    "kind": "fiber",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25242,
+                    "ms": 2.288754,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-47",
+                    "kind": "json",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25242,
+                    "ms": 2.133982,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-48",
+                    "kind": "hard",
+                    "status": 0,
+                    "ok": false,
+                    "pid": 25242,
+                    "ms": 74.741963,
+                    "error": "Adoy\\FastCGI\\ForbiddenException: Not in white list. Check listen.allowed_clients.",
+                    "shutdown": false
+                },
+                {
+                    "id": "hard-49",
+                    "kind": "normal",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25244,
+                    "ms": 75.245327,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-50",
+                    "kind": "gc",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25244,
+                    "ms": 2.935824,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-51",
+                    "kind": "session",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25244,
+                    "ms": 2.829188,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-52",
+                    "kind": "serialization",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25244,
+                    "ms": 2.635288,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-53",
+                    "kind": "fiber",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25244,
+                    "ms": 2.574963,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-54",
+                    "kind": "json",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25244,
+                    "ms": 2.481076,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-55",
+                    "kind": "array",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25244,
+                    "ms": 3.83819,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-56",
+                    "kind": "hard",
+                    "status": 0,
+                    "ok": false,
+                    "pid": 25244,
+                    "ms": 69.749844,
+                    "error": "Adoy\\FastCGI\\ForbiddenException: Not in white list. Check listen.allowed_clients.",
+                    "shutdown": false
+                },
+                {
+                    "id": "hard-57",
+                    "kind": "gc",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25247,
+                    "ms": 82.323177,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-58",
+                    "kind": "session",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25247,
+                    "ms": 3.617232,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-59",
+                    "kind": "serialization",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25247,
+                    "ms": 3.35278,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-60",
+                    "kind": "fiber",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25247,
+                    "ms": 3.223831,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-61",
+                    "kind": "json",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25247,
+                    "ms": 2.109261,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-62",
+                    "kind": "array",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25247,
+                    "ms": 3.076646,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-63",
+                    "kind": "normal",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25247,
+                    "ms": 2.643645,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-64",
+                    "kind": "hard",
+                    "status": 0,
+                    "ok": false,
+                    "pid": 25247,
+                    "ms": 72.904698,
+                    "error": "Adoy\\FastCGI\\ForbiddenException: Not in white list. Check listen.allowed_clients.",
+                    "shutdown": false
+                },
+                {
+                    "id": "hard-65",
+                    "kind": "session",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25248,
+                    "ms": 80.658762,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-66",
+                    "kind": "serialization",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25248,
+                    "ms": 3.33424,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-67",
+                    "kind": "fiber",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25248,
+                    "ms": 2.654536,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-68",
+                    "kind": "json",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25248,
+                    "ms": 2.456453,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-69",
+                    "kind": "array",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25248,
+                    "ms": 3.000466,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-70",
+                    "kind": "normal",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25248,
+                    "ms": 2.148159,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-71",
+                    "kind": "gc",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25248,
+                    "ms": 2.268447,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-72",
+                    "kind": "hard",
+                    "status": 0,
+                    "ok": false,
+                    "pid": 25248,
+                    "ms": 74.54958,
+                    "error": "Adoy\\FastCGI\\ForbiddenException: Not in white list. Check listen.allowed_clients.",
+                    "shutdown": false
+                },
+                {
+                    "id": "hard-73",
+                    "kind": "serialization",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25250,
+                    "ms": 82.556108,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-74",
+                    "kind": "fiber",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25250,
+                    "ms": 4.1756,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-75",
+                    "kind": "json",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25250,
+                    "ms": 3.905847,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-76",
+                    "kind": "array",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25250,
+                    "ms": 3.749714,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-77",
+                    "kind": "normal",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25250,
+                    "ms": 2.236875,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-78",
+                    "kind": "gc",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25250,
+                    "ms": 2.483722,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-79",
+                    "kind": "session",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25250,
+                    "ms": 2.875447,
+                    "error": null,
+                    "shutdown": true
+                },
+                {
+                    "id": "hard-80",
+                    "kind": "hard",
+                    "status": 0,
+                    "ok": false,
+                    "pid": 25250,
+                    "ms": 75.024841,
+                    "error": "Adoy\\FastCGI\\ForbiddenException: Not in white list. Check listen.allowed_clients.",
+                    "shutdown": false
+                },
+                {
+                    "id": "hard-recovery",
+                    "kind": "normal",
+                    "status": 200,
+                    "ok": true,
+                    "pid": 25262,
+                    "ms": 80.284435,
+                    "error": null,
+                    "shutdown": true
+                }
+            ]
+        }
+    }
+}

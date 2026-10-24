@@ -1,0 +1,68 @@
+
+---- EXPECTED OUTPUT
+array(0) {
+}
+int(0)
+bool(true)
+array(3) {
+  ["foo"]=>
+  int(1)
+  ["bar"]=>
+  int(2)
+  ["baz"]=>
+  int(3)
+}
+array(2) {
+  [0]=>
+  string(5) "first"
+  ["key"]=>
+  string(6) "second"
+}
+array(2) {
+  [100]=>
+  string(7) "hundred"
+  [0]=>
+  string(4) "zero"
+}
+array(2) {
+  ["c"]=>
+  int(3)
+  ["d"]=>
+  int(4)
+}
+array(1) {
+  ["x"]=>
+  int(1)
+}
+array(2) {
+  ["x"]=>
+  int(1)
+  ["y"]=>
+  int(2)
+}
+array(3) {
+  ["a"]=>
+  int(1)
+  ["b"]=>
+  int(2)
+  ["c"]=>
+  int(3)
+}
+array(3) {
+  [0]=>
+  int(1)
+  [1]=>
+  int(2)
+  [2]=>
+  int(3)
+}
+bool(true)
+bool(true)
+0 => a
+1 => b
+---- ACTUAL OUTPUT
+Fatal error: Uncaught Error: Call to undefined function zend_new_singleton_array() in work/releases/8.2/unpatched/release-corpus/Zend/tests/singleton_array.php:3
+Stack trace:
+#0 {main}
+  thrown in work/releases/8.2/unpatched/release-corpus/Zend/tests/singleton_array.php on line 3
+---- FAILED

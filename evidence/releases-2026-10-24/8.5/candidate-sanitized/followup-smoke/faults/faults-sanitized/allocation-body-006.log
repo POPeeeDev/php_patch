@@ -1,0 +1,7 @@
+
+--- STDERR ---
+GUARD_BODY_ENTERED
+Assertion failed: (ret == SUCCESS), function zif_array_map, file array.c, line 6913.
+
+--- METRICS ---
+{"wall_ms":556.341,"user_ms":164.678,"system_ms":299.868,"peak_rss_bytes":69091328,"exit":134,"signal":6,"termination":"completed"}

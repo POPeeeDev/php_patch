@@ -1,0 +1,24 @@
+001+ Warning: shm_attach(): Failed for key 0x7404f3c3: No space left on device in work/releases/8.2/candidate/release-corpus/ext/sysvshm/tests/006.php on line 4
+     Warning: shm_remove_var(): Variable key -10 doesn't exist in %s006.php on line %d
+     bool(false)
+     string(11) "test string"
+002+ shm_put_var(): Argument #1 ($shm) must be of type SysvSharedMemory, bool given
+001- Warning: shm_remove_var(): Variable key -10 doesn't exist in %s006.php on line %d
+002- bool(false)
+003- string(11) "test string"
+004- bool(true)
+     
+004+ Fatal error: Uncaught TypeError: shm_remove_var(): Argument #1 ($shm) must be of type SysvSharedMemory, bool given in work/releases/8.2/candidate/release-corpus/ext/sysvshm/tests/006.php:12
+005+ Stack trace:
+006+ #0 work/releases/8.2/candidate/release-corpus/ext/sysvshm/tests/006.php(12): shm_remove_var(false, -10)
+007+ #1 {main}
+008+   thrown in work/releases/8.2/candidate/release-corpus/ext/sysvshm/tests/006.php on line 12
+006- Warning: shm_get_var(): Variable key 1 doesn't exist in %s006.php on line %d
+007- bool(false)
+008- 
+009- Warning: shm_remove_var(): Variable key 1 doesn't exist in %s006.php on line %d
+010- bool(false)
+011- 
+012- Warning: shm_get_var(): Variable key 1 doesn't exist in %s006.php on line %d
+013- bool(false)
+014- Done

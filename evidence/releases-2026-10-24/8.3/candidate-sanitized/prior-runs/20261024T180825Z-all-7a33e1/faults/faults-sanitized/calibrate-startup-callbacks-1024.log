@@ -1,0 +1,7 @@
+GUARD_SHUTDOWN
+
+--- STDERR ---
+GUARD_BODY_ENTERED
+
+--- METRICS ---
+{"wall_ms":608.238,"user_ms":146.03,"system_ms":446.447,"peak_rss_bytes":56934400,"exit":121,"signal":0,"termination":"completed"}

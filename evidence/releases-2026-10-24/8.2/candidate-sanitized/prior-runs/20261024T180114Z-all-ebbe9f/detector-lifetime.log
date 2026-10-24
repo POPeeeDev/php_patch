@@ -1,0 +1,79 @@
+
+--- STDERR ---
+=================================================================
+==78156==ERROR: AddressSanitizer: heap-use-after-free on address 0x602000002f90 at pc 0x0001158bcdd8 bp 0x7ff7b0af6850 sp 0x7ff7b0af6848
+WRITE of size 1 at 0x602000002f90 thread T0
+    #0 0x0001158bcdd7 in zif_guard_memory_fault sanitizer_probe.c:24
+    #1 0x0001110a86e8 in ZEND_DO_ICALL_SPEC_RETVAL_UNUSED_HANDLER zend_vm_execute.h:1250
+    #2 0x000110c8889a in execute_ex zend_vm_execute.h:55930
+    #3 0x000110c89c2e in zend_execute zend_vm_execute.h:60503
+    #4 0x000110a4b30a in zend_eval_stringl zend_execute_API.c:1327
+    #5 0x000110a4be54 in zend_eval_stringl_ex zend_execute_API.c:1369
+    #6 0x000110a4c04b in zend_eval_string_ex zend_execute_API.c:1379
+    #7 0x0001118fc252 in do_cli php_cli.c:995
+    #8 0x0001118f9016 in main php_cli.c:1334
+    #9 0x7ff805c571c7 in start+0xca7 (dyld:x86_64+0x131c7)
+
+0x602000002f90 is located 0 bytes inside of 16-byte region [0x602000002f90,0x602000002fa0)
+freed by thread T0 here:
+    #0 0x000113d3989b in free+0x8b (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0xa689b)
+    #1 0x0001158bcb37 in zif_guard_memory_fault sanitizer_probe.c:23
+    #2 0x0001110a86e8 in ZEND_DO_ICALL_SPEC_RETVAL_UNUSED_HANDLER zend_vm_execute.h:1250
+    #3 0x000110c8889a in execute_ex zend_vm_execute.h:55930
+    #4 0x000110c89c2e in zend_execute zend_vm_execute.h:60503
+    #5 0x000110a4b30a in zend_eval_stringl zend_execute_API.c:1327
+    #6 0x000110a4be54 in zend_eval_stringl_ex zend_execute_API.c:1369
+    #7 0x000110a4c04b in zend_eval_string_ex zend_execute_API.c:1379
+    #8 0x0001118fc252 in do_cli php_cli.c:995
+    #9 0x0001118f9016 in main php_cli.c:1334
+    #10 0x7ff805c571c7 in start+0xca7 (dyld:x86_64+0x131c7)
+
+previously allocated by thread T0 here:
+    #0 0x000113d39792 in malloc+0x82 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0xa6792)
+    #1 0x0001158bca25 in zif_guard_memory_fault sanitizer_probe.c:18
+    #2 0x0001110a86e8 in ZEND_DO_ICALL_SPEC_RETVAL_UNUSED_HANDLER zend_vm_execute.h:1250
+    #3 0x000110c8889a in execute_ex zend_vm_execute.h:55930
+    #4 0x000110c89c2e in zend_execute zend_vm_execute.h:60503
+    #5 0x000110a4b30a in zend_eval_stringl zend_execute_API.c:1327
+    #6 0x000110a4be54 in zend_eval_stringl_ex zend_execute_API.c:1369
+    #7 0x000110a4c04b in zend_eval_string_ex zend_execute_API.c:1379
+    #8 0x0001118fc252 in do_cli php_cli.c:995
+    #9 0x0001118f9016 in main php_cli.c:1334
+    #10 0x7ff805c571c7 in start+0xca7 (dyld:x86_64+0x131c7)
+
+SUMMARY: AddressSanitizer: heap-use-after-free sanitizer_probe.c:24 in zif_guard_memory_fault
+Shadow bytes around the buggy address:
+  0x602000002d00: fa fa 00 00 fa fa fd fd fa fa fd fd fa fa fd fd
+  0x602000002d80: fa fa fd fd fa fa fd fd fa fa fd fd fa fa fd fd
+  0x602000002e00: fa fa fd fd fa fa fd fd fa fa fd fd fa fa 00 04
+  0x602000002e80: fa fa 00 05 fa fa 00 05 fa fa fd fd fa fa fd fd
+  0x602000002f00: fa fa 04 fa fa fa 00 fa fa fa fd fa fa fa 00 fa
+=>0x602000002f80: fa fa[fd]fd fa fa fa fa fa fa fa fa fa fa fa fa
+  0x602000003000: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x602000003080: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x602000003100: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x602000003180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x602000003200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==78156==ABORTING
+
+--- METRICS ---
+{"wall_ms":2813.715,"user_ms":214.815,"system_ms":336.814,"peak_rss_bytes":55238656,"exit":134,"signal":6,"termination":"completed"}

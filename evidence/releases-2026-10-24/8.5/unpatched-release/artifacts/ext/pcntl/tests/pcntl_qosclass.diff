@@ -1,0 +1,9 @@
+     bool(true)
+     bool(true)
+003- bool(true)
+003+ 
+004+ Fatal error: Uncaught ArgumentCountError: pcntl_setqos_class() expects exactly 1 argument, 0 given in work/releases/8.5/unpatched/release-corpus/ext/pcntl/tests/pcntl_qosclass.php:8
+005+ Stack trace:
+006+ #0 work/releases/8.5/unpatched/release-corpus/ext/pcntl/tests/pcntl_qosclass.php(8): pcntl_setqos_class()
+007+ #1 {main}
+008+   thrown in work/releases/8.5/unpatched/release-corpus/ext/pcntl/tests/pcntl_qosclass.php on line 8

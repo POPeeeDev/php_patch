@@ -1,0 +1,12 @@
+     strict mode: 0, invalid return: 0
+002- RuntimeException: create_sid failed
+002+ Error: Session id must be a string
+     strict mode: 0, invalid return: 1
+004- TypeError: FailingHandler::create_sid(): Return value must be of type string, array returned
+004+ Error: Session id must be a string
+     strict mode: 1, invalid return: 0
+006- RuntimeException: create_sid failed
+006+ Error: Session id must be a string
+     strict mode: 1, invalid return: 1
+008- TypeError: FailingHandler::create_sid(): Return value must be of type string, array returned
+008+ Error: Session id must be a string

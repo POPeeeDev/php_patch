@@ -1,0 +1,12 @@
+
+---- EXPECTED OUTPUT
+Caught
+Caught
+Caught
+int(32767)
+---- ACTUAL OUTPUT
+Caught
+Caught
+Caught
+int(30719)
+---- FAILED

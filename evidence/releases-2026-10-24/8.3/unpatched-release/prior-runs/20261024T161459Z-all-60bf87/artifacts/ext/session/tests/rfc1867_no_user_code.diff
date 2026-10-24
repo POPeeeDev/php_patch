@@ -1,0 +1,67 @@
+     X-Powered-By: PHP/%s
+     Content-type: text/html; charset=UTF-8
+     
+004- bool(false)
+004+ <br />
+005+ <b>Warning</b>:  Class __PHP_Incomplete_Class has no unserializer in <b>Unknown</b> on line <b>0</b><br />
+006+ <br />
+007+ <b>Warning</b>:  PHP Request Startup: Class 'Suit' not found in <b>Unknown</b> on line <b>0</b><br />
+008+ <br />
+009+ <b>Warning</b>:  PHP Request Startup: Failed to decode session object. Session has been destroyed in <b>Unknown</b> on line <b>0</b><br />
+010+ <br />
+011+ <b>Warning</b>:  PHP Request Startup: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (work/releases/8.3/unpatched/release-corpus/ext/session/tests/rfc1867_no_user_code) in <b>Unknown</b> on line <b>0</b><br />
+     bool(true)
+013+ bool(true)
+     --- record after the update:
+007- bool(true)
+008- string(20) "upload_progress_key|"
+015+ <br />
+016+ <b>Warning</b>:  file_get_contents(work/releases/8.3/unpatched/release-corpus/ext/session/tests/rfc1867_no_user_code/sess_rfc1867nousercode): Failed to open stream: No such file or directory in <b>work/releases/8.3/unpatched/release-corpus/ext/session/tests/rfc1867_no_user_code/worker.php</b> on line <b>51</b><br />
+017+ bool(false)
+018+ string(0) ""
+     --- session_start():
+010- autoload(Missing)
+011- W::__wakeup
+012- U::__unserialize
+     string(17) "rfc1867nousercode"
+014- int(1)
+015- int(2)
+016- string(7) "payload"
+017- bool(true)
+018- bool(true)
+019- object(__PHP_Incomplete_Class)#%d (2) {
+020-   ["__PHP_Incomplete_Class_Name"]=>
+021-   string(7) "Missing"
+022-   ["x"]=>
+023-   int(3)
+024- }
+025- bool(true)
+021+ <br />
+022+ <b>Warning</b>:  Undefined array key "w" in <b>work/releases/8.3/unpatched/release-corpus/ext/session/tests/rfc1867_no_user_code/worker.php</b> on line <b>58</b><br />
+023+ <br />
+024+ <b>Warning</b>:  Attempt to read property "a" on null in <b>work/releases/8.3/unpatched/release-corpus/ext/session/tests/rfc1867_no_user_code/worker.php</b> on line <b>58</b><br />
+025+ <br />
+026+ <b>Warning</b>:  Undefined array key "u" in <b>work/releases/8.3/unpatched/release-corpus/ext/session/tests/rfc1867_no_user_code/worker.php</b> on line <b>58</b><br />
+027+ <br />
+028+ <b>Warning</b>:  Attempt to read property "a" on null in <b>work/releases/8.3/unpatched/release-corpus/ext/session/tests/rfc1867_no_user_code/worker.php</b> on line <b>58</b><br />
+029+ <br />
+030+ <b>Warning</b>:  Undefined array key "c" in <b>work/releases/8.3/unpatched/release-corpus/ext/session/tests/rfc1867_no_user_code/worker.php</b> on line <b>58</b><br />
+031+ <br />
+032+ <b>Warning</b>:  Attempt to read property "x" on null in <b>work/releases/8.3/unpatched/release-corpus/ext/session/tests/rfc1867_no_user_code/worker.php</b> on line <b>58</b><br />
+033+ NULL
+034+ NULL
+035+ NULL
+036+ <br />
+037+ <b>Warning</b>:  Undefined array key "e" in <b>work/releases/8.3/unpatched/release-corpus/ext/session/tests/rfc1867_no_user_code/worker.php</b> on line <b>59</b><br />
+038+ <br />
+039+ <b>Warning</b>:  Trying to access array offset on null in <b>work/releases/8.3/unpatched/release-corpus/ext/session/tests/rfc1867_no_user_code/worker.php</b> on line <b>59</b><br />
+040+ <br />
+041+ <b>Warning</b>:  Undefined array key "e" in <b>work/releases/8.3/unpatched/release-corpus/ext/session/tests/rfc1867_no_user_code/worker.php</b> on line <b>59</b><br />
+042+ <br />
+043+ <b>Warning</b>:  Trying to access array offset on null in <b>work/releases/8.3/unpatched/release-corpus/ext/session/tests/rfc1867_no_user_code/worker.php</b> on line <b>59</b><br />
+044+ bool(false)
+045+ bool(false)
+046+ <br />
+047+ <b>Warning</b>:  Undefined array key "m" in <b>work/releases/8.3/unpatched/release-corpus/ext/session/tests/rfc1867_no_user_code/worker.php</b> on line <b>60</b><br />
+048+ NULL
+049+ bool(false)

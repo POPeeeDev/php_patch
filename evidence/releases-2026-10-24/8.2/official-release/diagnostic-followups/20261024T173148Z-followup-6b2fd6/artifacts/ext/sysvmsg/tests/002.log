@@ -1,0 +1,14 @@
+
+---- EXPECTED OUTPUT
+Warning: msg_receive(): Message corrupted in %s002.php on line %d
+bool(false)
+Done
+---- ACTUAL OUTPUT
+Warning: msg_get_queue(): Failed for key 0x72046836: No space left on device in work/releases/8.2/official/release-corpus/ext/sysvmsg/tests/002.php on line 3
+
+Fatal error: Uncaught TypeError: msg_send(): Argument #1 ($queue) must be of type SysvMessageQueue, bool given in work/releases/8.2/official/release-corpus/ext/sysvmsg/tests/002.php:4
+Stack trace:
+#0 work/releases/8.2/official/release-corpus/ext/sysvmsg/tests/002.php(4): msg_send(false, 1, 'Hi', false, true, NULL)
+#1 {main}
+  thrown in work/releases/8.2/official/release-corpus/ext/sysvmsg/tests/002.php on line 4
+---- FAILED

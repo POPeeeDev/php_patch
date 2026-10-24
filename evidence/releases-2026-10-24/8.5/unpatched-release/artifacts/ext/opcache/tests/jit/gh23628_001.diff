@@ -1,0 +1,11 @@
+001- int(100)
+002- int(100)
+003- int(100)
+004- int(99)
+005- int(100)
+006- int(100)
+001+ Fatal error: Uncaught RuntimeException: isset false at 1 in work/releases/8.5/unpatched/release-corpus/ext/opcache/tests/jit/gh23628_001.php:11
+002+ Stack trace:
+003+ #0 work/releases/8.5/unpatched/release-corpus/ext/opcache/tests/jit/gh23628_001.php(42): Table->parse(100)
+004+ #1 {main}
+005+   thrown in work/releases/8.5/unpatched/release-corpus/ext/opcache/tests/jit/gh23628_001.php on line 11

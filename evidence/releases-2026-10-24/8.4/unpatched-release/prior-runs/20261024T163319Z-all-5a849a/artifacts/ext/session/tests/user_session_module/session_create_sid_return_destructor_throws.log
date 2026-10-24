@@ -1,0 +1,6 @@
+
+---- EXPECTED OUTPUT
+RuntimeException: destructor failed
+---- ACTUAL OUTPUT
+Error: Session id must be a string
+---- FAILED

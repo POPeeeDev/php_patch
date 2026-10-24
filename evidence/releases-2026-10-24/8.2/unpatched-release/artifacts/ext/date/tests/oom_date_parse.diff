@@ -1,0 +1,2 @@
+001+ Fatal error: Allowed memory size of 67108864 bytes exhausted (tried to allocate 50331648 bytes) in work/releases/8.2/unpatched/release-corpus/ext/date/tests/oom_date_parse.php on line 2
+001- int(1000)

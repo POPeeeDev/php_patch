@@ -1,0 +1,2 @@
+001+ Fatal error: Allowed memory size of 67108864 bytes exhausted (tried to allocate 23068680 bytes) in work/releases/8.2/unpatched/release-corpus/ext/date/tests/oom_dateinterval_construct.php on line 3
+001- Exception: Unknown or bad format (%s)

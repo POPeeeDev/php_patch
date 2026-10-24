@@ -1,0 +1,48 @@
+
+--- STDERR ---
+=================================================================
+==15619==ERROR: AddressSanitizer: attempting double-free on 0x602000003290 in thread T0:
+    #0 0x00010915489b in free+0x8b (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0xa689b)
+    #1 0x00010acd7c0b in zif_guard_memory_fault sanitizer_probe.c:27
+    #2 0x00010633e488 in ZEND_DO_ICALL_SPEC_RETVAL_UNUSED_HANDLER zend_vm_execute.h:1275
+    #3 0x000105f0ed3b in execute_ex zend_vm_execute.h:57076
+    #4 0x000105f1021e in zend_execute zend_vm_execute.h:61673
+    #5 0x000105cbb6cb in zend_eval_stringl zend_execute_API.c:1337
+    #6 0x000105cbc244 in zend_eval_stringl_ex zend_execute_API.c:1379
+    #7 0x000105cbc43b in zend_eval_string_ex zend_execute_API.c:1389
+    #8 0x000106bbab03 in do_cli php_cli.c:996
+    #9 0x000106bb7a06 in main php_cli.c:1341
+    #10 0x7ff805c571c7 in start+0xca7 (dyld:x86_64+0x131c7)
+
+0x602000003290 is located 0 bytes inside of 16-byte region [0x602000003290,0x6020000032a0)
+freed by thread T0 here:
+    #0 0x00010915489b in free+0x8b (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0xa689b)
+    #1 0x00010acd7c03 in zif_guard_memory_fault sanitizer_probe.c:26
+    #2 0x00010633e488 in ZEND_DO_ICALL_SPEC_RETVAL_UNUSED_HANDLER zend_vm_execute.h:1275
+    #3 0x000105f0ed3b in execute_ex zend_vm_execute.h:57076
+    #4 0x000105f1021e in zend_execute zend_vm_execute.h:61673
+    #5 0x000105cbb6cb in zend_eval_stringl zend_execute_API.c:1337
+    #6 0x000105cbc244 in zend_eval_stringl_ex zend_execute_API.c:1379
+    #7 0x000105cbc43b in zend_eval_string_ex zend_execute_API.c:1389
+    #8 0x000106bbab03 in do_cli php_cli.c:996
+    #9 0x000106bb7a06 in main php_cli.c:1341
+    #10 0x7ff805c571c7 in start+0xca7 (dyld:x86_64+0x131c7)
+
+previously allocated by thread T0 here:
+    #0 0x000109154792 in malloc+0x82 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0xa6792)
+    #1 0x00010acd7a25 in zif_guard_memory_fault sanitizer_probe.c:18
+    #2 0x00010633e488 in ZEND_DO_ICALL_SPEC_RETVAL_UNUSED_HANDLER zend_vm_execute.h:1275
+    #3 0x000105f0ed3b in execute_ex zend_vm_execute.h:57076
+    #4 0x000105f1021e in zend_execute zend_vm_execute.h:61673
+    #5 0x000105cbb6cb in zend_eval_stringl zend_execute_API.c:1337
+    #6 0x000105cbc244 in zend_eval_stringl_ex zend_execute_API.c:1379
+    #7 0x000105cbc43b in zend_eval_string_ex zend_execute_API.c:1389
+    #8 0x000106bbab03 in do_cli php_cli.c:996
+    #9 0x000106bb7a06 in main php_cli.c:1341
+    #10 0x7ff805c571c7 in start+0xca7 (dyld:x86_64+0x131c7)
+
+SUMMARY: AddressSanitizer: double-free sanitizer_probe.c:27 in zif_guard_memory_fault
+==15619==ABORTING
+
+--- METRICS ---
+{"wall_ms":2711.724,"user_ms":206.771,"system_ms":312.656,"peak_rss_bytes":56041472,"exit":134,"signal":6,"termination":"completed"}

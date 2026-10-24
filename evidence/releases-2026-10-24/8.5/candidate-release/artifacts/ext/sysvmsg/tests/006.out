@@ -1,0 +1,9 @@
+Warning: msg_get_queue(): Failed for key 0x72049f68: No space left on device in work/releases/8.5/candidate/release-corpus/ext/sysvmsg/tests/006.php on line 3
+Sending/receiving 'foo':
+msg_send(): Argument #1 ($queue) must be of type SysvMessageQueue, false given
+
+Fatal error: Uncaught TypeError: msg_receive(): Argument #1 ($queue) must be of type SysvMessageQueue, false given in work/releases/8.5/candidate/release-corpus/ext/sysvmsg/tests/006.php:16
+Stack trace:
+#0 work/releases/8.5/candidate/release-corpus/ext/sysvmsg/tests/006.php(16): msg_receive(false, 1, NULL, 1024, NULL, false, 1)
+#1 {main}
+  thrown in work/releases/8.5/candidate/release-corpus/ext/sysvmsg/tests/006.php on line 16

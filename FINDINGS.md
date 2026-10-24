@@ -16,6 +16,8 @@ also includes unrelated maintenance fixes.
 Reproduction is documented in [BUILD.md](BUILD.md); mechanisms and limitations
 are in [RELEASE_DESIGN.md](RELEASE_DESIGN.md). Acronyms and test terminology are
 defined in [GLOSSARY.md](GLOSSARY.md).
+The [20-row evidence index](evidence/releases-2026-10-24/README.md) links to the
+machine-readable summary, original reports, prior attempts, and diagnostics.
 
 ## Normal-build comparisons
 
@@ -87,10 +89,35 @@ be skipped. Application-level OOM retains the official repaired path.
 
 ## Instrumented outcomes
 
-All eight instrumented builds compiled successfully. The resumed test rows are
-still running; their final bounded outcomes and partial-coverage accounting are
-not yet published. The normal-build counts above are not instrumented results.
-Do not interpret this interim report as a completed sanitizer comparison.
+All 20 builds completed, including all eight ASan/UBSan debug builds. All eight
+instrumented upstream-suite attempts reached their 2,400-second wall-time bound.
+Their final full-suite totals are unknown. The following are individually
+recorded **partial observations**, not completed-suite totals:
+
+| Branch | Official recorded passed / failed | Candidate recorded passed / failed | Tests recorded in both |
+|---|---:|---:|---:|
+| 8.2 | 5,427 / 12 | 5,289 / 13 | 5,431 |
+| 8.3 | 7,841 / 18 | 7,205 / 15 | 7,449 |
+| 8.4 | 4,272 / 1 | 4,772 / 2 | 4,402 |
+| 8.5 | 5,208 / 4 | 6,484 / 4 | 5,338 |
+
+Partial skips, warnings, expected failures, and two BORKED cases in each PHP 8.3
+row are retained in the summary. A larger observed count is not a performance
+comparison: builds ran under differing concurrent load and scheduling.
+
+The two PHP 8.2 paired adverse differences and three PHP 8.3 differences all
+passed on both binaries in sequential diagnostic follow-ups. PHP 8.4 and 8.5
+had no differing adverse statuses among their paired observations. Shared
+failures include timeouts and stack-limit behavior; matching failure status
+does not establish identical causes or memory safety. One additional PHP 8.4
+candidate OOM timeout lacked an observation in the official full run.
+That case passed on both binaries in a separately labeled coverage follow-up;
+the original official observation remains missing.
+
+The latest instrumented allocation sweeps passed 384/384 sampled cases for both
+profiles on PHP 8.2 through 8.4, and 383/384 on both PHP 8.5 profiles. The original
+PHP 8.4 candidate sweep had one supervisor setup failure; the later complete
+sweep passed. These follow-ups remain separate from the full upstream runs.
 
 ### Investigated native differences
 
@@ -108,6 +135,9 @@ With ASan symbolization and UBSan stack traces disabled, all six checks complete
 as expected on both binaries. This narrows the observed delay to the reporting
 configuration; its underlying cause is not established. Detector sensitivity
 is not evidence that the lifecycle guard prevents these injected errors.
+Later complete native-check reruns, which compiled new probe modules, passed all
+six detectors on both PHP 8.5 builds with original reporting settings. The
+reporting delay is therefore not consistently reproducible across these runs.
 The earlier PHP 8.3 official bounds-detector timeout did not recur in the paired
 diagnostic replay with either reporting configuration.
 
@@ -146,6 +176,16 @@ because a setup failure occurred alongside the definite assertion failure.
 The corrected harness gives known failures precedence while retaining individual
 inconclusive cases. Eight classification checks passed. Exported per-case
 counts expose this distinction without rewriting the original report.
+
+## Fresh public-clone check
+
+A new GitHub clone built the PHP 8.2 candidate from its affected input using the
+published instructions and the documented existing-upstream-checkout option.
+CLI, CGI, and FPM compiled. All 12 smoke groups passed, including 384 allocation
+cases. [The reproduction record](evidence/public-clone-2026-10-24/README.md)
+identifies the build and harness commits. No earlier compiled objects were
+reused; this was not provisioning a clean operating system or independently
+repeating the entire matrix.
 
 ## Claims ledger
 

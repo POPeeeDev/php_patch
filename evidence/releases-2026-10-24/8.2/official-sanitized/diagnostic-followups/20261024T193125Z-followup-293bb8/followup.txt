@@ -1,0 +1,2 @@
+Zend/tests/oom_unserialize_006.phpt
+Zend/tests/oom_unserialize_011.phpt

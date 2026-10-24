@@ -1,0 +1,6 @@
+{"seed":104729,"mutations":{"json":2048,"serialization":2048,"session":2048},"valid_roundtrips":4096,"status":"completed","scope":"deterministic-local-input-mutations-not-exhaustive-fuzzing"}
+
+--- STDERR ---
+
+--- METRICS ---
+{"wall_ms":1272.554,"user_ms":695.217,"system_ms":563.373,"peak_rss_bytes":58462208,"exit":0,"signal":0,"termination":"completed"}

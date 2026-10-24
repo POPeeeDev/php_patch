@@ -1,0 +1,79 @@
+
+--- STDERR ---
+=================================================================
+==92048==ERROR: AddressSanitizer: heap-use-after-free on address 0x602000003230 at pc 0x00010acefdd8 bp 0x7ff7be5564d0 sp 0x7ff7be5564c8
+WRITE of size 1 at 0x602000003230 thread T0
+    #0 0x00010acefdd7 in zif_guard_memory_fault sanitizer_probe.c:24
+    #1 0x00010536ea2c in ZEND_DO_ICALL_SPEC_RETVAL_UNUSED_TAILCALL_HANDLER zend_vm_execute.h:57202
+    #2 0x000104938b00 in execute_ex zend_vm_execute.h:116326
+    #3 0x00010493a10e in zend_execute zend_vm_execute.h:122038
+    #4 0x0001048eb10b in zend_eval_stringl zend_execute_API.c:1399
+    #5 0x0001048ebe24 in zend_eval_stringl_ex zend_execute_API.c:1441
+    #6 0x0001048ec01b in zend_eval_string_ex zend_execute_API.c:1451
+    #7 0x000105a12666 in do_cli php_cli.c:990
+    #8 0x000105a0f486 in main php_cli.c:1383
+    #9 0x7ff805c571c7 in start+0xca7 (dyld:x86_64+0x131c7)
+
+0x602000003230 is located 0 bytes inside of 16-byte region [0x602000003230,0x602000003240)
+freed by thread T0 here:
+    #0 0x00010914c89b in free+0x8b (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0xa689b)
+    #1 0x00010acefb37 in zif_guard_memory_fault sanitizer_probe.c:23
+    #2 0x00010536ea2c in ZEND_DO_ICALL_SPEC_RETVAL_UNUSED_TAILCALL_HANDLER zend_vm_execute.h:57202
+    #3 0x000104938b00 in execute_ex zend_vm_execute.h:116326
+    #4 0x00010493a10e in zend_execute zend_vm_execute.h:122038
+    #5 0x0001048eb10b in zend_eval_stringl zend_execute_API.c:1399
+    #6 0x0001048ebe24 in zend_eval_stringl_ex zend_execute_API.c:1441
+    #7 0x0001048ec01b in zend_eval_string_ex zend_execute_API.c:1451
+    #8 0x000105a12666 in do_cli php_cli.c:990
+    #9 0x000105a0f486 in main php_cli.c:1383
+    #10 0x7ff805c571c7 in start+0xca7 (dyld:x86_64+0x131c7)
+
+previously allocated by thread T0 here:
+    #0 0x00010914c792 in malloc+0x82 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0xa6792)
+    #1 0x00010acefa25 in zif_guard_memory_fault sanitizer_probe.c:18
+    #2 0x00010536ea2c in ZEND_DO_ICALL_SPEC_RETVAL_UNUSED_TAILCALL_HANDLER zend_vm_execute.h:57202
+    #3 0x000104938b00 in execute_ex zend_vm_execute.h:116326
+    #4 0x00010493a10e in zend_execute zend_vm_execute.h:122038
+    #5 0x0001048eb10b in zend_eval_stringl zend_execute_API.c:1399
+    #6 0x0001048ebe24 in zend_eval_stringl_ex zend_execute_API.c:1441
+    #7 0x0001048ec01b in zend_eval_string_ex zend_execute_API.c:1451
+    #8 0x000105a12666 in do_cli php_cli.c:990
+    #9 0x000105a0f486 in main php_cli.c:1383
+    #10 0x7ff805c571c7 in start+0xca7 (dyld:x86_64+0x131c7)
+
+SUMMARY: AddressSanitizer: heap-use-after-free sanitizer_probe.c:24 in zif_guard_memory_fault
+Shadow bytes around the buggy address:
+  0x602000002f80: fa fa fd fd fa fa 00 00 fa fa fd fd fa fa fd fd
+  0x602000003000: fa fa fd fd fa fa fd fd fa fa fd fd fa fa fd fd
+  0x602000003080: fa fa fd fd fa fa fd fd fa fa fd fd fa fa fd fd
+  0x602000003100: fa fa 00 04 fa fa 00 05 fa fa 00 05 fa fa fd fd
+  0x602000003180: fa fa fd fd fa fa 04 fa fa fa 00 fa fa fa fd fa
+=>0x602000003200: fa fa 00 fa fa fa[fd]fd fa fa fa fa fa fa fa fa
+  0x602000003280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x602000003300: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x602000003380: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x602000003400: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x602000003480: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==92048==ABORTING
+
+--- METRICS ---
+{"wall_ms":2331.33,"user_ms":251.605,"system_ms":669.171,"peak_rss_bytes":68308992,"exit":134,"signal":6,"termination":"completed"}

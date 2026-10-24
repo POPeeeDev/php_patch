@@ -1,0 +1,8 @@
+001- NANArray
+001+ Warning: unexpected NAN value was coerced to string in work/releases/8.5/unpatched/release-corpus/Zend/tests/gh23662.php on line 2
+002+ NAN
+003+ Warning: unexpected NAN value was coerced to string in work/releases/8.5/unpatched/release-corpus/Zend/tests/gh23662.php on line 3
+004+ Array
+     (
+         [0] => NAN
+     )

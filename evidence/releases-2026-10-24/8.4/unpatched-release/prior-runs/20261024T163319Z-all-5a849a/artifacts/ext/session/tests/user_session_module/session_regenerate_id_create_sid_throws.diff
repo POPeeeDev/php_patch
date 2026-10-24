@@ -1,0 +1,6 @@
+001- RuntimeException: create_sid failed
+001+ Error: Session id must be a string
+     create_sid calls: 2
+003- RuntimeException: create_sid failed
+003+ Error: Session id must be a string
+     create_sid calls: 3

@@ -1,0 +1,12 @@
+     control          warnings: 0, decode refused: false record kept: true
+002- Class_Name       warnings: 1, decode refused: true  record kept: false
+003- Class_Serialized warnings: 1, decode refused: true  record kept: false
+004- Enum_Case        warnings: 1, decode refused: true  record kept: false
+005- nested           warnings: 1, decode refused: true  record kept: false
+002+ Class_Name       warnings: 0, decode refused: false record kept: true
+003+ Class_Serialized warnings: 0, decode refused: false record kept: true
+004+ Enum_Case        warnings: 0, decode refused: false record kept: true
+005+ nested           warnings: 0, decode refused: false record kept: true
+     mangled          warnings: 0, decode refused: false record kept: true
+007- corrupt          warnings: 1, decode refused: true  record kept: false
+007+ corrupt          warnings: 2, decode refused: true  record kept: false

@@ -1,0 +1,50 @@
+
+---- EXPECTED OUTPUT
+Exception: create_sid failed
+NULL
+bool(true)
+---- ACTUAL OUTPUT
+Error: Session id must be a string
+object(Exception)#2 (7) {
+  ["message":protected]=>
+  string(17) "create_sid failed"
+  ["string":"Exception":private]=>
+  string(0) ""
+  ["code":protected]=>
+  int(0)
+  ["file":protected]=>
+  string(153) "work/releases/8.5/unpatched/release-corpus/ext/session/tests/user_session_module/session_create_id_create_sid_throws.php"
+  ["line":protected]=>
+  int(12)
+  ["trace":"Exception":private]=>
+  array(2) {
+    [0]=>
+    array(4) {
+      ["function"]=>
+      string(10) "create_sid"
+      ["class"]=>
+      string(16) "MySessionHandler"
+      ["type"]=>
+      string(2) "->"
+      ["args"]=>
+      array(0) {
+      }
+    }
+    [1]=>
+    array(4) {
+      ["file"]=>
+      string(153) "work/releases/8.5/unpatched/release-corpus/ext/session/tests/user_session_module/session_create_id_create_sid_throws.php"
+      ["line"]=>
+      int(27)
+      ["function"]=>
+      string(17) "session_create_id"
+      ["args"]=>
+      array(0) {
+      }
+    }
+  }
+  ["previous":"Exception":private]=>
+  NULL
+}
+bool(true)
+---- FAILED

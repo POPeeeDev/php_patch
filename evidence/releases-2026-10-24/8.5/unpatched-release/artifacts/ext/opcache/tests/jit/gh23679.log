@@ -1,0 +1,12 @@
+
+---- EXPECTED OUTPUT
+ok
+---- ACTUAL OUTPUT
+dim-assign i=2 private=string(7) "MISSING"
+dim-assign i=2 public=array(2) {
+  ["keep"]=>
+  int(1)
+  ["x"]=>
+  int(2)
+}
+---- FAILED

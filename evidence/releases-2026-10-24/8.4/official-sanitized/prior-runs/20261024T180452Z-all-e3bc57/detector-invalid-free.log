@@ -1,0 +1,35 @@
+
+--- STDERR ---
+=================================================================
+==26049==ERROR: AddressSanitizer: attempting free on address which was not malloc()-ed: 0x602000002ff1 in thread T0
+    #0 0x000114c8789b in free+0x8b (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0xa689b)
+    #1 0x0001167f8c49 in zif_guard_memory_fault sanitizer_probe.c:30
+    #2 0x000111f03708 in ZEND_DO_ICALL_SPEC_RETVAL_UNUSED_HANDLER zend_vm_execute.h:1287
+    #3 0x000111ab57ab in execute_ex zend_vm_execute.h:58729
+    #4 0x000111ab6aae in zend_execute zend_vm_execute.h:64381
+    #5 0x000111a6df7b in zend_eval_stringl zend_execute_API.c:1388
+    #6 0x000111a6ec94 in zend_eval_stringl_ex zend_execute_API.c:1430
+    #7 0x000111a6ee8b in zend_eval_string_ex zend_execute_API.c:1440
+    #8 0x00011255c339 in do_cli php_cli.c:974
+    #9 0x000112559196 in main php_cli.c:1331
+    #10 0x7ff805c571c7 in start+0xca7 (dyld:x86_64+0x131c7)
+
+0x602000002ff1 is located 1 bytes inside of 16-byte region [0x602000002ff0,0x602000003000)
+allocated by thread T0 here:
+    #0 0x000114c87792 in malloc+0x82 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0xa6792)
+    #1 0x0001167f8a25 in zif_guard_memory_fault sanitizer_probe.c:18
+    #2 0x000111f03708 in ZEND_DO_ICALL_SPEC_RETVAL_UNUSED_HANDLER zend_vm_execute.h:1287
+    #3 0x000111ab57ab in execute_ex zend_vm_execute.h:58729
+    #4 0x000111ab6aae in zend_execute zend_vm_execute.h:64381
+    #5 0x000111a6df7b in zend_eval_stringl zend_execute_API.c:1388
+    #6 0x000111a6ec94 in zend_eval_stringl_ex zend_execute_API.c:1430
+    #7 0x000111a6ee8b in zend_eval_string_ex zend_execute_API.c:1440
+    #8 0x00011255c339 in do_cli php_cli.c:974
+    #9 0x000112559196 in main php_cli.c:1331
+    #10 0x7ff805c571c7 in start+0xca7 (dyld:x86_64+0x131c7)
+
+SUMMARY: AddressSanitizer: bad-free sanitizer_probe.c:30 in zif_guard_memory_fault
+==26049==ABORTING
+
+--- METRICS ---
+{"wall_ms":1059.911,"user_ms":147.735,"system_ms":252.153,"peak_rss_bytes":55074816,"exit":134,"signal":6,"termination":"completed"}

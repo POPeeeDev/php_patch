@@ -1,0 +1,80 @@
+[24-Oct-2026 17:27:20 UTC] PHP Fatal error:  Allowed memory size of 16777216 bytes exhausted (tried to allocate 2097152 bytes) in work/releases/8.5/official/release-tests/20261024T172705Z-all-658b0a/fpm/request.php on line 14
+Stack trace:
+#0 work/releases/8.5/official/release-tests/20261024T172705Z-all-658b0a/fpm/request.php(14): str_repeat('x', 262144)
+#1 {main}
+[24-Oct-2026 17:27:20 UTC] PHP Fatal error:  Allowed memory size of 16777216 bytes exhausted (tried to allocate 2097152 bytes) in work/releases/8.5/official/release-tests/20261024T172705Z-all-658b0a/fpm/request.php on line 14
+Stack trace:
+#0 work/releases/8.5/official/release-tests/20261024T172705Z-all-658b0a/fpm/request.php(14): str_repeat('x', 262144)
+#1 {main}
+[24-Oct-2026 17:27:20 UTC] PHP Fatal error:  Allowed memory size of 16777216 bytes exhausted (tried to allocate 2097152 bytes) in work/releases/8.5/official/release-tests/20261024T172705Z-all-658b0a/fpm/request.php on line 14
+Stack trace:
+#0 work/releases/8.5/official/release-tests/20261024T172705Z-all-658b0a/fpm/request.php(14): str_repeat('x', 262144)
+#1 {main}
+[24-Oct-2026 17:27:20 UTC] PHP Fatal error:  Allowed memory size of 16777216 bytes exhausted (tried to allocate 2097152 bytes) in work/releases/8.5/official/release-tests/20261024T172705Z-all-658b0a/fpm/request.php on line 14
+Stack trace:
+#0 work/releases/8.5/official/release-tests/20261024T172705Z-all-658b0a/fpm/request.php(14): str_repeat('x', 262144)
+#1 {main}
+[24-Oct-2026 17:27:20 UTC] PHP Fatal error:  Allowed memory size of 16777216 bytes exhausted (tried to allocate 2097152 bytes) in work/releases/8.5/official/release-tests/20261024T172705Z-all-658b0a/fpm/request.php on line 14
+Stack trace:
+#0 work/releases/8.5/official/release-tests/20261024T172705Z-all-658b0a/fpm/request.php(14): str_repeat('x', 262144)
+#1 {main}
+[24-Oct-2026 17:27:21 UTC] PHP Fatal error:  Allowed memory size of 16777216 bytes exhausted (tried to allocate 2097152 bytes) in work/releases/8.5/official/release-tests/20261024T172705Z-all-658b0a/fpm/request.php on line 14
+Stack trace:
+#0 work/releases/8.5/official/release-tests/20261024T172705Z-all-658b0a/fpm/request.php(14): str_repeat('x', 262144)
+#1 {main}
+[24-Oct-2026 17:27:21 UTC] PHP Fatal error:  Allowed memory size of 16777216 bytes exhausted (tried to allocate 2097152 bytes) in work/releases/8.5/official/release-tests/20261024T172705Z-all-658b0a/fpm/request.php on line 14
+Stack trace:
+#0 work/releases/8.5/official/release-tests/20261024T172705Z-all-658b0a/fpm/request.php(14): str_repeat('x', 262144)
+#1 {main}
+[24-Oct-2026 17:27:21 UTC] PHP Fatal error:  Allowed memory size of 16777216 bytes exhausted (tried to allocate 2097152 bytes) in work/releases/8.5/official/release-tests/20261024T172705Z-all-658b0a/fpm/request.php on line 14
+Stack trace:
+#0 work/releases/8.5/official/release-tests/20261024T172705Z-all-658b0a/fpm/request.php(14): str_repeat('x', 262144)
+#1 {main}
+[24-Oct-2026 17:27:21 UTC] PHP Fatal error:  Allowed memory size of 16777216 bytes exhausted (tried to allocate 2097152 bytes) in work/releases/8.5/official/release-tests/20261024T172705Z-all-658b0a/fpm/request.php on line 14
+Stack trace:
+#0 work/releases/8.5/official/release-tests/20261024T172705Z-all-658b0a/fpm/request.php(14): str_repeat('x', 262144)
+#1 {main}
+[24-Oct-2026 17:27:21 UTC] PHP Fatal error:  Allowed memory size of 16777216 bytes exhausted (tried to allocate 2097152 bytes) in work/releases/8.5/official/release-tests/20261024T172705Z-all-658b0a/fpm/request.php on line 14
+Stack trace:
+#0 work/releases/8.5/official/release-tests/20261024T172705Z-all-658b0a/fpm/request.php(14): str_repeat('x', 262144)
+#1 {main}
+[24-Oct-2026 17:27:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function guard_intentional_undefined_function() in work/releases/8.5/official/release-tests/20261024T172705Z-all-658b0a/fpm/request.php:21
+Stack trace:
+#0 {main}
+  thrown in work/releases/8.5/official/release-tests/20261024T172705Z-all-658b0a/fpm/request.php on line 21
+[24-Oct-2026 17:27:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function guard_intentional_undefined_function() in work/releases/8.5/official/release-tests/20261024T172705Z-all-658b0a/fpm/request.php:21
+Stack trace:
+#0 {main}
+  thrown in work/releases/8.5/official/release-tests/20261024T172705Z-all-658b0a/fpm/request.php on line 21
+[24-Oct-2026 17:27:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function guard_intentional_undefined_function() in work/releases/8.5/official/release-tests/20261024T172705Z-all-658b0a/fpm/request.php:21
+Stack trace:
+#0 {main}
+  thrown in work/releases/8.5/official/release-tests/20261024T172705Z-all-658b0a/fpm/request.php on line 21
+[24-Oct-2026 17:27:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function guard_intentional_undefined_function() in work/releases/8.5/official/release-tests/20261024T172705Z-all-658b0a/fpm/request.php:21
+Stack trace:
+#0 {main}
+  thrown in work/releases/8.5/official/release-tests/20261024T172705Z-all-658b0a/fpm/request.php on line 21
+[24-Oct-2026 17:27:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function guard_intentional_undefined_function() in work/releases/8.5/official/release-tests/20261024T172705Z-all-658b0a/fpm/request.php:21
+Stack trace:
+#0 {main}
+  thrown in work/releases/8.5/official/release-tests/20261024T172705Z-all-658b0a/fpm/request.php on line 21
+[24-Oct-2026 17:27:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function guard_intentional_undefined_function() in work/releases/8.5/official/release-tests/20261024T172705Z-all-658b0a/fpm/request.php:21
+Stack trace:
+#0 {main}
+  thrown in work/releases/8.5/official/release-tests/20261024T172705Z-all-658b0a/fpm/request.php on line 21
+[24-Oct-2026 17:27:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function guard_intentional_undefined_function() in work/releases/8.5/official/release-tests/20261024T172705Z-all-658b0a/fpm/request.php:21
+Stack trace:
+#0 {main}
+  thrown in work/releases/8.5/official/release-tests/20261024T172705Z-all-658b0a/fpm/request.php on line 21
+[24-Oct-2026 17:27:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function guard_intentional_undefined_function() in work/releases/8.5/official/release-tests/20261024T172705Z-all-658b0a/fpm/request.php:21
+Stack trace:
+#0 {main}
+  thrown in work/releases/8.5/official/release-tests/20261024T172705Z-all-658b0a/fpm/request.php on line 21
+[24-Oct-2026 17:27:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function guard_intentional_undefined_function() in work/releases/8.5/official/release-tests/20261024T172705Z-all-658b0a/fpm/request.php:21
+Stack trace:
+#0 {main}
+  thrown in work/releases/8.5/official/release-tests/20261024T172705Z-all-658b0a/fpm/request.php on line 21
+[24-Oct-2026 17:27:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function guard_intentional_undefined_function() in work/releases/8.5/official/release-tests/20261024T172705Z-all-658b0a/fpm/request.php:21
+Stack trace:
+#0 {main}
+  thrown in work/releases/8.5/official/release-tests/20261024T172705Z-all-658b0a/fpm/request.php on line 21

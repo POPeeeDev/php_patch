@@ -1,0 +1,25 @@
+
+---- EXPECTED OUTPUT
+initial: 0
+after setSize(3): 3
+array(3) {
+  [0]=>
+  string(1) "x"
+  [1]=>
+  NULL
+  [2]=>
+  string(1) "z"
+}
+after setSize(1): 1
+after setSize(0): 0
+deferred parent::__construct(2): 2
+clone then setSize(2): 2
+---- ACTUAL OUTPUT
+initial: 0
+after setSize(3): 0
+
+Fatal error: Uncaught OutOfBoundsException: Index invalid or out of range in work/releases/8.5/unpatched/release-corpus/ext/spl/tests/SplFixedArray_subclass_without_parent_construct.php:14
+Stack trace:
+#0 {main}
+  thrown in work/releases/8.5/unpatched/release-corpus/ext/spl/tests/SplFixedArray_subclass_without_parent_construct.php on line 14
+---- FAILED

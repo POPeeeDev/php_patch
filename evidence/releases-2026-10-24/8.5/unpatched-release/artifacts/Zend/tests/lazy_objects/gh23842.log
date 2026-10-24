@@ -1,0 +1,6 @@
+
+---- EXPECTED OUTPUT
+string(3) "EUR"
+---- ACTUAL OUTPUT
+UNKNOWN:0
+---- FAILED

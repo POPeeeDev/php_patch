@@ -1,0 +1,8 @@
+
+---- EXPECTED OUTPUT
+int(32767)
+int(32767)
+---- ACTUAL OUTPUT
+int(30719)
+int(30719)
+---- FAILED

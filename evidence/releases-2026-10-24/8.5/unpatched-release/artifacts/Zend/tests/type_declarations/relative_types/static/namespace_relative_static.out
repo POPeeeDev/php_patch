@@ -1,0 +1,1 @@
+Fatal error: Cannot use "static" when no class scope is active in work/releases/8.5/unpatched/release-corpus/Zend/tests/type_declarations/relative_types/static/namespace_relative_static.php on line 3

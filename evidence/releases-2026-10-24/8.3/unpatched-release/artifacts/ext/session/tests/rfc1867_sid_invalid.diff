@@ -1,0 +1,69 @@
+--
+     
+     Warning: PHP Request Startup: Failed to read session data: files (path: ) in Unknown on line 0
+     
+005+ Warning: PHP Request Startup: Failed to write session data (files). Please verify that the current setting of session.save_path is correct () in Unknown on line 0
+006+ 
+     Warning: PHP Request Startup: Session ID is too long or contains illegal characters. Only the A-Z, a-z, 0-9, "-", and "," characters are allowed in Unknown on line 0
+     
+     Warning: PHP Request Startup: Failed to read session data: files (path: ) in Unknown on line 0
+010+ 
+011+ Warning: PHP Request Startup: Failed to write session data (files). Please verify that the current setting of session.save_path is correct () in Unknown on line 0
+     string(0) ""
+     bool(true)
+     array(2) {
+--
+         int(1)
+       }
+     }
+042- NULL
+046+ array(1) {
+047+   ["upload_progress_rfc1867_sid_invalid.php"]=>
+048+   array(5) {
+049+     ["start_time"]=>
+050+     int(1792862240)
+051+     ["content_length"]=>
+052+     int(469)
+053+     ["bytes_processed"]=>
+054+     int(469)
+055+     ["done"]=>
+056+     bool(true)
+057+     ["files"]=>
+058+     array(2) {
+059+       [0]=>
+060+       array(7) {
+061+         ["field_name"]=>
+062+         string(5) "file1"
+063+         ["name"]=>
+064+         string(9) "file1.txt"
+065+         ["tmp_name"]=>
+066+         string(66) "<TMP>/php8shFBZ"
+067+         ["error"]=>
+068+         int(0)
+069+         ["done"]=>
+070+         bool(true)
+071+         ["start_time"]=>
+072+         int(1792862240)
+073+         ["bytes_processed"]=>
+074+         int(1)
+075+       }
+076+       [1]=>
+077+       array(7) {
+078+         ["field_name"]=>
+079+         string(5) "file2"
+080+         ["name"]=>
+081+         string(9) "file2.txt"
+082+         ["tmp_name"]=>
+083+         string(66) "<TMP>/phpGjjElJ"
+084+         ["error"]=>
+085+         int(0)
+086+         ["done"]=>
+087+         bool(true)
+088+         ["start_time"]=>
+089+         int(1792862240)
+090+         ["bytes_processed"]=>
+091+         int(1)
+092+       }
+093+     }
+094+   }
+095+ }

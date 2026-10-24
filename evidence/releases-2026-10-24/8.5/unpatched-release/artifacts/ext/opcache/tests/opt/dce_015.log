@@ -1,0 +1,8 @@
+
+---- EXPECTED OUTPUT
+int(5)
+int(5)
+---- ACTUAL OUTPUT
+int(0)
+int(5)
+---- FAILED

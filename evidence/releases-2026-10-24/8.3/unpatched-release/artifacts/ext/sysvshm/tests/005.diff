@@ -1,0 +1,26 @@
+001- Warning: shm_get_var(): Variable key 1000 doesn't exist in %s005.php on line %d
+002- bool(false)
+001+ Warning: shm_attach(): Failed for key 0x74048220: No space left on device in work/releases/8.3/unpatched/release-corpus/ext/sysvshm/tests/005.php on line 4
+     
+004- Warning: shm_get_var(): Variable key -10000 doesn't exist in %s005.php on line %d
+005- bool(false)
+006- string(11) "test string"
+007- object(stdClass)#%d (0) {
+008- }
+009- array(3) {
+010-   [0]=>
+011-   int(1)
+012-   [1]=>
+013-   int(2)
+014-   [2]=>
+015-   int(3)
+016- }
+017- bool(false)
+018- NULL
+019- NULL
+020- Done
+003+ Fatal error: Uncaught TypeError: shm_put_var(): Argument #1 ($shm) must be of type SysvSharedMemory, false given in work/releases/8.3/unpatched/release-corpus/ext/sysvshm/tests/005.php:6
+004+ Stack trace:
+005+ #0 work/releases/8.3/unpatched/release-corpus/ext/sysvshm/tests/005.php(6): shm_put_var(false, -1, 'test string')
+006+ #1 {main}
+007+   thrown in work/releases/8.3/unpatched/release-corpus/ext/sysvshm/tests/005.php on line 6

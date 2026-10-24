@@ -1,0 +1,10 @@
+--
+     size: 0
+     string(2) "ok"
+     -- __construct() then setSize() --
+005- size: 3
+005+ size: 0
+     string(2) "ok"
+     -- __unserialize() --
+     size: 0
+--

@@ -1,0 +1,108 @@
+{
+    "schema": "guard-general-memory-tests/1",
+    "limits": {
+        "PolicyVersion": 2,
+        "RecoverableMode": 2,
+        "TestWorkers": 8,
+        "CaseSeconds": 20,
+        "SuiteSeconds": 2400,
+        "AllocationCases": 192,
+        "AllocationPhases": 2,
+        "MaxAllocationOrdinal": 8192,
+        "MutationCases": 2048,
+        "ServiceRequests": 80,
+        "ServiceFaultEvery": 8
+    },
+    "results": {
+        "aliased-roots-sanitized": {
+            "id": "aliased-roots-sanitized",
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 752.934,
+                "user_ms": 55.579,
+                "system_ms": 180.368,
+                "peak_rss_bytes": 54079488,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "command": [
+                "env",
+                "USE_ZEND_ALLOC=0",
+                "USE_TRACKED_ALLOC=0",
+                "ZEND_MM_MAX_ALLOCS=0",
+                "ASAN_OPTIONS=detect_leaks=0:abort_on_error=1:allocator_may_return_null=1",
+                "UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1",
+                "work/releases/8.2/candidate/sanitized-tests/20261024T184728Z-all-48a552/build-alias/sanitized/sapi/cli/php",
+                "-n",
+                "-d",
+                "extension=work/releases/8.2/candidate/sanitized-tests/20261024T184728Z-all-48a552/faults/faults-sanitized/allocation_probe.so",
+                "-r",
+                "error_clear_last(); guard_test_alias_roots(); error_clear_last(); if (!guard_test_roots_clear()) { exit(8); } echo \"GUARD_ALIAS_CLEAR\";"
+            ],
+            "log": "aliased-owned-roots.log",
+            "status": "pass",
+            "details": {
+                "scope": "two-valid-owned-references-to-one-allocation-detached-and-released"
+            }
+        },
+        "fault-sweep-sanitized": {
+            "id": "fault-sweep-sanitized",
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 201034.310736
+            },
+            "log": "faults-sanitized/results.json",
+            "status": "pass",
+            "details": {
+                "cases": 384,
+                "passed": 384,
+                "entered": 296,
+                "exits": {
+                    "121": 251,
+                    "0": 133
+                },
+                "calibrated_upper_ordinals": {
+                    "startup": {
+                        "array": 2048,
+                        "session": 1024,
+                        "callbacks": 2048
+                    },
+                    "body": {
+                        "array": 2048,
+                        "session": 64,
+                        "callbacks": 512
+                    }
+                },
+                "scope": "64-spaced-ordinals-per-workload-per-startup-or-body-phase;121-is-upstream-injected-OOM-status"
+            }
+        }
+    },
+    "scope": {
+        "evidence": "dynamic-tests-and-bounded-lifecycle-model",
+        "general_memory_safety_proof": "not-established",
+        "vendor_fixes": "required",
+        "production_deployment": "none",
+        "leak_sanitizer": "disabled",
+        "platform": "Darwin-POSIX-NTS",
+        "full_C_refinement": "open",
+        "sanitizer_custom_allocator_blind_spots": "explicit"
+    },
+    "artifact_sha256": {
+        "config.json": "e7652d3f85d1b0bf0f5bca1a63f4e9a74a905c9b6808139b6088cc63315f78f8",
+        "verify.php": "d90a03a49e21afe576f23f123f00e390d2597dd547a79c91daa58bb6d5030f4c",
+        "common.php": "3513c1a702c9ed1ac201c581c9c250130070525a84c2e8660871aa467e96d24c",
+        "../models/RequestCleanup.tla": "54dec469a2ac0831cdfe208d3ad5f56ff0a63c56108d1fb15fceb03ccc335703",
+        "sanitizer_probe.c": "aef78287defbbcb46af27c686e34f52f732aa96b3c04e337acc473052c78b903",
+        "allocation_probe.c": "5382f413e59d4222d1b63d18b7cf6e99d54843039871e5af2bef976edd203aea",
+        "service_probe.c": "58a5e78c18c3596ec9a51651c98197df74f5cac28634369ce9d3a6b026ecc100",
+        "workload.php": "cf3842317833e8a724add6c55b29877e12ee33552cc1104f9da4b41e1da0c7a2",
+        "mutations.php": "daf88c3b942e7f79b3fb2dc940acf1635f1c8feceb84e37ef6f3895c5d3477fc",
+        "fpm_bench.php": "cb2020ebd2d2575fa4f08db0c5397ef9b7186e897d56c48604b5b233ff69b183",
+        "request.php": "bd7d23a3900157ee3afefffd42a627b02520b7a386191e56f3638530156f5d80"
+    },
+    "utc": "2026-10-24T18:51:03+00:00",
+    "status": "tested-scoped-cases"
+}

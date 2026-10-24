@@ -1,0 +1,8 @@
+001+ Fatal error: Uncaught Error: Call to undefined function zend_test_handle_post_data() in work/releases/8.2/unpatched/release-corpus/tests/basic/GHSA-2cv3-554h-jpmh_urlencoded.php:11
+002+ Stack trace:
+003+ #0 {main}
+004+   thrown in work/releases/8.2/unpatched/release-corpus/tests/basic/GHSA-2cv3-554h-jpmh_urlencoded.php on line 11
+001- int(5)
+002- 
+003- Warning: zend_test_handle_post_data(): Actual POST length does not match Content-Length, and exceeds 102400 bytes in %s on line %d
+004- bool(true)

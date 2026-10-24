@@ -1,0 +1,54 @@
+
+=====================================================================
+PHP         : work/releases/8.2/official/release-build/sapi/cli/php 
+PHP_SAPI    : cli
+PHP_VERSION : 8.2.35
+ZEND_VERSION: 4.2.35
+PHP_OS      : Darwin - Darwin <USER>.local 25.6.0 Darwin Kernel Version 25.6.0: Tue Aug 18 17:46:40 PDT 2026; root:xnu-12377.161.15.700.19~2/RELEASE_X86_64 x86_64
+INI actual  : work/releases/8.2/official/release-corpus
+More .INIs  :  
+---------------------------------------------------------------------
+PHP         : work/releases/8.2/official/release-build/sapi/cgi/php-cgi 
+PHP_SAPI    : cgi-fcgi
+PHP_VERSION : 8.2.35
+ZEND_VERSION: 4.2.35
+PHP_OS      : Darwin - Darwin <USER>.local 25.6.0 Darwin Kernel Version 25.6.0: Tue Aug 18 17:46:40 PDT 2026; root:xnu-12377.161.15.700.19~2/RELEASE_X86_64 x86_64
+INI actual  : work/releases/8.2/official/release-corpus
+More .INIs  : 
+--------------------------------------------------------------------- 
+CWD         : work/releases/8.2/official/release-corpus
+Extra dirs  : 
+VALGRIND    : Not used
+=====================================================================
+Running selected tests.
+FAIL send/receive serialized message. [ext/sysvmsg/tests/001.phpt] 
+FAIL msg_receive() should return false when unserialize() failed [ext/sysvmsg/tests/002.phpt] 
+FAIL msg_queue_exists() [ext/sysvmsg/tests/003.phpt] 
+FAIL msg_set_queue() and msg_stat_queue() [ext/sysvmsg/tests/004.phpt] 
+FAIL sysvmsg functions on non-existing queue [ext/sysvmsg/tests/005.phpt] 
+FAIL msg_send() data types when not serializing [ext/sysvmsg/tests/006.phpt] 
+=====================================================================
+Number of tests :    6                 6
+Tests skipped   :    0 (  0.0%) --------
+Tests warned    :    0 (  0.0%) (  0.0%)
+Tests failed    :    6 (100.0%) (100.0%)
+Tests passed    :    0 (  0.0%) (  0.0%)
+---------------------------------------------------------------------
+Time taken      :    1 seconds
+=====================================================================
+
+=====================================================================
+FAILED TEST SUMMARY
+---------------------------------------------------------------------
+send/receive serialized message. [ext/sysvmsg/tests/001.phpt]
+msg_receive() should return false when unserialize() failed [ext/sysvmsg/tests/002.phpt]
+msg_queue_exists() [ext/sysvmsg/tests/003.phpt]
+msg_set_queue() and msg_stat_queue() [ext/sysvmsg/tests/004.phpt]
+sysvmsg functions on non-existing queue [ext/sysvmsg/tests/005.phpt]
+msg_send() data types when not serializing [ext/sysvmsg/tests/006.phpt]
+=====================================================================
+
+--- STDERR ---
+
+--- METRICS ---
+{"wall_ms":1152.834,"user_ms":485.029,"system_ms":409.878,"peak_rss_bytes":8605696,"exit":1,"signal":0,"termination":"completed"}

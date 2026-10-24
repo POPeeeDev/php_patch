@@ -1,0 +1,17 @@
+{
+    "schema": "php-oom-benchmark-config\/1",
+    "sha256": "e7652d3f85d1b0bf0f5bca1a63f4e9a74a905c9b6808139b6088cc63315f78f8",
+    "values": {
+        "PolicyVersion": 2,
+        "RecoverableMode": 2,
+        "TestWorkers": 8,
+        "CaseSeconds": 20,
+        "SuiteSeconds": 2400,
+        "AllocationCases": 192,
+        "AllocationPhases": 2,
+        "MaxAllocationOrdinal": 8192,
+        "MutationCases": 2048,
+        "ServiceRequests": 80,
+        "ServiceFaultEvery": 8
+    }
+}

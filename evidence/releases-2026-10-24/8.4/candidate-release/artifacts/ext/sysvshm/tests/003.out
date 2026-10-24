@@ -1,0 +1,7 @@
+Warning: shm_attach(): Failed for key 0x71048dbb: No space left on device in work/releases/8.4/candidate/release-corpus/ext/sysvshm/tests/003.php on line 5
+
+Fatal error: Uncaught TypeError: shm_detach(): Argument #1 ($shm) must be of type SysvSharedMemory, false given in work/releases/8.4/candidate/release-corpus/ext/sysvshm/tests/003.php:7
+Stack trace:
+#0 work/releases/8.4/candidate/release-corpus/ext/sysvshm/tests/003.php(7): shm_detach(false)
+#1 {main}
+  thrown in work/releases/8.4/candidate/release-corpus/ext/sysvshm/tests/003.php on line 7

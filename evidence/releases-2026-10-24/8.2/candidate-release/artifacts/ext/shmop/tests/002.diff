@@ -1,0 +1,17 @@
+--
+     Warning: shmop_open(): Unable to attach or create shared memory segment "%s" in %s on line %d
+     shmop_open(): Argument #4 ($size) must be greater than 0 for the "c" and "n" access modes
+     
+012+ 
+     shmop_read(): Argument #2 ($offset) must be between 0 and the segment size
+013+ Warning: shmop_open(): Unable to attach or create shared memory segment "No space left on device" in work/releases/8.2/candidate/release-corpus/ext/shmop/tests/002.php on line 37
+012- shmop_read(): Argument #2 ($offset) must be between 0 and the segment size
+013- shmop_read(): Argument #3 ($size) is out of range
+     
+015+ Fatal error: Uncaught TypeError: shmop_read(): Argument #1 ($shmop) must be of type Shmop, bool given in work/releases/8.2/candidate/release-corpus/ext/shmop/tests/002.php:39
+016+ Stack trace:
+015- ## shmop_write function tests ##
+016- shmop_write(): Argument #3 ($offset) is out of range
+017+ #0 work/releases/8.2/candidate/release-corpus/ext/shmop/tests/002.php(39): shmop_read(false, -10, 0)
+018+ #1 {main}
+019+   thrown in work/releases/8.2/candidate/release-corpus/ext/shmop/tests/002.php on line 39

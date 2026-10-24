@@ -1,0 +1,14 @@
+
+---- EXPECTED OUTPUT
+Deprecated: ArrayIterator::__construct(): Using an object as a backing array for ArrayIterator is deprecated, as it allows violating class constraints and invariants in %s on line %d
+string(51) "{"test":{"a":{"2":"","3":"","4":"","5":"in here"}}}"
+string(51) "{"test":{"a":{"2":"","3":"","4":"","5":"in here"}}}"
+string(56) "{"test":{"b":{"2":"","3":"","4":"","5":"must be here"}}}"
+string(37) "{"test":{"b":{"2":"","3":"","4":""}}}"
+---- ACTUAL OUTPUT
+Deprecated: ArrayIterator::__construct(): Using an object as a backing array for ArrayIterator is deprecated, as it allows violating class constraints and invariants in work/releases/8.5/candidate/release-corpus/ext/spl/tests/ArrayObject/gh10519.php on line 11
+string(51) "{"test":{"a":{"2":"","3":"","4":"","5":"in here"}}}"
+string(51) "{"test":{"a":{"2":"","3":"","4":"","5":"in here"}}}"
+string(37) "{"test":{"b":{"2":"","3":"","4":""}}}"
+string(37) "{"test":{"b":{"2":"","3":"","4":""}}}"
+---- FAILED

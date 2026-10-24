@@ -1,0 +1,66 @@
+
+--- STDERR ---
+=================================================================
+==91492==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x602000003000 at pc 0x0001143f4dc0 bp 0x7ff7b250c7f0 sp 0x7ff7b250c7e8
+WRITE of size 1 at 0x602000003000 thread T0
+    #0 0x0001143f4dbf in zif_guard_memory_fault sanitizer_probe.c:21
+    #1 0x00010fb1d758 in ZEND_DO_ICALL_SPEC_RETVAL_UNUSED_HANDLER zend_vm_execute.h:1287
+    #2 0x00010f6cf7fb in execute_ex zend_vm_execute.h:58729
+    #3 0x00010f6d0afe in zend_execute zend_vm_execute.h:64381
+    #4 0x00010f687fcb in zend_eval_stringl zend_execute_API.c:1388
+    #5 0x00010f688ce4 in zend_eval_stringl_ex zend_execute_API.c:1430
+    #6 0x00010f688edb in zend_eval_string_ex zend_execute_API.c:1440
+    #7 0x000110176389 in do_cli php_cli.c:974
+    #8 0x0001101731e6 in main php_cli.c:1331
+    #9 0x7ff805c571c7 in start+0xca7 (dyld:x86_64+0x131c7)
+
+0x602000003000 is located 0 bytes after 16-byte region [0x602000002ff0,0x602000003000)
+allocated by thread T0 here:
+    #0 0x0001128a3792 in malloc+0x82 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0xa6792)
+    #1 0x0001143f4a25 in zif_guard_memory_fault sanitizer_probe.c:18
+    #2 0x00010fb1d758 in ZEND_DO_ICALL_SPEC_RETVAL_UNUSED_HANDLER zend_vm_execute.h:1287
+    #3 0x00010f6cf7fb in execute_ex zend_vm_execute.h:58729
+    #4 0x00010f6d0afe in zend_execute zend_vm_execute.h:64381
+    #5 0x00010f687fcb in zend_eval_stringl zend_execute_API.c:1388
+    #6 0x00010f688ce4 in zend_eval_stringl_ex zend_execute_API.c:1430
+    #7 0x00010f688edb in zend_eval_string_ex zend_execute_API.c:1440
+    #8 0x000110176389 in do_cli php_cli.c:974
+    #9 0x0001101731e6 in main php_cli.c:1331
+    #10 0x7ff805c571c7 in start+0xca7 (dyld:x86_64+0x131c7)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow sanitizer_probe.c:21 in zif_guard_memory_fault
+Shadow bytes around the buggy address:
+  0x602000002d80: fa fa fd fd fa fa fd fd fa fa fd fd fa fa fd fd
+  0x602000002e00: fa fa fd fd fa fa fd fd fa fa fd fd fa fa fd fd
+  0x602000002e80: fa fa fd fd fa fa fd fd fa fa 00 04 fa fa 00 05
+  0x602000002f00: fa fa 00 05 fa fa fd fd fa fa fd fd fa fa 04 fa
+  0x602000002f80: fa fa 00 fa fa fa fd fa fa fa 00 fa fa fa 00 00
+=>0x602000003000:[fa]fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x602000003080: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x602000003100: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x602000003180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x602000003200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x602000003280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==91492==ABORTING
+
+--- METRICS ---
+{"wall_ms":5459.924,"user_ms":205.797,"system_ms":351.73,"peak_rss_bytes":55078912,"exit":134,"signal":6,"termination":"completed"}

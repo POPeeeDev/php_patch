@@ -1,0 +1,8 @@
+
+---- EXPECTED OUTPUT
+Hard memory limit of 268435456 bytes exhausted %S(tried to allocate %d bytes) in %s on line %d
+
+Termsig=9
+---- ACTUAL OUTPUT
+Fatal error: Allowed memory size of 134217728 bytes exhausted (tried to allocate 4611686018427387904 bytes) in work/releases/8.4/unpatched/release-corpus/ext/hash/tests/hash_pbkdf2_max_length.php on line 3
+---- FAILED

@@ -1,0 +1,4 @@
+     Cycle::__destruct
+002- Caught: Cycle::__destruct
+002+ Not reached
+003+ Escaped: Cycle::__destruct

@@ -1,0 +1,6 @@
+work/releases/8.2/candidate/release-corpus/ext/sysvmsg/tests/001.phpt
+work/releases/8.2/candidate/release-corpus/ext/sysvmsg/tests/002.phpt
+work/releases/8.2/candidate/release-corpus/ext/sysvmsg/tests/003.phpt
+work/releases/8.2/candidate/release-corpus/ext/sysvmsg/tests/004.phpt
+work/releases/8.2/candidate/release-corpus/ext/sysvmsg/tests/005.phpt
+work/releases/8.2/candidate/release-corpus/ext/sysvmsg/tests/006.phpt

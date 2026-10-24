@@ -1,0 +1,3 @@
+work/releases/8.4/official/sanitized-corpus/tests/security/open_basedir_linkinfo.phpt
+work/releases/8.4/official/sanitized-corpus/Zend/tests/fibers/gh19983.phpt
+work/releases/8.4/official/sanitized-corpus/Zend/tests/interface_constructor_prototype_002.phpt

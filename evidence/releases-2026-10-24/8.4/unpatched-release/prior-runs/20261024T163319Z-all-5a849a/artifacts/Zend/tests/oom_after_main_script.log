@@ -1,0 +1,10 @@
+
+---- EXPECTED OUTPUT
+Done
+
+Fatal error: Allowed memory size of 8388608 bytes exhausted %S(tried to allocate %d bytes) in %s on line %d
+Shutdown function called
+---- ACTUAL OUTPUT
+Fatal error: Allowed memory size of 8388608 bytes exhausted (tried to allocate 6291488 bytes) in work/releases/8.4/unpatched/release-corpus/Zend/tests/oom_after_main_script.php on line 9
+Shutdown function called
+---- FAILED

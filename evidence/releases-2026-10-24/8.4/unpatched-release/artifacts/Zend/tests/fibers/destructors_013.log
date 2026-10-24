@@ -1,0 +1,9 @@
+
+---- EXPECTED OUTPUT
+Cycle::__destruct
+Caught: Cycle::__destruct
+---- ACTUAL OUTPUT
+Cycle::__destruct
+Not reached
+Escaped: Cycle::__destruct
+---- FAILED

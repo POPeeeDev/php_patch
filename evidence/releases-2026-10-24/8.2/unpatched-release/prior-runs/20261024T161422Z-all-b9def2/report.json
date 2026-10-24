@@ -1,0 +1,590 @@
+{
+    "schema": "php-release-comparison/1",
+    "branch": "8.2",
+    "profile": "unpatched",
+    "variant": "release",
+    "phase": "all",
+    "build": {
+        "schema": "php-release-build/1",
+        "branch": "8.2",
+        "profile": "unpatched",
+        "variant": "release",
+        "source": {
+            "branch": "8.2",
+            "profile": "unpatched",
+            "manifest": {
+                "schema": "php-release-guard/1",
+                "branch": "8.2",
+                "affected_version": "8.2.34",
+                "official_version": "8.2.35",
+                "affected_revision": "0be211a0cf752780881a9611224f8adc516af573",
+                "official_revision": "09a9f29a0402bb87bb448cb2e3149ccbec1699c6",
+                "official_tree": "c2ea164b066ca8895fb5aeb3c1c9552ea7aa57c1",
+                "upstream_patch_sha256": "e430737ed607d61d6ec8d276f94506d159c95b4b797de3426933d469b3b1d32a",
+                "guard_patch_sha256": "dd1f232ff89ee774c87d242f2b5aa8edcaa14eecf08075bd5b05b9b27e18dbc8",
+                "guard_files": {
+                    "Zend/zend_alloc.h": {
+                        "official_sha256": "f25e34422c6f45d030ea50201bf496ac12514a8b6652d06d6b5f7c1895f463ae",
+                        "candidate_sha256": "9384c04eea47b7fdf4445b150de2b11135ed528cf5c57a4dca851bb1b5a6df65"
+                    },
+                    "Zend/zend_alloc.c": {
+                        "official_sha256": "8a21582121a332271969c520edcbfe97df61f8db25774b8ffb8f9688209deb7f",
+                        "candidate_sha256": "0c5af4cd8c34ac1ed2144762ba487c6a569a037c7127fef4a8e0b52006ee42ad"
+                    },
+                    "main/main.c": {
+                        "official_sha256": "5953c9acc7c57fcf017c5adb59e386e829b99b90874ad27d14916b6f030c0457",
+                        "candidate_sha256": "79a9f81585dc62a2211a91ab75a04599172aff9250bd9653d93c3eb8c3cd220a"
+                    }
+                },
+                "kind": "complete-official-release-update-plus-additive-guard",
+                "upstream_security_commits": [
+                    "01a40e89fbfc499936e3b05888d8f00bfde886df"
+                ]
+            },
+            "starting_revision": "0be211a0cf752780881a9611224f8adc516af573",
+            "prepared_tree": "72a066233e0270a3612177f75869f60371938068"
+        },
+        "configure": [
+            "--disable-all",
+            "--enable-cli",
+            "--enable-fpm",
+            "--enable-cgi",
+            "--disable-phpdbg",
+            "--without-pear",
+            "--enable-session",
+            "--enable-filter",
+            "--enable-tokenizer",
+            "--enable-ctype",
+            "--enable-fileinfo",
+            "--enable-posix",
+            "--enable-sockets",
+            "--enable-pcntl",
+            "--enable-shmop",
+            "--enable-sysvmsg",
+            "--enable-sysvsem",
+            "--enable-sysvshm",
+            "--enable-zend-test"
+        ],
+        "jobs": 4,
+        "binary_sha256": {
+            "cli/php": "14d88b50a248584c0ecf1be91695c78b1fbeca03851538b84d47a90df5b21e46",
+            "fpm/php-fpm": "a15cc1042c3a073cf7d2d9669bd1c7a7db9a4025c6180962dd99753b8ff23d21",
+            "cgi/php-cgi": "cbdff1daa222ccc0cd1dcad1db1623ef7aac7876f86627fe0339ad177d82b5db"
+        },
+        "platform": "Darwin-x86_64",
+        "utc": "2026-10-24T16:14:22+00:00"
+    },
+    "tests": {
+        "version": {
+            "id": "version",
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 1584.033,
+                "user_ms": 23.354,
+                "system_ms": 18.092,
+                "peak_rss_bytes": 5939200,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "command": [
+                "env",
+                "USE_ZEND_ALLOC=1",
+                "USE_TRACKED_ALLOC=0",
+                "ZEND_MM_MAX_ALLOCS=0",
+                "ASAN_OPTIONS=detect_leaks=0:abort_on_error=1:allocator_may_return_null=1",
+                "UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1",
+                "work/releases/8.2/unpatched/release-build/sapi/cli/php",
+                "-n",
+                "-r",
+                "echo PHP_VERSION;"
+            ],
+            "log": "version.log",
+            "status": "pass",
+            "details": {
+                "reported": "8.2.34"
+            }
+        },
+        "compile-release_probe": {
+            "id": "compile-release_probe",
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 943.207,
+                "user_ms": 690.689,
+                "system_ms": 284.8,
+                "peak_rss_bytes": 46813184,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "command": [
+                "env",
+                "USE_ZEND_ALLOC=1",
+                "USE_TRACKED_ALLOC=0",
+                "ZEND_MM_MAX_ALLOCS=0",
+                "ASAN_OPTIONS=detect_leaks=0:abort_on_error=1:allocator_may_return_null=1",
+                "UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1",
+                "cc",
+                "-bundle",
+                "-undefined",
+                "dynamic_lookup",
+                "-fPIC",
+                "-O1",
+                "-g",
+                "-Iwork/releases/8.2/unpatched/release-build",
+                "-Iwork/releases/8.2/unpatched/release-build/main",
+                "-Iwork/releases/8.2/unpatched/release-build/Zend",
+                "-Iwork/releases/8.2/unpatched/source",
+                "-Iwork/releases/8.2/unpatched/source/main",
+                "-Iwork/releases/8.2/unpatched/source/Zend",
+                "-Iwork/releases/8.2/unpatched/source/TSRM",
+                "./bench/release_probe.c",
+                "-o",
+                "work/releases/8.2/unpatched/release-tests/20261024T161422Z-all-b9def2/release_probe.so"
+            ],
+            "log": "compile-release_probe.log",
+            "status": "pass",
+            "details": []
+        },
+        "compile-service_probe": {
+            "id": "compile-service_probe",
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 815.356,
+                "user_ms": 620.031,
+                "system_ms": 267.723,
+                "peak_rss_bytes": 43466752,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "command": [
+                "env",
+                "USE_ZEND_ALLOC=1",
+                "USE_TRACKED_ALLOC=0",
+                "ZEND_MM_MAX_ALLOCS=0",
+                "ASAN_OPTIONS=detect_leaks=0:abort_on_error=1:allocator_may_return_null=1",
+                "UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1",
+                "cc",
+                "-bundle",
+                "-undefined",
+                "dynamic_lookup",
+                "-fPIC",
+                "-O1",
+                "-g",
+                "-Iwork/releases/8.2/unpatched/release-build",
+                "-Iwork/releases/8.2/unpatched/release-build/main",
+                "-Iwork/releases/8.2/unpatched/release-build/Zend",
+                "-Iwork/releases/8.2/unpatched/source",
+                "-Iwork/releases/8.2/unpatched/source/main",
+                "-Iwork/releases/8.2/unpatched/source/Zend",
+                "-Iwork/releases/8.2/unpatched/source/TSRM",
+                "./bench/service_probe.c",
+                "-o",
+                "work/releases/8.2/unpatched/release-tests/20261024T161422Z-all-b9def2/service_probe.so"
+            ],
+            "log": "compile-service_probe.log",
+            "status": "pass",
+            "details": []
+        },
+        "guard-symbol": {
+            "id": "guard-symbol",
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 864.538,
+                "user_ms": 25.318,
+                "system_ms": 18.171,
+                "peak_rss_bytes": 6111232,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "command": [
+                "env",
+                "USE_ZEND_ALLOC=1",
+                "USE_TRACKED_ALLOC=0",
+                "ZEND_MM_MAX_ALLOCS=0",
+                "ASAN_OPTIONS=detect_leaks=0:abort_on_error=1:allocator_may_return_null=1",
+                "UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1",
+                "work/releases/8.2/unpatched/release-build/sapi/cli/php",
+                "-n",
+                "-d",
+                "extension=work/releases/8.2/unpatched/release-tests/20261024T161422Z-all-b9def2/release_probe.so",
+                "-r",
+                "echo guard_release_probe(\"policy\") ? \"guard\" : \"upstream\";"
+            ],
+            "log": "guard-symbol.log",
+            "status": "pass",
+            "details": []
+        },
+        "owned-alias-cleanup": {
+            "id": "owned-alias-cleanup",
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 49.503,
+                "user_ms": 26.106,
+                "system_ms": 17.513,
+                "peak_rss_bytes": 6078464,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "command": [
+                "env",
+                "USE_ZEND_ALLOC=1",
+                "USE_TRACKED_ALLOC=0",
+                "ZEND_MM_MAX_ALLOCS=0",
+                "ASAN_OPTIONS=detect_leaks=0:abort_on_error=1:allocator_may_return_null=1",
+                "UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1",
+                "work/releases/8.2/unpatched/release-build/sapi/cli/php",
+                "-n",
+                "-d",
+                "extension=work/releases/8.2/unpatched/release-tests/20261024T161422Z-all-b9def2/release_probe.so",
+                "-r",
+                "error_clear_last(); guard_release_probe(\"alias\"); error_clear_last(); exit(guard_release_probe(\"clear\") ? 0 : 8);"
+            ],
+            "log": "owned-alias-cleanup.log",
+            "status": "pass",
+            "details": []
+        },
+        "raw-allocation-failure": {
+            "id": "raw-allocation-failure",
+            "exit": 1,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 55.409,
+                "user_ms": 21.5,
+                "system_ms": 16.425,
+                "peak_rss_bytes": 5931008,
+                "exit": 1,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "command": [
+                "env",
+                "USE_ZEND_ALLOC=1",
+                "USE_TRACKED_ALLOC=0",
+                "ZEND_MM_MAX_ALLOCS=0",
+                "ASAN_OPTIONS=detect_leaks=0:abort_on_error=1:allocator_may_return_null=1",
+                "UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1",
+                "work/releases/8.2/unpatched/release-build/sapi/cli/php",
+                "-n",
+                "-d",
+                "extension=work/releases/8.2/unpatched/release-tests/20261024T161422Z-all-b9def2/release_probe.so",
+                "-r",
+                "guard_release_probe(\"raw\"); echo \"RETURNED\";"
+            ],
+            "log": "raw-allocation-failure.log",
+            "status": "pass",
+            "details": {
+                "expected_terminal_failure": true
+            }
+        },
+        "soft-oom": {
+            "id": "soft-oom",
+            "exit": 255,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 50.739,
+                "user_ms": 25.045,
+                "system_ms": 19.754,
+                "peak_rss_bytes": 10199040,
+                "exit": 255,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "command": [
+                "env",
+                "USE_ZEND_ALLOC=1",
+                "USE_TRACKED_ALLOC=0",
+                "ZEND_MM_MAX_ALLOCS=0",
+                "ASAN_OPTIONS=detect_leaks=0:abort_on_error=1:allocator_may_return_null=1",
+                "UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1",
+                "work/releases/8.2/unpatched/release-build/sapi/cli/php",
+                "-n",
+                "-d",
+                "memory_limit=8M",
+                "-d",
+                "memory_hard_limit_percent=-1",
+                "-d",
+                "display_errors=0",
+                "-d",
+                "log_errors=0",
+                "./bench/oom.php"
+            ],
+            "log": "soft-oom.log",
+            "status": "pass",
+            "details": []
+        },
+        "mutations-malloc": {
+            "id": "mutations-malloc",
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 1380.825,
+                "user_ms": 303.292,
+                "system_ms": 1031.465,
+                "peak_rss_bytes": 6803456,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "command": [
+                "env",
+                "USE_ZEND_ALLOC=0",
+                "USE_TRACKED_ALLOC=0",
+                "ZEND_MM_MAX_ALLOCS=0",
+                "ASAN_OPTIONS=detect_leaks=0:abort_on_error=1:allocator_may_return_null=1",
+                "UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1",
+                "work/releases/8.2/unpatched/release-build/sapi/cli/php",
+                "-n",
+                "-d",
+                "display_errors=0",
+                "-d",
+                "log_errors=0",
+                "./bench/mutations.php",
+                "work/releases/8.2/unpatched/release-tests/20261024T161422Z-all-b9def2/mutations-malloc"
+            ],
+            "log": "mutations-malloc.log",
+            "status": "pass",
+            "details": {
+                "measurement": {
+                    "seed": 104729,
+                    "mutations": {
+                        "json": 2048,
+                        "serialization": 2048,
+                        "session": 2048
+                    },
+                    "valid_roundtrips": 4096,
+                    "status": "completed",
+                    "scope": "deterministic-local-input-mutations-not-exhaustive-fuzzing"
+                }
+            }
+        },
+        "mutations-zend": {
+            "id": "mutations-zend",
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 1384.627,
+                "user_ms": 232.573,
+                "system_ms": 1082.845,
+                "peak_rss_bytes": 6541312,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "command": [
+                "env",
+                "USE_ZEND_ALLOC=1",
+                "USE_TRACKED_ALLOC=0",
+                "ZEND_MM_MAX_ALLOCS=0",
+                "ASAN_OPTIONS=detect_leaks=0:abort_on_error=1:allocator_may_return_null=1",
+                "UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1",
+                "work/releases/8.2/unpatched/release-build/sapi/cli/php",
+                "-n",
+                "-d",
+                "display_errors=0",
+                "-d",
+                "log_errors=0",
+                "./bench/mutations.php",
+                "work/releases/8.2/unpatched/release-tests/20261024T161422Z-all-b9def2/mutations-zend"
+            ],
+            "log": "mutations-zend.log",
+            "status": "pass",
+            "details": {
+                "measurement": {
+                    "seed": 104729,
+                    "mutations": {
+                        "json": 2048,
+                        "serialization": 2048,
+                        "session": 2048
+                    },
+                    "valid_roundtrips": 4096,
+                    "status": "completed",
+                    "scope": "deterministic-local-input-mutations-not-exhaustive-fuzzing"
+                }
+            }
+        },
+        "service": {
+            "id": "service",
+            "exit": 255,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 2452.834,
+                "user_ms": 50.409,
+                "system_ms": 49.941,
+                "peak_rss_bytes": 5767168,
+                "exit": 255,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "command": [
+                "env",
+                "GUARD_FPM_BINARY=work/releases/8.2/unpatched/release-build/sapi/fpm/php-fpm",
+                "USE_ZEND_ALLOC=1",
+                "USE_TRACKED_ALLOC=0",
+                "ZEND_MM_MAX_ALLOCS=0",
+                "ASAN_OPTIONS=detect_leaks=0:abort_on_error=1:allocator_may_return_null=1",
+                "UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1",
+                "<PHP_CONTROLLER>",
+                "-n",
+                "./bench/fpm_bench.php",
+                "unpatched",
+                "work/releases/8.2/unpatched/release-tests/20261024T161422Z-all-b9def2/fpm",
+                "0",
+                "work/releases/8.2/unpatched/release-tests/20261024T161422Z-all-b9def2/service_probe.so"
+            ],
+            "log": "service.log",
+            "status": "fail",
+            "details": {
+                "measurement": null,
+                "hard_case": "identical-64MiB-native-allocation;unpatched-has-no-second-limit"
+            }
+        },
+        "php-suite": {
+            "id": "php-suite",
+            "exit": 1,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 359914.361,
+                "user_ms": 522689.798,
+                "system_ms": 512785.79,
+                "peak_rss_bytes": 300851200,
+                "exit": 1,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "command": [
+                "env",
+                "NO_INTERACTION=1",
+                "REPORT_EXIT_STATUS=1",
+                "TEST_PHP_EXECUTABLE=work/releases/8.2/unpatched/release-build/sapi/cli/php",
+                "TEST_PHP_CGI_EXECUTABLE=work/releases/8.2/unpatched/release-build/sapi/cgi/php-cgi",
+                "TEST_PHP_FPM_EXECUTABLE=work/releases/8.2/unpatched/release-build/sapi/fpm/php-fpm",
+                "TEST_PHP_SRCDIR=work/releases/8.2/unpatched/release-corpus",
+                "SKIP_ASAN=0",
+                "USE_ZEND_ALLOC=1",
+                "USE_TRACKED_ALLOC=0",
+                "ZEND_MM_MAX_ALLOCS=0",
+                "ASAN_OPTIONS=detect_leaks=0:abort_on_error=1:allocator_may_return_null=1",
+                "UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1",
+                "<PHP_CONTROLLER>",
+                "-n",
+                "work/releases/8.2/unpatched/release-corpus/run-tests.php",
+                "-q",
+                "-n",
+                "-j4",
+                "--no-progress",
+                "--set-timeout",
+                "20",
+                "-g",
+                "FAIL,XFAIL,BORK,WARN,LEAK,SKIP",
+                "-p",
+                "work/releases/8.2/unpatched/release-build/sapi/cli/php",
+                "-w",
+                "work/releases/8.2/unpatched/release-tests/20261024T161422Z-all-b9def2/failed.txt",
+                "-W",
+                "work/releases/8.2/unpatched/release-tests/20261024T161422Z-all-b9def2/status.txt"
+            ],
+            "log": "php-suite.log",
+            "status": "fail",
+            "details": {
+                "counts": {
+                    "Number of tests": 18792,
+                    "Tests skipped": 7723,
+                    "Tests warned": 2,
+                    "Tests failed": 40,
+                    "Tests passed": 11019,
+                    "Tests borked": 2,
+                    "Expected fail": 6
+                },
+                "adverse": {
+                    "tests/basic/GHSA-2cv3-554h-jpmh_multipart.phpt": "FAILED",
+                    "tests/basic/GHSA-2cv3-554h-jpmh_urlencoded.phpt": "FAILED",
+                    "tests/basic/GHSA-f883-x959-3vr9_007.phpt": "FAILED",
+                    "tests/basic/oom_rfc1867_header_count.phpt": "FAILED",
+                    "tests/output/stream_isatty_err.phpt": "FAILED",
+                    "tests/output/stream_isatty_in-err.phpt": "FAILED",
+                    "tests/output/stream_isatty_in-out.phpt": "FAILED",
+                    "tests/output/stream_isatty_out-err.phpt": "FAILED",
+                    "tests/output/stream_isatty_out.phpt": "FAILED",
+                    "tests/security/open_basedir_linkinfo.phpt": "XFAILED",
+                    "Zend/tests/bug81652.phpt": "FAILED",
+                    "Zend/tests/gh11189.phpt": "FAILED",
+                    "Zend/tests/gh11189_1.phpt": "FAILED",
+                    "Zend/tests/interface_constructor_prototype_002.phpt": "XFAILED",
+                    "Zend/tests/oom_call_function_003.phpt": "FAILED",
+                    "Zend/tests/oom_soft_limit_in_callback.phpt": "FAILED",
+                    "Zend/tests/oom_hard_limit_exceeded.phpt": "FAILED",
+                    "Zend/tests/oom_SplFixedArray_copy_ctor.phpt": "FAILED",
+                    "Zend/tests/oom_hard_limit_exceeded_during_complilation.phpt": "FAILED",
+                    "Zend/tests/oom_after_main_script.phpt": "FAILED",
+                    "Zend/tests/throw/leaks.phpt": "FAILED",
+                    "Zend/tests/singleton_array.phpt": "FAILED",
+                    "Zend/tests/oom_unserialize_016.phpt": "FAILED",
+                    "ext/date/tests/oom_date_create.phpt": "FAILED",
+                    "ext/date/tests/oom_date_create_immutable.phpt": "FAILED",
+                    "ext/date/tests/oom_date_interval_create_from_date_string.phpt": "FAILED",
+                    "ext/date/tests/oom_date_modify.phpt": "FAILED",
+                    "ext/date/tests/oom_date_parse.phpt": "FAILED",
+                    "ext/date/tests/oom_dateinterval_construct.phpt": "FAILED",
+                    "ext/date/tests/oom_dateinterval_createfromdatestring.phpt": "FAILED",
+                    "ext/date/tests/oom_dateperiod_construct.phpt": "FAILED",
+                    "ext/date/tests/oom_datetime_construct.phpt": "FAILED",
+                    "ext/date/tests/oom_datetime_modify.phpt": "FAILED",
+                    "ext/date/tests/oom_datetimeimmutable_construct.phpt": "FAILED",
+                    "ext/date/tests/oom_datetimeimmutable_modify.phpt": "FAILED",
+                    "ext/date/tests/oom_strtotime.phpt": "FAILED",
+                    "ext/filter/tests/bug49184.phpt": "XFAILED",
+                    "ext/filter/tests/bug67167.02.phpt": "XFAILED",
+                    "ext/filter/tests/bug42718.phpt": "XFAILED",
+                    "ext/pcntl/tests/bug81577_3.phpt": "WARNED",
+                    "ext/session/tests/rfc1867_no_user_code.phpt": "FAILED",
+                    "ext/session/tests/rfc1867_sid_invalid.phpt": "FAILED",
+                    "ext/session/tests/bug71162.phpt": "XFAILED",
+                    "ext/session/tests/rfc1867_incomplete_class_reserved_props.phpt": "FAILED",
+                    "ext/sockets/tests/mcast_ipv6_recv.phpt": "BORKED",
+                    "ext/sockets/tests/mcast_ipv6_recv_limited.phpt": "BORKED",
+                    "ext/sockets/tests/mcast_ipv6_send.phpt": "FAILED",
+                    "ext/sockets/tests/socket_send.phpt": "FAILED",
+                    "ext/tokenizer/tests/token_get_all_TOKEN_PARSE_oom_feedback.phpt": "FAILED",
+                    "sapi/fpm/tests/log-bwd-multiple-msgs-stdout-stderr.phpt": "WARNED"
+                },
+                "timeouts": [],
+                "corpus_revision": "09a9f29a0402bb87bb448cb2e3149ccbec1699c6",
+                "corpus_inventory": 18792,
+                "selection": "full-official-release-corpus;upstream-discovery-for-built-extensions",
+                "test_timeouts_are_inconclusive_safety_results": true,
+                "slow_tests_excluded": false
+            }
+        }
+    },
+    "scope": {
+        "general_memory_safety_proof": false,
+        "exploit_prevention_demonstrated": false,
+        "upstream_fixes_in_candidate": true,
+        "posix_nts_only": true,
+        "leak_sanitizer": "disabled",
+        "sanitizer_custom_allocator_blind_spots": "malloc-for-probes-and-suites;Zend-for-memory-limit-and-service-tests",
+        "service_load": "one-worker-sequential-local-only"
+    },
+    "artifact_sha256": {
+        "tools/release-test.php": "6810acda066fec646766f2c94781070ca3998b4fc5cda4a69c1fcdf16f204f15",
+        "bench/releases.php": "5535dc9205ba8567fdbf6b2532b4d901f9e55dcdcdb89848a2ab5eea42eff839",
+        "bench/common.php": "203fed90db98ed6ec723f9aeb20fc561ddeac2d46c46005e9c6a37da2050d269",
+        "bench/release_probe.c": "bcae82ab829a0ddc20c8b7fd038fad0bdcc167f2daa0fc895a71d4aa5d73ba21",
+        "bench/fpm_bench.php": "7ac727070e2e5a8f886927cc89a4ca22a65ef91c33fbf1d306b8888823812fd4",
+        "bench/service_probe.c": "58a5e78c18c3596ec9a51651c98197df74f5cac28634369ce9d3a6b026ecc100",
+        "bench/request.php": "bd7d23a3900157ee3afefffd42a627b02520b7a386191e56f3638530156f5d80",
+        "bench/mutations.php": "daf88c3b942e7f79b3fb2dc940acf1635f1c8feceb84e37ef6f3895c5d3477fc",
+        "bench/oom.php": "04ecc34e3927929cd68514015e69803ff79f9f1dd61cb656b7eb9c3f22293e88",
+        "bench/limit.c": "850cfe2f5f8fce45a37c7c32af85e6295965b6ab7d6a9286a09ccaf498f9d500"
+    },
+    "utc": "2026-10-24T16:20:53+00:00"
+}

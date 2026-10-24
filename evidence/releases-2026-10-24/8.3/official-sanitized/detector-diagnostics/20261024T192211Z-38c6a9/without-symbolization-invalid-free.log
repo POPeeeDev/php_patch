@@ -1,0 +1,35 @@
+
+--- STDERR ---
+=================================================================
+==82649==ERROR: AddressSanitizer: attempting free on address which was not malloc()-ed: 0x602000003291 in thread T0
+    #0 0x000109a1089b  (/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/21/lib/darwin/libclang_rt.asan_osx_dynamic.dylib:x86_64h+0xa689b)
+    #1 0x00010b4f7c49  (work/releases/8.3/official/sanitized-tests/20261024T171952Z-all-a5fd28/sanitizer_probe.so:x86_64+0xc49)
+    #2 0x000106bfa488  (work/releases/8.3/official/sanitized-build/sapi/cli/php:x86_64+0x101d48488)
+    #3 0x0001067cad3b  (work/releases/8.3/official/sanitized-build/sapi/cli/php:x86_64+0x101918d3b)
+    #4 0x0001067cc21e  (work/releases/8.3/official/sanitized-build/sapi/cli/php:x86_64+0x10191a21e)
+    #5 0x0001065776cb  (work/releases/8.3/official/sanitized-build/sapi/cli/php:x86_64+0x1016c56cb)
+    #6 0x000106578244  (work/releases/8.3/official/sanitized-build/sapi/cli/php:x86_64+0x1016c6244)
+    #7 0x00010657843b  (work/releases/8.3/official/sanitized-build/sapi/cli/php:x86_64+0x1016c643b)
+    #8 0x000107476b03  (work/releases/8.3/official/sanitized-build/sapi/cli/php:x86_64+0x1025c4b03)
+    #9 0x000107473a06  (work/releases/8.3/official/sanitized-build/sapi/cli/php:x86_64+0x1025c1a06)
+    #10 0x7ff805c571c7  (/usr/lib/dyld:x86_64+0x131c7)
+
+0x602000003291 is located 1 bytes inside of 16-byte region [0x602000003290,0x6020000032a0)
+allocated by thread T0 here:
+    #0 0x000109a10792  (/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/21/lib/darwin/libclang_rt.asan_osx_dynamic.dylib:x86_64h+0xa6792)
+    #1 0x00010b4f7a25  (work/releases/8.3/official/sanitized-tests/20261024T171952Z-all-a5fd28/sanitizer_probe.so:x86_64+0xa25)
+    #2 0x000106bfa488  (work/releases/8.3/official/sanitized-build/sapi/cli/php:x86_64+0x101d48488)
+    #3 0x0001067cad3b  (work/releases/8.3/official/sanitized-build/sapi/cli/php:x86_64+0x101918d3b)
+    #4 0x0001067cc21e  (work/releases/8.3/official/sanitized-build/sapi/cli/php:x86_64+0x10191a21e)
+    #5 0x0001065776cb  (work/releases/8.3/official/sanitized-build/sapi/cli/php:x86_64+0x1016c56cb)
+    #6 0x000106578244  (work/releases/8.3/official/sanitized-build/sapi/cli/php:x86_64+0x1016c6244)
+    #7 0x00010657843b  (work/releases/8.3/official/sanitized-build/sapi/cli/php:x86_64+0x1016c643b)
+    #8 0x000107476b03  (work/releases/8.3/official/sanitized-build/sapi/cli/php:x86_64+0x1025c4b03)
+    #9 0x000107473a06  (work/releases/8.3/official/sanitized-build/sapi/cli/php:x86_64+0x1025c1a06)
+    #10 0x7ff805c571c7  (/usr/lib/dyld:x86_64+0x131c7)
+
+SUMMARY: AddressSanitizer: bad-free (work/releases/8.3/official/sanitized-tests/20261024T171952Z-all-a5fd28/sanitizer_probe.so:x86_64+0xc49) 
+==82649==ABORTING
+
+--- METRICS ---
+{"wall_ms":2409.716,"user_ms":194.122,"system_ms":568.131,"peak_rss_bytes":56012800,"exit":134,"signal":6,"termination":"completed"}

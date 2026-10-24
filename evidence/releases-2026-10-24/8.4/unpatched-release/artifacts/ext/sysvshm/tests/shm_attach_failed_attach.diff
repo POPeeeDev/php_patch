@@ -1,0 +1,8 @@
+     Warning: shm_attach(): Failed for key 0x%x: %s in %s on line %d
+     bool(false)
+003- bool(true)
+004- string(5) "value"
+005- bool(true)
+003+ 
+004+ Warning: shm_attach(): Failed for key 0x7404bc51: No space left on device in work/releases/8.4/unpatched/release-corpus/ext/sysvshm/tests/shm_attach_failed_attach.php on line 6
+005+ the key is still held by the segment of the failed attach

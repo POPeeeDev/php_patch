@@ -1,0 +1,12 @@
+--
+     X-Powered-By: %s
+     Content-type: text/html; charset=UTF-8
+     
+005- array(1) {
+006-   ["d1"]=>
+007-   string(4) "test"
+008- }
+005+ <br />
+006+ <b>Fatal error</b>:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 4096 bytes) in <b>Unknown</b> on line <b>0</b><br />
+007+ 
+008+ Notice: fwrite(): Write of 3000063 bytes failed with errno=32 Broken pipe in work/releases/8.4/unpatched/release-corpus/tests/basic/GHSA-f883-x959-3vr9_007.php on line 39

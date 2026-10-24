@@ -1,0 +1,46 @@
+
+---- EXPECTED OUTPUT
+array(1) {
+  ["foo"]=>
+  string(3) "bar"
+}
+array(1) {
+  ["file"]=>
+  array(6) {
+    ["name"]=>
+    string(5) "f.txt"
+    ["full_path"]=>
+    string(5) "f.txt"
+    ["type"]=>
+    string(10) "text/plain"
+    ["tmp_name"]=>
+    string(%d) "%s"
+    ["error"]=>
+    int(0)
+    ["size"]=>
+    int(13)
+  }
+}
+bool(true)
+string(13) "file contents"
+array(2) {
+  ["a"]=>
+  string(1) "1"
+  ["b"]=>
+  array(2) {
+    [0]=>
+    string(1) "2"
+    [1]=>
+    string(1) "3"
+  }
+}
+array(0) {
+}
+array(0) {
+}
+---- ACTUAL OUTPUT
+Fatal error: Uncaught Error: Call to undefined function zend_test_handle_post_data() in work/releases/8.3/unpatched/release-corpus/ext/zend_test/tests/zend_test_handle_post_data.php:21
+Stack trace:
+#0 {main}
+  thrown in work/releases/8.3/unpatched/release-corpus/ext/zend_test/tests/zend_test_handle_post_data.php on line 21
+---- FAILED

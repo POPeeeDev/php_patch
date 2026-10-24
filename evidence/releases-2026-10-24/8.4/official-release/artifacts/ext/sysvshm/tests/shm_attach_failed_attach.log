@@ -1,0 +1,14 @@
+
+---- EXPECTED OUTPUT
+Warning: shm_attach(): Failed for key 0x%x: %s in %s on line %d
+bool(false)
+bool(true)
+string(5) "value"
+bool(true)
+---- ACTUAL OUTPUT
+Warning: shm_attach(): Failed for key 0x74049bef: No space left on device in work/releases/8.4/official/release-corpus/ext/sysvshm/tests/shm_attach_failed_attach.php on line 4
+bool(false)
+
+Warning: shm_attach(): Failed for key 0x74049bef: No space left on device in work/releases/8.4/official/release-corpus/ext/sysvshm/tests/shm_attach_failed_attach.php on line 6
+the key is still held by the segment of the failed attach
+---- FAILED

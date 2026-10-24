@@ -1,0 +1,304 @@
+
+=====================================================================
+PHP         : work/releases/8.3/official/sanitized-build/sapi/cli/php 
+PHP_SAPI    : cli
+PHP_VERSION : 8.3.36
+ZEND_VERSION: 4.3.36
+PHP_OS      : Darwin - Darwin <USER>.local 25.6.0 Darwin Kernel Version 25.6.0: Tue Aug 18 17:46:40 PDT 2026; root:xnu-12377.161.15.700.19~2/RELEASE_X86_64 x86_64
+INI actual  : work/releases/8.3/official/sanitized-corpus
+More .INIs  :  
+---------------------------------------------------------------------
+PHP         : work/releases/8.3/official/sanitized-build/sapi/cgi/php-cgi 
+PHP_SAPI    : cgi-fcgi
+PHP_VERSION : 8.3.36
+ZEND_VERSION: 4.3.36
+PHP_OS      : Darwin - Darwin <USER>.local 25.6.0 Darwin Kernel Version 25.6.0: Tue Aug 18 17:46:40 PDT 2026; root:xnu-12377.161.15.700.19~2/RELEASE_X86_64 x86_64
+INI actual  : work/releases/8.3/official/sanitized-corpus
+More .INIs  : 
+--------------------------------------------------------------------- 
+CWD         : work/releases/8.3/official/sanitized-corpus
+Extra dirs  : 
+VALGRIND    : Not used
+=====================================================================
+TIME START 2026-10-24 17:28:40
+=====================================================================
+Spawning 4 workers... Done in 14.86s
+=====================================================================
+
+SKIP rfc1867: mbstring input conversion of a body part doesn't reach the hard limit [tests/basic/oom_rfc1867_mb_encoding.phpt] reason: mbstring not available
+SKIP phpt EXTENSIONS directive - shared module [tests/run-test/extensions-shared.phpt] reason: Required extension missing: openssl
+SKIP Shift_JIS request [tests/basic/029.phpt] reason: Required extension missing: mbstring
+SKIP rfc1867: the session upload progress handler doesn't reach the hard limit [tests/basic/oom_rfc1867_upload_progress.phpt] reason: slow under ASan
+SKIP Req #44164 (Handle "Content-Length" HTTP header when zlib.output_compression active) [tests/basic/req44164.phpt] reason: Required extension missing: zlib
+SKIP GH-7896 (Environment vars may be mangled on Windows) [tests/basic/gh7896.phpt] reason: for Windows only
+SKIP Req #60524 (Specify temporary directory) [tests/basic/req60524-win.phpt] reason: Run only on Windows
+SKIP Timeout within function [tests/basic/timeout_variation_1.phpt] reason: Windows only test
+SKIP Timeout within shutdown function, variation [tests/basic/timeout_variation_10.phpt] reason: Windows only test
+SKIP Timeout within array_map [tests/basic/timeout_variation_2.phpt] reason: Windows only test
+SKIP Timeout within call_user_func [tests/basic/timeout_variation_4.phpt] reason: Windows only test
+SKIP Timeout within shutdown function [tests/basic/timeout_variation_9.phpt] reason: Windows only test
+SKIP Bug #38579 (include_once() may include the same file twice) [tests/lang/bug38579.phpt] reason: only for Windows
+SKIP Bug #45392 (ob_start()/ob_end_clean() and memory_limit) [tests/lang/bug45392.phpt] reason: Zend MM disabled
+SKIP Test PHP_INT_MIN, PHP_INT_MAX and PHP_INT_SIZE (32-bit) [tests/lang/constants/PHP_INT_32bit.phpt] reason: this test is for 32-bit platforms only
+SKIP Bug #30638 (localeconv returns wrong LC_NUMERIC settings) (ok to fail on MacOS X) [tests/lang/bug30638.phpt] reason: ok to fail on MacOS X
+SKIP Binary integer strings (32bit) [tests/lang/integer_literals/binary_32bit.phpt] reason: this test is for 32bit platform only
+SKIP Test != operator : max int 32bit range [tests/lang/operators/operator_notequals_variation.phpt] reason: this test is for 32bit platform only
+SKIP Hexadecimal integer strings (32bit) [tests/lang/integer_literals/hexadecimal_32bit.phpt] reason: this test is for 32bit platform only
+SKIP Octal integer strings (32bit) [tests/lang/integer_literals/octal_32bit.phpt] reason: this test is for 32bit platform only
+SKIP Test !== operator : max int 32bit range [tests/lang/operators/operator_notidentical_variation.phpt] reason: this test is for 32bit platform only
+SKIP rfc1867: reaching the soft limit at each step of the $_FILES registration [tests/basic/oom_rfc1867_files_registration.phpt] reason: difficult to produce on ASAN
+SKIP rfc1867: reaching the soft limit on the $_FILES [full_path] entry [tests/basic/oom_rfc1867_files_registration_full_path.phpt] reason: difficult to produce on ASAN
+SKIP Test == operator : max int 32bit range [tests/lang/operators/operator_equals_variation.phpt] reason: this test is for 32bit platform only
+SKIP Test >= operator : max int 32bit range [tests/lang/operators/operator_gt_or_equal_variation.phpt] reason: this test is for 32bit platform only
+SKIP Test === operator : max int 32bit range [tests/lang/operators/operator_identical_variation.phpt] reason: this test is for 32bit platform only
+SKIP Test <= operator : max int 32bit range [tests/lang/operators/operator_lt_or_equal_variation.phpt] reason: this test is for 32bit platform only
+SKIP GH-14808 (Unexpected null pointer in Zend/zend_string.h with empty output buffer) [tests/output/gh14808.phpt] reason: Required extension missing: iconv
+SKIP GH-15179 (Segmentation fault (null pointer dereference) in ext/standard/url_scanner_ex.re) [tests/output/gh15179.phpt] reason: requires ZendMM
+SKIP Bug #60282 (Segfault when using ob_gzhandler() with open buffers) [tests/output/bug60282.phpt] reason: Required extension missing: zlib
+SKIP output buffering - error message nirvana bug #37714 [tests/output/ob_018.phpt] reason: Required extension missing: zlib
+SKIP Test sapi_windows_vt100_support on newer Windows versions with redirected STDIN/STDERR [tests/output/sapi_windows_vt100_support_winok_in-err.phpt] reason: I/O capture test
+SKIP Test sapi_windows_vt100_support on newer Windows versions with redirected STDIN/STDOUT/STDERR [tests/output/sapi_windows_vt100_support_winok_in-out-err.phpt] reason: I/O capture test
+SKIP Test sapi_windows_vt100_support on newer Windows versions with redirected STDIN/STDOUT [tests/output/sapi_windows_vt100_support_winok_in-out.phpt] reason: I/O capture test
+SKIP Test sapi_windows_vt100_support on newer Windows versions with redirected STDOUT/STDERR [tests/output/sapi_windows_vt100_support_winok_out-err.phpt] reason: I/O capture test
+SKIP Test sapi_windows_vt100_support on newer Windows versions with redirected STDOUT [tests/output/sapi_windows_vt100_support_winok_out.phpt] reason: I/O capture test
+SKIP Test stream_isatty with redirected STDERR [tests/output/stream_isatty_err.phpt] reason: I/O capture test
+SKIP Test stream_isatty with redirected STDIN/STDERR [tests/output/stream_isatty_in-err.phpt] reason: I/O capture test
+SKIP Test stream_isatty with redirected STDIN/STDOUT/STDERR [tests/output/stream_isatty_in-out-err.phpt] reason: I/O capture test
+SKIP Test stream_isatty with redirected STDIN/STDOUT [tests/output/stream_isatty_in-out.phpt] reason: I/O capture test
+SKIP OOM inside an internal output handler must not free the running handler [tests/output/oom_in_internal_output_handler.phpt] reason: Required extension missing: mbstring
+SKIP sapi_windows_vt100_support(): casting stream does not emit data loss and should not emit warnings [tests/output/sapi_windows_vt100_support_no_warning_on_cast.phpt] reason: Only for Windows systems
+SKIP sapi_windows_vt100_support(): uncastable user stream [tests/output/sapi_windows_vt100_support_non_castable_user_stream.phpt] reason: Only for Windows systems
+SKIP Test stream_isatty with redirected STDOUT/STDERR [tests/output/stream_isatty_out-err.phpt] reason: I/O capture test
+SKIP Test stream_isatty with redirected STDOUT [tests/output/stream_isatty_out.phpt] reason: I/O capture test
+SKIP Test sapi_windows_vt100_support on older Windows versions with redirected STDERR [tests/output/sapi_windows_vt100_support_winko_err.phpt] reason: I/O capture test
+SKIP Test sapi_windows_vt100_support on older Windows versions with redirected STDIN/STDERR [tests/output/sapi_windows_vt100_support_winko_in-err.phpt] reason: I/O capture test
+SKIP Test sapi_windows_vt100_support on older Windows versions with redirected STDIN/STDOUT/STDERR [tests/output/sapi_windows_vt100_support_winko_in-out-err.phpt] reason: I/O capture test
+SKIP Test sapi_windows_vt100_support on older Windows versions with redirected STDIN/STDOUT [tests/output/sapi_windows_vt100_support_winko_in-out.phpt] reason: I/O capture test
+SKIP Test sapi_windows_vt100_support on older Windows versions with redirected STDOUT/STDERR [tests/output/sapi_windows_vt100_support_winko_out-err.phpt] reason: I/O capture test
+SKIP Test sapi_windows_vt100_support on older Windows versions with redirected STDOUT [tests/output/sapi_windows_vt100_support_winko_out.phpt] reason: I/O capture test
+SKIP Test sapi_windows_vt100_support on newer Windows versions with redirected STDERR [tests/output/sapi_windows_vt100_support_winok_err.phpt] reason: I/O capture test
+SKIP GHSA-wm6j-2649-pv75: Null pointer dereference in php_mb_check_encoding() via mb_ereg_search_init() [Zend/tests/GHSA-wm6j-2649-pv75.phpt] reason: Required extension missing: mbstring
+SKIP Test that there is no arginfo/zpp mismatch [Zend/tests/arginfo_zpp_mismatch.phpt] reason: Intermittently crashes lsan
+SKIP Test that there is no arginfo/zpp mismatch in strict mode [Zend/tests/arginfo_zpp_mismatch_strict.phpt] reason: Intermittently crashes lsan
+XFAIL Test open_basedir configuration [tests/security/open_basedir_linkinfo.phpt]   XFAIL REASON: BUG: open_basedir cannot delete symlink to prohibited file. See also
+bugs 48111 and 52176.
+SKIP GH-24148: Bare NUL remains usable with open_basedir on Windows [tests/security/open_basedir_nul_win32.phpt] reason: Windows only
+SKIP Test open_basedir configuration [tests/security/open_basedir_parse_ini_file.phpt] reason: Windows only variation
+SKIP Test open_basedir configuration [tests/security/open_basedir_realpath.phpt] reason: only run on Windows
+SKIP testing binary literals [Zend/tests/binary-32bit.phpt] reason: this test is for 32bit platform only
+SKIP Bug #34199 (if($obj)/if(!$obj) inconsistency because of cast handler) [Zend/tests/bug34199.phpt] reason: Required extension missing: simplexml
+SKIP Bug #40770 (Apache child exits when PHP memory limit reached) [Zend/tests/bug40770.phpt] reason: Zend MM disabled
+SKIP Bug #34617 (zend_deactivate: objects_store used after zend_objects_store_destroy is called) [Zend/tests/bug34617.phpt] reason: Required extension missing: xml
+SKIP Bug #43918 (Segmentation fault in garbage collector) [Zend/tests/bug43918.phpt] reason: Required extension missing: simplexml
+SKIP Bug #46701 (Creating associative array with long values in the key fails on 32bit linux) [Zend/tests/bug46701.phpt] reason: this test is for 32bit platforms only
+SKIP Bug #55509 (segfault on x86_64 using more than 2G memory) [Zend/tests/bug55509.phpt] reason: resource-heavy test
+SKIP Bug #54268 (Double free when destroy_zend_class fails) [Zend/tests/bug54268.phpt] reason: Zend MM disabled
+SKIP Bug #62097: fix for bug #54547 is wrong for 32-bit machines [Zend/tests/bug62097.phpt] reason: for system with 32-bit wide longs only
+SKIP Bug #68412 (Infinite recursion with __call can make the program crash/segfault) [Zend/tests/bug68412.phpt] reason: Need Zend MM enabled
+SKIP Bug #69092 (Declare Encoding Compile Check Wrong) [Zend/tests/bug69092.phpt] reason: Required extension missing: mbstring
+SKIP Bug #70173 (ZVAL_COPY_VALUE_EX broken for 32bit Solaris Sparc) [Zend/tests/bug70173.phpt] reason: this test is for 32bit platforms only
+SKIP Bug #71930 (_zval_dtor_func: Assertion `(arr)->gc.refcount <= 1' failed) [Zend/tests/bug71930.phpt] reason: Required extension missing: curl
+SKIP Bug #70258 (Segfault if do_resize fails to allocated memory) [Zend/tests/bug70258.phpt] reason: Zend MM disabled
+SKIP bug #71428.2: inheritance of ye olde dynamic interfaces [Zend/tests/bug71428.2.phpt] reason: Required extension missing: pdo
+SKIP Bug #70914 zend_throw_or_error() format string vulnerability [Zend/tests/bug70914.phpt] reason: Required extension missing: pdo_sqlite
+SKIP Bug #74093 (Maximum execution time of n+2 seconds exceed not written in error_log) [Zend/tests/bug74093.phpt] reason: resource-heavy test
+SKIP Bug #76846: Segfault in shutdown function after memory limit error [Zend/tests/bug76846.phpt] reason: Zend MM disabled
+SKIP Bug #77494 (Disabling class causes segfault on member access) [Zend/tests/bug77494.phpt] reason: Required extension missing: curl
+SKIP Bug #78770: Incorrect callability check inside internal methods [Zend/tests/bug78770.phpt] reason: Required extension missing: intl
+SKIP Bug #81070	Setting memory limit to below current usage [Zend/tests/bug81070.phpt] reason: requires zmm
+SKIP Bug #78010: Segmentation fault during GC [Zend/tests/bug78010.phpt] reason: resource-heavy test
+SKIP Bug #79919 (Stack use-after-scope in define()) [Zend/tests/bug79919.phpt] reason: Required extension missing: simplexml
+SKIP comparing different variables for equality [Zend/tests/compare_001.phpt] reason: this test is for 32bit platform only
+SKIP comparing different variables for identity [Zend/tests/compare_002.phpt] reason: this test is for 32bit platform only
+SKIP comparing different variables (greater than) [Zend/tests/compare_003.phpt] reason: this test is for 32bit platform only
+SKIP comparing different variables (less than) [Zend/tests/compare_004.phpt] reason: this test is for 32bit platform only
+SKIP comparing different variables (greater or equal than) [Zend/tests/compare_005.phpt] reason: this test is for 32bit platform only
+SKIP comparing different variables (smaller or equal than) [Zend/tests/compare_006.phpt] reason: this test is for 32bit platform only
+SKIP Concatenating many small strings should not slowdown allocations [Zend/tests/concat_003.phpt] reason: debug version is slow
+SKIP Testing declare statement with several type values [Zend/tests/declare_001.phpt] reason: Required extension missing: mbstring
+SKIP Testing declare statement with several type values [Zend/tests/declare_002.phpt] reason: Required extension missing: mbstring
+SKIP double to string conversion tests [Zend/tests/double_to_string.phpt] reason: this test is for 32bit platform only
+SKIP zend_dval_to_lval preserves low bits  (32 bit long) [Zend/tests/dval_to_lval_32.phpt] reason: for machines with 32-bit longs
+SKIP Delayed early binding throws class redeclaration error [Zend/tests/delayed_early_binding_redeclaration.phpt] reason: Required extension missing: opcache
+SKIP Out of Memory in a fiber [Zend/tests/fibers/out-of-memory-in-fiber.phpt] reason: Zend MM disabled
+SKIP Out of Memory in a nested fiber [Zend/tests/fibers/out-of-memory-in-nested-fiber.phpt] reason: Zend MM disabled
+SKIP Out of Memory from recursive fiber creation [Zend/tests/fibers/out-of-memory-in-recursive-fiber.phpt] reason: Zend MM disabled
+SKIP Implicit float to int conversions when float too large should warn, string offset variant, 32bit variant [Zend/tests/float_to_int/warning_float_does_not_fit_zend_long_strings_32bit.phpt] reason: this test is for 32bit platform only
+SKIP Explicit (int) cast must not warn 32bit variation [Zend/tests/float_to_int/explicit_casts_should_not_warn_32bit.phpt] reason: this test is for 32bit platform only
+SKIP GC 039: Garbage created by replacing argument send by reference [Zend/tests/gc_039.phpt] reason: Required extension missing: mbstring
+SKIP Bug GH-9801 (Crash when memory limit is exceeded during generator initialization) [Zend/tests/generators/gh9801.phpt] reason: Zend MM disabled
+SKIP GH-11189: Exceeding memory limit in zend_hash_do_resize leaves the array in an invalid state (packed array) [Zend/tests/gh11189.phpt] reason: ZMM is disabled
+SKIP GH-11189: Exceeding memory limit in zend_hash_do_resize leaves the array in an invalid state (not packed array) [Zend/tests/gh11189_1.phpt] reason: ZMM is disabled
+SKIP GH-16508: Missing lineno in inheritance errors of delayed early bound classes [Zend/tests/gh16508.phpt] reason: Required extension missing: opcache
+SKIP GH-12366: Use-after-free of constant name when script doesn't fit in SHM [Zend/tests/gh12366.phpt] reason: Required extension missing: opcache
+SKIP GH-16630 (UAF in lexer with encoding translation and heredocs) [Zend/tests/gh16630.phpt] reason: Required extension missing: mbstring
+SKIP GH-18572: Nested object comparison leading to stack overflow [Zend/tests/gh18572.phpt] reason: as it fatally crash
+SKIP GH-19305 003: Operands may be released during comparison [Zend/tests/gh19305-003.phpt] reason: No lazy objects
+SKIP testing integer overflow (32bit) [Zend/tests/hex_overflow_32bit.phpt] reason: this test is for 32bit platform only
+SKIP Error handler can change type of operand of ++ to object with do_operator [Zend/tests/in-de-crement/increment_diagnostic_change_type_do_operator.phpt] reason: Required extension missing: gmp
+SKIP Decrementing min int values 32bit [Zend/tests/in-de-crement/decrement_001.phpt] reason: this test is for 32bit platform only
+XFAIL Interfaces don't set prototypes to their parent method [Zend/tests/interface_constructor_prototype_002.phpt]   XFAIL REASON: X::__constructor()'s prototype is set to B::__construct(). Y::__construct() then
+uses prototype to verify LSP, but misses A::__construct() which has a stricter
+signature.
+SKIP Incrementing max int values 32bit [Zend/tests/in-de-crement/increment_001.phpt] reason: this test is for 32bit platform only
+SKIP testing integer overflow (32bit) [Zend/tests/int_overflow_32bit.phpt] reason: this test is for 32bit platform only
+SKIP testing integer underflow (32bit) [Zend/tests/int_underflow_32bit.phpt] reason: this test is for 32bit platform only
+SKIP int memory_get_peak_usage ([ bool $real_usage = false ] ); [Zend/tests/memory_get_peak_usage.phpt] reason: Zend MM disabled
+SKIP void memory_reset_peak_usage(); [Zend/tests/memory_reset_peak_usage.phpt] reason: Zend MM disabled
+SKIP Don't segfault when zend.script_encoding=pass [Zend/tests/multibyte/multibyte_encoding_007.phpt] reason: Required extension missing: mbstring
+SKIP Crash with Big5 [Zend/tests/multibyte/bug68665.phpt] reason: Required extension missing: mbstring
+SKIP Zend Multibyte and ShiftJIS [Zend/tests/multibyte/multibyte_encoding_001.phpt] reason: Required extension missing: mbstring
+SKIP Zend Multibyte and UTF-8 BOM [Zend/tests/multibyte/multibyte_encoding_002.phpt] reason: Required extension missing: mbstring
+SKIP Zend Multibyte and UTF-16 BOM [Zend/tests/multibyte/multibyte_encoding_003.phpt] reason: Required extension missing: mbstring
+SKIP test for mbstring script_encoding for flex unsafe encoding (Shift_JIS) [Zend/tests/multibyte/multibyte_encoding_004.phpt] reason: Required extension missing: mbstring
+SKIP encoding conversion from script encoding into internal encoding [Zend/tests/multibyte/multibyte_encoding_005.phpt] reason: Required extension missing: mbstring
+SKIP 086: bracketed namespace with encoding [Zend/tests/ns_086.phpt] reason: Required extension missing: mbstring
+FAIL Test OOM on new of each class [Zend/tests/new_oom.phpt] 
+FAIL OOM unserialize() array of old strings [Zend/tests/oom_unserialize_004.phpt] 
+SKIP Request parsing doesn't reach hard limit [Zend/tests/oom_request_parsing.phpt] reason: ASan-instrumented realloc() is slow
+SKIP Stack limit 010 - Check stack size detection against known defaults [Zend/tests/stack_limit/stack_limit_010.phpt] reason: STACK_LIMIT_DEFAULTS_CHECK not set
+FAIL OOM unserialize() object [Zend/tests/oom_unserialize_005.phpt] 
+SKIP Leak in JMP_SET [Zend/tests/temporary_cleaning_014.phpt] reason: Required extension missing: gmp
+FAIL OOM unserialize() array [Zend/tests/oom_unserialize_001.phpt] 
+FAIL Test binary operands exposing the same behavior at compile as at run time [Zend/tests/runtime_compile_time_binary_operands.phpt] 
+WARN OOM unserialize() object of int=>int [Zend/tests/oom_unserialize_006.phpt]  (warn: Test passed on retry attempt)
+FAIL OOM unserialize() array of strings [Zend/tests/oom_unserialize_002.phpt] 
+SKIP Test strict declaration being first operation only 006 [Zend/tests/type_declarations/scalar_strict_declaration_placement_006.phpt] reason: Required extension missing: mbstring
+SKIP Test strict declaration being first operation only 007 [Zend/tests/type_declarations/scalar_strict_declaration_placement_007.phpt] reason: Required extension missing: mbstring
+FAIL OOM unserialize() array of string=>int [Zend/tests/oom_unserialize_003.phpt] 
+SKIP Return scalar type basics [Zend/tests/type_declarations/scalar_return_basic.phpt] reason: this test is for 32bit platform only
+SKIP Scalar type strict mode [Zend/tests/type_declarations/scalar_strict.phpt] reason: this test is for 32bit platform only
+FAIL OOM unserialize() object fextend [Zend/tests/oom_unserialize_012.phpt] 
+SKIP Zend signed multiply 32-bit [Zend/tests/zend_signed_multiply-32bit.phpt] reason: Running on 64-bit target
+FAIL OOM unserialize() object __unserialize (2) [Zend/tests/oom_unserialize_014.phpt] 
+SKIP strftime() and gmstrftime() tests [ext/date/tests/009_win32.phpt] reason: only windows test.
+SKIP Do not inherit LC_CTYPE from environment [ext/ctype/tests/lc_ctype_inheritance.phpt] reason: macOS 15 inherits LC_CTYPE into the thread locale
+SKIP Bug GH-11600: Intl patterns are not parseable DateTime Strings [ext/date/tests/bug-gh11600.phpt] reason: Required extension missing: intl
+SKIP Bug #33532 (Different output for strftime() and date()) [ext/date/tests/bug33532.phpt] reason: strftime uses system TZ on Darwin and Windows
+SKIP Bug #36988 (mktime freezes on long numbers) [ext/date/tests/bug36988.phpt] reason: this test is for 32-bit only
+FAIL OOM unserialize() cleans up BG(unserialize) after a delayed OOM [Zend/tests/oom_unserialize_016.phpt] 
+SKIP Bug #41523 (strtotime('0000-00-00 00:00:00') is parsed as 1999-11-30) (32 bit) [ext/date/tests/bug41523.phpt] reason: 32-bit only
+SKIP Bug #52062 (large timestamps with DateTime::getTimestamp and DateTime::setTimestamp) (32 bit) [ext/date/tests/bug52062.phpt] reason: 32-bit only
+SKIP Bug #53437 DateInterval unserialize bad data, 32 bit [ext/date/tests/bug53437_var3.phpt] reason: 32 bit only
+SKIP Test bug #65184 strftime() returns insufficient-length string under multibyte locales [ext/date/tests/bug65184.phpt] reason: Test is valid for Windows
+SKIP Test for timelib #124: Problem with large negative timestamps [ext/date/tests/gh-124.phpt] reason: triggers undefined behavior
+SKIP Test gmdate() function : usage variation - Valid and invalid range of timestamp 32 bits. [ext/date/tests/gmdate_variation12.phpt] reason: 32 bit only
+SKIP mktime() [3] (32-bit) [ext/date/tests/mktime-3.phpt] reason: 32-bit only
+SKIP strtotime() and mysql timestamps (32 bit) [ext/date/tests/strtotime-mysql.phpt] reason: 32-bit only
+SKIP strtotime() function (32 bit) [ext/date/tests/strtotime3.phpt] reason: 32-bit only
+SKIP DateInterval::__construct() doesn't reach hard limit [ext/date/tests/oom_dateinterval_construct.phpt] reason: ASan-instrumented realloc() is slow
+SKIP DatePeriod::__construct() doesn't reach hard limit [ext/date/tests/oom_dateperiod_construct.phpt] reason: ASan-instrumented realloc() is slow
+SKIP finfo_file(): Files and directories inside an stream [ext/fileinfo/tests/finfo_file_stream_001.phpt] reason: Required extension missing: zip
+SKIP Bug #74170 locale information change after mime_content_type [ext/fileinfo/tests/bug74170.phpt] reason: Required extension missing: intl
+SKIP Bug #66731: file: extensive backtracking [ext/fileinfo/tests/cve-2014-3538-mb.phpt] reason: performance sensitive test
+SKIP Bug #66731: file: extensive backtracking, with pcre.jit=0 [ext/fileinfo/tests/cve-2014-3538-nojit.phpt] reason: not suitable for debug build
+SKIP Bug #66731: file: extensive backtracking [ext/fileinfo/tests/cve-2014-3538.phpt] reason: performance sensitive test
+FAIL Extensive test for date_diff(). [ext/date/tests/date_diff.phpt] 
+XFAIL Bug #67167 (filter_var(null,FILTER_VALIDATE_BOOLEAN,FILTER_NULL_ON_FAILURE) returns null) [ext/filter/tests/bug67167.02.phpt]   XFAIL REASON: Requires php_zval_filter to not use convert_to_string for all filters.
+XFAIL Bug #42718 (unsafe_raw filter not applied when configured as default filter) [ext/filter/tests/bug42718.phpt]   XFAIL REASON: FILTER_UNSAFE_RAW not applied when configured as default filter, even with flags
+XFAIL Bug #67296 (filter_input doesn't validate variables) [ext/filter/tests/bug49184.phpt]   XFAIL REASON: See Bug #49184
+SKIP filter_var(filter: FILTER_SANITIZE_SPECIAL_CHARS) doesn't reach hard limit [ext/filter/tests/oom_filter_var.phpt] reason: ASan-instrumented realloc() is slow
+SKIP filter_var_array() doesn't reach hard limit [ext/filter/tests/oom_filter_var_array.phpt] reason: ASan-instrumented realloc() is slow
+SKIP filter_var(filter: FILTER_SANITIZE_FULL_SPECIAL_CHARS) doesn't reach hard limit [ext/filter/tests/oom_filter_var_full_special_chars.phpt] reason: ASan-instrumented realloc() is slow
+SKIP Ensure hash_update_stream() always returns the same hash when $length = 0 [ext/hash/tests/hash_update_stream_basic_001.phpt] reason: Required extension missing: openssl
+SKIP GH-16711: Segmentation fault in mhash() [ext/hash/tests/gh16711_1.phpt] reason: mhash compatibility layer not available
+SKIP GH-16711: Segmentation fault in mhash() [ext/hash/tests/gh16711_2.phpt] reason: mhash compatibility layer not available
+SKIP MHash: mhash() test [ext/hash/tests/mhash_001.phpt] reason: mhash compatibility layer not available
+SKIP MHash: mhash_get_block_size() & mhash_get_hash_name() test [ext/hash/tests/mhash_002.phpt] reason: mhash compatibility layer not available
+SKIP MHash: mhash_keygen_s2k() test [ext/hash/tests/mhash_003.phpt] reason: mhash compatibility layer not available
+SKIP MHash: mhash() modifying algorithm parameter [ext/hash/tests/mhash_004.phpt] reason: mhash compatibility layer not available
+SKIP GH-15168 (stack overflow in json_encode()) [ext/json/tests/gh15168.phpt] reason: ASAN needs different stack limit setting due to more stack space usage
+SKIP pcntl_getpriority() - Wrong mode passed and also for non existing process id provided [ext/pcntl/tests/pcntl_getpriority_error.phpt] reason: This test is not for Darwin
+SKIP pcntl_signal() context of realtime signal [ext/pcntl/tests/pcntl_realtime_signal.phpt] reason: realtime signal not supported
+SKIP Test function pcntl_rfork() with no flag. [ext/pcntl/tests/pcntl_rfork.phpt] reason: pcntl_rfork unavailable
+SKIP Test function pcntl_rfork() with wrong flags [ext/pcntl/tests/pcntl_rfork_badflags.phpt] reason: pcntl_rfork unavailable
+SKIP Test function pcntl_rfork() with RFCFDG and RFFDG flags. [ext/pcntl/tests/pcntl_rfork_flags.phpt] reason: pcntl_rfork unavailable
+SKIP Test function pcntl_rfork() with no wait flag. [ext/pcntl/tests/pcntl_rfork_nowait.phpt] reason: pcntl_rfork unavailable
+SKIP pcntl_setpriority() - Basic behaviour [ext/pcntl/tests/pcntl_setpriority_basic.phpt] reason: this function needs to run with CAP_SYS_NICE privileges
+SKIP pcntl_setpriority() - Check for errors [ext/pcntl/tests/pcntl_setpriority_error.phpt] reason: This test is not for Darwin
+SKIP Test pcntl wait functionality [ext/pcntl/tests/001.phpt] reason: do not run on darwin
+SKIP pcntl: pcntl_sigprocmask(), pcntl_sigwaitinfo(), pcntl_sigtimedwait() [ext/pcntl/tests/002.phpt] reason: required functionality is not available
+SKIP pcntl_setpriority() - Check for errors [ext/pcntl/tests/pcntl_setpriority_error_linux.phpt] reason: This test only runs on Linux
+SKIP pcntl: SIG_BLOCK, SIG_UNBLOCK, SIG_SETMASK [ext/pcntl/tests/003.phpt] reason: required functionality is not available
+SKIP pcntl_unshare() with CLONE_NEWUSER [ext/pcntl/tests/pcntl_unshare_01.phpt] reason: pcntl_unshare is not available
+SKIP pcntl_unshare() with CLONE_NEWPID [ext/pcntl/tests/pcntl_unshare_02.phpt] reason: pcntl_unshare is not available
+SKIP pcntl_unshare() with CLONE_NEWNET [ext/pcntl/tests/pcntl_unshare_03.phpt] reason: pcntl_unshare is not available
+SKIP pcntl_unshare() with wrong flag [ext/pcntl/tests/pcntl_unshare_04.phpt] reason: pcntl_unshare is not available
+SKIP Bug #81577: (Exceptions in interrupt handlers: cleanup_live_vars) [ext/pcntl/tests/bug81577_3.phpt] reason: xleak does not work with asan
+SKIP pcntl_alarm() [ext/pcntl/tests/pcntl_alarm.phpt] reason: pcntl_sigtimedwait() not available
+SKIP Waiting on SIGCHLD with a pcntl_wait() loop [ext/pcntl/tests/waiting_on_sigchild_pcntl_wait.phpt] reason: Linux only
+SKIP Bug #72463 mail fails with invalid argument [ext/pcre/tests/bug72463_2.phpt] reason: windows only
+SKIP Bug #72685: Same string is UTF-8 validated repeatedly [ext/pcre/tests/bug72685.phpt] reason: performance sensitive test
+SKIP Test posix_getgrgid() function : error conditions [ext/posix/tests/posix_getgrgid_error.phpt] reason: xleak does not work with asan
+SKIP Test posix_getpwuid() function : error conditions [ext/posix/tests/posix_getpwuid_error.phpt] reason: xleak does not work with asan
+SKIP posix_getrlimit() for single resource [ext/posix/tests/posix_getrlimit_single_resource.phpt] reason: Failed to set POSIX_RLIMIT_CORE
+SKIP posix_eaccess() with bogus paths [ext/posix/tests/posix_eaccess.phpt] reason: only platforms with posix_eaccess
+SKIP posix_isatty(): manually validating int ZPP param [ext/posix/tests/posix_isatty_manual_zpp.phpt] reason: Required extension missing: gmp
+SKIP posix_ttyname(): manually validating int ZPP param [ext/posix/tests/posix_ttyname_manual_zpp.phpt] reason: Required extension missing: gmp
+SKIP ReflectionExtension::getDependencies() [ext/reflection/tests/016.phpt] reason: Required extension missing: dom
+SKIP ReflectionClass::getExtensionName() method - basic test for getExtensionName() method [ext/reflection/tests/ReflectionClass_getExtensionName_basic.phpt] reason: Required extension missing: dom
+SKIP ReflectionClass::getExtension() method - basic test for getExtension() method [ext/reflection/tests/ReflectionClass_getExtension_basic.phpt] reason: Required extension missing: dom
+SKIP Random: Randomizer: nextInt(): Throws for 64 bit engines on 32 bit platforms [ext/random/tests/03_randomizer/methods/nextInt_64_engine_on_32_platform.phpt] reason: 32-bit only
+SKIP Testing ReflectionClass::isCloneable() [ext/reflection/tests/ReflectionClass_isCloneable_001.phpt] reason: Required extensions missing: simplexml, xmlwriter
+WARN Compiled regex cache limit [ext/pcre/tests/cache_limit.phpt]  (warn: Test passed on retry attempt)
+SKIP ReflectionExtension::getDependencies() method on an extension with a required and conflicting dependency [ext/reflection/tests/ReflectionExtension_getDependencies_basic.phpt] reason: Required extension missing: dom
+SKIP Test ReflectionZendExtension class [ext/reflection/tests/ReflectionZendExtension.phpt] reason: Required extension missing: opcache
+SKIP Test ReflectionZendExtension class errors [ext/reflection/tests/ReflectionZendExtension_error.phpt] reason: Required extension missing: opcache
+SKIP GH-16187 (ReflectionClass::__toString() with unpacked properties) [ext/reflection/tests/gh16187.phpt] reason: Required extension missing: simplexml
+BORK Warning: socket_sendto(): Unable to write to socket [65]: No route to host in work/releases/8.3/official/sanitized-corpus/ext/sockets/tests/mcast_ipv6_recv.skip.php on line 24
+skip unable to send multicast packet. [ext/sockets/tests/mcast_ipv6_recv.phpt] reason: invalid output from SKIPIF
+BORK Warning: socket_sendto(): Unable to write to socket [65]: No route to host in work/releases/8.3/official/sanitized-corpus/ext/sockets/tests/mcast_ipv6_recv_limited.skip.php on line 23
+skip unable to send multicast packet. [ext/sockets/tests/mcast_ipv6_recv_limited.phpt] reason: invalid output from SKIPIF
+FAIL Multicast support: IPv6 send options [ext/sockets/tests/mcast_ipv6_send.phpt] 
+SKIP Support for paths in the abstract namespace (bind, connect) [ext/sockets/tests/socket_abstract_path.phpt] reason: For Linux only
+SKIP Support for paths in the abstract namespace (bind, sendmsg, recvmsg) [ext/sockets/tests/socket_abstract_path_sendmsg.phpt] reason: For Linux only
+XFAIL updateTimestamp never called when session data is empty [ext/session/tests/user_session_module/bug71162.phpt]   XFAIL REASON: Current session module is designed to write empty session always. In addition, current session module only supports SessionHandlerInterface only from PHP 7.0.
+FAIL shmop extension test [ext/shmop/tests/001.phpt] 
+FAIL shmop extension error messages [ext/shmop/tests/002.phpt] 
+FAIL ext/sockets - socket_bind - basic test [ext/sockets/tests/socket_bind.phpt] 
+SKIP Bug #81407 (shmop_open won't attach and causes php to crash) [ext/shmop/tests/bug81407.phpt] reason: for Windows only
+SKIP SO_BPF_EXTENSIONS socket_getopt test [ext/sockets/tests/socket_bpf_extensions.phpt] reason: SO_BOF_EXTENSIONS
+SKIP GH-14537: shmop Windows 11 crashes the process [ext/shmop/tests/gh14537.phpt] reason: only for Windows
+SKIP void socket_clear_error ([ resource $socket ] ) ; [ext/sockets/tests/socket_clear_error-win32.phpt] reason: windows only test
+FAIL shmop_open with IPC_PRIVATE creates private SHM [ext/shmop/tests/shmop_open_private.phpt] 
+SKIP socket_import_stream: Test with multicasting [ext/sockets/tests/socket_import_stream-3.phpt] reason: joining group 224.0.0.23 on interface lo failed
+SKIP recvmsg(): receive SCM_CREDENTIALS messages [ext/sockets/tests/socket_cmsg_credentials.phpt] reason: SO_PASSCRED is not defined
+SKIP socket_import_stream: effects of closing [ext/sockets/tests/socket_import_stream-4-win.phpt] reason: Not Valid for Linux
+SKIP recvmsg(): receive SCM_CREDS messages [ext/sockets/tests/socket_cmsg_credentials_fbsd.phpt] reason: ped supported only on FreeBSD
+SKIP Bug #51958: socket_accept() fails on IPv6 server sockets [ext/sockets/tests/bug51958.phpt] reason: test relies Winsock's error code for WSAEWOULDBLOCK/EAGAIN
+SKIP Test if socket_recvfrom() receives data sent by socket_sendto() via IPv6 UDP (Win32) [ext/sockets/tests/socket_sentto_recvfrom_ipv6_udp-win32.phpt] reason: only for Windows
+SKIP socket_get_option MEMINFO; [ext/sockets/tests/socket_meminfo.phpt] reason: SO_MEMINFO test
+SKIP Test if socket_create_listen() returns false, when it cannot bind to the port. [ext/sockets/tests/socket_create_listen-nobind.phpt] reason: Test cannot be run in environment that will allow binding to port 80 (azure)
+SKIP Test if socket binds on 31338 [ext/sockets/tests/socket_create_listen-win32.phpt] reason: .. Not valid for non Windows
+SKIP Test if socket_set_option() works, option:SO_ACCEPTFILTER [ext/sockets/tests/socket_set_option_acf.phpt] reason: on platforms not supporting SO_ACCEPTFILTER
+SKIP Test parameter handling in socket_create_pair() [ext/sockets/tests/socket_create_pair-wrongparams-win32.phpt] reason: .. Not valid for non Windows
+SKIP Test if socket_set_option() works, option:SO_BINDTODEVICE [ext/sockets/tests/socket_set_option_bindtodevice.phpt] reason: SO_BINDTODEVICE requires root permissions.
+SKIP Test if socket_set_option() works, option:SO_ATTACH_REUSEPORT_CBPF [ext/sockets/tests/socket_reuseport_cbpf.phpt] reason: on platforms not supporting SO_ATTACH_REUSEPORT_CBPF
+SKIP Test if socket_set_option() returns 'Unable to set socket option' failure for invalid options [ext/sockets/tests/socket_set_option_error_socket_option.phpt] reason: Not for OSX
+SKIP Test parameter handling in socket_select(). [ext/sockets/tests/socket_select-wrongparams-1-win32.phpt] reason: .. Not valid for non Windows
+SKIP Test if socket_set_option() works, option:TCP_DEFER_ACCEPT [ext/sockets/tests/socket_defer_acp.phpt] reason: on non Linux
+SKIP IP_MTU_DISCOVER test [ext/sockets/tests/socket_dontfragment.phpt] reason: For Linux only
+SKIP IP_DONTFRAG test [ext/sockets/tests/socket_dontfragment_bsd.phpt] reason: For FreeBSD only
+SKIP Multicast support: IPv4 receive options [ext/sockets/tests/mcast_ipv4_recv.phpt] reason: interface 'lo' is unavailable.
+SKIP socket_export_stream: Test with multicasting [ext/sockets/tests/socket_export_stream-3.phpt] reason: joining group 224.0.0.23 on interface lo failed
+SKIP socket_export_stream: effects of closing [ext/sockets/tests/socket_export_stream-4-win.phpt] reason: Not Valid for Linux
+SKIP bool socket_shutdown ( resource $socket [, int $how = 2 ] ) ; [ext/sockets/tests/socket_shutdown-win32.phpt] reason: windows only test
+FAIL int socket_send ( resource $socket , string $buf , int $len , int $flags ); [ext/sockets/tests/socket_send.phpt] 
+FAIL bool socket_shutdown ( resource $socket [, int $how = 2 ] ) ; [ext/sockets/tests/socket_shutdown.phpt] 
+SKIP ext/sockets - socket_strerror - basic test [ext/sockets/tests/socket_strerror.phpt] reason: - test validates linux error strings only.
+SKIP Test TCP_CONGESTION constant with allowed algos for unprivileged accounts. [ext/sockets/tests/socket_tcp_congestion.phpt] reason: TCP_CONGESTION test
+SKIP Winsock export/import socket, basic test [ext/sockets/tests/wsaprotocol_info_0.phpt] reason: .. Windows only test
+SKIP Test socket_sendto with MSG_ZEROCOPY [ext/sockets/tests/socket_sendto_zerocopy.phpt] reason: SO_ZEROCOPY
+SKIP SPL: SplFileInfo::getExtension() basic test [ext/spl/tests/SplFileInfo_getExtension_basic-win32.phpt] reason: only for Windows
+SKIP Bug #54971 (Wrong result when using iterator_to_array with use_keys on true) [ext/spl/tests/bug54971.phpt] reason: Required extension missing: dom
+SKIP SPL: Problem with casting to string (no glob version) [ext/spl/tests/dit_001_noglob.phpt] reason: GLOB_ERR defined
+SKIP Bug #81587: MultipleIterator Segmentation fault w/ SimpleXMLElement attached [ext/spl/tests/bug81587.phpt] reason: Required extension missing: simplexml
+SKIP GH-17225 (NULL deref in spl_directory.c) [ext/spl/tests/gh17225.phpt] reason: Required extension missing: phar
+SKIP SPL: IteratorIterator and SimpleXMlElement [ext/spl/tests/iterator_006.phpt] reason: Required extension missing: simplexml
+SKIP GH-14639 (Member access within null pointer in ext/spl/spl_observer.c) [ext/spl/tests/gh14639.phpt] reason: Zend MM disabled
+SKIP GH-14687 segfault on debugging SplObjectStorage instance after __destruct. [ext/spl/tests/gh14687.phpt] reason: Required extension missing: phar
+
+--- STDERR ---
+
+--- METRICS ---
+{"wall_ms":2400553.831,"user_ms":20475.188,"system_ms":11057.058,"peak_rss_bytes":673828864,"exit":137,"signal":9,"termination":"timeout"}

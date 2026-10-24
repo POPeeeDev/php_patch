@@ -1,0 +1,11 @@
+
+---- EXPECTED OUTPUT
+Warning: Undefined variable $undef in %s on line %d
+array(1) {
+  [0]=>
+  array(0) {
+  }
+}
+---- ACTUAL OUTPUT
+** ERROR: process timed out **
+---- FAILED

@@ -1,0 +1,8 @@
+
+---- EXPECTED OUTPUT
+Cannot use object of type P as array
+Cannot use object of type P as array
+---- ACTUAL OUTPUT
+bool(false)
+bool(true)
+---- FAILED

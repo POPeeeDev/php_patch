@@ -1,0 +1,468 @@
+{
+    "schema": "php-release-detector-diagnostic/1",
+    "branch": "8.3",
+    "profile": "official",
+    "input_report": "work/releases/8.3/official/sanitized-tests/20261024T171952Z-all-a5fd28/report.json",
+    "build": {
+        "schema": "php-release-build/1",
+        "branch": "8.3",
+        "profile": "official",
+        "variant": "sanitized",
+        "source": {
+            "branch": "8.3",
+            "profile": "official",
+            "manifest": {
+                "schema": "php-release-guard/1",
+                "branch": "8.3",
+                "affected_version": "8.3.35",
+                "official_version": "8.3.36",
+                "affected_revision": "2d3433d24d59f45703be2b4fb40d74e5a41b136b",
+                "official_revision": "5ba6ad519229ac09fc4fc74155c76bdca69ae0de",
+                "official_tree": "4f0eff828ab01da29e1b12241eb59ca90701bf18",
+                "upstream_patch_sha256": "53ac4333057f0a779367d9e70a8c1b0b91b688bb5895576d21990a59abdd9b9e",
+                "guard_patch_sha256": "9b9d2ab7129f2871ef3f6006c58bb0d3d6f1ac8adca69d4845dec306ef32ec57",
+                "guard_files": {
+                    "Zend/zend_alloc.h": {
+                        "official_sha256": "f25e34422c6f45d030ea50201bf496ac12514a8b6652d06d6b5f7c1895f463ae",
+                        "candidate_sha256": "9384c04eea47b7fdf4445b150de2b11135ed528cf5c57a4dca851bb1b5a6df65"
+                    },
+                    "Zend/zend_alloc.c": {
+                        "official_sha256": "9401c5ee28088be17d043724301827b3fa566c4d80977b8d2e087b97c6b745b0",
+                        "candidate_sha256": "6f60654edd6a796057027694303a0b85cd6560e81641d74923abfa3b48f65fe5"
+                    },
+                    "main/main.c": {
+                        "official_sha256": "8ba6a830fbcdc1c05ef1b7c4aaccf24676459a8234c44ac7bc49d23e5fb885d3",
+                        "candidate_sha256": "109889d5b883f05d3176d957193fb9d6291846ea9019d3b276ef52b4cf0b5fb1"
+                    }
+                },
+                "kind": "complete-official-release-update-plus-additive-guard",
+                "upstream_security_commits": [
+                    "3c832b523ee13b1a010177d2ff84aea18be0015e"
+                ]
+            },
+            "starting_revision": "5ba6ad519229ac09fc4fc74155c76bdca69ae0de",
+            "prepared_tree": "4f0eff828ab01da29e1b12241eb59ca90701bf18"
+        },
+        "configure": [
+            "--disable-all",
+            "--enable-cli",
+            "--enable-fpm",
+            "--enable-cgi",
+            "--disable-phpdbg",
+            "--without-pear",
+            "--enable-session",
+            "--enable-filter",
+            "--enable-tokenizer",
+            "--enable-ctype",
+            "--enable-fileinfo",
+            "--enable-posix",
+            "--enable-sockets",
+            "--enable-pcntl",
+            "--enable-shmop",
+            "--enable-sysvmsg",
+            "--enable-sysvsem",
+            "--enable-sysvshm",
+            "--enable-zend-test",
+            "--enable-debug",
+            "--enable-address-sanitizer",
+            "--enable-undefined-sanitizer"
+        ],
+        "jobs": 4,
+        "binary_sha256": {
+            "cli/php": "e0d0e15bfdc190c5f8f8f2dd95870fe4849027da897fd682227720fb9d209902",
+            "fpm/php-fpm": "3cd8d08e0f05a6a78cd62961f5b7d206b5e15494ca89853c7795c084bf3fd03b",
+            "cgi/php-cgi": "c8eaae2fe2288d0a8d0e12dcf49f083c95ecee1117ccb027d7b39c5fc5eb638b"
+        },
+        "platform": "Darwin-x86_64",
+        "utc": "2026-10-24T17:19:44+00:00"
+    },
+    "fixture_sha256": "89e5522848afe631dc7c3dd0d91723222e79ad6ecfed2b41761f5867858a7e95",
+    "supervisor_sha256": "b57b394545abe1f42411ea5024d543fe3ca217884cd950fc9cac22bfe32fd81a",
+    "scope": "paired-detector-reporting-diagnostic;does-not-replace-full-run;not-guard-prevention",
+    "tests": {
+        "original-normal": {
+            "id": "original-normal",
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 947.691,
+                "user_ms": 165.518,
+                "system_ms": 532.705,
+                "peak_rss_bytes": 54853632,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "command": [
+                "env",
+                "USE_ZEND_ALLOC=0",
+                "USE_TRACKED_ALLOC=0",
+                "ZEND_MM_MAX_ALLOCS=0",
+                "ASAN_OPTIONS=detect_leaks=0:abort_on_error=1:allocator_may_return_null=1",
+                "UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1",
+                "work/releases/8.3/official/sanitized-build/sapi/cli/php",
+                "-n",
+                "-d",
+                "extension=work/releases/8.3/official/sanitized-tests/20261024T171952Z-all-a5fd28/sanitizer_probe.so",
+                "-r",
+                "guard_memory_fault($argv[1]); echo \"CONTROL_RETURNED\";",
+                "normal"
+            ],
+            "log": "original-normal.log",
+            "diagnostic_observed": false,
+            "status": "pass"
+        },
+        "original-bounds": {
+            "id": "original-bounds",
+            "exit": 134,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 2658.441,
+                "user_ms": 194.459,
+                "system_ms": 311.567,
+                "peak_rss_bytes": 56041472,
+                "exit": 134,
+                "signal": 6,
+                "termination": "completed"
+            },
+            "command": [
+                "env",
+                "USE_ZEND_ALLOC=0",
+                "USE_TRACKED_ALLOC=0",
+                "ZEND_MM_MAX_ALLOCS=0",
+                "ASAN_OPTIONS=detect_leaks=0:abort_on_error=1:allocator_may_return_null=1",
+                "UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1",
+                "work/releases/8.3/official/sanitized-build/sapi/cli/php",
+                "-n",
+                "-d",
+                "extension=work/releases/8.3/official/sanitized-tests/20261024T171952Z-all-a5fd28/sanitizer_probe.so",
+                "-r",
+                "guard_memory_fault($argv[1]); echo \"CONTROL_RETURNED\";",
+                "bounds"
+            ],
+            "log": "original-bounds.log",
+            "diagnostic_observed": true,
+            "status": "pass"
+        },
+        "original-lifetime": {
+            "id": "original-lifetime",
+            "exit": 134,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 2494.038,
+                "user_ms": 204.429,
+                "system_ms": 302.339,
+                "peak_rss_bytes": 56049664,
+                "exit": 134,
+                "signal": 6,
+                "termination": "completed"
+            },
+            "command": [
+                "env",
+                "USE_ZEND_ALLOC=0",
+                "USE_TRACKED_ALLOC=0",
+                "ZEND_MM_MAX_ALLOCS=0",
+                "ASAN_OPTIONS=detect_leaks=0:abort_on_error=1:allocator_may_return_null=1",
+                "UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1",
+                "work/releases/8.3/official/sanitized-build/sapi/cli/php",
+                "-n",
+                "-d",
+                "extension=work/releases/8.3/official/sanitized-tests/20261024T171952Z-all-a5fd28/sanitizer_probe.so",
+                "-r",
+                "guard_memory_fault($argv[1]); echo \"CONTROL_RETURNED\";",
+                "lifetime"
+            ],
+            "log": "original-lifetime.log",
+            "diagnostic_observed": true,
+            "status": "pass"
+        },
+        "original-double-free": {
+            "id": "original-double-free",
+            "exit": 134,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 3103.521,
+                "user_ms": 203.571,
+                "system_ms": 301.385,
+                "peak_rss_bytes": 56037376,
+                "exit": 134,
+                "signal": 6,
+                "termination": "completed"
+            },
+            "command": [
+                "env",
+                "USE_ZEND_ALLOC=0",
+                "USE_TRACKED_ALLOC=0",
+                "ZEND_MM_MAX_ALLOCS=0",
+                "ASAN_OPTIONS=detect_leaks=0:abort_on_error=1:allocator_may_return_null=1",
+                "UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1",
+                "work/releases/8.3/official/sanitized-build/sapi/cli/php",
+                "-n",
+                "-d",
+                "extension=work/releases/8.3/official/sanitized-tests/20261024T171952Z-all-a5fd28/sanitizer_probe.so",
+                "-r",
+                "guard_memory_fault($argv[1]); echo \"CONTROL_RETURNED\";",
+                "double-free"
+            ],
+            "log": "original-double-free.log",
+            "diagnostic_observed": true,
+            "status": "pass"
+        },
+        "original-invalid-free": {
+            "id": "original-invalid-free",
+            "exit": 134,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 3147.819,
+                "user_ms": 195.577,
+                "system_ms": 527.093,
+                "peak_rss_bytes": 56041472,
+                "exit": 134,
+                "signal": 6,
+                "termination": "completed"
+            },
+            "command": [
+                "env",
+                "USE_ZEND_ALLOC=0",
+                "USE_TRACKED_ALLOC=0",
+                "ZEND_MM_MAX_ALLOCS=0",
+                "ASAN_OPTIONS=detect_leaks=0:abort_on_error=1:allocator_may_return_null=1",
+                "UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1",
+                "work/releases/8.3/official/sanitized-build/sapi/cli/php",
+                "-n",
+                "-d",
+                "extension=work/releases/8.3/official/sanitized-tests/20261024T171952Z-all-a5fd28/sanitizer_probe.so",
+                "-r",
+                "guard_memory_fault($argv[1]); echo \"CONTROL_RETURNED\";",
+                "invalid-free"
+            ],
+            "log": "original-invalid-free.log",
+            "diagnostic_observed": true,
+            "status": "pass"
+        },
+        "original-overflow": {
+            "id": "original-overflow",
+            "exit": 134,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 2761.144,
+                "user_ms": 184.561,
+                "system_ms": 520.848,
+                "peak_rss_bytes": 56041472,
+                "exit": 134,
+                "signal": 6,
+                "termination": "completed"
+            },
+            "command": [
+                "env",
+                "USE_ZEND_ALLOC=0",
+                "USE_TRACKED_ALLOC=0",
+                "ZEND_MM_MAX_ALLOCS=0",
+                "ASAN_OPTIONS=detect_leaks=0:abort_on_error=1:allocator_may_return_null=1",
+                "UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1",
+                "work/releases/8.3/official/sanitized-build/sapi/cli/php",
+                "-n",
+                "-d",
+                "extension=work/releases/8.3/official/sanitized-tests/20261024T171952Z-all-a5fd28/sanitizer_probe.so",
+                "-r",
+                "guard_memory_fault($argv[1]); echo \"CONTROL_RETURNED\";",
+                "overflow"
+            ],
+            "log": "original-overflow.log",
+            "diagnostic_observed": true,
+            "status": "pass"
+        },
+        "without-symbolization-normal": {
+            "id": "without-symbolization-normal",
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 925.922,
+                "user_ms": 166.656,
+                "system_ms": 522.809,
+                "peak_rss_bytes": 54177792,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "command": [
+                "env",
+                "USE_ZEND_ALLOC=0",
+                "USE_TRACKED_ALLOC=0",
+                "ZEND_MM_MAX_ALLOCS=0",
+                "ASAN_OPTIONS=detect_leaks=0:abort_on_error=1:allocator_may_return_null=1:symbolize=0",
+                "UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=0",
+                "work/releases/8.3/official/sanitized-build/sapi/cli/php",
+                "-n",
+                "-d",
+                "extension=work/releases/8.3/official/sanitized-tests/20261024T171952Z-all-a5fd28/sanitizer_probe.so",
+                "-r",
+                "guard_memory_fault($argv[1]); echo \"CONTROL_RETURNED\";",
+                "normal"
+            ],
+            "log": "without-symbolization-normal.log",
+            "diagnostic_observed": false,
+            "status": "pass"
+        },
+        "without-symbolization-bounds": {
+            "id": "without-symbolization-bounds",
+            "exit": 134,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 2021.395,
+                "user_ms": 178.82,
+                "system_ms": 525.744,
+                "peak_rss_bytes": 56012800,
+                "exit": 134,
+                "signal": 6,
+                "termination": "completed"
+            },
+            "command": [
+                "env",
+                "USE_ZEND_ALLOC=0",
+                "USE_TRACKED_ALLOC=0",
+                "ZEND_MM_MAX_ALLOCS=0",
+                "ASAN_OPTIONS=detect_leaks=0:abort_on_error=1:allocator_may_return_null=1:symbolize=0",
+                "UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=0",
+                "work/releases/8.3/official/sanitized-build/sapi/cli/php",
+                "-n",
+                "-d",
+                "extension=work/releases/8.3/official/sanitized-tests/20261024T171952Z-all-a5fd28/sanitizer_probe.so",
+                "-r",
+                "guard_memory_fault($argv[1]); echo \"CONTROL_RETURNED\";",
+                "bounds"
+            ],
+            "log": "without-symbolization-bounds.log",
+            "diagnostic_observed": true,
+            "status": "pass"
+        },
+        "without-symbolization-lifetime": {
+            "id": "without-symbolization-lifetime",
+            "exit": 134,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 2210.573,
+                "user_ms": 180.486,
+                "system_ms": 544.953,
+                "peak_rss_bytes": 56020992,
+                "exit": 134,
+                "signal": 6,
+                "termination": "completed"
+            },
+            "command": [
+                "env",
+                "USE_ZEND_ALLOC=0",
+                "USE_TRACKED_ALLOC=0",
+                "ZEND_MM_MAX_ALLOCS=0",
+                "ASAN_OPTIONS=detect_leaks=0:abort_on_error=1:allocator_may_return_null=1:symbolize=0",
+                "UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=0",
+                "work/releases/8.3/official/sanitized-build/sapi/cli/php",
+                "-n",
+                "-d",
+                "extension=work/releases/8.3/official/sanitized-tests/20261024T171952Z-all-a5fd28/sanitizer_probe.so",
+                "-r",
+                "guard_memory_fault($argv[1]); echo \"CONTROL_RETURNED\";",
+                "lifetime"
+            ],
+            "log": "without-symbolization-lifetime.log",
+            "diagnostic_observed": true,
+            "status": "pass"
+        },
+        "without-symbolization-double-free": {
+            "id": "without-symbolization-double-free",
+            "exit": 134,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 2101.094,
+                "user_ms": 190.476,
+                "system_ms": 558.573,
+                "peak_rss_bytes": 55996416,
+                "exit": 134,
+                "signal": 6,
+                "termination": "completed"
+            },
+            "command": [
+                "env",
+                "USE_ZEND_ALLOC=0",
+                "USE_TRACKED_ALLOC=0",
+                "ZEND_MM_MAX_ALLOCS=0",
+                "ASAN_OPTIONS=detect_leaks=0:abort_on_error=1:allocator_may_return_null=1:symbolize=0",
+                "UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=0",
+                "work/releases/8.3/official/sanitized-build/sapi/cli/php",
+                "-n",
+                "-d",
+                "extension=work/releases/8.3/official/sanitized-tests/20261024T171952Z-all-a5fd28/sanitizer_probe.so",
+                "-r",
+                "guard_memory_fault($argv[1]); echo \"CONTROL_RETURNED\";",
+                "double-free"
+            ],
+            "log": "without-symbolization-double-free.log",
+            "diagnostic_observed": true,
+            "status": "pass"
+        },
+        "without-symbolization-invalid-free": {
+            "id": "without-symbolization-invalid-free",
+            "exit": 134,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 2409.716,
+                "user_ms": 194.122,
+                "system_ms": 568.131,
+                "peak_rss_bytes": 56012800,
+                "exit": 134,
+                "signal": 6,
+                "termination": "completed"
+            },
+            "command": [
+                "env",
+                "USE_ZEND_ALLOC=0",
+                "USE_TRACKED_ALLOC=0",
+                "ZEND_MM_MAX_ALLOCS=0",
+                "ASAN_OPTIONS=detect_leaks=0:abort_on_error=1:allocator_may_return_null=1:symbolize=0",
+                "UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=0",
+                "work/releases/8.3/official/sanitized-build/sapi/cli/php",
+                "-n",
+                "-d",
+                "extension=work/releases/8.3/official/sanitized-tests/20261024T171952Z-all-a5fd28/sanitizer_probe.so",
+                "-r",
+                "guard_memory_fault($argv[1]); echo \"CONTROL_RETURNED\";",
+                "invalid-free"
+            ],
+            "log": "without-symbolization-invalid-free.log",
+            "diagnostic_observed": true,
+            "status": "pass"
+        },
+        "without-symbolization-overflow": {
+            "id": "without-symbolization-overflow",
+            "exit": 134,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 2061.185,
+                "user_ms": 163.902,
+                "system_ms": 556.139,
+                "peak_rss_bytes": 54177792,
+                "exit": 134,
+                "signal": 6,
+                "termination": "completed"
+            },
+            "command": [
+                "env",
+                "USE_ZEND_ALLOC=0",
+                "USE_TRACKED_ALLOC=0",
+                "ZEND_MM_MAX_ALLOCS=0",
+                "ASAN_OPTIONS=detect_leaks=0:abort_on_error=1:allocator_may_return_null=1:symbolize=0",
+                "UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=0",
+                "work/releases/8.3/official/sanitized-build/sapi/cli/php",
+                "-n",
+                "-d",
+                "extension=work/releases/8.3/official/sanitized-tests/20261024T171952Z-all-a5fd28/sanitizer_probe.so",
+                "-r",
+                "guard_memory_fault($argv[1]); echo \"CONTROL_RETURNED\";",
+                "overflow"
+            ],
+            "log": "without-symbolization-overflow.log",
+            "diagnostic_observed": true,
+            "status": "pass"
+        }
+    }
+}

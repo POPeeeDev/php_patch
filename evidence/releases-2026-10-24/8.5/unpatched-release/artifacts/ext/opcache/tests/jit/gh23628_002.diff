@@ -1,0 +1,9 @@
+     int(100)
+002- int(100)
+003- int(100)
+002+ 
+003+ Fatal error: Uncaught RuntimeException: isset false at 0 in work/releases/8.5/unpatched/release-corpus/ext/opcache/tests/jit/gh23628_002.php:10
+004+ Stack trace:
+005+ #0 work/releases/8.5/unpatched/release-corpus/ext/opcache/tests/jit/gh23628_002.php(24): Table->parse(100)
+006+ #1 {main}
+007+   thrown in work/releases/8.5/unpatched/release-corpus/ext/opcache/tests/jit/gh23628_002.php on line 10

@@ -1,0 +1,7 @@
+
+--- STDERR ---
+=================================================================
+==73105==ERROR: AddressSanitizer: attempting double-free on 0x602000003230 in thread T0:
+
+--- METRICS ---
+{"wall_ms":20275.972,"user_ms":172.344,"system_ms":590.732,"peak_rss_bytes":68157440,"exit":137,"signal":9,"termination":"timeout"}

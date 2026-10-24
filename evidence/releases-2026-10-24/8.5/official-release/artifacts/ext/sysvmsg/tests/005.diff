@@ -1,0 +1,23 @@
+001- Iteration 1:
+002- bool(false)
+003- bool(false)
+004- bool(false)
+005- bool(true)
+006- msg_receive(): Argument #4 ($max_message_size) must be greater than 0
+007- 
+008- Warning: msg_send(): msgsnd failed: Invalid argument in %s on line %d
+009- bool(false)
+010- bool(true)
+011- Iteration 2:
+012- bool(false)
+013- bool(false)
+014- bool(false)
+015- bool(true)
+016- msg_receive(): Argument #4 ($max_message_size) must be greater than 0
+017- 
+018- Warning: msg_send(): msgsnd failed: Invalid argument in %s on line %d
+019- bool(false)
+020- bool(true)
+021- Done
+001+ Warning: msg_get_queue(): Failed for key 0x290402e4: No space left on device in work/releases/8.5/official/release-corpus/ext/sysvmsg/tests/005.php on line 12
+002+ Failed to create queue

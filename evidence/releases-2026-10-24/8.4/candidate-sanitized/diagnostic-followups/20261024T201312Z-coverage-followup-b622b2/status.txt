@@ -1,0 +1,1 @@
+PASSED	work/releases/8.4/candidate/sanitized-corpus/Zend/tests/oom_unserialize_004.phpt

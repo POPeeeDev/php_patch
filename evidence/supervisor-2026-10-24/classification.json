@@ -1,0 +1,7 @@
+{
+    "command": "php -n tools/check-harness.php",
+    "exit": 0,
+    "cases": 8,
+    "source_sha256": "f870e783db797cc06378fbffaba34444cbe191fd3cb94cffcdbb016c46102b74",
+    "common_sha256": "85d6e7cd998c8ad49331c307b26f5e97623ccbc84038633fae28e5263310eb70"
+}

@@ -1,0 +1,50 @@
+[24-Oct-2026 17:13:00 UTC] PHP Fatal error:  Allowed memory size of 16777216 bytes exhausted (tried to allocate 2097152 bytes) in work/releases/8.2/candidate/release-tests/20261024T171235Z-all-8d678a/fpm/request.php on line 14
+[24-Oct-2026 17:13:00 UTC] PHP Fatal error:  Allowed memory size of 16777216 bytes exhausted (tried to allocate 2097152 bytes) in work/releases/8.2/candidate/release-tests/20261024T171235Z-all-8d678a/fpm/request.php on line 14
+[24-Oct-2026 17:13:00 UTC] PHP Fatal error:  Allowed memory size of 16777216 bytes exhausted (tried to allocate 2097152 bytes) in work/releases/8.2/candidate/release-tests/20261024T171235Z-all-8d678a/fpm/request.php on line 14
+[24-Oct-2026 17:13:00 UTC] PHP Fatal error:  Allowed memory size of 16777216 bytes exhausted (tried to allocate 2097152 bytes) in work/releases/8.2/candidate/release-tests/20261024T171235Z-all-8d678a/fpm/request.php on line 14
+[24-Oct-2026 17:13:00 UTC] PHP Fatal error:  Allowed memory size of 16777216 bytes exhausted (tried to allocate 2097152 bytes) in work/releases/8.2/candidate/release-tests/20261024T171235Z-all-8d678a/fpm/request.php on line 14
+[24-Oct-2026 17:13:00 UTC] PHP Fatal error:  Allowed memory size of 16777216 bytes exhausted (tried to allocate 2097152 bytes) in work/releases/8.2/candidate/release-tests/20261024T171235Z-all-8d678a/fpm/request.php on line 14
+[24-Oct-2026 17:13:00 UTC] PHP Fatal error:  Allowed memory size of 16777216 bytes exhausted (tried to allocate 2097152 bytes) in work/releases/8.2/candidate/release-tests/20261024T171235Z-all-8d678a/fpm/request.php on line 14
+[24-Oct-2026 17:13:00 UTC] PHP Fatal error:  Allowed memory size of 16777216 bytes exhausted (tried to allocate 2097152 bytes) in work/releases/8.2/candidate/release-tests/20261024T171235Z-all-8d678a/fpm/request.php on line 14
+[24-Oct-2026 17:13:00 UTC] PHP Fatal error:  Allowed memory size of 16777216 bytes exhausted (tried to allocate 2097152 bytes) in work/releases/8.2/candidate/release-tests/20261024T171235Z-all-8d678a/fpm/request.php on line 14
+[24-Oct-2026 17:13:00 UTC] PHP Fatal error:  Allowed memory size of 16777216 bytes exhausted (tried to allocate 2097152 bytes) in work/releases/8.2/candidate/release-tests/20261024T171235Z-all-8d678a/fpm/request.php on line 14
+[24-Oct-2026 17:13:00 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function guard_intentional_undefined_function() in work/releases/8.2/candidate/release-tests/20261024T171235Z-all-8d678a/fpm/request.php:21
+Stack trace:
+#0 {main}
+  thrown in work/releases/8.2/candidate/release-tests/20261024T171235Z-all-8d678a/fpm/request.php on line 21
+[24-Oct-2026 17:13:00 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function guard_intentional_undefined_function() in work/releases/8.2/candidate/release-tests/20261024T171235Z-all-8d678a/fpm/request.php:21
+Stack trace:
+#0 {main}
+  thrown in work/releases/8.2/candidate/release-tests/20261024T171235Z-all-8d678a/fpm/request.php on line 21
+[24-Oct-2026 17:13:00 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function guard_intentional_undefined_function() in work/releases/8.2/candidate/release-tests/20261024T171235Z-all-8d678a/fpm/request.php:21
+Stack trace:
+#0 {main}
+  thrown in work/releases/8.2/candidate/release-tests/20261024T171235Z-all-8d678a/fpm/request.php on line 21
+[24-Oct-2026 17:13:00 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function guard_intentional_undefined_function() in work/releases/8.2/candidate/release-tests/20261024T171235Z-all-8d678a/fpm/request.php:21
+Stack trace:
+#0 {main}
+  thrown in work/releases/8.2/candidate/release-tests/20261024T171235Z-all-8d678a/fpm/request.php on line 21
+[24-Oct-2026 17:13:00 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function guard_intentional_undefined_function() in work/releases/8.2/candidate/release-tests/20261024T171235Z-all-8d678a/fpm/request.php:21
+Stack trace:
+#0 {main}
+  thrown in work/releases/8.2/candidate/release-tests/20261024T171235Z-all-8d678a/fpm/request.php on line 21
+[24-Oct-2026 17:13:00 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function guard_intentional_undefined_function() in work/releases/8.2/candidate/release-tests/20261024T171235Z-all-8d678a/fpm/request.php:21
+Stack trace:
+#0 {main}
+  thrown in work/releases/8.2/candidate/release-tests/20261024T171235Z-all-8d678a/fpm/request.php on line 21
+[24-Oct-2026 17:13:00 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function guard_intentional_undefined_function() in work/releases/8.2/candidate/release-tests/20261024T171235Z-all-8d678a/fpm/request.php:21
+Stack trace:
+#0 {main}
+  thrown in work/releases/8.2/candidate/release-tests/20261024T171235Z-all-8d678a/fpm/request.php on line 21
+[24-Oct-2026 17:13:00 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function guard_intentional_undefined_function() in work/releases/8.2/candidate/release-tests/20261024T171235Z-all-8d678a/fpm/request.php:21
+Stack trace:
+#0 {main}
+  thrown in work/releases/8.2/candidate/release-tests/20261024T171235Z-all-8d678a/fpm/request.php on line 21
+[24-Oct-2026 17:13:00 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function guard_intentional_undefined_function() in work/releases/8.2/candidate/release-tests/20261024T171235Z-all-8d678a/fpm/request.php:21
+Stack trace:
+#0 {main}
+  thrown in work/releases/8.2/candidate/release-tests/20261024T171235Z-all-8d678a/fpm/request.php on line 21
+[24-Oct-2026 17:13:01 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function guard_intentional_undefined_function() in work/releases/8.2/candidate/release-tests/20261024T171235Z-all-8d678a/fpm/request.php:21
+Stack trace:
+#0 {main}
+  thrown in work/releases/8.2/candidate/release-tests/20261024T171235Z-all-8d678a/fpm/request.php on line 21

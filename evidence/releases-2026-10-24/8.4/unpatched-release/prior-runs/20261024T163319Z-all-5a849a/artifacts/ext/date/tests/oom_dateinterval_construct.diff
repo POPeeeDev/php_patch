@@ -1,0 +1,2 @@
+001- DateMalformedIntervalStringException: Unknown or bad format (%s)
+001+ Fatal error: Allowed memory size of 67108864 bytes exhausted (tried to allocate 4096 bytes) in work/releases/8.4/unpatched/release-corpus/ext/date/tests/oom_dateinterval_construct.php on line 3

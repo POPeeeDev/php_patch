@@ -1,0 +1,8 @@
+001- ok
+001+ dim-assign i=2 private=string(7) "MISSING"
+002+ dim-assign i=2 public=array(2) {
+003+   ["keep"]=>
+004+   int(1)
+005+   ["x"]=>
+006+   int(2)
+007+ }

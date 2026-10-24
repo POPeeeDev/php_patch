@@ -1,0 +1,6 @@
+work/releases/8.5/candidate/sanitized-corpus/tests/security/open_basedir_linkinfo.phpt
+work/releases/8.5/candidate/sanitized-corpus/Zend/tests/fibers/gh19983.phpt
+work/releases/8.5/candidate/sanitized-corpus/Zend/tests/inheritance/interface_constructor_prototype_002.phpt
+work/releases/8.5/candidate/sanitized-corpus/Zend/tests/stack_limit/stack_limit_002.phpt
+work/releases/8.5/candidate/sanitized-corpus/Zend/tests/stack_limit/stack_limit_004.phpt
+work/releases/8.5/candidate/sanitized-corpus/Zend/tests/runtime_compile_time_binary_operands.phpt

@@ -1,0 +1,6 @@
+--
+       [1]=>
+       string(29) "FileInvalidWindowsDriveLetter"
+     }
+008- string(3) "/zz"
+008+ string(5) "/c:/x"

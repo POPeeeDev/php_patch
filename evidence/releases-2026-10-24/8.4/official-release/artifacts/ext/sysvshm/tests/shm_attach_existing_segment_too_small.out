@@ -1,0 +1,10 @@
+Warning: shmop_open(): Unable to attach or create shared memory segment "No space left on device" in work/releases/8.4/official/release-corpus/ext/sysvshm/tests/shm_attach_existing_segment_too_small.php on line 4
+
+Warning: shm_attach(): Failed for key 0x53484d32: No space left on device in work/releases/8.4/official/release-corpus/ext/sysvshm/tests/shm_attach_existing_segment_too_small.php on line 6
+bool(false)
+
+Fatal error: Uncaught TypeError: shmop_delete(): Argument #1 ($shmop) must be of type Shmop, false given in work/releases/8.4/official/release-corpus/ext/sysvshm/tests/shm_attach_existing_segment_too_small.php:8
+Stack trace:
+#0 work/releases/8.4/official/release-corpus/ext/sysvshm/tests/shm_attach_existing_segment_too_small.php(8): shmop_delete(false)
+#1 {main}
+  thrown in work/releases/8.4/official/release-corpus/ext/sysvshm/tests/shm_attach_existing_segment_too_small.php on line 8

@@ -1,0 +1,4 @@
+work/releases/8.4/candidate/sanitized-corpus/tests/security/open_basedir_linkinfo.phpt
+work/releases/8.4/candidate/sanitized-corpus/Zend/tests/fibers/gh19983.phpt
+work/releases/8.4/candidate/sanitized-corpus/Zend/tests/interface_constructor_prototype_002.phpt
+work/releases/8.4/candidate/sanitized-corpus/Zend/tests/oom_unserialize_004.phpt

@@ -1,0 +1,3 @@
+PASSED	work/releases/8.3/official/sanitized-corpus/Zend/tests/oom_unserialize_005.phpt
+PASSED	work/releases/8.3/official/sanitized-corpus/Zend/tests/oom_unserialize_016.phpt
+PASSED	work/releases/8.3/official/sanitized-corpus/ext/pcre/tests/cache_limit.phpt

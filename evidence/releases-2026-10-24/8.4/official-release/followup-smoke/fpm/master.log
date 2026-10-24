@@ -1,0 +1,34 @@
+[24-Oct-2026 13:18:10] NOTICE: fpm is running, pid 79040
+[24-Oct-2026 13:18:10] NOTICE: ready to handle connections
+[24-Oct-2026 13:18:12] WARNING: [pool guard] child 79756 said into stderr: "Hard memory limit of 33554432 bytes exhausted (tried to allocate 67108864 bytes) in work/releases/8.4/official/release-tests/20261024T171747Z-smoke-9b85ac/fpm/request.php on line 18"
+[24-Oct-2026 13:18:12] WARNING: [pool guard] child 79756 exited with code 137 after 1.783191 seconds from start
+[24-Oct-2026 13:18:12] NOTICE: [pool guard] child 80396 started
+[24-Oct-2026 13:18:12] WARNING: [pool guard] child 80396 said into stderr: "Hard memory limit of 33554432 bytes exhausted (tried to allocate 67108864 bytes) in work/releases/8.4/official/release-tests/20261024T171747Z-smoke-9b85ac/fpm/request.php on line 18"
+[24-Oct-2026 13:18:12] WARNING: [pool guard] child 80396 exited with code 137 after 0.023527 seconds from start
+[24-Oct-2026 13:18:12] NOTICE: [pool guard] child 80412 started
+[24-Oct-2026 13:18:12] WARNING: [pool guard] child 80412 said into stderr: "Hard memory limit of 33554432 bytes exhausted (tried to allocate 67108864 bytes) in work/releases/8.4/official/release-tests/20261024T171747Z-smoke-9b85ac/fpm/request.php on line 18"
+[24-Oct-2026 13:18:12] WARNING: [pool guard] child 80412 exited with code 137 after 0.022474 seconds from start
+[24-Oct-2026 13:18:12] NOTICE: [pool guard] child 80424 started
+[24-Oct-2026 13:18:12] WARNING: [pool guard] child 80424 said into stderr: "Hard memory limit of 33554432 bytes exhausted (tried to allocate 67108864 bytes) in work/releases/8.4/official/release-tests/20261024T171747Z-smoke-9b85ac/fpm/request.php on line 18"
+[24-Oct-2026 13:18:12] WARNING: [pool guard] child 80424 exited with code 137 after 0.024284 seconds from start
+[24-Oct-2026 13:18:12] NOTICE: [pool guard] child 80436 started
+[24-Oct-2026 13:18:12] WARNING: [pool guard] child 80436 said into stderr: "Hard memory limit of 33554432 bytes exhausted (tried to allocate 67108864 bytes) in work/releases/8.4/official/release-tests/20261024T171747Z-smoke-9b85ac/fpm/request.php on line 18"
+[24-Oct-2026 13:18:12] WARNING: [pool guard] child 80436 exited with code 137 after 0.024335 seconds from start
+[24-Oct-2026 13:18:12] NOTICE: [pool guard] child 80446 started
+[24-Oct-2026 13:18:12] WARNING: [pool guard] child 80446 said into stderr: "Hard memory limit of 33554432 bytes exhausted (tried to allocate 67108864 bytes) in work/releases/8.4/official/release-tests/20261024T171747Z-smoke-9b85ac/fpm/request.php on line 18"
+[24-Oct-2026 13:18:12] WARNING: [pool guard] child 80446 exited with code 137 after 0.023685 seconds from start
+[24-Oct-2026 13:18:12] NOTICE: [pool guard] child 80456 started
+[24-Oct-2026 13:18:12] WARNING: [pool guard] child 80456 said into stderr: "Hard memory limit of 33554432 bytes exhausted (tried to allocate 67108864 bytes) in work/releases/8.4/official/release-tests/20261024T171747Z-smoke-9b85ac/fpm/request.php on line 18"
+[24-Oct-2026 13:18:12] WARNING: [pool guard] child 80456 exited with code 137 after 0.025906 seconds from start
+[24-Oct-2026 13:18:12] NOTICE: [pool guard] child 80469 started
+[24-Oct-2026 13:18:12] WARNING: [pool guard] child 80469 said into stderr: "Hard memory limit of 33554432 bytes exhausted (tried to allocate 67108864 bytes) in work/releases/8.4/official/release-tests/20261024T171747Z-smoke-9b85ac/fpm/request.php on line 18"
+[24-Oct-2026 13:18:12] WARNING: [pool guard] child 80469 exited with code 137 after 0.045053 seconds from start
+[24-Oct-2026 13:18:12] NOTICE: [pool guard] child 80481 started
+[24-Oct-2026 13:18:12] WARNING: [pool guard] child 80481 said into stderr: "Hard memory limit of 33554432 bytes exhausted (tried to allocate 67108864 bytes) in work/releases/8.4/official/release-tests/20261024T171747Z-smoke-9b85ac/fpm/request.php on line 18"
+[24-Oct-2026 13:18:12] WARNING: [pool guard] child 80481 exited with code 137 after 0.036862 seconds from start
+[24-Oct-2026 13:18:12] NOTICE: [pool guard] child 80494 started
+[24-Oct-2026 13:18:12] WARNING: [pool guard] child 80494 said into stderr: "Hard memory limit of 33554432 bytes exhausted (tried to allocate 67108864 bytes) in work/releases/8.4/official/release-tests/20261024T171747Z-smoke-9b85ac/fpm/request.php on line 18"
+[24-Oct-2026 13:18:12] WARNING: [pool guard] child 80494 exited with code 137 after 0.025520 seconds from start
+[24-Oct-2026 13:18:12] NOTICE: [pool guard] child 80504 started
+[24-Oct-2026 13:18:12] NOTICE: Terminating ...
+[24-Oct-2026 13:18:12] NOTICE: exiting, bye-bye!

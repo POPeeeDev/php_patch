@@ -1,0 +1,34 @@
+[24-Oct-2026 14:47:41] NOTICE: fpm is running, pid 25237
+[24-Oct-2026 14:47:41] NOTICE: ready to handle connections
+[24-Oct-2026 14:47:41] WARNING: [pool guard] child 25243 said into stderr: "Hard memory limit of 33554432 bytes exhausted at ./bench/service_probe.c:9 (tried to allocate 67108864 bytes) in work/releases/8.4/official/sanitized-tests/20261024T184730Z-all-ae7e74/fpm/request.php on line 18"
+[24-Oct-2026 14:47:42] WARNING: [pool guard] child 25243 exited with code 137 after 0.921424 seconds from start
+[24-Oct-2026 14:47:42] NOTICE: [pool guard] child 25268 started
+[24-Oct-2026 14:47:42] WARNING: [pool guard] child 25268 said into stderr: "Hard memory limit of 33554432 bytes exhausted at ./bench/service_probe.c:9 (tried to allocate 67108864 bytes) in work/releases/8.4/official/sanitized-tests/20261024T184730Z-all-ae7e74/fpm/request.php on line 18"
+[24-Oct-2026 14:47:42] WARNING: [pool guard] child 25268 exited with code 137 after 0.103367 seconds from start
+[24-Oct-2026 14:47:42] NOTICE: [pool guard] child 25283 started
+[24-Oct-2026 14:47:42] WARNING: [pool guard] child 25283 said into stderr: "Hard memory limit of 33554432 bytes exhausted at ./bench/service_probe.c:9 (tried to allocate 67108864 bytes) in work/releases/8.4/official/sanitized-tests/20261024T184730Z-all-ae7e74/fpm/request.php on line 18"
+[24-Oct-2026 14:47:42] WARNING: [pool guard] child 25283 exited with code 137 after 0.106778 seconds from start
+[24-Oct-2026 14:47:42] NOTICE: [pool guard] child 25298 started
+[24-Oct-2026 14:47:42] WARNING: [pool guard] child 25298 said into stderr: "Hard memory limit of 33554432 bytes exhausted at ./bench/service_probe.c:9 (tried to allocate 67108864 bytes) in work/releases/8.4/official/sanitized-tests/20261024T184730Z-all-ae7e74/fpm/request.php on line 18"
+[24-Oct-2026 14:47:42] WARNING: [pool guard] child 25298 exited with code 137 after 0.102138 seconds from start
+[24-Oct-2026 14:47:42] NOTICE: [pool guard] child 25319 started
+[24-Oct-2026 14:47:42] WARNING: [pool guard] child 25319 said into stderr: "Hard memory limit of 33554432 bytes exhausted at ./bench/service_probe.c:9 (tried to allocate 67108864 bytes) in work/releases/8.4/official/sanitized-tests/20261024T184730Z-all-ae7e74/fpm/request.php on line 18"
+[24-Oct-2026 14:47:42] WARNING: [pool guard] child 25319 exited with code 137 after 0.100426 seconds from start
+[24-Oct-2026 14:47:42] NOTICE: [pool guard] child 25321 started
+[24-Oct-2026 14:47:42] WARNING: [pool guard] child 25321 said into stderr: "Hard memory limit of 33554432 bytes exhausted at ./bench/service_probe.c:9 (tried to allocate 67108864 bytes) in work/releases/8.4/official/sanitized-tests/20261024T184730Z-all-ae7e74/fpm/request.php on line 18"
+[24-Oct-2026 14:47:42] WARNING: [pool guard] child 25321 exited with code 137 after 0.108791 seconds from start
+[24-Oct-2026 14:47:42] NOTICE: [pool guard] child 25347 started
+[24-Oct-2026 14:47:43] WARNING: [pool guard] child 25347 said into stderr: "Hard memory limit of 33554432 bytes exhausted at ./bench/service_probe.c:9 (tried to allocate 67108864 bytes) in work/releases/8.4/official/sanitized-tests/20261024T184730Z-all-ae7e74/fpm/request.php on line 18"
+[24-Oct-2026 14:47:43] WARNING: [pool guard] child 25347 exited with code 137 after 0.112119 seconds from start
+[24-Oct-2026 14:47:43] NOTICE: [pool guard] child 25385 started
+[24-Oct-2026 14:47:43] WARNING: [pool guard] child 25385 said into stderr: "Hard memory limit of 33554432 bytes exhausted at ./bench/service_probe.c:9 (tried to allocate 67108864 bytes) in work/releases/8.4/official/sanitized-tests/20261024T184730Z-all-ae7e74/fpm/request.php on line 18"
+[24-Oct-2026 14:47:43] WARNING: [pool guard] child 25385 exited with code 137 after 0.112421 seconds from start
+[24-Oct-2026 14:47:43] NOTICE: [pool guard] child 25427 started
+[24-Oct-2026 14:47:43] WARNING: [pool guard] child 25427 said into stderr: "Hard memory limit of 33554432 bytes exhausted at ./bench/service_probe.c:9 (tried to allocate 67108864 bytes) in work/releases/8.4/official/sanitized-tests/20261024T184730Z-all-ae7e74/fpm/request.php on line 18"
+[24-Oct-2026 14:47:43] WARNING: [pool guard] child 25427 exited with code 137 after 0.113443 seconds from start
+[24-Oct-2026 14:47:43] NOTICE: [pool guard] child 25469 started
+[24-Oct-2026 14:47:43] WARNING: [pool guard] child 25469 said into stderr: "Hard memory limit of 33554432 bytes exhausted at ./bench/service_probe.c:9 (tried to allocate 67108864 bytes) in work/releases/8.4/official/sanitized-tests/20261024T184730Z-all-ae7e74/fpm/request.php on line 18"
+[24-Oct-2026 14:47:43] WARNING: [pool guard] child 25469 exited with code 137 after 0.118656 seconds from start
+[24-Oct-2026 14:47:43] NOTICE: [pool guard] child 25509 started
+[24-Oct-2026 14:47:43] NOTICE: Terminating ...
+[24-Oct-2026 14:47:43] NOTICE: exiting, bye-bye!

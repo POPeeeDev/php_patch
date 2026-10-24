@@ -1,0 +1,6 @@
+FAILED	work/releases/8.2/official/release-corpus/ext/sysvmsg/tests/001.phpt
+FAILED	work/releases/8.2/official/release-corpus/ext/sysvmsg/tests/002.phpt
+FAILED	work/releases/8.2/official/release-corpus/ext/sysvmsg/tests/003.phpt
+FAILED	work/releases/8.2/official/release-corpus/ext/sysvmsg/tests/004.phpt
+FAILED	work/releases/8.2/official/release-corpus/ext/sysvmsg/tests/005.phpt
+FAILED	work/releases/8.2/official/release-corpus/ext/sysvmsg/tests/006.phpt

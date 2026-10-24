@@ -1,0 +1,10 @@
+
+Fatal error: Uncaught RuntimeException: Local FPM did not become ready; inspect master.log in ./bench/fpm_bench.php:68
+Stack trace:
+#0 {main}
+  thrown in ./bench/fpm_bench.php on line 68
+
+--- STDERR ---
+
+--- METRICS ---
+{"wall_ms":5119.599,"user_ms":51.201,"system_ms":55.575,"peak_rss_bytes":5824512,"exit":255,"signal":0,"termination":"completed"}

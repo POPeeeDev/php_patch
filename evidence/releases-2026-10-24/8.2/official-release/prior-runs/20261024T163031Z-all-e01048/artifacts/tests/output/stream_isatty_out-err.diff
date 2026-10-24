@@ -1,0 +1,12 @@
+001+ STDIN (constant): bool(false)
+002+ STDIN (fopen): bool(false)
+     STDIN (constant): bool(true)
+     STDIN (fopen): bool(true)
+003+ STDIN (php://fd/0): bool(false)
+001- STDIN (constant): bool(true)
+002- STDIN (fopen): bool(true)
+003- STDIN (php://fd/0): bool(true)
+     STDOUT (constant): bool(false)
+     STDOUT (fopen): bool(false)
+     STDOUT (php://fd/1): bool(false)
+--

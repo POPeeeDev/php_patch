@@ -1,0 +1,6 @@
+
+---- EXPECTED OUTPUT
+bool(false)
+---- ACTUAL OUTPUT
+Fatal error: Allowed memory size of 67108864 bytes exhausted (tried to allocate 50331648 bytes) in work/releases/8.3/unpatched/release-corpus/ext/date/tests/oom_date_create_immutable.php on line 2
+---- FAILED

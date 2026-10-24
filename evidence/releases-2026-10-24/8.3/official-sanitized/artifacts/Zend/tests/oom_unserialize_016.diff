@@ -1,0 +1,6 @@
+001- Fatal error: Allowed memory size of %d bytes exhausted %S(tried to allocate %d bytes) in %s on line %d
+002- array(1) {
+003-   [0]=>
+004-   *RECURSION*
+005- }
+001+ ** ERROR: process timed out **

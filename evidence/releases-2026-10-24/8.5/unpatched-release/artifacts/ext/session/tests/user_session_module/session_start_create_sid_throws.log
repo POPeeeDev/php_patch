@@ -1,0 +1,20 @@
+
+---- EXPECTED OUTPUT
+strict mode: 0, invalid return: 0
+RuntimeException: create_sid failed
+strict mode: 0, invalid return: 1
+TypeError: FailingHandler::create_sid(): Return value must be of type string, array returned
+strict mode: 1, invalid return: 0
+RuntimeException: create_sid failed
+strict mode: 1, invalid return: 1
+TypeError: FailingHandler::create_sid(): Return value must be of type string, array returned
+---- ACTUAL OUTPUT
+strict mode: 0, invalid return: 0
+Error: Session id must be a string
+strict mode: 0, invalid return: 1
+Error: Session id must be a string
+strict mode: 1, invalid return: 0
+Error: Session id must be a string
+strict mode: 1, invalid return: 1
+Error: Session id must be a string
+---- FAILED

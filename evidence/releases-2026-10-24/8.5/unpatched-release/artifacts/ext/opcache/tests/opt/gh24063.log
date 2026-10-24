@@ -1,0 +1,16 @@
+
+---- EXPECTED OUTPUT
+float(0)
+float(-0)
+float(0)
+float(-0)
+float(0)
+float(-0)
+---- ACTUAL OUTPUT
+float(-0)
+float(-0)
+float(-0)
+float(-0)
+float(-0)
+float(-0)
+---- FAILED

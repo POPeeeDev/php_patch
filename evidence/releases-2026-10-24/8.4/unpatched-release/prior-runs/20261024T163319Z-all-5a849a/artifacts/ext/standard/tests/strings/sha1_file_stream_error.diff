@@ -1,0 +1,26 @@
+001- error: bool(false)
+002- error (raw): bool(false)
+003- prefix-error: bool(false)
+004- prefix-error (raw): bool(false)
+005- stalled: bool(false)
+006- stalled (raw): bool(false)
+007- prefix-stalled: bool(false)
+008- prefix-stalled (raw): bool(false)
+001+ error: string(40) "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+002+ error (raw): string(40) "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+003+ prefix-error: string(40) "b4ebfe34d0fa97f0dd2bb1234fad8f59805f4e8d"
+004+ prefix-error (raw): string(40) "b4ebfe34d0fa97f0dd2bb1234fad8f59805f4e8d"
+005+ stalled: string(40) "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+006+ stalled (raw): string(40) "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+007+ prefix-stalled: string(40) "b4ebfe34d0fa97f0dd2bb1234fad8f59805f4e8d"
+008+ prefix-stalled (raw): string(40) "b4ebfe34d0fa97f0dd2bb1234fad8f59805f4e8d"
+     empty: string(40) "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+     empty (raw): string(40) "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+     eof: string(40) "b4ebfe34d0fa97f0dd2bb1234fad8f59805f4e8d"
+     eof (raw): string(40) "b4ebfe34d0fa97f0dd2bb1234fad8f59805f4e8d"
+     short: string(40) "b4ebfe34d0fa97f0dd2bb1234fad8f59805f4e8d"
+     short (raw): string(40) "b4ebfe34d0fa97f0dd2bb1234fad8f59805f4e8d"
+015- directory: bool(false)
+016- directory (raw): bool(false)
+015+ directory: string(40) "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+016+ directory (raw): string(40) "da39a3ee5e6b4b0d3255bfef95601890afd80709"

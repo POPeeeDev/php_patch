@@ -1,0 +1,12 @@
+-- __construct() --
+size: 0
+string(2) "ok"
+-- __construct() then setSize() --
+size: 0
+string(2) "ok"
+-- __unserialize() --
+size: 0
+string(2) "ok"
+-- __wakeup() --
+size: 0
+string(2) "ok"

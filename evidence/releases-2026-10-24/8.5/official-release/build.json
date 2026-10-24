@@ -1,0 +1,70 @@
+{
+    "schema": "php-release-build/1",
+    "branch": "8.5",
+    "profile": "official",
+    "variant": "release",
+    "source": {
+        "branch": "8.5",
+        "profile": "official",
+        "manifest": {
+            "schema": "php-release-guard/1",
+            "branch": "8.5",
+            "affected_version": "8.5.11",
+            "official_version": "8.5.12",
+            "affected_revision": "678778973bb4d4185c06ef1320de50f1a975d3c8",
+            "official_revision": "136e049ac10b032c83018e65b63b6df858943750",
+            "official_tree": "cde8057721f0cbd389a749ea06bf6208a6d11957",
+            "upstream_patch_sha256": "47069d87f3b8bd9ea6000e048fe91774eb5eed405eacfc915a0f92525dcaba71",
+            "guard_patch_sha256": "6ce0c41f7ee586d30411874817ff0d16bb6a50c6cd559b065170e36396cd4ab9",
+            "guard_files": {
+                "Zend/zend_alloc.h": {
+                    "official_sha256": "8638c5b8f53631211674261183faf5311c8172ef51fc23a62ad398e3f2ca6b97",
+                    "candidate_sha256": "8450ac2c8241d947098496a158a05856bf2cbf026c0e4c91fdab9022e6eee90e"
+                },
+                "Zend/zend_alloc.c": {
+                    "official_sha256": "082d69a789f071accdf3cc120817fcb225e29caae13141151ef7135fc42c519e",
+                    "candidate_sha256": "9129a028ac63089c7aa5704b78d505273479f867c0b4fc74acbd746d8644a8ac"
+                },
+                "main/main.c": {
+                    "official_sha256": "78fc472b27e0a0d62d57781fb601802106598dc43bdcdf49fa6d582beef08a69",
+                    "candidate_sha256": "a55476374a2ceb265731e9e1c49c22180b1a8a7490ca75d436aa4284a8ab8fef"
+                }
+            },
+            "kind": "complete-official-release-update-plus-additive-guard",
+            "upstream_security_commits": [
+                "31c0ea7d7ff1d1fccb6492e52dab544011628065"
+            ]
+        },
+        "starting_revision": "136e049ac10b032c83018e65b63b6df858943750",
+        "prepared_tree": "cde8057721f0cbd389a749ea06bf6208a6d11957"
+    },
+    "configure": [
+        "--disable-all",
+        "--enable-cli",
+        "--enable-fpm",
+        "--enable-cgi",
+        "--disable-phpdbg",
+        "--without-pear",
+        "--enable-session",
+        "--enable-filter",
+        "--enable-tokenizer",
+        "--enable-ctype",
+        "--enable-fileinfo",
+        "--enable-posix",
+        "--enable-sockets",
+        "--enable-pcntl",
+        "--enable-shmop",
+        "--enable-sysvmsg",
+        "--enable-sysvsem",
+        "--enable-sysvshm",
+        "--enable-zend-test"
+    ],
+    "jobs": 2,
+    "binary_sha256": {
+        "cli/php": "6397e64f36f4988980d01d5983286a9307d93578149b370c5e88f3b058c87a32",
+        "fpm/php-fpm": "82006cc1b1af62bbce2136b8fdbe5b06319f9523283a5c1c39d690afb38244af",
+        "cgi/php-cgi": "ea35102c1760b4aa03858979903d27077632971cf066baa5b0569f76bdfd2538"
+    },
+    "platform": "Darwin-x86_64",
+    "utc": "2026-10-24T17:27:03+00:00"
+}

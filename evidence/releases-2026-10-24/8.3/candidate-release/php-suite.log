@@ -1,0 +1,931 @@
+
+=====================================================================
+PHP         : work/releases/8.3/candidate/release-build/sapi/cli/php 
+PHP_SAPI    : cli
+PHP_VERSION : 8.3.36
+ZEND_VERSION: 4.3.36
+PHP_OS      : Darwin - Darwin <USER>.local 25.6.0 Darwin Kernel Version 25.6.0: Tue Aug 18 17:46:40 PDT 2026; root:xnu-12377.161.15.700.19~2/RELEASE_X86_64 x86_64
+INI actual  : work/releases/8.3/candidate/release-corpus
+More .INIs  :  
+---------------------------------------------------------------------
+PHP         : work/releases/8.3/candidate/release-build/sapi/cgi/php-cgi 
+PHP_SAPI    : cgi-fcgi
+PHP_VERSION : 8.3.36
+ZEND_VERSION: 4.3.36
+PHP_OS      : Darwin - Darwin <USER>.local 25.6.0 Darwin Kernel Version 25.6.0: Tue Aug 18 17:46:40 PDT 2026; root:xnu-12377.161.15.700.19~2/RELEASE_X86_64 x86_64
+INI actual  : work/releases/8.3/candidate/release-corpus
+More .INIs  : 
+--------------------------------------------------------------------- 
+CWD         : work/releases/8.3/candidate/release-corpus
+Extra dirs  : 
+VALGRIND    : Not used
+=====================================================================
+TIME START 2026-10-24 16:56:57
+=====================================================================
+Spawning 4 workers... Done in 0.39s
+=====================================================================
+
+SKIP rfc1867: mbstring input conversion of a body part doesn't reach the hard limit [tests/basic/oom_rfc1867_mb_encoding.phpt] reason: mbstring not available
+SKIP phpt EXTENSIONS directive - shared module [tests/run-test/extensions-shared.phpt] reason: Required extension missing: openssl
+SKIP Shift_JIS request [tests/basic/029.phpt] reason: Required extension missing: mbstring
+SKIP GH-7896 (Environment vars may be mangled on Windows) [tests/basic/gh7896.phpt] reason: for Windows only
+SKIP Bug #30638 (localeconv returns wrong LC_NUMERIC settings) (ok to fail on MacOS X) [tests/lang/bug30638.phpt] reason: ok to fail on MacOS X
+SKIP Bug #38579 (include_once() may include the same file twice) [tests/lang/bug38579.phpt] reason: only for Windows
+SKIP Test PHP_INT_MIN, PHP_INT_MAX and PHP_INT_SIZE (32-bit) [tests/lang/constants/PHP_INT_32bit.phpt] reason: this test is for 32-bit platforms only
+SKIP Binary integer strings (32bit) [tests/lang/integer_literals/binary_32bit.phpt] reason: this test is for 32bit platform only
+SKIP Hexadecimal integer strings (32bit) [tests/lang/integer_literals/hexadecimal_32bit.phpt] reason: this test is for 32bit platform only
+SKIP Octal integer strings (32bit) [tests/lang/integer_literals/octal_32bit.phpt] reason: this test is for 32bit platform only
+SKIP Test != operator : max int 32bit range [tests/lang/operators/operator_notequals_variation.phpt] reason: this test is for 32bit platform only
+SKIP Test !== operator : max int 32bit range [tests/lang/operators/operator_notidentical_variation.phpt] reason: this test is for 32bit platform only
+SKIP Test == operator : max int 32bit range [tests/lang/operators/operator_equals_variation.phpt] reason: this test is for 32bit platform only
+SKIP Test >= operator : max int 32bit range [tests/lang/operators/operator_gt_or_equal_variation.phpt] reason: this test is for 32bit platform only
+SKIP Test === operator : max int 32bit range [tests/lang/operators/operator_identical_variation.phpt] reason: this test is for 32bit platform only
+SKIP Test <= operator : max int 32bit range [tests/lang/operators/operator_lt_or_equal_variation.phpt] reason: this test is for 32bit platform only
+SKIP GH-14808 (Unexpected null pointer in Zend/zend_string.h with empty output buffer) [tests/output/gh14808.phpt] reason: Required extension missing: iconv
+SKIP Bug #60282 (Segfault when using ob_gzhandler() with open buffers) [tests/output/bug60282.phpt] reason: Required extension missing: zlib
+SKIP output buffering - error message nirvana bug #37714 [tests/output/ob_018.phpt] reason: Required extension missing: zlib
+SKIP Test sapi_windows_vt100_support on newer Windows versions with redirected STDIN/STDERR [tests/output/sapi_windows_vt100_support_winok_in-err.phpt] reason: I/O capture test
+SKIP Test sapi_windows_vt100_support on newer Windows versions with redirected STDIN/STDOUT/STDERR [tests/output/sapi_windows_vt100_support_winok_in-out-err.phpt] reason: I/O capture test
+SKIP Test sapi_windows_vt100_support on newer Windows versions with redirected STDIN/STDOUT [tests/output/sapi_windows_vt100_support_winok_in-out.phpt] reason: I/O capture test
+SKIP Test sapi_windows_vt100_support on newer Windows versions with redirected STDOUT/STDERR [tests/output/sapi_windows_vt100_support_winok_out-err.phpt] reason: I/O capture test
+SKIP Test sapi_windows_vt100_support on newer Windows versions with redirected STDOUT [tests/output/sapi_windows_vt100_support_winok_out.phpt] reason: I/O capture test
+SKIP Test stream_isatty with redirected STDERR [tests/output/stream_isatty_err.phpt] reason: I/O capture test
+SKIP Test stream_isatty with redirected STDIN/STDERR [tests/output/stream_isatty_in-err.phpt] reason: I/O capture test
+SKIP Test stream_isatty with redirected STDIN/STDOUT/STDERR [tests/output/stream_isatty_in-out-err.phpt] reason: I/O capture test
+SKIP Test stream_isatty with redirected STDIN/STDOUT [tests/output/stream_isatty_in-out.phpt] reason: I/O capture test
+SKIP OOM inside an internal output handler must not free the running handler [tests/output/oom_in_internal_output_handler.phpt] reason: Required extension missing: mbstring
+SKIP sapi_windows_vt100_support(): casting stream does not emit data loss and should not emit warnings [tests/output/sapi_windows_vt100_support_no_warning_on_cast.phpt] reason: Only for Windows systems
+SKIP sapi_windows_vt100_support(): uncastable user stream [tests/output/sapi_windows_vt100_support_non_castable_user_stream.phpt] reason: Only for Windows systems
+SKIP Test stream_isatty with redirected STDOUT/STDERR [tests/output/stream_isatty_out-err.phpt] reason: I/O capture test
+SKIP Test stream_isatty with redirected STDOUT [tests/output/stream_isatty_out.phpt] reason: I/O capture test
+SKIP Test sapi_windows_vt100_support on older Windows versions with redirected STDERR [tests/output/sapi_windows_vt100_support_winko_err.phpt] reason: I/O capture test
+SKIP Test sapi_windows_vt100_support on older Windows versions with redirected STDIN/STDERR [tests/output/sapi_windows_vt100_support_winko_in-err.phpt] reason: I/O capture test
+SKIP Test sapi_windows_vt100_support on older Windows versions with redirected STDIN/STDOUT/STDERR [tests/output/sapi_windows_vt100_support_winko_in-out-err.phpt] reason: I/O capture test
+SKIP Test sapi_windows_vt100_support on older Windows versions with redirected STDIN/STDOUT [tests/output/sapi_windows_vt100_support_winko_in-out.phpt] reason: I/O capture test
+SKIP Test sapi_windows_vt100_support on older Windows versions with redirected STDOUT/STDERR [tests/output/sapi_windows_vt100_support_winko_out-err.phpt] reason: I/O capture test
+SKIP Test sapi_windows_vt100_support on older Windows versions with redirected STDOUT [tests/output/sapi_windows_vt100_support_winko_out.phpt] reason: I/O capture test
+SKIP Test sapi_windows_vt100_support on newer Windows versions with redirected STDERR [tests/output/sapi_windows_vt100_support_winok_err.phpt] reason: I/O capture test
+SKIP GHSA-wm6j-2649-pv75: Null pointer dereference in php_mb_check_encoding() via mb_ereg_search_init() [Zend/tests/GHSA-wm6j-2649-pv75.phpt] reason: Required extension missing: mbstring
+XFAIL Test open_basedir configuration [tests/security/open_basedir_linkinfo.phpt]   XFAIL REASON: BUG: open_basedir cannot delete symlink to prohibited file. See also
+bugs 48111 and 52176.
+SKIP GH-24148: Bare NUL remains usable with open_basedir on Windows [tests/security/open_basedir_nul_win32.phpt] reason: Windows only
+SKIP Test open_basedir configuration [tests/security/open_basedir_parse_ini_file.phpt] reason: Windows only variation
+SKIP Test open_basedir configuration [tests/security/open_basedir_realpath.phpt] reason: only run on Windows
+SKIP testing binary literals [Zend/tests/binary-32bit.phpt] reason: this test is for 32bit platform only
+SKIP Bug #34199 (if($obj)/if(!$obj) inconsistency because of cast handler) [Zend/tests/bug34199.phpt] reason: Required extension missing: simplexml
+SKIP Bug #34617 (zend_deactivate: objects_store used after zend_objects_store_destroy is called) [Zend/tests/bug34617.phpt] reason: Required extension missing: xml
+SKIP Bug #43918 (Segmentation fault in garbage collector) [Zend/tests/bug43918.phpt] reason: Required extension missing: simplexml
+SKIP Req #44164 (Handle "Content-Length" HTTP header when zlib.output_compression active) [tests/basic/req44164.phpt] reason: Required extension missing: zlib
+SKIP Req #60524 (Specify temporary directory) [tests/basic/req60524-win.phpt] reason: Run only on Windows
+SKIP Bug #46701 (Creating associative array with long values in the key fails on 32bit linux) [Zend/tests/bug46701.phpt] reason: this test is for 32bit platforms only
+SKIP Bug #55509 (segfault on x86_64 using more than 2G memory) [Zend/tests/bug55509.phpt] reason: resource-heavy test
+SKIP Timeout within function [tests/basic/timeout_variation_1.phpt] reason: Windows only test
+SKIP Timeout within shutdown function, variation [tests/basic/timeout_variation_10.phpt] reason: Windows only test
+SKIP Timeout within array_map [tests/basic/timeout_variation_2.phpt] reason: Windows only test
+SKIP Timeout within call_user_func [tests/basic/timeout_variation_4.phpt] reason: Windows only test
+SKIP Bug #62097: fix for bug #54547 is wrong for 32-bit machines [Zend/tests/bug62097.phpt] reason: for system with 32-bit wide longs only
+SKIP Bug #69092 (Declare Encoding Compile Check Wrong) [Zend/tests/bug69092.phpt] reason: Required extension missing: mbstring
+SKIP Bug #70173 (ZVAL_COPY_VALUE_EX broken for 32bit Solaris Sparc) [Zend/tests/bug70173.phpt] reason: this test is for 32bit platforms only
+SKIP Timeout within shutdown function [tests/basic/timeout_variation_9.phpt] reason: Windows only test
+SKIP Bug #70914 zend_throw_or_error() format string vulnerability [Zend/tests/bug70914.phpt] reason: Required extension missing: pdo_sqlite
+SKIP Bug #71930 (_zval_dtor_func: Assertion `(arr)->gc.refcount <= 1' failed) [Zend/tests/bug71930.phpt] reason: Required extension missing: curl
+SKIP bug #71428.2: inheritance of ye olde dynamic interfaces [Zend/tests/bug71428.2.phpt] reason: Required extension missing: pdo
+SKIP Bug #74093 (Maximum execution time of n+2 seconds exceed not written in error_log) [Zend/tests/bug74093.phpt] reason: resource-heavy test
+SKIP Bug #78770: Incorrect callability check inside internal methods [Zend/tests/bug78770.phpt] reason: Required extension missing: intl
+SKIP Bug #79919 (Stack use-after-scope in define()) [Zend/tests/bug79919.phpt] reason: Required extension missing: simplexml
+SKIP Bug #77494 (Disabling class causes segfault on member access) [Zend/tests/bug77494.phpt] reason: Required extension missing: curl
+SKIP Bug #78010: Segmentation fault during GC [Zend/tests/bug78010.phpt] reason: resource-heavy test
+SKIP comparing different variables for equality [Zend/tests/compare_001.phpt] reason: this test is for 32bit platform only
+SKIP comparing different variables for identity [Zend/tests/compare_002.phpt] reason: this test is for 32bit platform only
+SKIP comparing different variables (greater than) [Zend/tests/compare_003.phpt] reason: this test is for 32bit platform only
+SKIP comparing different variables (less than) [Zend/tests/compare_004.phpt] reason: this test is for 32bit platform only
+SKIP comparing different variables (greater or equal than) [Zend/tests/compare_005.phpt] reason: this test is for 32bit platform only
+SKIP comparing different variables (smaller or equal than) [Zend/tests/compare_006.phpt] reason: this test is for 32bit platform only
+SKIP Testing declare statement with several type values [Zend/tests/declare_001.phpt] reason: Required extension missing: mbstring
+SKIP Testing declare statement with several type values [Zend/tests/declare_002.phpt] reason: Required extension missing: mbstring
+SKIP Delayed early binding throws class redeclaration error [Zend/tests/delayed_early_binding_redeclaration.phpt] reason: Required extension missing: opcache
+SKIP double to string conversion tests [Zend/tests/double_to_string.phpt] reason: this test is for 32bit platform only
+SKIP zend_dval_to_lval preserves low bits  (32 bit long) [Zend/tests/dval_to_lval_32.phpt] reason: for machines with 32-bit longs
+SKIP Implicit float to int conversions when float too large should warn, string offset variant, 32bit variant [Zend/tests/float_to_int/warning_float_does_not_fit_zend_long_strings_32bit.phpt] reason: this test is for 32bit platform only
+SKIP Explicit (int) cast must not warn 32bit variation [Zend/tests/float_to_int/explicit_casts_should_not_warn_32bit.phpt] reason: this test is for 32bit platform only
+SKIP GC 039: Garbage created by replacing argument send by reference [Zend/tests/gc_039.phpt] reason: Required extension missing: mbstring
+SKIP GH-16508: Missing lineno in inheritance errors of delayed early bound classes [Zend/tests/gh16508.phpt] reason: Required extension missing: opcache
+SKIP GH-16630 (UAF in lexer with encoding translation and heredocs) [Zend/tests/gh16630.phpt] reason: Required extension missing: mbstring
+SKIP GH-12366: Use-after-free of constant name when script doesn't fit in SHM [Zend/tests/gh12366.phpt] reason: Required extension missing: opcache
+SKIP GH-19305 003: Operands may be released during comparison [Zend/tests/gh19305-003.phpt] reason: No lazy objects
+SKIP Error handler can change type of operand of ++ to object with do_operator [Zend/tests/in-de-crement/increment_diagnostic_change_type_do_operator.phpt] reason: Required extension missing: gmp
+SKIP testing integer overflow (32bit) [Zend/tests/hex_overflow_32bit.phpt] reason: this test is for 32bit platform only
+SKIP Decrementing min int values 32bit [Zend/tests/in-de-crement/decrement_001.phpt] reason: this test is for 32bit platform only
+XFAIL Interfaces don't set prototypes to their parent method [Zend/tests/interface_constructor_prototype_002.phpt]   XFAIL REASON: X::__constructor()'s prototype is set to B::__construct(). Y::__construct() then
+uses prototype to verify LSP, but misses A::__construct() which has a stricter
+signature.
+SKIP Incrementing max int values 32bit [Zend/tests/in-de-crement/increment_001.phpt] reason: this test is for 32bit platform only
+SKIP testing integer overflow (32bit) [Zend/tests/int_overflow_32bit.phpt] reason: this test is for 32bit platform only
+SKIP testing integer underflow (32bit) [Zend/tests/int_underflow_32bit.phpt] reason: this test is for 32bit platform only
+SKIP Don't segfault when zend.script_encoding=pass [Zend/tests/multibyte/multibyte_encoding_007.phpt] reason: Required extension missing: mbstring
+SKIP Crash with Big5 [Zend/tests/multibyte/bug68665.phpt] reason: Required extension missing: mbstring
+SKIP Zend Multibyte and ShiftJIS [Zend/tests/multibyte/multibyte_encoding_001.phpt] reason: Required extension missing: mbstring
+SKIP Zend Multibyte and UTF-8 BOM [Zend/tests/multibyte/multibyte_encoding_002.phpt] reason: Required extension missing: mbstring
+SKIP Zend Multibyte and UTF-16 BOM [Zend/tests/multibyte/multibyte_encoding_003.phpt] reason: Required extension missing: mbstring
+SKIP test for mbstring script_encoding for flex unsafe encoding (Shift_JIS) [Zend/tests/multibyte/multibyte_encoding_004.phpt] reason: Required extension missing: mbstring
+SKIP encoding conversion from script encoding into internal encoding [Zend/tests/multibyte/multibyte_encoding_005.phpt] reason: Required extension missing: mbstring
+SKIP 086: bracketed namespace with encoding [Zend/tests/ns_086.phpt] reason: Required extension missing: mbstring
+SKIP Return type for internal functions [Zend/tests/return_types/internal_functions001.phpt] reason: requires debug build
+SKIP Stack limit 010 - Check stack size detection against known defaults [Zend/tests/stack_limit/stack_limit_010.phpt] reason: STACK_LIMIT_DEFAULTS_CHECK not set
+SKIP Leak in JMP_SET [Zend/tests/temporary_cleaning_014.phpt] reason: Required extension missing: gmp
+SKIP Test strict declaration being first operation only 006 [Zend/tests/type_declarations/scalar_strict_declaration_placement_006.phpt] reason: Required extension missing: mbstring
+SKIP Test strict declaration being first operation only 007 [Zend/tests/type_declarations/scalar_strict_declaration_placement_007.phpt] reason: Required extension missing: mbstring
+SKIP Return scalar type basics [Zend/tests/type_declarations/scalar_return_basic.phpt] reason: this test is for 32bit platform only
+SKIP Scalar type strict mode [Zend/tests/type_declarations/scalar_strict.phpt] reason: this test is for 32bit platform only
+SKIP Zend signed multiply 32-bit [Zend/tests/zend_signed_multiply-32bit.phpt] reason: Running on 64-bit target
+SKIP strftime() and gmstrftime() tests [ext/date/tests/009_win32.phpt] reason: only windows test.
+SKIP Do not inherit LC_CTYPE from environment [ext/ctype/tests/lc_ctype_inheritance.phpt] reason: macOS 15 inherits LC_CTYPE into the thread locale
+SKIP Bug GH-11600: Intl patterns are not parseable DateTime Strings [ext/date/tests/bug-gh11600.phpt] reason: Required extension missing: intl
+SKIP Bug #33532 (Different output for strftime() and date()) [ext/date/tests/bug33532.phpt] reason: strftime uses system TZ on Darwin and Windows
+SKIP Bug #36988 (mktime freezes on long numbers) [ext/date/tests/bug36988.phpt] reason: this test is for 32-bit only
+SKIP Bug #52062 (large timestamps with DateTime::getTimestamp and DateTime::setTimestamp) (32 bit) [ext/date/tests/bug52062.phpt] reason: 32-bit only
+SKIP Bug #41523 (strtotime('0000-00-00 00:00:00') is parsed as 1999-11-30) (32 bit) [ext/date/tests/bug41523.phpt] reason: 32-bit only
+SKIP Bug #53437 DateInterval unserialize bad data, 32 bit [ext/date/tests/bug53437_var3.phpt] reason: 32 bit only
+SKIP Test bug #65184 strftime() returns insufficient-length string under multibyte locales [ext/date/tests/bug65184.phpt] reason: Test is valid for Windows
+SKIP Test gmdate() function : usage variation - Valid and invalid range of timestamp 32 bits. [ext/date/tests/gmdate_variation12.phpt] reason: 32 bit only
+SKIP strtotime() and mysql timestamps (32 bit) [ext/date/tests/strtotime-mysql.phpt] reason: 32-bit only
+SKIP strtotime() function (32 bit) [ext/date/tests/strtotime3.phpt] reason: 32-bit only
+SKIP mktime() [3] (32-bit) [ext/date/tests/mktime-3.phpt] reason: 32-bit only
+SKIP Bug #74170 locale information change after mime_content_type [ext/fileinfo/tests/bug74170.phpt] reason: Required extension missing: intl
+SKIP finfo_file(): Files and directories inside an stream [ext/fileinfo/tests/finfo_file_stream_001.phpt] reason: Required extension missing: zip
+XFAIL Bug #42718 (unsafe_raw filter not applied when configured as default filter) [ext/filter/tests/bug42718.phpt]   XFAIL REASON: FILTER_UNSAFE_RAW not applied when configured as default filter, even with flags
+XFAIL Bug #67296 (filter_input doesn't validate variables) [ext/filter/tests/bug49184.phpt]   XFAIL REASON: See Bug #49184
+XFAIL Bug #67167 (filter_var(null,FILTER_VALIDATE_BOOLEAN,FILTER_NULL_ON_FAILURE) returns null) [ext/filter/tests/bug67167.02.phpt]   XFAIL REASON: Requires php_zval_filter to not use convert_to_string for all filters.
+SKIP Ensure hash_update_stream() always returns the same hash when $length = 0 [ext/hash/tests/hash_update_stream_basic_001.phpt] reason: Required extension missing: openssl
+SKIP MHash: mhash() test [ext/hash/tests/mhash_001.phpt] reason: mhash compatibility layer not available
+SKIP MHash: mhash_get_block_size() & mhash_get_hash_name() test [ext/hash/tests/mhash_002.phpt] reason: mhash compatibility layer not available
+SKIP MHash: mhash_keygen_s2k() test [ext/hash/tests/mhash_003.phpt] reason: mhash compatibility layer not available
+SKIP MHash: mhash() modifying algorithm parameter [ext/hash/tests/mhash_004.phpt] reason: mhash compatibility layer not available
+SKIP GH-16711: Segmentation fault in mhash() [ext/hash/tests/gh16711_1.phpt] reason: mhash compatibility layer not available
+SKIP GH-16711: Segmentation fault in mhash() [ext/hash/tests/gh16711_2.phpt] reason: mhash compatibility layer not available
+SKIP pcntl_getpriority() - Wrong mode passed and also for non existing process id provided [ext/pcntl/tests/pcntl_getpriority_error.phpt] reason: This test is not for Darwin
+SKIP pcntl_signal() context of realtime signal [ext/pcntl/tests/pcntl_realtime_signal.phpt] reason: realtime signal not supported
+SKIP Test function pcntl_rfork() with no flag. [ext/pcntl/tests/pcntl_rfork.phpt] reason: pcntl_rfork unavailable
+SKIP Test function pcntl_rfork() with wrong flags [ext/pcntl/tests/pcntl_rfork_badflags.phpt] reason: pcntl_rfork unavailable
+SKIP Test function pcntl_rfork() with RFCFDG and RFFDG flags. [ext/pcntl/tests/pcntl_rfork_flags.phpt] reason: pcntl_rfork unavailable
+SKIP Test function pcntl_rfork() with no wait flag. [ext/pcntl/tests/pcntl_rfork_nowait.phpt] reason: pcntl_rfork unavailable
+SKIP pcntl_setpriority() - Basic behaviour [ext/pcntl/tests/pcntl_setpriority_basic.phpt] reason: this function needs to run with CAP_SYS_NICE privileges
+SKIP pcntl_setpriority() - Check for errors [ext/pcntl/tests/pcntl_setpriority_error.phpt] reason: This test is not for Darwin
+SKIP pcntl_setpriority() - Check for errors [ext/pcntl/tests/pcntl_setpriority_error_linux.phpt] reason: This test only runs on Linux
+SKIP Test pcntl wait functionality [ext/pcntl/tests/001.phpt] reason: do not run on darwin
+SKIP pcntl: pcntl_sigprocmask(), pcntl_sigwaitinfo(), pcntl_sigtimedwait() [ext/pcntl/tests/002.phpt] reason: required functionality is not available
+SKIP pcntl: SIG_BLOCK, SIG_UNBLOCK, SIG_SETMASK [ext/pcntl/tests/003.phpt] reason: required functionality is not available
+SKIP pcntl_unshare() with CLONE_NEWUSER [ext/pcntl/tests/pcntl_unshare_01.phpt] reason: pcntl_unshare is not available
+SKIP pcntl_unshare() with CLONE_NEWPID [ext/pcntl/tests/pcntl_unshare_02.phpt] reason: pcntl_unshare is not available
+SKIP pcntl_unshare() with CLONE_NEWNET [ext/pcntl/tests/pcntl_unshare_03.phpt] reason: pcntl_unshare is not available
+SKIP pcntl_unshare() with wrong flag [ext/pcntl/tests/pcntl_unshare_04.phpt] reason: pcntl_unshare is not available
+SKIP Waiting on SIGCHLD with a pcntl_wait() loop [ext/pcntl/tests/waiting_on_sigchild_pcntl_wait.phpt] reason: Linux only
+SKIP Bug #81577: (Exceptions in interrupt handlers: cleanup_live_vars) [ext/pcntl/tests/bug81577_3.phpt] reason: xleak does not work with asan
+SKIP pcntl_alarm() [ext/pcntl/tests/pcntl_alarm.phpt] reason: pcntl_sigtimedwait() not available
+SKIP Bug #72463 mail fails with invalid argument [ext/pcre/tests/bug72463_2.phpt] reason: windows only
+SKIP posix_eaccess() with bogus paths [ext/posix/tests/posix_eaccess.phpt] reason: only platforms with posix_eaccess
+SKIP posix_ttyname(): manually validating int ZPP param [ext/posix/tests/posix_ttyname_manual_zpp.phpt] reason: Required extension missing: gmp
+SKIP posix_getrlimit() for single resource [ext/posix/tests/posix_getrlimit_single_resource.phpt] reason: Failed to set POSIX_RLIMIT_CORE
+SKIP posix_isatty(): manually validating int ZPP param [ext/posix/tests/posix_isatty_manual_zpp.phpt] reason: Required extension missing: gmp
+SKIP ReflectionExtension::getDependencies() [ext/reflection/tests/016.phpt] reason: Required extension missing: dom
+SKIP ReflectionClass::getExtensionName() method - basic test for getExtensionName() method [ext/reflection/tests/ReflectionClass_getExtensionName_basic.phpt] reason: Required extension missing: dom
+SKIP ReflectionClass::getExtension() method - basic test for getExtension() method [ext/reflection/tests/ReflectionClass_getExtension_basic.phpt] reason: Required extension missing: dom
+SKIP Random: Randomizer: nextInt(): Throws for 64 bit engines on 32 bit platforms [ext/random/tests/03_randomizer/methods/nextInt_64_engine_on_32_platform.phpt] reason: 32-bit only
+SKIP Testing ReflectionClass::isCloneable() [ext/reflection/tests/ReflectionClass_isCloneable_001.phpt] reason: Required extensions missing: simplexml, xmlwriter
+SKIP ReflectionExtension::getDependencies() method on an extension with a required and conflicting dependency [ext/reflection/tests/ReflectionExtension_getDependencies_basic.phpt] reason: Required extension missing: dom
+SKIP Test ReflectionZendExtension class [ext/reflection/tests/ReflectionZendExtension.phpt] reason: Required extension missing: opcache
+SKIP Test ReflectionZendExtension class errors [ext/reflection/tests/ReflectionZendExtension_error.phpt] reason: Required extension missing: opcache
+SKIP GH-16187 (ReflectionClass::__toString() with unpacked properties) [ext/reflection/tests/gh16187.phpt] reason: Required extension missing: simplexml
+XFAIL updateTimestamp never called when session data is empty [ext/session/tests/user_session_module/bug71162.phpt]   XFAIL REASON: Current session module is designed to write empty session always. In addition, current session module only supports SessionHandlerInterface only from PHP 7.0.
+FAIL shmop extension test [ext/shmop/tests/001.phpt] 
+FAIL shmop extension error messages [ext/shmop/tests/002.phpt] 
+SKIP Bug #81407 (shmop_open won't attach and causes php to crash) [ext/shmop/tests/bug81407.phpt] reason: for Windows only
+SKIP GH-14537: shmop Windows 11 crashes the process [ext/shmop/tests/gh14537.phpt] reason: only for Windows
+FAIL shmop_open with IPC_PRIVATE creates private SHM [ext/shmop/tests/shmop_open_private.phpt] 
+SKIP Bug #51958: socket_accept() fails on IPv6 server sockets [ext/sockets/tests/bug51958.phpt] reason: test relies Winsock's error code for WSAEWOULDBLOCK/EAGAIN
+BORK Warning: socket_sendto(): Unable to write to socket [65]: No route to host in work/releases/8.3/candidate/release-corpus/ext/sockets/tests/mcast_ipv6_recv.skip.php on line 24
+skip unable to send multicast packet. [ext/sockets/tests/mcast_ipv6_recv.phpt] reason: invalid output from SKIPIF
+BORK Warning: socket_sendto(): Unable to write to socket [65]: No route to host in work/releases/8.3/candidate/release-corpus/ext/sockets/tests/mcast_ipv6_recv_limited.skip.php on line 23
+skip unable to send multicast packet. [ext/sockets/tests/mcast_ipv6_recv_limited.phpt] reason: invalid output from SKIPIF
+FAIL Multicast support: IPv6 send options [ext/sockets/tests/mcast_ipv6_send.phpt] 
+SKIP Support for paths in the abstract namespace (bind, connect) [ext/sockets/tests/socket_abstract_path.phpt] reason: For Linux only
+SKIP Support for paths in the abstract namespace (bind, sendmsg, recvmsg) [ext/sockets/tests/socket_abstract_path_sendmsg.phpt] reason: For Linux only
+SKIP Multicast support: IPv4 receive options [ext/sockets/tests/mcast_ipv4_recv.phpt] reason: interface 'lo' is unavailable.
+SKIP Test if socket_recvfrom() receives data sent by socket_sendto() via IPv6 UDP (Win32) [ext/sockets/tests/socket_sentto_recvfrom_ipv6_udp-win32.phpt] reason: only for Windows
+SKIP SO_BPF_EXTENSIONS socket_getopt test [ext/sockets/tests/socket_bpf_extensions.phpt] reason: SO_BOF_EXTENSIONS
+SKIP void socket_clear_error ([ resource $socket ] ) ; [ext/sockets/tests/socket_clear_error-win32.phpt] reason: windows only test
+SKIP recvmsg(): receive SCM_CREDENTIALS messages [ext/sockets/tests/socket_cmsg_credentials.phpt] reason: SO_PASSCRED is not defined
+SKIP recvmsg(): receive SCM_CREDS messages [ext/sockets/tests/socket_cmsg_credentials_fbsd.phpt] reason: ped supported only on FreeBSD
+SKIP Test if socket_set_option() works, option:SO_ACCEPTFILTER [ext/sockets/tests/socket_set_option_acf.phpt] reason: on platforms not supporting SO_ACCEPTFILTER
+SKIP Test if socket_set_option() works, option:SO_BINDTODEVICE [ext/sockets/tests/socket_set_option_bindtodevice.phpt] reason: SO_BINDTODEVICE requires root permissions.
+SKIP socket_import_stream: Test with multicasting [ext/sockets/tests/socket_import_stream-3.phpt] reason: joining group 224.0.0.23 on interface lo failed
+SKIP Test if socket_set_option() returns 'Unable to set socket option' failure for invalid options [ext/sockets/tests/socket_set_option_error_socket_option.phpt] reason: Not for OSX
+SKIP socket_import_stream: effects of closing [ext/sockets/tests/socket_import_stream-4-win.phpt] reason: Not Valid for Linux
+SKIP Test if socket_create_listen() returns false, when it cannot bind to the port. [ext/sockets/tests/socket_create_listen-nobind.phpt] reason: Test cannot be run in environment that will allow binding to port 80 (azure)
+SKIP Test if socket binds on 31338 [ext/sockets/tests/socket_create_listen-win32.phpt] reason: .. Not valid for non Windows
+SKIP socket_get_option MEMINFO; [ext/sockets/tests/socket_meminfo.phpt] reason: SO_MEMINFO test
+SKIP Test parameter handling in socket_create_pair() [ext/sockets/tests/socket_create_pair-wrongparams-win32.phpt] reason: .. Not valid for non Windows
+SKIP bool socket_shutdown ( resource $socket [, int $how = 2 ] ) ; [ext/sockets/tests/socket_shutdown-win32.phpt] reason: windows only test
+SKIP Test if socket_set_option() works, option:TCP_DEFER_ACCEPT [ext/sockets/tests/socket_defer_acp.phpt] reason: on non Linux
+SKIP IP_MTU_DISCOVER test [ext/sockets/tests/socket_dontfragment.phpt] reason: For Linux only
+SKIP IP_DONTFRAG test [ext/sockets/tests/socket_dontfragment_bsd.phpt] reason: For FreeBSD only
+SKIP Test if socket_set_option() works, option:SO_ATTACH_REUSEPORT_CBPF [ext/sockets/tests/socket_reuseport_cbpf.phpt] reason: on platforms not supporting SO_ATTACH_REUSEPORT_CBPF
+SKIP Test parameter handling in socket_select(). [ext/sockets/tests/socket_select-wrongparams-1-win32.phpt] reason: .. Not valid for non Windows
+SKIP socket_export_stream: Test with multicasting [ext/sockets/tests/socket_export_stream-3.phpt] reason: joining group 224.0.0.23 on interface lo failed
+SKIP socket_export_stream: effects of closing [ext/sockets/tests/socket_export_stream-4-win.phpt] reason: Not Valid for Linux
+SKIP ext/sockets - socket_strerror - basic test [ext/sockets/tests/socket_strerror.phpt] reason: - test validates linux error strings only.
+SKIP Test TCP_CONGESTION constant with allowed algos for unprivileged accounts. [ext/sockets/tests/socket_tcp_congestion.phpt] reason: TCP_CONGESTION test
+SKIP Winsock export/import socket, basic test [ext/sockets/tests/wsaprotocol_info_0.phpt] reason: .. Windows only test
+SKIP SPL: SplFileInfo::getExtension() basic test [ext/spl/tests/SplFileInfo_getExtension_basic-win32.phpt] reason: only for Windows
+FAIL int socket_send ( resource $socket , string $buf , int $len , int $flags ); [ext/sockets/tests/socket_send.phpt] 
+SKIP Test socket_sendto with MSG_ZEROCOPY [ext/sockets/tests/socket_sendto_zerocopy.phpt] reason: SO_ZEROCOPY
+SKIP Bug #54971 (Wrong result when using iterator_to_array with use_keys on true) [ext/spl/tests/bug54971.phpt] reason: Required extension missing: dom
+SKIP SPL: Problem with casting to string (no glob version) [ext/spl/tests/dit_001_noglob.phpt] reason: GLOB_ERR defined
+SKIP GH-17225 (NULL deref in spl_directory.c) [ext/spl/tests/gh17225.phpt] reason: Required extension missing: phar
+SKIP Bug #81587: MultipleIterator Segmentation fault w/ SimpleXMLElement attached [ext/spl/tests/bug81587.phpt] reason: Required extension missing: simplexml
+SKIP GH-14687 segfault on debugging SplObjectStorage instance after __destruct. [ext/spl/tests/gh14687.phpt] reason: Required extension missing: phar
+SKIP SPL: IteratorIterator and SimpleXMlElement [ext/spl/tests/iterator_006.phpt] reason: Required extension missing: simplexml
+SKIP GHSA-96wq-48vp-hh57: signed integer overflow of char array offset [ext/standard/tests/GHSA-96wq-48vp-hh57.phpt] reason: resource-heavy test
+SKIP Test array_product() function with objects castable to numeric type [ext/standard/tests/array/array_product_variation6.phpt] reason: Required extension missing: gmp
+SKIP Test array_sum() function with objects that implement addition but not castable to numeric type [ext/standard/tests/array/array_sum_objects_operation_no_cast_FFI.phpt] reason: Required extension missing: ffi
+SKIP Test array_sum() function with objects castable to numeric type [ext/standard/tests/array/array_sum_variation9.phpt] reason: Required extension missing: gmp
+SKIP Test array_values() function (variation) [ext/standard/tests/array/array_values_variation.phpt] reason: this test is for 32bit platform only
+SKIP Bug #35014 (array_product() always returns 0) (32bit) [ext/standard/tests/array/bug35014.phpt] reason: this test is for 32bit platform only
+SKIP Test end() function [ext/standard/tests/array/end.phpt] reason: this test is for 32bit platform only
+SKIP Test natcasesort() function : usage variations - different numeric types [ext/standard/tests/array/natcasesort_variation3.phpt] reason: this test is for 32bit platform only
+SKIP Test rsort() function : usage variations - numeric values [ext/standard/tests/array/rsort_variation3.phpt] reason: this test is for 32bit platform only
+SKIP Bug #41121 (range() overflow handling for large numbers on 32bit machines) [ext/standard/tests/array/range/bug41121.phpt] reason: this test is for 32bit platform only
+SKIP Test range() function (variation-2) [ext/standard/tests/array/range/range_variation1.phpt] reason: this test is for 32bit platform only
+SKIP Test scandir() function : basic functionality [ext/standard/tests/dir/scandir_basic-win32-mb.phpt] reason: Valid only on Windows
+SKIP Test getcwd() function : basic functionality [ext/standard/tests/dir/getcwd_basic-win32-mb.phpt] reason: Valid only on Windows
+SKIP Test scandir() function : usage variations - different sorting constants [ext/standard/tests/dir/scandir_variation10-win32-mb.phpt] reason: Valid only on Windows
+SKIP Bug #72625 realpath() fails on very long argument. [ext/standard/tests/dir/bug72625.phpt] reason: Valid only on Windows
+SKIP Bug #73877 readlink() returns garbage for UTF-8 paths
+File type functions [ext/standard/tests/dir/bug73877.phpt] reason: only for Windows
+SKIP Test opendir() function : basic functionality [ext/standard/tests/dir/opendir_basic-win32-mb.phpt] reason: Valid only on Windows
+SKIP Test scandir() function : usage variations - different relative paths [ext/standard/tests/dir/scandir_variation4-win32-mb.phpt] reason: Valid only on Windows
+SKIP Bug #78220 (Can't access OneDrive folder) [ext/standard/tests/dir/bug78220.phpt] reason: this test is for Windows platforms only
+SKIP Fix #80960 (opendir() warning wrong info when failed on Windows) [ext/standard/tests/dir/bug80960.phpt] reason: for Windows only
+SKIP Test chdir() function : basic functionality [ext/standard/tests/dir/chdir_basic-win32-mb.phpt] reason: Valid only on Windows
+SKIP Test opendir() function : usage variations - open a directory twice [ext/standard/tests/dir/opendir_variation3-win32-mb.phpt] reason: Valid only on Windows
+SKIP Test chdir() function : error conditions - Non-existent directory [ext/standard/tests/dir/chdir_error2-win32-mb.phpt] reason: Valid only on Windows
+SKIP Test chdir() function : usage variations - relative paths [ext/standard/tests/dir/chdir_variation2-win32-mb.phpt] reason: Valid only on Windows
+SKIP Test opendir() function : usage variations - different relative paths [ext/standard/tests/dir/opendir_variation4-win32-mb.phpt] reason: Valid only on Windows
+SKIP Test closedir() function : basic functionality [ext/standard/tests/dir/closedir_basic-win32-mb.phpt] reason: Valid only on Windows
+SKIP Test closedir() function : usage variations - close directory handle twice [ext/standard/tests/dir/closedir_variation2-win32-mb.phpt] reason: Valid only on Windows
+SKIP Test opendir() function : usage variations - Different wildcards [ext/standard/tests/dir/opendir_variation6-win32.phpt] reason: Valid only on Windows
+SKIP Test scandir() function : usage variations - different file names [ext/standard/tests/dir/scandir_variation8-win32-mb.phpt] reason: Valid only on Windows
+SKIP Test scandir() function : usage variations - different ints as $sorting_order arg [ext/standard/tests/dir/scandir_variation9-win32-mb.phpt] reason: Valid only on Windows
+SKIP Test dir() function : basic functionality [ext/standard/tests/dir/dir_basic-win32-mb.phpt] reason: Valid only on Windows
+SKIP Test readdir() function : basic functionality [ext/standard/tests/dir/readdir_basic-win32-mb.phpt] reason: Valid only on Windows
+SKIP Bug #73971 Filename got limited to MAX_PATH on Win32 when scan directory [ext/standard/tests/dir/dir_bug73971.phpt] reason: Valid only on Windows
+SKIP Test readdir() function : usage variations - empty directories [ext/standard/tests/dir/readdir_variation2-win32-mb.phpt] reason: Valid only on Windows
+SKIP Bug #74589 __DIR__ wrong for unicode character, UTF-8 [ext/standard/tests/directory/bug74589_utf8.phpt] reason: Linux or Windows only
+SKIP Test readdir() function : usage variations - sub-directories [ext/standard/tests/dir/readdir_variation3-win32-mb.phpt] reason: Valid only on Windows
+SKIP Test dir() function : usage variations - operate on previously opened directory [ext/standard/tests/dir/dir_variation4-win32-mb.phpt] reason: Valid only on Windows
+SKIP Test that the Directory extension constants are correctly defined. [ext/standard/tests/directory/directory_constants-win32.phpt] reason: .. only for Windows
+SKIP Test readdir() function : usage variations - different file names [ext/standard/tests/dir/readdir_variation4-win32-mb.phpt] reason: Valid only on Windows
+SKIP File type functions [ext/standard/tests/file/001-win32-mb.phpt] reason: only for Windows
+SKIP File type functions [ext/standard/tests/file/001-win32.phpt] reason: only for Windows
+SKIP Test fopen and fclose() functions - usage variations - "wt" mode [ext/standard/tests/file/007_variation11-win32-mb.phpt] reason: Run only on Windows
+SKIP Test fopen and fclose() functions - usage variations - "wt" mode [ext/standard/tests/file/007_variation11-win32.phpt] reason: Run only on Windows
+SKIP basename [ext/standard/tests/file/basename-win32.phpt] reason: Windows only basename tests
+SKIP basename() basic functionality [ext/standard/tests/file/basename_basic-win32.phpt] reason: Windows only basename tests
+SKIP Test readdir() function : usage variations - operate on previously opened directory [ext/standard/tests/dir/readdir_variation6-win32-mb.phpt] reason: Valid only on Windows
+SKIP Test fopen and fclose() functions - usage variations - "w+t" mode [ext/standard/tests/file/007_variation12-win32.phpt] reason: Run only on Windows
+SKIP basename bug #66395 [ext/standard/tests/file/basename_bug66395-win32.phpt] reason: Windows only basename tests
+SKIP basename bug #66395 check drive traversing and NTFS streams [ext/standard/tests/file/basename_bug66395_variation2-win32.phpt] reason: Windows only basename tests
+SKIP basename() with various inputs [ext/standard/tests/file/basename_variation1-win32.phpt] reason: Windows only basename tests
+SKIP Test fopen and fclose() functions - usage variations - "at" mode [ext/standard/tests/file/007_variation13-win32.phpt] reason: Run only on Windows
+SKIP Test rewinddir() function : basic functionality [ext/standard/tests/dir/rewinddir_basic-win32-mb.phpt] reason: Valid only on Windows
+SKIP Testing basename() with various values for the suffix parameter [ext/standard/tests/file/basename_variation2-win32.phpt] reason: Windows only basename tests
+SKIP Test rewinddir() function : usage variations - operate on a closed directory [ext/standard/tests/dir/rewinddir_variation2-win32-mb.phpt] reason: Valid only on Windows
+SKIP Bug #41655 (open_basedir bypass via glob()) 1/2 [ext/standard/tests/file/bug41655_1-win32.phpt] reason: only for Windows
+SKIP bug #41874 (Separate STDOUT and STDERR in exec functions) [ext/standard/tests/file/bug41874.phpt] reason: windows only test
+SKIP bug #41874 (Separate STDOUT and STDERR in exec functions) [ext/standard/tests/file/bug41874_1.phpt] reason: windows only test
+SKIP bug #41874 (Separate STDOUT and STDERR in exec functions) [ext/standard/tests/file/bug41874_2.phpt] reason: windows only test
+SKIP bug #41874 (Separate STDOUT and STDERR in exec functions) [ext/standard/tests/file/bug41874_3.phpt] reason: windows only test
+SKIP Bug #43008 (php://filter uris ignore url encoded filternames and can't handle slashes) [ext/standard/tests/file/bug43008.phpt] reason: Required extension missing: iconv
+SKIP Test fileatime(), filemtime(), filectime() & touch() functions : usage variation [ext/standard/tests/file/005_variation-win32.phpt] reason: Windows-only test
+SKIP Test fileatime(), filemtime(), filectime() & touch() functions : usage variation [ext/standard/tests/file/005_variation2-win32.phpt] reason: .. only for Windows
+SKIP Bug #47517 test registry virtualization disabled [ext/standard/tests/file/bug47517.phpt] reason: only for Windows
+SKIP bug #47767 (include_once does not resolve windows symlinks or junctions) [ext/standard/tests/file/bug47767.phpt] reason: windows only test
+SKIP Bug #52820 (writes to fopencookie FILE* not committed when seeking the stream) [ext/standard/tests/file/bug52820.phpt] reason: Required extension missing: curl
+SKIP Bug #53241 (stream casting that relies on fdopen/fopencookie fails with 'xb' mode) [ext/standard/tests/file/bug53241.phpt] reason: Required extension missing: curl
+SKIP Bug #78386 (fstat mode has unexpected value on PHP 7.4) [ext/standard/tests/file/bug78386.phpt] reason: this test is for Windows platforms only
+SKIP Bug #81223 (flock() only locks first byte of file) [ext/standard/tests/file/bug81223.phpt] reason: for Windows only
+SKIP chmod() basic functionality [ext/standard/tests/file/chmod_basic-win32-mb.phpt] reason: Windows only chmod test
+SKIP chmod() basic functionality [ext/standard/tests/file/chmod_basic-win32.phpt] reason: Windows only chmod test
+SKIP Test copy() function: usage variations - destination file names(case sensitive) [ext/standard/tests/file/copy_variation5-win32.phpt] reason: only run on Windows
+SKIP Test copy() function: usage variations - destination file names(case sensitive) [ext/standard/tests/file/copy_variation5.phpt] reason: requires case-sensitive file system
+SKIP Test copy() function: usage variations - copy empty file across dirs [ext/standard/tests/file/copy_variation6-win32.phpt] reason: Only run on Windows
+SKIP Test dirname() function : basic functionality [ext/standard/tests/file/dirname_basic-win32.phpt] reason: Only valid for Windows
+SKIP chmod() with various paths [ext/standard/tests/file/chmod_variation2-win32-mb.phpt] reason: Windows only chmod test
+SKIP chmod() with various paths [ext/standard/tests/file/chmod_variation2-win32.phpt] reason: Windows only chmod test
+SKIP Test dirname() function : regression with path normalization [ext/standard/tests/file/dirname_no_path_normalization-win32.phpt] reason: Only valid for Windows
+SKIP Bug #72035 php-cgi.exe fails to run scripts relative to drive root [ext/standard/tests/file/bug72035.phpt] reason: windows only test
+SKIP chroot() [ext/standard/tests/file/chroot_001.phpt] reason: chroot() not available
+SKIP Bug #72330 (CSV fields incorrectly split if escape char followed by UTF chars) [ext/standard/tests/file/bug72330.phpt] reason: available locales not usable
+SKIP Test disk_free_space and its alias diskfreespace() functions : error conditions [ext/standard/tests/file/disk_free_space_error-win32.phpt] reason: Valid only for Windows
+SKIP Test disk_total_space() function : error conditions [ext/standard/tests/file/disk_total_space_error-win32.phpt] reason: Valid only for Windows
+SKIP Test copy() function: usage variations - dir as source [ext/standard/tests/file/copy_variation12-win32.phpt] reason: Run only on Windows
+SKIP Test fflush() function: usage variations - files in different modes [ext/standard/tests/file/fflush_variation1-win32-mb.phpt] reason: .. only for Windows
+SKIP Test fflush() function: usage variations - files in different modes [ext/standard/tests/file/fflush_variation1-win32.phpt] reason: .. only for Windows
+SKIP Test copy() function: usage variations - copy data file across dirs [ext/standard/tests/file/copy_variation16-win32.phpt] reason: Run only on Windows
+SKIP Test copy() function: usage variations - destination file names(special chars) [ext/standard/tests/file/copy_variation2-win32-mb.phpt] reason: only run on Windows
+SKIP Test copy() function: usage variations - destination file names(special chars) [ext/standard/tests/file/copy_variation2-win32.phpt] reason: only run on Windows
+SKIP Test copy() function: usage variations - destination file names(white spaces) [ext/standard/tests/file/copy_variation3-win32.phpt] reason: only run on Windows
+SKIP Bug #77552 Uninitialized php_stream_statbuf in stat functions [ext/standard/tests/file/bug77552.phpt] reason: windows only test
+SKIP Bug #78241 (touch() does not handle dates after 2038 in PHP 64-bit) [ext/standard/tests/file/bug78241.phpt] reason: this test is for Windows platforms only
+SKIP Test fgets() function : usage variations - seek n read [ext/standard/tests/file/fgets_variation4-win32-mb.phpt] reason: only valid for Windows
+SKIP Test fgets() function : usage variations - seek n read [ext/standard/tests/file/fgets_variation4-win32.phpt] reason: only valid for Windows
+SKIP Test fgets() function : usage variations - read when file pointer at EOF [ext/standard/tests/file/fgets_variation6-win32.phpt] reason: only valid for Windows
+SKIP Test file_put_contents() function : usage variation - various absolute and relative paths [ext/standard/tests/file/file_put_contents_variation7-win32.phpt] reason: Only run on Windows
+SKIP Test file_get_contents() function : error when passing folder - on Windows [ext/standard/tests/file/file_get_contents_error_folder-win.phpt] reason: - Windows only
+SKIP file() with various paths [ext/standard/tests/file/file_variation5-win32-mb.phpt] reason: windows only test
+SKIP file() with various paths [ext/standard/tests/file/file_variation5-win32.phpt] reason: windows only test
+SKIP Test file_put_contents() and file_get_contents() functions with 5GB string [ext/standard/tests/file/file_get_contents_file_put_contents_5gb.phpt] reason: resource-heavy test
+SKIP Test file() function : variation - various absolute and relative paths [ext/standard/tests/file/file_variation8-win32.phpt] reason: Only run on Windows
+SKIP Test file_get_contents() function : variation - various absolute and relative paths [ext/standard/tests/file/file_get_contents_variation7-win32-mb.phpt] reason: Only run on Windows
+SKIP Test file_get_contents() function : variation - various absolute and relative paths [ext/standard/tests/file/file_get_contents_variation7-win32.phpt] reason: Only run on Windows
+SKIP Test filesize() function: usage variations - size of files [ext/standard/tests/file/filesize_variation1-win32-mb.phpt] reason: only valid for Windows
+SKIP Test filesize() function: usage variations - size of files [ext/standard/tests/file/filesize_variation1-win32.phpt] reason: only valid for Windows
+SKIP Test file_get_contents() function : variation - obscure filenames [ext/standard/tests/file/file_get_contents_variation8-win32.phpt] reason: Valid only on Windows
+SKIP Test file_put_contents() function : usage variation - obscure filenames [ext/standard/tests/file/file_put_contents_variation8-win32.phpt] reason: Only run on Windows
+SKIP Test filesize() function: usage variations - size of dir/subdir [ext/standard/tests/file/filesize_variation2-win32.phpt] reason: only valid for Windows
+SKIP Test filesize() function: usage variations - file mode & holes in file [ext/standard/tests/file/filesize_variation4-win32.phpt] reason: only valid for Windows
+SKIP Test fread() function : usage variations - read beyond file size, read/write mode [ext/standard/tests/file/fread_variation3-win32-mb.phpt] reason: ...only valid for Windows
+SKIP Test fread() function : usage variations - read beyond file size, read/write mode [ext/standard/tests/file/fread_variation3-win32.phpt] reason: ...only valid for Windows
+SKIP Test filetype() function: Check block device [ext/standard/tests/file/filetype_variation3.phpt] reason: /dev/ram0 not available
+SKIP Test fopen() function : variation: interesting paths, no use include path [ext/standard/tests/file/fopen_variation10-win32.phpt] reason: Run only on Windows
+SKIP Test fopen() function : variation: interesting paths, use include path = true [ext/standard/tests/file/fopen_variation11-win32.phpt] reason: Run only on Windows
+SKIP Test fopen() function : variation: file uri, no use include path [ext/standard/tests/file/fopen_variation14-win32.phpt] reason: Run only on Windows
+SKIP Test fopen() function : variation: file uri, use include path = true [ext/standard/tests/file/fopen_variation15-win32.phpt] reason: Run only on Windows
+SKIP Test fscanf() function: usage variations - integer formats with float values [ext/standard/tests/file/fscanf_variation3.phpt] reason: this test is for 32bit platform only
+SKIP Test fscanf() function: usage variations - tracking file pointer while reading [ext/standard/tests/file/fscanf_variation55.phpt] reason: this test is for 32bit platform only
+SKIP Test fscanf() function: usage variations - hexa formats with integer values [ext/standard/tests/file/fscanf_variation33.phpt] reason: this test is for 32bit platform only
+SKIP Test fscanf() function: usage variations - hexa formats with float values [ext/standard/tests/file/fscanf_variation34.phpt] reason: this test is for 32bit platform only
+SKIP Test ftruncate() function : usage variations - truncate filesize to zero [ext/standard/tests/file/ftruncate_variation1-win32-mb.phpt] reason: .. only valid for Windows
+SKIP Test ftruncate() function : usage variations - truncate filesize to zero [ext/standard/tests/file/ftruncate_variation1-win32.phpt] reason: .. only valid for Windows
+SKIP Test fscanf() function: usage variations - float formats with integer values [ext/standard/tests/file/fscanf_variation9.phpt] reason: this test is for 32bit platform only
+SKIP Test ftruncate() function : usage variations - truncate file to current size [ext/standard/tests/file/ftruncate_variation2-win32.phpt] reason: .. only valid for Windows
+SKIP Test fseek(), ftell() & rewind() functions : basic functionality - all w and x modes [ext/standard/tests/file/fseek_ftell_rewind_basic2-win32-mb.phpt] reason: .. only valid for Windows
+SKIP Test fseek(), ftell() & rewind() functions : basic functionality - all w and x modes [ext/standard/tests/file/fseek_ftell_rewind_basic2-win32.phpt] reason: .. only valid for Windows
+SKIP Test fscanf() function: usage variations - unsigned int formats with integer values [ext/standard/tests/file/fscanf_variation39.phpt] reason: this test is for 32bit platform only
+SKIP Test ftruncate() function : usage variations - truncate file to half size [ext/standard/tests/file/ftruncate_variation3-win32.phpt] reason: .. only valid for Windows
+SKIP Test fscanf() function: usage variations - unsigned formats with float values [ext/standard/tests/file/fscanf_variation40.phpt] reason: this test is for 32bit platform only
+SKIP Test fseek(), ftell() & rewind() functions : usage variations - all w and x modes, default whence [ext/standard/tests/file/fseek_ftell_rewind_variation2-win32.phpt] reason: .. only valid for Windows
+SKIP Test ftruncate() function : usage variations - truncate file to bigger size [ext/standard/tests/file/ftruncate_variation5-win32.phpt] reason: .. only valid for Windows
+SKIP Test ftruncate() function : usage variations - truncate file to smaller size [ext/standard/tests/file/ftruncate_variation6-win32.phpt] reason: .. only valid for Windows
+SKIP Test fseek(), ftell() & rewind() functions : usage variations - all w and x modes, SEEK_SET [ext/standard/tests/file/fseek_ftell_rewind_variation4-win32.phpt] reason: .. only valid for Windows
+SKIP Test ftruncate() function : usage variations - truncate when file pointer at EOF [ext/standard/tests/file/ftruncate_variation7-win32.phpt] reason: .. only valid for Windows
+SKIP Test fseek(), ftell() & rewind() functions : usage variations - all w & x modes, SEEK_CUR [ext/standard/tests/file/fseek_ftell_rewind_variation6-win32.phpt] reason: .. only valid for Windows
+SKIP Test fseek(), ftell() & rewind() functions : usage variations - all w and x modes, SEEK_END [ext/standard/tests/file/fseek_ftell_rewind_variation8-win32.phpt] reason: .. only valid for Windows
+SKIP Test fwrite() function : basic functionality [ext/standard/tests/file/fwrite_basic-win32-mb.phpt] reason: ...Valid for Windows only
+SKIP Test fwrite() function : basic functionality [ext/standard/tests/file/fwrite_basic-win32.phpt] reason: ...Valid for Windows only
+SKIP Test fwrite() function : usage variations - r, rb & rt modes [ext/standard/tests/file/fwrite_variation1-win32-mb.phpt] reason: ...Not valid for Linux
+SKIP Test fwrite() function : usage variations - r+, r+b & r+t modes [ext/standard/tests/file/fwrite_variation2-win32.phpt] reason: ...Not valid for Linux
+SKIP Test fwrite() function : usage variations - a, ab, at, a+, a+b & a+t mode [ext/standard/tests/file/fwrite_variation3-win32.phpt] reason: ...Not valid for Linux
+SKIP Bug GH-9227 (Trailing dots and spaces in filenames are ignored) [ext/standard/tests/file/gh9227.phpt] reason: for Windows only
+SKIP Test fwrite() function : usage variations - x, xb, xt, x+, x+b & x+t modes [ext/standard/tests/file/fwrite_variation4-win32.phpt] reason: ...Not valid for Linux
+SKIP GHSA-9f67-6fw4-hpfp: Windows reserved device names are rejected in filesystem paths [ext/standard/tests/file/ghsa-9f67-6fw4-hpfp-win32.phpt] reason: Windows only
+SKIP Test glob() function: error condition - pattern too long. [ext/standard/tests/file/glob_error_002-win32.phpt] reason: Only valid for Windows
+SKIP Test is_readable() function: basic functionality [ext/standard/tests/file/is_readable_basic-win32-mb.phpt] reason: only for Windows
+SKIP Test is_readable() function: basic functionality [ext/standard/tests/file/is_readable_basic-win32.phpt] reason: only for Windows
+SKIP Test glob() function: usage variations [ext/standard/tests/file/glob_variation-win32-mb.phpt] reason: .. only for Windows
+SKIP Test glob() function: usage variations [ext/standard/tests/file/glob_variation-win32.phpt] reason: .. only for Windows
+SKIP Test glob() function: ensure no platform difference, variation 4 [ext/standard/tests/file/glob_variation6.phpt] reason: only valid directory on Windows
+SKIP Test is_executable() function: basic functionality [ext/standard/tests/file/is_executable_basic-win32-mb.phpt] reason: .. only for Windows
+SKIP Test is_executable() function: basic functionality [ext/standard/tests/file/is_executable_basic-win32.phpt] reason: .. only for Windows
+SKIP link not working properly on Windows [ext/standard/tests/file/link_win32.phpt] reason: windows only test
+SKIP Test pathinfo() function: basic functionality [ext/standard/tests/file/pathinfo_basic2-win32.phpt] reason: Only valid for Windows
+SKIP Test lstat() and stat() functions: usage variations - effects of touch() on link [ext/standard/tests/file/lstat_stat_variation6.phpt] reason: .. atime update is disabled, hence skip the test
+SKIP php://fd wrapper: invalid file descriptor [ext/standard/tests/file/php_fd_wrapper_04.phpt] reason: : the warning output is different on MacOS
+SKIP Test popen() and pclose function: basic functionality [ext/standard/tests/file/popen_pclose_basic-win32-mb.phpt] reason: Not Valid for Linux
+SKIP Test popen() and pclose function: basic functionality [ext/standard/tests/file/popen_pclose_basic-win32.phpt] reason: Not Valid for Linux
+SKIP Test popen() and pclose function: error conditions [ext/standard/tests/file/popen_pclose_error-sunos.phpt] reason: Only valid for Sun Solaris
+SKIP Test readfile() function: basic functionality [ext/standard/tests/file/readfile_basic-win32.phpt] reason: .. only on Windows
+SKIP Test mkdir() and rmdir() functions: usage variations [ext/standard/tests/file/mkdir_rmdir_variation-win32-mb.phpt] reason: only for Windows
+SKIP Test mkdir() and rmdir() functions: usage variations [ext/standard/tests/file/mkdir_rmdir_variation-win32.phpt] reason: only for Windows
+SKIP Test readfile() function : variation - various invalid paths [ext/standard/tests/file/readfile_variation10-win32.phpt] reason: run only on Windows
+SKIP Test mkdir() function : variation: various valid and invalid paths [ext/standard/tests/file/mkdir_variation5-win32.phpt] reason: Only valid for Windows
+SKIP Test readfile() function : variation [ext/standard/tests/file/readfile_variation8-win32-mb.phpt] reason: Only valid for Windows
+SKIP Test readfile() function : variation [ext/standard/tests/file/readfile_variation8-win32.phpt] reason: Only valid for Windows
+SKIP Test readlink() and realpath functions: basic functionality - diff. path notation for files [ext/standard/tests/file/readlink_realpath_basic2-win32.phpt] reason: only for Windows
+SKIP Test readlink() and realpath() functions: error conditions [ext/standard/tests/file/readlink_realpath_error-win32.phpt] reason: only for Windows
+SKIP Test readlink() and realpath() functions: usage variation - linkname/filename stored in object(Bug #42038) [ext/standard/tests/file/readlink_realpath_variation1-win32.phpt] reason: only for Windows
+SKIP Test readlink() and realpath() functions: usage variation - linkname/filename stored in array(Bug #42038) [ext/standard/tests/file/readlink_realpath_variation2-win32.phpt] reason: only for Windows
+SKIP Test realpath() function: basic functionality [ext/standard/tests/file/realpath_basic-win32-mb.phpt] reason: only on Windows
+SKIP Test realpath() function: basic functionality [ext/standard/tests/file/realpath_basic-win32.phpt] reason: only on Windows
+SKIP Test parse_ini_file() function : variation - various absolute and relative paths [ext/standard/tests/file/parse_ini_file_variation6-win32-mb.phpt] reason: Only run on Windows
+SKIP Test parse_ini_file() function : variation - various absolute and relative paths [ext/standard/tests/file/parse_ini_file_variation6-win32.phpt] reason: Only run on Windows
+SKIP Test pathinfo() function: basic functionality [ext/standard/tests/file/pathinfo_basic1-win32.phpt] reason: Only valid for Windows
+SKIP realpath_cache_size() and realpath_cache_get() [ext/standard/tests/file/realpath_cache_win32.phpt] reason: only on Windows
+SKIP Test realpath() function: usage variation [ext/standard/tests/file/realpath_variation-win32-mb.phpt] reason: only on Windows
+SKIP Test realpath() function: usage variation [ext/standard/tests/file/realpath_variation-win32.phpt] reason: only on Windows
+SKIP Test rename() function: usage variations-6 [ext/standard/tests/file/rename_variation6-win32.phpt] reason: ..  for Windows
+SKIP Test rename() function: usage variations [ext/standard/tests/file/rename_variation-win32.phpt] reason: .. only for Windows
+SKIP Test rename() function: usage variations-8 [ext/standard/tests/file/rename_variation7-win32.phpt] reason: .. for Windows
+SKIP Test rename() function: usage variations [ext/standard/tests/file/rename_variation1-win32.phpt] reason: .. only for Windows
+SKIP Test rename() function : variation - various relative, absolute paths [ext/standard/tests/file/rename_variation11-win32.phpt] reason: Only valid for Windows
+SKIP Test rename() function: variation [ext/standard/tests/file/rename_variation8-win32.phpt] reason: ..  for Windows
+SKIP Test rename() function : variation - various relative, absolute paths [ext/standard/tests/file/rename_variation12-win32.phpt] reason: ..  for Windows
+SKIP Test rename() function : variation - various invalid paths [ext/standard/tests/file/rename_variation13-win32.phpt] reason: run only on Windows
+SKIP Test rmdir() function : variation: various valid and invalid paths [ext/standard/tests/file/rmdir_variation3-win32.phpt] reason: Only valid for Windows
+SKIP Test rename() function: usage variations [ext/standard/tests/file/rename_variation2-win32.phpt] reason: .. only for Windows
+SKIP Test stat() function: basic functionality [ext/standard/tests/file/stat_basic-win32-mb.phpt] reason: .. valid only for Windows
+SKIP Test stat() function: basic functionality [ext/standard/tests/file/stat_basic-win32.phpt] reason: .. valid only for Windows
+SKIP Test stat() function: error conditions [ext/standard/tests/file/stat_error-win32.phpt] reason: .. only for Windows
+SKIP Test stat() functions: usage variations - effects of rename() [ext/standard/tests/file/stat_variation1-win32-mb.phpt] reason: .. only for Windows
+SKIP Test stat() functions: usage variations - effects of rename() [ext/standard/tests/file/stat_variation1-win32.phpt] reason: .. only for Windows
+SKIP Test stat() functions: usage variations - effects of writing to file [ext/standard/tests/file/stat_variation2-win32.phpt] reason: .. only for Windows
+SKIP Test rename() function: usage variations [ext/standard/tests/file/rename_variation3-win32.phpt] reason: .. only for Windows
+SKIP Test stat() functions: usage variations - effects of creating/deleting the dir/file [ext/standard/tests/file/stat_variation3-win32.phpt] reason: .. only for Windows
+SKIP Test stat() functions: usage variations - effects of is_dir() & is_file() [ext/standard/tests/file/stat_variation4-win32.phpt] reason: .. only for Windows
+SKIP Test stat() functions: usage variations - file opened in read/write mode [ext/standard/tests/file/stat_variation5-win32.phpt] reason: .. only for Windows
+SKIP Test stat() functions: usage variations - changing permissions of dir/file [ext/standard/tests/file/stat_variation6-win32.phpt] reason: .. only for Windows
+SKIP Test stat() functions: usage variations - names of dir/file stored in objects [ext/standard/tests/file/stat_variation7-win32.phpt] reason: .. only for Windows
+SKIP Test stat() functions: usage variations - effects of truncate() [ext/standard/tests/file/stat_variation8-win32.phpt] reason: .. only for Windows
+SKIP Test tempnam() function: usage variations - Using previous unique filename [ext/standard/tests/file/tempnam_variation6-win32.phpt] reason: Windows Only
+SKIP Test tempnam() function: usage variations - various absolute and relative paths [ext/standard/tests/file/tempnam_variation8-win32.phpt] reason: Only valid for Windows
+SKIP Test touch() function : basic functionality [ext/standard/tests/file/touch_basic-win32-mb.phpt] reason: .. only for Windows
+SKIP Test touch() function : basic functionality [ext/standard/tests/file/touch_basic-win32.phpt] reason: .. only for Windows
+SKIP Test tempnam() function: usage variations - creating files [ext/standard/tests/file/tempnam_variation1-win32-mb.phpt] reason: Only valid for Windows
+SKIP Test tempnam() function: usage variations - creating files [ext/standard/tests/file/tempnam_variation1-win32.phpt] reason: Only valid for Windows
+SKIP Test tempnam() function: usage variations - various absolute and relative paths [ext/standard/tests/file/tempnam_variation2-win32.phpt] reason: Only valid for Windows
+SKIP Test touch() function : variation: various valid and invalid paths [ext/standard/tests/file/touch_variation5-win32.phpt] reason: .. only for Windows
+SKIP Test tempnam() function: usage variations - obscure prefixes [ext/standard/tests/file/tempnam_variation3-win32.phpt] reason: run only on Windows
+SKIP Test touch() function : variation: various valid and invalid paths [ext/standard/tests/file/touch_variation6-win32.phpt] reason: .. only for Windows
+SKIP Test tempnam() function: usage variations - existing file [ext/standard/tests/file/tempnam_variation5-win32.phpt] reason: Windows only
+SKIP Test tempnam() function: usage variations - invalid/non-existing dir [ext/standard/tests/file/tempnam_variation7-win32.phpt] reason: Only run on Windows
+SKIP Test unlink() function : variation: various valid and invalid paths [ext/standard/tests/file/unlink_variation9-win32.phpt] reason: .. only for Windows
+SKIP Testing unlink() function : error conditions [ext/standard/tests/file/unlink_error-win32-mb.phpt] reason: .. only on Windows
+SKIP Testing unlink() function : error conditions [ext/standard/tests/file/unlink_error-win32.phpt] reason: .. only on Windows
+SKIP Test unlink() function : usage variations - unlinking file in a directory [ext/standard/tests/file/unlink_variation1-win32-mb.phpt] reason: only on Windows
+SKIP Test unlink() function : usage variations - unlinking file in a directory [ext/standard/tests/file/unlink_variation1-win32.phpt] reason: only on Windows
+SKIP bug #44859 (incorrect result with NTFS ACL permissions, is_writable) [ext/standard/tests/file/windows_acls/bug44859.phpt] reason: windows only test
+SKIP bug #44859 (incorrect result with NTFS ACL permissions, is_readable) [ext/standard/tests/file/windows_acls/bug44859_2.phpt] reason: windows only test
+SKIP bug #44859 (incorrect result with NTFS ACL permissions, is_executable) [ext/standard/tests/file/windows_acls/bug44859_3.phpt] reason: windows only test
+SKIP bug #44859 (incorrect result with NTFS ACL permissions, is_readable) [ext/standard/tests/file/windows_acls/bug44859_4.phpt] reason: windows only test
+SKIP Bug#48746 - Junction not working properly [ext/standard/tests/file/windows_links/bug48746.phpt] reason: windows only test
+SKIP Bug#48746 - Junction not working properly [ext/standard/tests/file/windows_links/bug48746_1.phpt] reason: windows only test
+SKIP Bug#48746 - Junction not working properly [ext/standard/tests/file/windows_links/bug48746_2.phpt] reason: windows only test
+SKIP Bug#48746 - Junction not working properly [ext/standard/tests/file/windows_links/bug48746_3.phpt] reason: windows only test
+SKIP Bug #73962 bug with symlink related to cyrillic directory [ext/standard/tests/file/windows_links/bug73962.phpt] reason: windows only test
+SKIP Bug #76335 "link(): Bad file descriptor" with non-ASCII path [ext/standard/tests/file/windows_links/bug76335.phpt] reason: windows only test
+SKIP Test readlink bc behaviour on Windows [ext/standard/tests/file/windows_links/readlink_compat.phpt] reason: windows only test
+SKIP Bug #54028 Directory::read() cannot handle non-unicode chars properly [ext/standard/tests/file/windows_mb_path/bug54028.phpt] reason: Required extension missing: mbstring
+SKIP Bug #54028 realpath(".") return false [ext/standard/tests/file/windows_mb_path/bug54028_2.phpt] reason: windows only test
+SKIP Bug #54977 UTF-8 files and folder are not shown [ext/standard/tests/file/windows_mb_path/bug54977.phpt] reason: windows only test
+SKIP Bug #61315 stat() fails with specific DBCS characters [ext/standard/tests/file/windows_mb_path/bug61315.phpt] reason: windows only test
+SKIP PHP can not read or write file correctly if file name have special char like š [ext/standard/tests/file/windows_mb_path/bug64506.phpt] reason: windows only test
+SKIP Bug #64699 is_dir() is inaccurate result on Windows with japanese locale. [ext/standard/tests/file/windows_mb_path/bug64699.phpt] reason: windows only test
+SKIP Bug #70903 scandir wrongly interprets the Turkish "ı" character [ext/standard/tests/file/windows_mb_path/bug70903.phpt] reason: windows only test
+SKIP Bug #71509 Zip problem with swedish letters in filename. [ext/standard/tests/file/windows_mb_path/bug71509.phpt] reason: windows only test
+SKIP Bug #74923 Crash when crawling through network share [ext/standard/tests/file/windows_mb_path/bug74923.phpt] reason: windows only test
+SKIP Bug #75063 Many filesystem-related functions do not work with multibyte file names, cp1251 [ext/standard/tests/file/windows_mb_path/bug75063_cp1251.phpt] reason: windows only test
+SKIP Bug #75063 Many filesystem-related functions do not work with multibyte file names, UTF-8 [ext/standard/tests/file/windows_mb_path/bug75063_utf8.phpt] reason: windows only test
+SKIP RecursiveDirectoryIterator with dir path long or of edge case length [ext/standard/tests/file/windows_mb_path/recursive_it.phpt] reason: windows only test
+SKIP Test fopen() for reading big5 path [ext/standard/tests/file/windows_mb_path/test_big5_0.phpt] reason: windows only test
+SKIP Test mkdir/rmdir big5 path [ext/standard/tests/file/windows_mb_path/test_big5_1.phpt] reason: windows only test
+SKIP Test fopen() for write big5 to UTF-8 path [ext/standard/tests/file/windows_mb_path/test_big5_2.phpt] reason: windows only test
+SKIP Test fopen() for reading big5 to UTF-8 path [ext/standard/tests/file/windows_mb_path/test_big5_to_utf8_0.phpt] reason: windows only test
+SKIP Test mkdir/rmdir big5 to UTF-8 path [ext/standard/tests/file/windows_mb_path/test_big5_to_utf8_1.phpt] reason: windows only test
+SKIP Test fopen() for write big5 to UTF-8 path [ext/standard/tests/file/windows_mb_path/test_big5_to_utf8_2.phpt] reason: windows only test
+SKIP Test fopen() for reading UTF-8 path with cp1250 specific symbols [ext/standard/tests/file/windows_mb_path/test_cp1250_to_utf8_0.phpt] reason: windows only test
+SKIP Test mkdir/rmdir UTF-8 path with cp1250 specific symbols [ext/standard/tests/file/windows_mb_path/test_cp1250_to_utf8_1.phpt] reason: windows only test
+SKIP Test fopen() for write to UTF-8 path with cp1250 specific symbols [ext/standard/tests/file/windows_mb_path/test_cp1250_to_utf8_2.phpt] reason: windows only test
+SKIP Test fopen() for reading UTF-8 path with cp1250 specific symbols [ext/standard/tests/file/windows_mb_path/test_cp1250_to_utf8_3.phpt] reason: windows only test
+SKIP Test mkdir/rmdir UTF-8 path with cp1250 specific symbols [ext/standard/tests/file/windows_mb_path/test_cp1250_to_utf8_4.phpt] reason: windows only test
+SKIP Test fopen() for write to UTF-8 path with cp1250 specific symbols [ext/standard/tests/file/windows_mb_path/test_cp1250_to_utf8_5.phpt] reason: windows only test
+SKIP Test fopen() for reading CP1251 path [ext/standard/tests/file/windows_mb_path/test_cp1251_0.phpt] reason: windows only test
+SKIP Test mkdir/rmdir CP1251 path [ext/standard/tests/file/windows_mb_path/test_cp1251_1.phpt] reason: windows only test
+SKIP Test fopen() for write CP1251 path [ext/standard/tests/file/windows_mb_path/test_cp1251_2.phpt] reason: windows only test
+SKIP Test fopen() for reading CP1251 to UTF-8 path [ext/standard/tests/file/windows_mb_path/test_cp1251_to_utf8_0.phpt] reason: windows only test
+SKIP Test mkdir/rmdir CP1251 to UTF-8 path [ext/standard/tests/file/windows_mb_path/test_cp1251_to_utf8_1.phpt] reason: windows only test
+SKIP Test fopen() for write CP1251 to UTF-8 path [ext/standard/tests/file/windows_mb_path/test_cp1251_to_utf8_2.phpt] reason: windows only test
+SKIP Test fopen() for reading CP1251 with zend.multibyte [ext/standard/tests/file/windows_mb_path/test_cp1251_zend_multibyte_0.phpt] reason: Required extension missing: mbstring
+SKIP Test mkdir/rmdir CP1251 with zend.multibyte [ext/standard/tests/file/windows_mb_path/test_cp1251_zend_multibyte_1.phpt] reason: Required extension missing: mbstring
+SKIP Test fopen() for write CP1251 with zend.multibyte [ext/standard/tests/file/windows_mb_path/test_cp1251_zend_multibyte_2.phpt] reason: Required extension missing: mbstring
+SKIP cp1252 cmd test [ext/standard/tests/file/windows_mb_path/test_cp1252_0.phpt] reason: windows only test
+SKIP Test fopen() for reading cp1252 to UTF-8 path [ext/standard/tests/file/windows_mb_path/test_cp1252_to_utf8_0.phpt] reason: windows only test
+SKIP Test mkdir/rmdir cp1252 to UTF-8 path [ext/standard/tests/file/windows_mb_path/test_cp1252_to_utf8_1.phpt] reason: windows only test
+SKIP Test fopen() for write cp1252 to UTF-8 path [ext/standard/tests/file/windows_mb_path/test_cp1252_to_utf8_2.phpt] reason: windows only test
+SKIP Test fopen() for reading cp1252 to UTF-8 path [ext/standard/tests/file/windows_mb_path/test_cp1252_to_utf8_3.phpt] reason: windows only test
+SKIP Test mkdir/rmdir cp1252 to UTF-8 path [ext/standard/tests/file/windows_mb_path/test_cp1252_to_utf8_4.phpt] reason: windows only test
+SKIP Test fopen() for write cp1252 to UTF-8 path [ext/standard/tests/file/windows_mb_path/test_cp1252_to_utf8_5.phpt] reason: windows only test
+SKIP Test fopen() for reading cp1253 path [ext/standard/tests/file/windows_mb_path/test_cp1253_0.phpt] reason: windows only test
+SKIP Test fopen() for reading cp1253 to UTF-8 path [ext/standard/tests/file/windows_mb_path/test_cp1253_to_utf8_0.phpt] reason: windows only test
+SKIP Test mkdir/rmdir cp1253 path [ext/standard/tests/file/windows_mb_path/test_cp1253_1.phpt] reason: windows only test
+SKIP Test fopen() for write cp1253 [ext/standard/tests/file/windows_mb_path/test_cp1253_2.phpt] reason: windows only test
+SKIP Test fopen() for reading cp936 path [ext/standard/tests/file/windows_mb_path/test_cp936_0.phpt] reason: windows only test
+SKIP Test mkdir/rmdir cp936 path [ext/standard/tests/file/windows_mb_path/test_cp936_1.phpt] reason: windows only test
+SKIP Test mkdir/rmdir cp1253 to UTF-8 path [ext/standard/tests/file/windows_mb_path/test_cp1253_to_utf8_1.phpt] reason: windows only test
+SKIP Test fopen() for write cp936 path [ext/standard/tests/file/windows_mb_path/test_cp936_2.phpt] reason: windows only test
+SKIP Test fopen() for write cp1253 to UTF-8 path [ext/standard/tests/file/windows_mb_path/test_cp1253_to_utf8_2.phpt] reason: windows only test
+SKIP Test fopen() for reading cp936 to UTF-8 path [ext/standard/tests/file/windows_mb_path/test_cp936_to_utf8_0.phpt] reason: windows only test
+SKIP Test mkdir/rmdir cp936 to UTF-8 path [ext/standard/tests/file/windows_mb_path/test_cp936_to_utf8_1.phpt] reason: windows only test
+SKIP Test fopen() for write cp936 to UTF-8 path [ext/standard/tests/file/windows_mb_path/test_cp936_to_utf8_2.phpt] reason: windows only test
+SKIP Test fopen() for reading cp1254 path [ext/standard/tests/file/windows_mb_path/test_cp1254_0.phpt] reason: windows only test
+SKIP Test mkdir/rmdir cp1254 to UTF-8 path [ext/standard/tests/file/windows_mb_path/test_cp1254_1.phpt] reason: windows only test
+SKIP Test chdir()/getcwd() with a dir for multibyte filenames [ext/standard/tests/file/windows_mb_path/test_cwd_mb_names.phpt] reason: windows only test
+SKIP Test fopen() for write cp1254 path [ext/standard/tests/file/windows_mb_path/test_cp1254_2.phpt] reason: windows only test
+SKIP Test fopen() for reading eucjp to UTF-8 path [ext/standard/tests/file/windows_mb_path/test_eucjp_to_utf8_0.phpt] reason: windows only test
+SKIP Test mkdir/rmdir eucjp to UTF-8 path [ext/standard/tests/file/windows_mb_path/test_eucjp_to_utf8_1.phpt] reason: windows only test
+SKIP Test fopen() for write eucjp to UTF-8 path [ext/standard/tests/file/windows_mb_path/test_eucjp_to_utf8_2.phpt] reason: windows only test
+SKIP Test fopen() for reading Kartuli UTF-8 path [ext/standard/tests/file/windows_mb_path/test_kartuli_utf8_0.phpt] reason: windows only test
+SKIP Test mkdir/rmdir Kartuli UTF-8 path [ext/standard/tests/file/windows_mb_path/test_kartuli_utf8_1.phpt] reason: windows only test
+SKIP Test fopen() for write Kartuli UTF-8 path [ext/standard/tests/file/windows_mb_path/test_kartuli_utf8_2.phpt] reason: windows only test
+SKIP Kartuli UTF-8 cmd test [ext/standard/tests/file/windows_mb_path/test_kartuli_utf8_3.phpt] reason: windows only test
+SKIP Basic long path test [ext/standard/tests/file/windows_mb_path/test_long_path_0.phpt] reason: Required extension missing: mbstring
+SKIP Basic long path test with file I/O [ext/standard/tests/file/windows_mb_path/test_long_path_1.phpt] reason: windows only test
+SKIP Basic long path test with file I/O, multibyte path and realpath() check [ext/standard/tests/file/windows_mb_path/test_long_path_2.phpt] reason: Required extension missing: mbstring
+SKIP Bug #30730 Filename path length limit broken on NTFS volume, using rename [ext/standard/tests/file/windows_mb_path/test_long_path_bug30730.phpt] reason: windows only test
+SKIP Bug #70943 fopen() can't open a file if path is 259 characters long [ext/standard/tests/file/windows_mb_path/test_long_path_bug70943.phpt] reason: windows only test
+SKIP Bug #71103 file_exists and is_readable fail silently [ext/standard/tests/file/windows_mb_path/test_long_path_bug71103.phpt] reason: windows only test
+SKIP cp1254 cmd test [ext/standard/tests/file/windows_mb_path/test_cp1254_3.phpt] reason: windows only test
+SKIP Test fopen() for reading cp1254 to UTF-8 path [ext/standard/tests/file/windows_mb_path/test_cp1254_to_utf8_0.phpt] reason: windows only test
+SKIP Test mkdir/rmdir cp1254 to UTF-8 path [ext/standard/tests/file/windows_mb_path/test_cp1254_to_utf8_1.phpt] reason: windows only test
+SKIP Test fopen() for write cp1254 to UTF-8 path [ext/standard/tests/file/windows_mb_path/test_cp1254_to_utf8_2.phpt] reason: windows only test
+SKIP cp1254 cmd test [ext/standard/tests/file/windows_mb_path/test_cp1254_to_utf8_3.phpt] reason: windows only test
+SKIP Mkdir with path length < 260 and > 248 has be a long path [ext/standard/tests/file/windows_mb_path/test_long_path_mkdir.phpt] reason: windows only test
+SKIP Test readdir() with a dir for multibyte filenames [ext/standard/tests/file/windows_mb_path/test_readdir_mb_names.phpt] reason: windows only test
+SKIP Test rename() with a dir for multibyte filenames [ext/standard/tests/file/windows_mb_path/test_rename_mb_names.phpt] reason: windows only test
+SKIP Test fopen() for reading cp1255 path [ext/standard/tests/file/windows_mb_path/test_cp1255_0.phpt] reason: windows only test
+SKIP Test mkdir/rmdir cp1255 path [ext/standard/tests/file/windows_mb_path/test_cp1255_1.phpt] reason: windows only test
+SKIP Test fopen() for write cp1255 path [ext/standard/tests/file/windows_mb_path/test_cp1255_2.phpt] reason: windows only test
+SKIP Test fopen() for reading cp1255 to UTF-8 path [ext/standard/tests/file/windows_mb_path/test_cp1255_to_utf8_0.phpt] reason: windows only test
+SKIP Test mkdir/rmdir cp1255 to UTF-8 path [ext/standard/tests/file/windows_mb_path/test_cp1255_to_utf8_1.phpt] reason: windows only test
+SKIP Test fopen() for write cp1255 to UTF-8 path [ext/standard/tests/file/windows_mb_path/test_cp1255_to_utf8_2.phpt] reason: windows only test
+SKIP Test fopen() for reading cp1256 to UTF-8 path [ext/standard/tests/file/windows_mb_path/test_cp1256_0.phpt] reason: windows only test
+SKIP Test mkdir/rmdir cp1256 to UTF-8 path [ext/standard/tests/file/windows_mb_path/test_cp1256_1.phpt] reason: windows only test
+SKIP Test fopen() for write cp1256 to UTF-8 path [ext/standard/tests/file/windows_mb_path/test_cp1256_2.phpt] reason: windows only test
+SKIP Test fopen() for reading cp1256 to UTF-8 path [ext/standard/tests/file/windows_mb_path/test_cp1256_to_utf8_0.phpt] reason: windows only test
+SKIP Test mkdir/rmdir cp1256 to UTF-8 path [ext/standard/tests/file/windows_mb_path/test_cp1256_to_utf8_1.phpt] reason: windows only test
+SKIP Test fopen() for write cp1256 to UTF-8 path [ext/standard/tests/file/windows_mb_path/test_cp1256_to_utf8_2.phpt] reason: windows only test
+SKIP Thai cp874 basic test [ext/standard/tests/file/windows_mb_path/test_cp874_0.phpt] reason: windows only test
+SKIP Test unlink() function : variation: various valid and invalid paths [ext/standard/tests/file/unlink_variation8-win32.phpt] reason: .. only for Windows
+SKIP Thai cp874 cmd test [ext/standard/tests/file/windows_mb_path/test_cp874_1.phpt] reason: windows only test
+SKIP Thai UTF-8 basic test [ext/standard/tests/file/windows_mb_path/test_cp874_to_utf8_0.phpt] reason: windows only test
+SKIP Thai UTF-8 cmd test [ext/standard/tests/file/windows_mb_path/test_cp874_to_utf8_1.phpt] reason: windows only test
+SKIP Test fopen() for reading cp932 path [ext/standard/tests/file/windows_mb_path/test_cp932_0.phpt] reason: windows only test
+SKIP Test mkdir/rmdir cp932 [ext/standard/tests/file/windows_mb_path/test_cp932_1.phpt] reason: windows only test
+SKIP Test fopen() for write to cp932 path [ext/standard/tests/file/windows_mb_path/test_cp932_2.phpt] reason: windows only test
+SKIP cp932 cmd test [ext/standard/tests/file/windows_mb_path/test_cp932_3.phpt] reason: windows only test
+SKIP Test fopen() for reading cp932 to UTF-8 path [ext/standard/tests/file/windows_mb_path/test_cp932_to_utf8_0.phpt] reason: windows only test
+SKIP Test mkdir/rmdir cp932 to UTF-8 path [ext/standard/tests/file/windows_mb_path/test_cp932_to_utf8_1.phpt] reason: windows only test
+SKIP Test fopen() for write cp932 to UTF-8 path [ext/standard/tests/file/windows_mb_path/test_cp932_to_utf8_2.phpt] reason: windows only test
+SKIP Bug #81294 (Segfault when removing a filter) [ext/standard/tests/filters/bug81294.phpt] reason: Required extension missing: zlib
+SKIP Bug #81302 (Stream position after stream filter removed) [ext/standard/tests/filters/bug81302.phpt] reason: Required extension missing: zlib
+SKIP user defined error handler + set_error_handling(EH_THROW) [ext/standard/tests/general_functions/bug44295-win.phpt] reason: Windows only
+SKIP Filter errors: zlib.inflate [ext/standard/tests/filters/filter_errors_zlib_inflate.phpt] reason: zlib.inflate not available
+SKIP GH-13264: fgets() and stream_get_line() do not return false on filter fatal error [ext/standard/tests/filters/gh13264.phpt] reason: zlib.inflate not available
+SKIP Bug #77638 (var_export'ing certain class instances segfaults) [ext/standard/tests/general_functions/bug77638_1.phpt] reason: Required extension missing: com_dotnet
+SKIP Bug #77638 (var_export'ing certain class instances segfaults) [ext/standard/tests/general_functions/bug77638_2.phpt] reason: Required extension missing: ffi
+SKIP Bug #69646 OS command injection vulnerability in escapeshellarg() [ext/standard/tests/general_functions/bug69646.phpt] reason: .. Windows only
+SKIP Bug #78569 (proc_open() may require extra quoting) [ext/standard/tests/general_functions/bug78569.phpt] reason: this test is for Windows platforms only
+SKIP Test escapeshellarg() function: basic test [ext/standard/tests/general_functions/escapeshellarg_basic-win32.phpt] reason: .. only for Windows
+SKIP Test escapeshellarg() function : usage variations - different data types as $arg arg [ext/standard/tests/general_functions/escapeshellarg_variation1-win32.phpt] reason: .. only for Windows
+SKIP Test escapeshellcmd() functionality on Windows [ext/standard/tests/general_functions/escapeshellcmd-win32.phpt] reason: ...Valid for Windows only
+SKIP dl(): Loaded extensions properly unregister their ini settings [ext/standard/tests/general_functions/dl-001.phpt] reason: dl_test extension is not built (tried /usr/local/lib/php/extensions/no-debug-non-zts-20230831/dl_test.so)
+SKIP dl(): Extensions compiled against zend_register_ini_entries() are supported [ext/standard/tests/general_functions/dl-002.phpt] reason: dl_test extension is not built (tried /usr/local/lib/php/extensions/no-debug-non-zts-20230831/dl_test.so)
+SKIP dl(): Loaded extensions support ini_set() [ext/standard/tests/general_functions/dl-003.phpt] reason: dl_test extension is not built (tried /usr/local/lib/php/extensions/no-debug-non-zts-20230831/dl_test.so)
+SKIP dl(): use zend_register_functions() directly [ext/standard/tests/general_functions/dl-use_register_functions_directly.phpt] reason: dl_test extension is not built (tried /usr/local/lib/php/extensions/no-debug-non-zts-20230831/dl_test.so)
+SKIP Test gettype() & settype() functions : usage variations [ext/standard/tests/general_functions/gettype_settype_variation1.phpt] reason: this test is for 32bit platform only
+SKIP Test escapeshellarg() function: basic test with UTF-8 strings [ext/standard/tests/general_functions/escapeshellarg_basic-win32-mb.phpt] reason: .. only for Windows
+SKIP Test gettype() & settype() functions : usage variations [ext/standard/tests/general_functions/gettype_settype_variation2.phpt] reason: this test is for 32bit platform only
+SKIP Test gettype() & settype() functions : usage variations [ext/standard/tests/general_functions/gettype_settype_variation3.phpt] reason: this test is for 32bit platform only
+SKIP Test gettype() & settype() functions : usage variations [ext/standard/tests/general_functions/gettype_settype_variation4.phpt] reason: this test is for 32bit platform only
+SKIP Test gettype() & settype() functions : usage variations [ext/standard/tests/general_functions/gettype_settype_variation5.phpt] reason: this test is for 32bit platform only
+SKIP Test gettype() & settype() functions : usage variations [ext/standard/tests/general_functions/gettype_settype_variation6.phpt] reason: this test is for 32bit platform only
+SKIP Test gettype() & settype() functions : usage variations [ext/standard/tests/general_functions/gettype_settype_variation7.phpt] reason: this test is for 32bit platform only
+SKIP Test gettype() & settype() functions : usage variations [ext/standard/tests/general_functions/gettype_settype_variation8.phpt] reason: this test is for 32bit platform only
+SKIP GH-10239 (proc_close after proc_get_status always returns -1) [ext/standard/tests/general_functions/gh10239_1.phpt] reason: , only for linux
+SKIP GH-10239 (proc_close after proc_get_status always returns -1) [ext/standard/tests/general_functions/gh10239_2.phpt] reason: , only for linux
+SKIP dl() / observer segfault [ext/standard/tests/general_functions/gh17211.phpt] reason: dl_test extension is not built (tried /usr/local/lib/php/extensions/no-debug-non-zts-20230831/dl_test.so)
+SKIP dl() segfaults when module is already loaded [ext/standard/tests/general_functions/gh9589.phpt] reason: Required extension missing: dl_test
+SKIP GHSA-9fcc-425m-g385 - bypass CVE-2024-1874 - batch file variation [ext/standard/tests/general_functions/ghsa-9fcc-425m-g385_001.phpt] reason: Run only on Windows
+SKIP GHSA-9fcc-425m-g385 - bypass CVE-2024-1874 - cmd.exe variation [ext/standard/tests/general_functions/ghsa-9fcc-425m-g385_002.phpt] reason: Run only on Windows
+SKIP GHSA-9fcc-425m-g385 - bypass CVE-2024-1874 - exhaustive suffix test [ext/standard/tests/general_functions/ghsa-9fcc-425m-g385_003.phpt] reason: Run only on Windows
+SKIP GHSA-54hq-v5wp-fqgv - proc_open does not correctly escape args for bat files [ext/standard/tests/general_functions/ghsa-pc52-254m-w9w7_1.phpt] reason: Run only on Windows
+SKIP GHSA-54hq-v5wp-fqgv - proc_open does not correctly escape args for cmd files [ext/standard/tests/general_functions/ghsa-pc52-254m-w9w7_2.phpt] reason: Run only on Windows
+SKIP GHSA-54hq-v5wp-fqgv - proc_open does not correctly escape args for cmd executing batch files [ext/standard/tests/general_functions/ghsa-pc52-254m-w9w7_3.phpt] reason: Run only on Windows
+SKIP Test is_float() & its is_double() alias [ext/standard/tests/general_functions/is_float.phpt] reason: this test is for 32bit platform only
+SKIP Test is_int() & it's FALIASes: is_long() & is_integer() functions [ext/standard/tests/general_functions/is_int.phpt] reason: this test is for 32bit platform only
+SKIP Test intval() function [ext/standard/tests/general_functions/intval.phpt] reason: this test is for 32bit platform only
+SKIP proc_nice() basic behaviour [ext/standard/tests/general_functions/proc_nice_basic-win.phpt] reason: : Only for Windows
+SKIP Test var_dump() function [ext/standard/tests/general_functions/var_dump.phpt] reason: this test is for 32bit platform only
+SKIP Test var_export() function with locale [ext/standard/tests/general_functions/var_export-locale_32.phpt] reason: 32-bit only
+SKIP Test var_export() function with integer values [ext/standard/tests/general_functions/var_export_basic1_32.phpt] reason: 32-bit only
+SKIP Bug #70096 (Repeated iptcembed() adds superfluous FF bytes) [ext/standard/tests/image/bug70096.phpt] reason: Required extension missing: gd
+SKIP GetImageSize() for compressed swf files [ext/standard/tests/image/getimagesize_swc.phpt] reason: Required extension missing: zlib
+SKIP Test getimagesize() function : variation - For shockwave-flash format [ext/standard/tests/image/getimagesize_variation4.phpt] reason: Required extension missing: zlib
+SKIP Test getimagesize() function : basic functionality for shockwave-flash [ext/standard/tests/image/getimagesize_variation_005.phpt] reason: Required extension missing: zlib
+SKIP Test image_type_to_mime_type() function : usage variations - Passing IMAGETYPE_ICO and IMAGETYPE_SWC [ext/standard/tests/image/image_type_to_mime_type_variation4.phpt] reason: Required extension missing: zlib
+SKIP Bug #75574 putenv does not work properly if parameter contains non-ASCII unicode character, cp936 Windows [ext/standard/tests/general_functions/putenv_bug75574_cp936_win.phpt] reason: Valid only on Windows
+SKIP getimagesize() decompression doesn't reach hard limit [ext/standard/tests/image/oom_getimagesize_cws.phpt] reason: built-in zlib not available
+SKIP Test bindec() function : usage variations - different data types as $binary_string arg [ext/standard/tests/math/bindec_variation1.phpt] reason: this test is for 32bit platform only
+SKIP getimagesizefromstring() decompression doesn't reach hard limit [ext/standard/tests/image/oom_getimagesizefromstring_cws.phpt] reason: built-in zlib not available
+SKIP Bug #30695 (32 bit issues) [ext/standard/tests/math/bug30695.phpt] reason: this test is for 32bit platform only
+SKIP Bug #69115 crash in mail (plus indirect pcre test) [ext/standard/tests/mail/bug69115.phpt] reason: Windows only test, as in Unix builds it sends an email
+SKIP Bug #72964 (White space not unfolded for CC/Bcc headers) [ext/standard/tests/mail/bug72964.phpt] reason: Required extension missing: imap
+SKIP Bug #72964 (White space not unfolded for CC/Bcc headers) [ext/standard/tests/mail/bug80706.phpt] reason: Required extension missing: imap
+SKIP Bug #80751 (Comma in recipient name breaks email delivery) [ext/standard/tests/mail/bug80751.phpt] reason: Required extension missing: imap
+SKIP Test decbin() function : usage variations - different data types as $num arg [ext/standard/tests/math/decbin_variation1.phpt] reason: this test is for 32bit platform only
+SKIP Test bindec() - basic function test bindec() [ext/standard/tests/math/bindec_basic.phpt] reason: this test is for 32bit platform only
+SKIP Test dechex() function : usage variations - different data types as $num arg [ext/standard/tests/math/dechex_variation1.phpt] reason: this test is for 32bit platform only
+SKIP Test decoct() function : usage variations - different data types as $num arg [ext/standard/tests/math/decoct_variation1.phpt] reason: this test is for 32bit platform only
+SKIP Test mail() function : basic functionality [ext/standard/tests/mail/mail_basic_alt1-win32.phpt] reason: Required extension missing: imap
+SKIP Test mail() function : basic functionality [ext/standard/tests/mail/mail_basic_alt2-win32.phpt] reason: Required extension missing: imap
+SKIP Test mail() function : basic functionality [ext/standard/tests/mail/mail_basic_alt3-win32.phpt] reason: Required extension missing: imap
+SKIP Test mail() function : basic functionality [ext/standard/tests/mail/mail_basic_alt4-win32.phpt] reason: Required extension missing: imap
+SKIP Test hexdec() - basic function test hexdec() [ext/standard/tests/math/hexdec_basic.phpt] reason: this test is for 32bit platform only
+SKIP Test octdec() - basic function test octdec() [ext/standard/tests/math/octdec_basic.phpt] reason: this test is for 32bit platform only
+SKIP Test mail() function : basic functionality [ext/standard/tests/mail/mail_variation_alt1-win32.phpt] reason: Required extension missing: imap
+SKIP Test mail() function : basic functionality [ext/standard/tests/mail/mail_variation_alt2-win32.phpt] reason: Required extension missing: imap
+SKIP Test mail() function : basic functionality [ext/standard/tests/mail/mail_variation_alt3-win32.phpt] reason: Required extension missing: imap
+SKIP Test hexdec() function : usage variations - different data types as $number arg [ext/standard/tests/math/hexdec_variation1.phpt] reason: this test is for 32bit platform only
+SKIP Test pow() - basic function test pow() [ext/standard/tests/math/pow_basic.phpt] reason: this test is for 32bit platform only
+SKIP Test pow() function : usage variations - different data types as $base argument [ext/standard/tests/math/pow_variation1.phpt] reason: this test is for 32bit platform only
+SKIP Streams Based IPv6 TCP Loopback test [ext/standard/tests/network/tcp6loop.phpt] reason: IPv6 is not supported.
+SKIP Bug #12190 (Setting 0 with port 0 too) [ext/standard/tests/network/gh12190.phpt] reason: : https wrapper is required
+SKIP Streams Based IPv6 UDP Loopback test [ext/standard/tests/network/udp6loop.phpt] reason: IPv6 is not supported.
+SKIP http-stream test [ext/standard/tests/network/http-stream.phpt] reason: Required extension missing: dom
+SKIP Bug #75221 (Argon2i always throws NUL at the end) [ext/standard/tests/password/bug75221.phpt] reason: password_hash not built with Argon2
+SKIP inet_ntop() & inet_pton() IPv6 tests [ext/standard/tests/network/inet_ipv6.phpt] reason: MacOS has broken inet_*() funcs
+SKIP ip2long() & long2ip() tests [ext/standard/tests/network/ip.phpt] reason: this test is for 32bit platform only
+SKIP Test ip2long() function : usage variation 2, 32 bit [ext/standard/tests/network/ip2long_variation2.phpt] reason: 32 bit only
+SKIP Test ip2long() function : usage variation 2, 64 bit [ext/standard/tests/network/ip2long_variation2_x64.phpt] reason: - inet_pton behaves differently on Darwin
+SKIP Test normal operation of password_get_info() with Argon2i and Argon2id [ext/standard/tests/password/password_get_info_argon2.phpt] reason: password_get_info not built with Argon2
+SKIP Check that windows version constants are initialized [ext/standard/tests/php_version_win_const.phpt] reason: .. Windows only
+SKIP Test normal operation of password_hash() with Argon2i and Argon2id [ext/standard/tests/password/password_hash_argon2.phpt] reason: password_hash not built with Argon2
+SKIP Test error operation of password_hash() with Argon2i and Argon2id [ext/standard/tests/password/password_hash_error_argon2.phpt] reason: password_hash not built with Argon2
+SKIP Test normal operation of password_needs_rehash() with Argon2i and Argon2id [ext/standard/tests/password/password_needs_rehash_argon2.phpt] reason: password_needs_rehash not built with Argon2
+SKIP Test normal operation of password_verify() with Argon2i and Argon2id [ext/standard/tests/password/password_verify_argon2.phpt] reason: password_verify not built with Argon2
+SKIP Bug #64330 (stream_socket_server() creates wrong Abstract Namespace UNIX sockets) [ext/standard/tests/network/bug64330.phpt] reason: abstract namespace is a Linux-only feature
+SKIP Bug #73594 (dns_get_record() does not populate $additional out parameter) [ext/standard/tests/network/bug73594.phpt] reason: local resolver does not return additional records
+SKIP Bug #73594 (dns_get_record() does not populate $additional out parameter - $authns parameter) [ext/standard/tests/network/bug73594a.phpt] reason: local resolver does not return authority records
+SKIP Bug #74764 IPv6 bindto fails with stream_socket_client() [ext/standard/tests/network/bug74764.phpt] reason: IPv6 not supported.
+SKIP Bug #80067 (Omitting the port in bindto setting errors) [ext/standard/tests/network/bug80067.phpt] reason: : https wrapper is required
+SKIP Test serialize() & unserialize() functions: many types [ext/standard/tests/serialize/serialization_miscTypes_001.phpt] reason: this test is for 32bit platform only
+SKIP Bug #70513: GMP Deserialization Type Confusion Vulnerability [ext/standard/tests/serialize/bug70513.phpt] reason: Required extension missing: gmp
+SKIP Bug #49936 (crash with ftp stream in php_stream_context_get_option()) [ext/standard/tests/streams/bug49936_win32.phpt] reason: . Do run on Windows only
+SKIP Bug #78883 (fgets(STDIN) fails on Windows) [ext/standard/tests/streams/bug78883.phpt] reason: this test is for Windows platforms only
+SKIP Bug #60106 (stream_socket_server with abstract unix socket paths) [ext/standard/tests/streams/bug60106-002.phpt] reason: Only for Linux systems
+SKIP Bug #81346 (Non-seekable streams don't update position after write) [ext/standard/tests/streams/bug81346.phpt] reason: Required extension missing: bz2
+XFAIL GH-14930: Custom stream wrapper dir_readdir output truncated to 255 characters in PHP 8.3 [ext/standard/tests/streams/gh14930.phpt]   XFAIL REASON: Fix is an ABI break so reverted from 8.3
+SKIP Bug #72771. FTPS to FTP downgrade not allowed when server doesn't support AUTH TLS or AUTH SSL. [ext/standard/tests/streams/bug72771.phpt] reason: Required extension missing: openssl
+SKIP GH-19570 (unable to fseek in /dev/zero and /dev/null) [ext/standard/tests/streams/gh19570.phpt] reason: only for Linux
+SKIP GH-19705 segmentation fault with non writable stream at stream_filter_append call. [ext/standard/tests/streams/gh19705.phpt] reason: Required extension missing: zlib
+SKIP Bug GH-9590 001 (stream_select does not abort upon exception or empty valid fd set) [ext/standard/tests/streams/gh9590-001.phpt] reason: Failed to set POSIX_RLIMIT_NOFILE
+SKIP Bug GH-9590 002 (stream_select does not abort upon exception or empty valid fd set) [ext/standard/tests/streams/gh9590-002.phpt] reason: Failed to set POSIX_RLIMIT_NOFILE
+SKIP Bug #75776 (Flushing streams with compression filter is broken) [ext/standard/tests/streams/bug75776.phpt] reason: Required extensions missing: zlib, bz2
+SKIP Bug #76136: stream_socket_get_name should enclose IPv6 in brackets [ext/standard/tests/streams/bug76136.phpt] reason: IPv6 is not supported.
+SKIP Bug #76943 (Inconsistent stream_wrapper_restore() errors) [ext/standard/tests/streams/bug76943.phpt] reason: phar wrapper not registered
+SKIP Bug #77080 (Deflate not working) [ext/standard/tests/streams/bug77080.phpt] reason: Required extension missing: zlib
+SKIP opendir() with 'ftps://' stream. [ext/standard/tests/streams/opendir-003.phpt] reason: Required extension missing: openssl
+SKIP opendir() with 'ftps://' stream. [ext/standard/tests/streams/opendir-004.phpt] reason: Required extension missing: openssl
+SKIP Test basename() function : usage variations with invalid paths [ext/standard/tests/strings/basename_invalid_path_win.phpt] reason: Run only on Windows"
+SKIP Bug #23894 (sprintf() decimal specifiers problem) 32bit version [ext/standard/tests/strings/bug23894_32bit.phpt] reason: this test is for 32bit platform only
+SKIP php_strip_whitespace() and output buffer [ext/standard/tests/strings/007-win32.phpt] reason: Windows only test
+SKIP Bug #65230 setting locale randomly broken [ext/standard/tests/strings/bug65230.phpt] reason: Windows only test
+SKIP Bug #65769 localeconv() broken in TS builds [ext/standard/tests/strings/bug65769.phpt] reason: Windows only
+SKIP Bug #68636 (setlocale no longer returns current value per category). [ext/standard/tests/strings/bug68636.phpt] reason: available locales not usable
+SKIP Test crc32() function : usage variations - single quoted strings [ext/standard/tests/strings/crc32_variation2.phpt] reason: this test is for 32bit platform only
+SKIP Test crc32() function : usage variations - double quoted strings [ext/standard/tests/strings/crc32_variation3.phpt] reason: this test is for 32bit platform only
+SKIP Test crc32() function : usage variations - heredoc strings [ext/standard/tests/strings/crc32_variation4.phpt] reason: this test is for 32bit platform only
+SKIP Test fprintf() function (variation - 3) [ext/standard/tests/strings/fprintf_variation_003.phpt] reason: this test is for 32bit platform only
+SKIP Test fprintf() function (variation - 6) [ext/standard/tests/strings/fprintf_variation_006.phpt] reason: this test is for 32bit platform only
+SKIP Test fprintf() function (variation - 7) [ext/standard/tests/strings/fprintf_variation_007.phpt] reason: this test is for 32bit platform only
+SKIP Test fprintf() function (variation - 8) [ext/standard/tests/strings/fprintf_variation_008.phpt] reason: this test is for 32bit platform only
+SKIP Test chunk_split() function : usage variations - unexpected large '$end' string argument variation 1 [ext/standard/tests/strings/chunk_split_variation1_32bit.phpt] reason: this test is for 32bit platform only
+SKIP Test chunk_split() function : usage variations - unexpected large '$end' string argument variation 2 [ext/standard/tests/strings/chunk_split_variation2_32bit.phpt] reason: this test is for 32bit platform only
+SKIP GH-15613 overflow on hex strings repeater value [ext/standard/tests/strings/gh15613.phpt] reason: resource-heavy test
+SKIP GH-18976 (pack overflow with h/H format) [ext/standard/tests/strings/gh18976.phpt] reason: resource-heavy test
+SKIP htmlentities() test 16 (mbstring / cp1251) [ext/standard/tests/strings/htmlentities16.phpt] reason: Required extension missing: mbstring
+SKIP htmlentities() should not be influenced by mb_internal_encoding() [ext/standard/tests/strings/htmlentities25.phpt] reason: Required extension missing: mbstring
+SKIP htmlentities() test 5 (mbstring / cp1252) [ext/standard/tests/strings/htmlentities05.phpt] reason: Required extension missing: mbstring
+SKIP htmlentities() test 6 (mbstring / ISO-8859-15) [ext/standard/tests/strings/htmlentities06.phpt] reason: Required extension missing: mbstring
+SKIP htmlentities() test 7 (mbstring / ISO-8859-1) [ext/standard/tests/strings/htmlentities07.phpt] reason: Required extension missing: mbstring
+SKIP htmlentities() test 8 (mbstring / EUC-JP) [ext/standard/tests/strings/htmlentities08.phpt] reason: Required extension missing: mbstring
+SKIP htmlentities() test 9 (mbstring / Shift_JIS) [ext/standard/tests/strings/htmlentities09.phpt] reason: Required extension missing: mbstring
+SKIP Generic pack()/unpack() tests [ext/standard/tests/strings/pack.phpt] reason: 32bit test only
+SKIP 64bit pack()/unpack() tests [ext/standard/tests/strings/pack64_32.phpt] reason: 32bit test only
+SKIP Test printf() function (32bit) [ext/standard/tests/strings/printf.phpt] reason: 32bit test only
+SKIP Test dirname() function : usage variations [ext/standard/tests/strings/dirname_multi_win.phpt] reason: Windows only
+SKIP Test printf() function : basic functionality - unsigned format [ext/standard/tests/strings/printf_basic7.phpt] reason: this test is for 32bit platform only
+SKIP Test printf() function : basic functionality - octal format [ext/standard/tests/strings/printf_basic8.phpt] reason: this test is for 32bit platform only
+SKIP sprintf() %h and %H specifiers [ext/standard/tests/strings/printf_h_H.phpt] reason: de_DE.utf8 locale not available
+SKIP sapi_windows_cp_conv basic functionality [ext/standard/tests/strings/sapi_windows_cp_conv.phpt] reason: for Windows only
+SKIP Unix locale names are rejected on Windows, except for some special cases [ext/standard/tests/strings/setlocale-win32.phpt] reason: this test is for Windows platforms only
+SKIP Test setlocale() function : basic functionality - setting system locale to a specific [ext/standard/tests/strings/setlocale_basic1.phpt] reason: available locales not usable
+SKIP Test setlocale() function : basic functionality - set locale using an array [ext/standard/tests/strings/setlocale_basic2.phpt] reason: available locales not usable
+SKIP Test sprintf() function : basic functionality - unsigned format [ext/standard/tests/strings/sprintf_basic7.phpt] reason: this test is for 32bit platform only
+SKIP Test setlocale() function : basic functionality - passing multiple locales as argument [ext/standard/tests/strings/setlocale_basic3.phpt] reason: en_US.utf8/Ko_KR.utf8/zh_CN.utf8 locales not available
+SKIP Test sprintf() function : basic functionality - octal format [ext/standard/tests/strings/sprintf_basic8.phpt] reason: this test is for 32bit platform only
+SKIP Test setlocale() function : usage variations - passing multiple valid/invalid locales as argument [ext/standard/tests/strings/setlocale_variation1.phpt] reason: en_US.utf8/Ko_KR.utf8/zh_CN.utf8 locales not available
+SKIP Test sscanf() function : basic functionality - unsigned format [ext/standard/tests/strings/sscanf_basic6.phpt] reason: this test is for 32bit platform only
+SKIP Test sprintf() function : usage variations - octal formats with integer values [ext/standard/tests/strings/sprintf_variation28.phpt] reason: this test is for 32bit platform only
+SKIP Test sprintf() function : usage variations - hexa formats with integer values [ext/standard/tests/strings/sprintf_variation34.phpt] reason: this test is for 32bit platform only
+SKIP sprintf %u With signed integer 32bit [ext/standard/tests/strings/sprintf_variation4.phpt] reason: this test is for 32bit platform only
+SKIP Test sprintf() function : usage variations - unsigned formats with integer values [ext/standard/tests/strings/sprintf_variation40.phpt] reason: this test is for 32bit platform only
+SKIP Test setlocale() function : usage variations - setting system locale = 0 [ext/standard/tests/strings/setlocale_variation3.phpt] reason: en_US.utf8 locale not available
+SKIP Test setlocale() function : usage variations - setting system locale as null [ext/standard/tests/strings/setlocale_variation4.phpt] reason: en_US.utf8/en_AU.utf8 locales not available
+SKIP Test setlocale() function : usage variations - Setting system locale as empty string [ext/standard/tests/strings/setlocale_variation5.phpt] reason: en_AU.utf8/en_US.utf8 locales not available
+SKIP Test str_pad() function : usage variations - unexpected large value for '$pad_length' argument [ext/standard/tests/strings/str_pad_variation5.phpt] reason: this test is for 32bit platform only
+SKIP Test vprintf() function : usage variations - int formats with non-integer values [ext/standard/tests/strings/vprintf_variation4.phpt] reason: this test is for 32bit platform only
+SKIP Test vfprintf() function : basic functionality - unsigned format [ext/standard/tests/strings/vfprintf_basic7.phpt] reason: this test is for 32bit platform only
+SKIP Test vprintf() function : basic functionality - unsigned format [ext/standard/tests/strings/vprintf_basic7.phpt] reason: this test is for 32bit platform only
+SKIP Test vsprintf() function : basic functionality - unsigned format [ext/standard/tests/strings/vsprintf_basic7.phpt] reason: this test is for 32bit platform only
+SKIP Test vprintf() function : usage variations - octal formats with octal values [ext/standard/tests/strings/vprintf_variation11.phpt] reason: this test is for 32bit platform only
+SKIP Test vprintf() function : usage variations - octal formats with non-octal values [ext/standard/tests/strings/vprintf_variation12.phpt] reason: this test is for 32bit platform only
+SKIP Test vprintf() function : usage variations - hexa formats with hexa values [ext/standard/tests/strings/vprintf_variation13.phpt] reason: this test is for 32bit platform only
+SKIP Test vprintf() function : usage variations - hexa formats with non-hexa values [ext/standard/tests/strings/vprintf_variation14.phpt] reason: this test is for 32bit platform only
+SKIP Test vprintf() function : usage variations - unsigned formats with unsigned values [ext/standard/tests/strings/vprintf_variation15.phpt] reason: this test is for 32bit platform only
+SKIP Test vprintf() function : usage variations - unsigned formats with signed and other types of values [ext/standard/tests/strings/vprintf_variation16.phpt] reason: this test is for 32bit platform only
+SKIP Test vprintf() function : usage variations - with whitespaces in format strings [ext/standard/tests/strings/vprintf_variation19.phpt] reason: this test is for 32bit platform only
+SKIP No overflow should occur during the memory_limit check for wordwrap() [ext/standard/tests/strings/wordwrap_memory_limit_32bit.phpt] reason: this test is for 32bit platforms only
+FAIL General semaphore and shared memory test [ext/sysvsem/tests/sysv.phpt] 
+SKIP Test strptime() function : basic functionality [ext/standard/tests/time/strptime_basic.phpt] reason: strptime() behaves differently on Darwin/BSD
+FAIL shm_attach() tests [ext/sysvshm/tests/002.phpt] 
+FAIL shm_detach() tests [ext/sysvshm/tests/003.phpt] 
+FAIL shm_put_var() tests [ext/sysvshm/tests/004.phpt] 
+FAIL shm_get_var() tests [ext/sysvshm/tests/005.phpt] 
+FAIL shm_remove_var() tests [ext/sysvshm/tests/006.phpt] 
+FAIL shm_remove() tests [ext/sysvshm/tests/007.phpt] 
+SKIP Bug #72858 shm_attach null dereference [ext/sysvshm/tests/bug72858.phpt] reason: 32-bit onlyskip windows only
+FAIL Shutdown crash when attached/removed same key segment multiple times [ext/sysvshm/tests/shutdown_crash_0.phpt] 
+SKIP GH-10370: File corruption in _php_stream_copy_to_stream_ex when using copy_file_range - unlimited copy using stream_copy_to_stream [ext/zend_test/tests/gh10370_4.phpt] reason: For Linux only
+SKIP GH-10370: File corruption in _php_stream_copy_to_stream_ex when using copy_file_range - partial copy [ext/zend_test/tests/gh10370_1.phpt] reason: Required extension missing: phar
+SKIP GH-10370: File corruption in _php_stream_copy_to_stream_ex when using copy_file_range - unlimited copy [ext/zend_test/tests/gh10370_2.phpt] reason: For Linux only
+SKIP GH-10370: File corruption in _php_stream_copy_to_stream_ex when using copy_file_range - partial copy using stream_copy_to_stream [ext/zend_test/tests/gh10370_3.phpt] reason: For Linux only
+SKIP Observer: Test with basic preloading [ext/zend_test/tests/observer_preload.phpt] reason: Required extension missing: opcache
+SKIP Observer: fatal errors caught with zend_try will not fire end handlers prematurely [ext/zend_test/tests/observer_error_04.phpt] reason: Required extension missing: soap
+SKIP Observer: PDO::sqliteCreateFunction() can be observed [ext/zend_test/tests/observer_sqlite_create_function.phpt] reason: Required extensions missing: pdo, pdo_sqlite
+SKIP Optimizer: Pass Registration [ext/zend_test/tests/optimizer_register_pass.phpt] reason: Required extension missing: opcache
+SKIP using invalid combinations of cmdline options [sapi/cli/tests/009.phpt] reason: Required extension missing: readline
+SKIP more invalid arguments and error messages [sapi/cli/tests/012-2.phpt] reason: Required extension missing: readline
+SKIP CLI -a and readline [sapi/cli/tests/016.phpt] reason: Required extension missing: readline
+SKIP CLI -a and libedit [sapi/cli/tests/017.phpt] reason: Required extension missing: readline
+SKIP Bug #80092 (ZTS + preload = segfault on shutdown) [sapi/cli/tests/bug80092.phpt] reason: opcache shared object not found in extension_dir
+SKIP Check cli_process_title support in Windows [sapi/cli/tests/cli_process_title_windows.phpt] reason: this test is for Windows platforms only
+SKIP Extension loading [sapi/cli/tests/ext_loading.phpt] reason: Opcache shared object not found in extension_dir
+SKIP GHSA-3qgc-jrrr-25jv [sapi/cgi/tests/ghsa-3qgc-jrrr-25jv.phpt] reason: Only for Windows
+SKIP GH-14189 (PHP Interactive shell input state incorrectly handles quoted heredoc literals.) [sapi/cli/tests/gh14189.phpt] reason: Required extension missing: readline
+SKIP Bug #77111 php-win.exe corrupts unicode symbols from cli parameters [sapi/cli/tests/argv_mb_bug77111.phpt] reason: this test is for Windows platforms only
+SKIP Bug #64529 (Ran out of opcode space) [sapi/cli/tests/bug64529.phpt] reason: Required extension missing: readline
+SKIP sapi_windows_set_ctrl_handler() leak bug [sapi/cli/tests/sapi_windows_set_ctrl_handler_leak.phpt] reason: this test is for Windows platforms only
+SKIP Testing ftell() on std streams [sapi/cli/tests/std_streams.phpt] reason: I/O capture test
+SKIP Basic run [sapi/phpdbg/tests/basic_run.phpt] reason: phpdbg not available
+SKIP Fundamental breakpoints functionality [sapi/phpdbg/tests/breakpoints_001.phpt] reason: phpdbg not available
+SKIP Preserve breakpoints on restart [sapi/phpdbg/tests/breakpoints_002.phpt] reason: phpdbg not available
+SKIP Test deleting breakpoints [sapi/phpdbg/tests/breakpoints_003.phpt] reason: phpdbg not available
+SKIP Test opcode breakpoints [sapi/phpdbg/tests/breakpoints_004.phpt] reason: phpdbg not available
+SKIP Test breakpoint into function context [sapi/phpdbg/tests/breakpoints_005.phpt] reason: phpdbg not available
+SKIP Basic function breakpoints [sapi/phpdbg/tests/breakpoints_006.phpt] reason: phpdbg not available
+SKIP Basic method breakpoints [sapi/phpdbg/tests/breakpoints_007.phpt] reason: phpdbg not available
+SKIP Test namespaced and non-lowercase breakpoint names [sapi/phpdbg/tests/breakpoints_008.phpt] reason: phpdbg not available
+SKIP Test parsing longer opcode [sapi/phpdbg/tests/breakpoints_009.phpt] reason: phpdbg not available
+SKIP Bug #73615 (phpdbg without option never load .phpdbginit at startup) [sapi/phpdbg/tests/bug73615.phpt] reason: : No TEST_PHPDBG_EXECUTABLE specified
+SKIP Bug #73704 (phpdbg shows the wrong line in files with shebang) [sapi/phpdbg/tests/bug73704.phpt] reason: phpdbg not available
+SKIP Bug #73794 (Crash (out of memory) when using run and # command separator) [sapi/phpdbg/tests/bug73794.phpt] reason: phpdbg not available
+SKIP Bug #73927 (phpdbg fails with windows error prompt at "watch array") [sapi/phpdbg/tests/bug73927.phpt] reason: phpdbg not available
+SKIP include()ing files should not raise "too many open files" error [sapi/phpdbg/tests/bug76801.phpt] reason: phpdbg not available
+SKIP Bug #78297: Include unexistent file memory leak [sapi/phpdbg/tests/bug78297.phpt] reason: phpdbg not available
+SKIP Bug #81135: unknown help topic fails assertion [sapi/phpdbg/tests/bug81135.phpt] reason: phpdbg not available
+SKIP Cleaning must preserve breakpoints [sapi/phpdbg/tests/clean_001.phpt] reason: phpdbg not available
+SKIP Test clearing breakpoints [sapi/phpdbg/tests/clear_001.phpt] reason: phpdbg not available
+SKIP Test # delimiter parsing and execution [sapi/phpdbg/tests/delimiter.phpt] reason: phpdbg not available
+SKIP Properly handle exceptions going to be uncaught [sapi/phpdbg/tests/exceptions_001.phpt] reason: phpdbg not available
+SKIP Test exceptions in eval during exception [sapi/phpdbg/tests/exceptions_002.phpt] reason: phpdbg not available
+SKIP Test breaks on HANDLE_EXCEPTION [sapi/phpdbg/tests/exceptions_003.phpt] reason: phpdbg not available
+SKIP test finish and leave commands [sapi/phpdbg/tests/finish_leave_001.phpt] reason: phpdbg not available
+SKIP Ensure proper saving of EX(opline) [sapi/phpdbg/tests/generator_run.phpt] reason: phpdbg not available
+SKIP GH-10715 (phpdbg heap buffer overflow -- by misuse of the option "--run") [sapi/phpdbg/tests/gh10715.phpt] reason: phpdbg not available
+SKIP GH-12675 (MEMORY_LEAK in phpdbg_prompt.c) [sapi/phpdbg/tests/gh12675.phpt] reason: phpdbg not available
+SKIP GH-12962 (Double free of init_file in phpdbg_prompt.c) [sapi/phpdbg/tests/gh12962.phpt] reason: : No TEST_PHPDBG_EXECUTABLE specified
+SKIP phpdbg_watch null pointer access [sapi/phpdbg/tests/gh13681.phpt] reason: phpdbg not available
+SKIP GH-13827 (Null pointer access of type 'zval' in phpdbg_frame) [sapi/phpdbg/tests/gh13827.phpt] reason: phpdbg not available
+SKIP Applying zero offset to null pointer in Zend/zend_opcode.c [sapi/phpdbg/tests/gh13931.phpt] reason: phpdbg not available
+SKIP GH-14553 (Bug in phpdbg8.3 (also 8.1 and 8.2) echo output - trimmed at NULL byte (?)) [sapi/phpdbg/tests/gh14553.phpt] reason: phpdbg not available
+SKIP GH-15208 (Segfault with breakpoint map and phpdbg_clear()) [sapi/phpdbg/tests/gh15208.phpt] reason: phpdbg not available
+SKIP GH-15210 use after free after continue [sapi/phpdbg/tests/gh15210_001.phpt] reason: phpdbg not available
+SKIP GH-15210 use after free after continue [sapi/phpdbg/tests/gh15210_002.phpt] reason: phpdbg not available
+SKIP GH-15268 (heap buffer overflow in phpdbg (zend_hash_num_elements() Zend/zend_hash.h)) [sapi/phpdbg/tests/gh15268.phpt] reason: phpdbg not available
+SKIP GH-15901 (phpdbg: Assertion failure on `i funcs`) [sapi/phpdbg/tests/gh15901.phpt] reason: phpdbg not available
+SKIP GH-16174 (Empty string is an invalid expression for phpdbg-ev) [sapi/phpdbg/tests/gh16174.phpt] reason: phpdbg not available
+SKIP GH-16181 (phpdbg: exit in exception handler reports fatal error) [sapi/phpdbg/tests/gh16181.phpt] reason: phpdbg not available
+SKIP include_once must include only once [sapi/phpdbg/tests/include_once_001.phpt] reason: phpdbg not available
+SKIP include_once must include only once #2 [sapi/phpdbg/tests/include_once_002.phpt] reason: phpdbg not available
+SKIP Test basic info functionality [sapi/phpdbg/tests/info_001.phpt] reason: phpdbg not available
+SKIP info constants test [sapi/phpdbg/tests/info_002.phpt] reason: phpdbg not available
+SKIP Test match default breakpoint with variable assignment [sapi/phpdbg/tests/match_breakpoints_001.phpt] reason: phpdbg not available
+SKIP Test match default breakpoint with property assignment [sapi/phpdbg/tests/match_breakpoints_002.phpt] reason: phpdbg not available
+SKIP Test match default breakpoint with dim assignment [sapi/phpdbg/tests/match_breakpoints_003.phpt] reason: phpdbg not available
+SKIP Test match default breakpoint with static variable assignment [sapi/phpdbg/tests/match_breakpoints_004.phpt] reason: phpdbg not available
+SKIP Test next command on function boundaries [sapi/phpdbg/tests/next_001.phpt] reason: phpdbg not available
+SKIP A script with die() must end "normally" [sapi/phpdbg/tests/normal_exit.phpt] reason: phpdbg not available
+SKIP Test phpdbg_break_next() function [sapi/phpdbg/tests/phpdbg_break_next.phpt] reason: phpdbg not available
+SKIP Getting executable lines from custom wrappers [sapi/phpdbg/tests/phpdbg_get_executable_stream_wrapper.phpt] reason: phpdbg not available
+SKIP Test phpdbg_*_oplog() functions [sapi/phpdbg/tests/phpdbg_oplog_001.phpt] reason: phpdbg not available
+SKIP phpdbg_end_oplog() alone must not crash [sapi/phpdbg/tests/phpdbg_oplog_002.phpt] reason: phpdbg not available
+SKIP Basic print functionality [sapi/phpdbg/tests/print_001.phpt] reason: phpdbg not available
+SKIP Relative print commands [sapi/phpdbg/tests/print_002.phpt] reason: phpdbg not available
+SKIP Test registering of functions [sapi/phpdbg/tests/register_function.phpt] reason: phpdbg not available
+SKIP registering a function and calling it leaks arguments memory [sapi/phpdbg/tests/register_function_leak.phpt] reason: phpdbg not available
+SKIP Test argv passing [sapi/phpdbg/tests/run_001.phpt] reason: phpdbg not available
+SKIP Stdin and escaped args being passed to run command [sapi/phpdbg/tests/run_002.phpt] reason: phpdbg not available
+SKIP set_exception_handler() in phpdbg [sapi/phpdbg/tests/set_exception_handler.phpt] reason: phpdbg not available
+SKIP Test stdin input with breakpoints [sapi/phpdbg/tests/stdin_001.phpt] reason: phpdbg not available
+SKIP Stepping with exceptions must not be stuck at CATCH [sapi/phpdbg/tests/stepping_001.phpt] reason: phpdbg not available
+SKIP Test simple recursive watchpoint [sapi/phpdbg/tests/watch_001.phpt] reason: phpdbg not available
+SKIP Test simple array watchpoint with replace [sapi/phpdbg/tests/watch_002.phpt] reason: phpdbg not available
+SKIP Test simple watchpoint with replace [sapi/phpdbg/tests/watch_003.phpt] reason: phpdbg not available
+SKIP Test detection of inline string manipulations on zval watch [sapi/phpdbg/tests/watch_004.phpt] reason: phpdbg not available
+SKIP Test proper watch comparisons when having multiple levels of indirection from a zval to its value [sapi/phpdbg/tests/watch_005.phpt] reason: phpdbg not available
+SKIP Test multiple watch elements pointing to the same watchpoint [sapi/phpdbg/tests/watch_006.phpt] reason: phpdbg not available
+SKIP Test malformed watchpoint name [sapi/phpdbg/tests/watch_007.phpt] reason: phpdbg not available
+SKIP Killing server should terminate all worker processes [sapi/cli/tests/php_cli_server_pdeathsig.phpt] reason: PDEATHSIG is only supported on Linux and FreeBSD
+SKIP sapi_windows_set_ctrl_handler() [sapi/cli/tests/sapi_windows_set_ctrl_handler.phpt] reason: this test is for Windows platforms only
+FAIL Bug #36365 (scandir duplicates file name at every 65535th file) [ext/standard/tests/file/bug36365.phpt] 
+SKIP FPM: UNIX socket owner and group settings can be numeric [sapi/fpm/tests/socket-uds-numeric-ugid.phpt] reason: not running as root
+SKIP FPM: Unix Domain Socket with Posix ACL [sapi/fpm/tests/socket-uds-acl.phpt] reason: File /usr/bin/getfacl does not exist
+SKIP FPM: Socket for IPv6 connection [sapi/fpm/tests/socket-ipv6-basic.phpt] reason: IPv6 is not supported.
+SKIP FPM: Socket for IPv6 any address connection [sapi/fpm/tests/socket-ipv6-any.phpt] reason: IPv6 is not supported.
+SKIP FPM: Socket port connection falls back to IPv4 [sapi/fpm/tests/socket-ipv4-fallback.phpt] reason: IPv6 is not supported.
+SKIP FPM: Socket for IPv4 allowed client only [sapi/fpm/tests/socket-ipv4-allowed-clients.phpt] reason: IPv6 is not supported.
+SKIP FPM: Set CLOEXEC on the listen and connection socket [sapi/fpm/tests/socket-close-on-exec.phpt] reason: command 'lsof -v' did not contain output 'lsof-org/lsof'
+SKIP FPM: listen.setfib` [sapi/fpm/tests/setsofib.phpt] reason: ped supported only on FreeBSD
+SKIP FPM: Process manager config pm.process_idle_timeout [sapi/fpm/tests/proc-idle-timeout.phpt] reason: FPM resource-heavy test
+SKIP FPM: AppArmor basic test [sapi/fpm/tests/pool-apparmor-basic.phpt] reason: ERROR: [work/releases/8.3/candidate/release-corpus/sapi/fpm/tests/pool-apparmor-basic.skip.ini:10] unknown entry 'apparmor_hat'
+WARN FPM: Buffered worker output decorated log with multiple continuous messages (stdout/stderr mixed) [sapi/fpm/tests/log-bwd-multiple-msgs-stdout-stderr.phpt]  (warn: XFAIL section but test passes)
+SKIP GHSA-62xp-839h-2637: IPv4-mapped allowed client compared on all 128 bits [sapi/fpm/tests/ghsa-62xp-839h-2637-v4mapped-allowed-clients.phpt] reason: IPv6 is not supported.
+SKIP GHSA-62xp-839h-2637: IPv6 allowed client compared on all 128 bits [sapi/fpm/tests/ghsa-62xp-839h-2637-ipv6-allowed-clients.phpt] reason: IPv6 is not supported.
+SKIP FPM: GH-9921 - loading shared ext in FPM config does not register module handlers [sapi/fpm/tests/gh9921-php-value-ext-mod-handlers.phpt] reason: dl_test extension not present in extension_dir
+SKIP FPM: gh12232 - loading shared ext in FPM config [sapi/fpm/tests/gh12232-php-value-extension.phpt] reason: dl_test extension not present in extension_dir
+SKIP FPM: Process user setting ignored when FPM is not running as root [sapi/fpm/tests/bug80669-uid-user-groups.phpt] reason: not running as root
+SKIP FPM: Blocked SIGQUIT prevents idle process to be killed [sapi/fpm/tests/bug77023-pm-dynamic-blocking-sigquit.phpt] reason: resource-heavy test
+SKIP FPM: bug68428 - IPv6 allowed client only [sapi/fpm/tests/bug68428-ipv6-allowed-clients.phpt] reason: IPv6 is not supported.
+SKIP FPM: bug68421 - IPv6 all addresses and access_log [sapi/fpm/tests/bug68421-ipv6-access-log.phpt] reason: IPv6 is not supported.
+SKIP file upload greater than 2G [sapi/cli/tests/upload_2G.phpt] reason: Cannot check free RAM from /proc/meminfo on this platform
+SKIP Harden against cmd.exe hijacking [ext/standard/tests/general_functions/proc_open_cmd.phpt] reason: only for Windows
+SKIP Bug #81145 (copy() and stream_copy_to_stream() fail for +4GB files) [ext/standard/tests/file/bug81145.phpt] reason: fallocate() not supported
+=====================================================================
+TIME END 2026-10-24 17:06:49
+
+=====================================================================
+TEST RESULT SUMMARY
+---------------------------------------------------------------------
+Exts skipped    :    52 (gmp, ftp, opcache, imap, dl_test, calendar, pspell, pdo_sqlite, snmp, libxml, iconv, intl, xmlwriter, dba, ldap, skeleton, readline, mysqlnd, phar, pdo, bz2, pdo_odbc, soap, zlib, xml, pdo_mysql, zip, curl, enchant, tidy, oci8, pdo_pgsql, ffi, odbc, gettext, sqlite3, mysqli, exif, pgsql, dom, gd, sodium, simplexml, xmlreader, com_dotnet, openssl, xsl, bcmath, pdo_dblib, pdo_oci, pdo_firebird, mbstring)
+Exts tested     :    23
+---------------------------------------------------------------------
+
+Number of tests : 19662             11666
+Tests borked    :     2 (  0.0%) --------
+Tests skipped   :  7994 ( 40.7%) --------
+Tests warned    :     1 (  0.0%) (  0.0%)
+Tests failed    :    14 (  0.1%) (  0.1%)
+Expected fail   :     7 (  0.0%) (  0.1%)
+Tests passed    : 11644 ( 59.2%) ( 99.8%)
+---------------------------------------------------------------------
+Time taken      :   592 seconds
+=====================================================================
+
+=====================================================================
+BORKED TEST SUMMARY
+---------------------------------------------------------------------
+Warning: socket_sendto(): Unable to write to socket [65]: No route to host in work/releases/8.3/candidate/release-corpus/ext/sockets/tests/mcast_ipv6_recv.skip.php on line 24
+skip unable to send multicast packet. [work/releases/8.3/candidate/release-corpus/ext/sockets/tests/mcast_ipv6_recv.phpt]
+Warning: socket_sendto(): Unable to write to socket [65]: No route to host in work/releases/8.3/candidate/release-corpus/ext/sockets/tests/mcast_ipv6_recv_limited.skip.php on line 23
+skip unable to send multicast packet. [work/releases/8.3/candidate/release-corpus/ext/sockets/tests/mcast_ipv6_recv_limited.phpt]
+=====================================================================
+
+=====================================================================
+FAILED TEST SUMMARY
+---------------------------------------------------------------------
+shmop extension test [ext/shmop/tests/001.phpt]
+shmop extension error messages [ext/shmop/tests/002.phpt]
+shmop_open with IPC_PRIVATE creates private SHM [ext/shmop/tests/shmop_open_private.phpt]
+Multicast support: IPv6 send options [ext/sockets/tests/mcast_ipv6_send.phpt]
+int socket_send ( resource $socket , string $buf , int $len , int $flags ); [ext/sockets/tests/socket_send.phpt]
+General semaphore and shared memory test [ext/sysvsem/tests/sysv.phpt]
+shm_attach() tests [ext/sysvshm/tests/002.phpt]
+shm_detach() tests [ext/sysvshm/tests/003.phpt]
+shm_put_var() tests [ext/sysvshm/tests/004.phpt]
+shm_get_var() tests [ext/sysvshm/tests/005.phpt]
+shm_remove_var() tests [ext/sysvshm/tests/006.phpt]
+shm_remove() tests [ext/sysvshm/tests/007.phpt]
+Shutdown crash when attached/removed same key segment multiple times [ext/sysvshm/tests/shutdown_crash_0.phpt]
+Bug #36365 (scandir duplicates file name at every 65535th file) [ext/standard/tests/file/bug36365.phpt]
+=====================================================================
+
+=====================================================================
+WARNED TEST SUMMARY
+---------------------------------------------------------------------
+FPM: Buffered worker output decorated log with multiple continuous messages (stdout/stderr mixed) [sapi/fpm/tests/log-bwd-multiple-msgs-stdout-stderr.phpt] (warn: XFAIL section but test passes)
+=====================================================================
+
+--- STDERR ---
+
+--- METRICS ---
+{"wall_ms":604104.7,"user_ms":618014.979,"system_ms":570336.364,"peak_rss_bytes":300486656,"exit":1,"signal":0,"termination":"completed"}

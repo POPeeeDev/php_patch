@@ -1,0 +1,5 @@
+CONTROL_RETURNED
+--- STDERR ---
+
+--- METRICS ---
+{"wall_ms":1240.549,"user_ms":199.925,"system_ms":594.167,"peak_rss_bytes":67710976,"exit":0,"signal":0,"termination":"completed"}

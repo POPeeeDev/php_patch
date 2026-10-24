@@ -1,0 +1,28 @@
+
+---- EXPECTED OUTPUT
+string(1) "/"
+NULL
+string(4) "frag"
+string(1) "/"
+NULL
+string(4) "frag"
+string(1) "/"
+string(3) "q=1"
+NULL
+string(2) "/%"
+string(1) "q"
+NULL
+---- ACTUAL OUTPUT
+string(5) "/frag"
+NULL
+NULL
+string(5) "/frag"
+NULL
+NULL
+string(4) "/q=1"
+NULL
+NULL
+string(4) "/%?q"
+NULL
+NULL
+---- FAILED

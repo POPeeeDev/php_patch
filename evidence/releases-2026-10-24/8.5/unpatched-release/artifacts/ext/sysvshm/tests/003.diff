@@ -1,0 +1,11 @@
+001- bool(true)
+002- Shared memory block has already been destroyed
+003- Shared memory block has already been destroyed
+004- Done
+001+ Warning: shm_attach(): Failed for key 0x710412e9: No space left on device in work/releases/8.5/unpatched/release-corpus/ext/sysvshm/tests/003.php on line 5
+002+ 
+003+ Fatal error: Uncaught TypeError: shm_detach(): Argument #1 ($shm) must be of type SysvSharedMemory, false given in work/releases/8.5/unpatched/release-corpus/ext/sysvshm/tests/003.php:7
+004+ Stack trace:
+005+ #0 work/releases/8.5/unpatched/release-corpus/ext/sysvshm/tests/003.php(7): shm_detach(false)
+006+ #1 {main}
+007+   thrown in work/releases/8.5/unpatched/release-corpus/ext/sysvshm/tests/003.php on line 7

@@ -1,0 +1,2 @@
+001- Fatal error: Allowed memory size of %d bytes exhausted%s
+001+ ** ERROR: process timed out **

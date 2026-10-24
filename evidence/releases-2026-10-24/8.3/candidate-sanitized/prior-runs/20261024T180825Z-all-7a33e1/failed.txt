@@ -1,0 +1,12 @@
+work/releases/8.3/candidate/sanitized-corpus/tests/security/open_basedir_linkinfo.phpt
+work/releases/8.3/candidate/sanitized-corpus/Zend/tests/interface_constructor_prototype_002.phpt
+work/releases/8.3/candidate/sanitized-corpus/Zend/tests/new_oom.phpt
+work/releases/8.3/candidate/sanitized-corpus/Zend/tests/oom_unserialize_004.phpt
+work/releases/8.3/candidate/sanitized-corpus/Zend/tests/oom_unserialize_001.phpt
+work/releases/8.3/candidate/sanitized-corpus/Zend/tests/oom_unserialize_005.phpt
+work/releases/8.3/candidate/sanitized-corpus/Zend/tests/runtime_compile_time_binary_operands.phpt
+work/releases/8.3/candidate/sanitized-corpus/Zend/tests/oom_unserialize_002.phpt
+work/releases/8.3/candidate/sanitized-corpus/Zend/tests/oom_unserialize_006.phpt
+work/releases/8.3/candidate/sanitized-corpus/Zend/tests/oom_unserialize_003.phpt
+work/releases/8.3/candidate/sanitized-corpus/Zend/tests/oom_unserialize_012.phpt
+work/releases/8.3/candidate/sanitized-corpus/Zend/tests/oom_unserialize_014.phpt

@@ -1,0 +1,7 @@
+initial: 0
+after setSize(3): 0
+
+Fatal error: Uncaught OutOfBoundsException: Index invalid or out of range in work/releases/8.5/unpatched/release-corpus/ext/spl/tests/SplFixedArray_subclass_without_parent_construct.php:14
+Stack trace:
+#0 {main}
+  thrown in work/releases/8.5/unpatched/release-corpus/ext/spl/tests/SplFixedArray_subclass_without_parent_construct.php on line 14

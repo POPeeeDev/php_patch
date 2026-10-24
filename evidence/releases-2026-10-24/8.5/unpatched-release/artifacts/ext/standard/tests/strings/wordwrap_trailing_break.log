@@ -1,0 +1,20 @@
+
+---- EXPECTED OUTPUT
+"abc\n"
+"ab cd\n"
+"abc\nd\n"
+"abc\nabc\n"
+"abc-"
+"abc\r\n"
+"\r\n"
+"ab cd\r\n"
+---- ACTUAL OUTPUT
+"abc\n\n"
+"ab\ncd\n"
+"abc\nd\n"
+"abc\nabc\n\n"
+"abc--"
+"abc\r\n\r\n"
+"\r\r\n\n"
+"ab\r\ncd\r\n"
+---- FAILED

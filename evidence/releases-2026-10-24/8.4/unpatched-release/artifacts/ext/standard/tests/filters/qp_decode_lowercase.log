@@ -1,0 +1,16 @@
+
+---- EXPECTED OUTPUT
+=cd => cd
+=0a => 0a
+=da => da
+=CD => cd
+=AB => ab
+=ab => ab
+---- ACTUAL OUTPUT
+=cd => ed
+=0a => 2a
+=da => fa
+=CD => cd
+=AB => ab
+=ab => ab
+---- FAILED

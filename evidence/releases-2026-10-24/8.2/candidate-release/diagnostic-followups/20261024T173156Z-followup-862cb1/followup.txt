@@ -1,0 +1,6 @@
+ext/sysvmsg/tests/001.phpt
+ext/sysvmsg/tests/002.phpt
+ext/sysvmsg/tests/003.phpt
+ext/sysvmsg/tests/004.phpt
+ext/sysvmsg/tests/005.phpt
+ext/sysvmsg/tests/006.phpt

@@ -1,0 +1,7 @@
+Warning: shm_attach(): Failed for key 0x74049fa6: No space left on device in work/releases/8.5/candidate/release-corpus/ext/sysvshm/tests/005.php on line 4
+
+Fatal error: Uncaught TypeError: shm_put_var(): Argument #1 ($shm) must be of type SysvSharedMemory, false given in work/releases/8.5/candidate/release-corpus/ext/sysvshm/tests/005.php:6
+Stack trace:
+#0 work/releases/8.5/candidate/release-corpus/ext/sysvshm/tests/005.php(6): shm_put_var(false, -1, 'test string')
+#1 {main}
+  thrown in work/releases/8.5/candidate/release-corpus/ext/sysvshm/tests/005.php on line 6

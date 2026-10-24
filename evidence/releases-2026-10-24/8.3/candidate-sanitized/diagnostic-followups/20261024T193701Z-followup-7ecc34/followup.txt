@@ -1,0 +1,3 @@
+Zend/tests/oom_unserialize_005.phpt
+Zend/tests/oom_unserialize_016.phpt
+ext/pcre/tests/cache_limit.phpt

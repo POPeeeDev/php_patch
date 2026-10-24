@@ -1,0 +1,180 @@
+{
+    "schema": "php-release-comparison/1",
+    "branch": "8.4",
+    "profile": "candidate",
+    "variant": "sanitized",
+    "phase": "coverage-followup",
+    "build": {
+        "schema": "php-release-build/1",
+        "branch": "8.4",
+        "profile": "candidate",
+        "variant": "sanitized",
+        "source": {
+            "branch": "8.4",
+            "profile": "candidate",
+            "manifest": {
+                "schema": "php-release-guard/1",
+                "branch": "8.4",
+                "affected_version": "8.4.26",
+                "official_version": "8.4.27",
+                "affected_revision": "c31ae58ecbedc7a85dac0eee5a6a88da73543e70",
+                "official_revision": "00d8bae801541db0d95a698e108bb4b1b273fe6e",
+                "official_tree": "f5e8a3c5dda5b5fb988ce218b30ee90f0e2f780d",
+                "upstream_patch_sha256": "d923945e69e06994d9ef080caafab73dca699a98ca4347cd27254e8b667b0076",
+                "guard_patch_sha256": "f5b2421ef44abf008d37f19e8ba18798be3d5b94cd90028eeb6681f54b3daed8",
+                "guard_files": {
+                    "Zend/zend_alloc.h": {
+                        "official_sha256": "045631fd427a555d20c19a4558987251e76053d4558b590bb69f9c8676690728",
+                        "candidate_sha256": "4346d8cdfd74ccbb9d7d80bb0489de6331e7fe90480ae305fffeafced08f3690"
+                    },
+                    "Zend/zend_alloc.c": {
+                        "official_sha256": "6c38e82da482a17c46f4f21de509f69d36424a6d9c05330b7b2e4ba7a6c6dc4b",
+                        "candidate_sha256": "7c953a91ffd55789e57e61ebdc5d41312943a8dd168e33b96464276e7ccb8a42"
+                    },
+                    "main/main.c": {
+                        "official_sha256": "d307fd53f86c15d6627982401fe03243a29ab8ce45ba47108b862e1293cffb1f",
+                        "candidate_sha256": "553c651e2a771fedada1530c407a3ec851c0fdf1f7c3f687d2436204f50cfa0a"
+                    }
+                },
+                "kind": "complete-official-release-update-plus-additive-guard",
+                "upstream_security_commits": [
+                    "506e87fa7dcdd306975e5b8f8265ee03527aacbf"
+                ]
+            },
+            "starting_revision": "c31ae58ecbedc7a85dac0eee5a6a88da73543e70",
+            "prepared_tree": "869a2f12de2ca951a4d5ee812eee0912afec541b"
+        },
+        "configure": [
+            "--disable-all",
+            "--enable-cli",
+            "--enable-fpm",
+            "--enable-cgi",
+            "--disable-phpdbg",
+            "--without-pear",
+            "--enable-session",
+            "--enable-filter",
+            "--enable-tokenizer",
+            "--enable-ctype",
+            "--enable-fileinfo",
+            "--enable-posix",
+            "--enable-sockets",
+            "--enable-pcntl",
+            "--enable-shmop",
+            "--enable-sysvmsg",
+            "--enable-sysvsem",
+            "--enable-sysvshm",
+            "--enable-zend-test",
+            "--enable-debug",
+            "--enable-address-sanitizer",
+            "--enable-undefined-sanitizer"
+        ],
+        "jobs": 2,
+        "binary_sha256": {
+            "cli/php": "9af36c9dd83413e801d0a769f56d4baf45573df0882fdb3055f0c770cc5f7ba1",
+            "fpm/php-fpm": "005c53dc51b53ea99b7dfd3637a6474245d1d2c2d0b6ebc6f5ce48d2b53e48f4",
+            "cgi/php-cgi": "547db6d4911302ef6523a0c864a7c886274a912daf890ee2cb7961d20abb50f1"
+        },
+        "platform": "Darwin-x86_64",
+        "utc": "2026-10-24T19:11:14+00:00"
+    },
+    "supervisor_sha256": "b57b394545abe1f42411ea5024d543fe3ca217884cd950fc9cac22bfe32fd81a",
+    "tests": {
+        "php-suite": {
+            "id": "php-suite",
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 28105.999,
+                "user_ms": 26037.211,
+                "system_ms": 1936.435,
+                "peak_rss_bytes": 1018552320,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "command": [
+                "env",
+                "NO_INTERACTION=1",
+                "REPORT_EXIT_STATUS=1",
+                "TEST_PHP_EXECUTABLE=work/releases/8.4/candidate/sanitized-build/sapi/cli/php",
+                "TEST_PHP_CGI_EXECUTABLE=work/releases/8.4/candidate/sanitized-build/sapi/cgi/php-cgi",
+                "TEST_PHP_FPM_EXECUTABLE=work/releases/8.4/candidate/sanitized-build/sapi/fpm/php-fpm",
+                "TEST_PHP_SRCDIR=work/releases/8.4/candidate/sanitized-corpus",
+                "SKIP_ASAN=1",
+                "USE_ZEND_ALLOC=0",
+                "USE_TRACKED_ALLOC=0",
+                "ZEND_MM_MAX_ALLOCS=0",
+                "ASAN_OPTIONS=detect_leaks=0:abort_on_error=1:allocator_may_return_null=1",
+                "UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1",
+                "work/releases/8.4/candidate/sanitized-build/sapi/cli/php",
+                "-n",
+                "work/releases/8.4/candidate/sanitized-corpus/run-tests.php",
+                "-q",
+                "-n",
+                "-j1",
+                "--no-progress",
+                "--set-timeout",
+                "20",
+                "-g",
+                "FAIL,XFAIL,BORK,WARN,LEAK,SKIP",
+                "-p",
+                "work/releases/8.4/candidate/sanitized-build/sapi/cli/php",
+                "-w",
+                "work/releases/8.4/candidate/sanitized-tests/20261024T201312Z-coverage-followup-b622b2/failed.txt",
+                "-W",
+                "work/releases/8.4/candidate/sanitized-tests/20261024T201312Z-coverage-followup-b622b2/status.txt",
+                "Zend/tests/oom_unserialize_004.phpt",
+                "--asan"
+            ],
+            "log": "php-suite.log",
+            "status": "pass",
+            "details": {
+                "counts": {
+                    "Number of tests": 1,
+                    "Tests skipped": 0,
+                    "Tests warned": 0,
+                    "Tests failed": 0,
+                    "Tests passed": 1
+                },
+                "adverse": [],
+                "timeouts": [],
+                "corpus_revision": "00d8bae801541db0d95a698e108bb4b1b273fe6e",
+                "corpus_inventory": 21257,
+                "selection": "adverse-tests-unobserved-in-other-full-run;diagnostic-only;does-not-fill-original-coverage",
+                "test_timeouts_are_inconclusive_safety_results": true,
+                "slow_tests_excluded": false,
+                "explicit_slow_test_exclusion": false,
+                "upstream_asan_and_perf_sensitive_skips": true,
+                "suite_allocator": "tracked-malloc-with-memory-limits",
+                "controller": "tested-runtime"
+            }
+        }
+    },
+    "scope": {
+        "general_memory_safety_proof": false,
+        "exploit_prevention_demonstrated": false,
+        "upstream_fixes_in_candidate": true,
+        "posix_nts_only": true,
+        "leak_sanitizer": "disabled",
+        "sanitizer_custom_allocator_blind_spots": "malloc-for-probes-and-suites;Zend-for-memory-limit-and-service-tests",
+        "service_load": "one-worker-sequential-local-only"
+    },
+    "artifact_sha256": {
+        "tools/release-test.php": "a0f056695c5768e26c09a04b29c80dfcb9e815fcfdeece2127b4a7d9d7e95f27",
+        "bench/releases.php": "8c385eafc398fb7c1efb4bf6011a771bb653849a3b1dfcb621958bb592fc9b1e",
+        "bench/common.php": "85d6e7cd998c8ad49331c307b26f5e97623ccbc84038633fae28e5263310eb70",
+        "bench/release_probe.c": "bcae82ab829a0ddc20c8b7fd038fad0bdcc167f2daa0fc895a71d4aa5d73ba21",
+        "bench/fpm_bench.php": "cb2020ebd2d2575fa4f08db0c5397ef9b7186e897d56c48604b5b233ff69b183",
+        "bench/service_probe.c": "58a5e78c18c3596ec9a51651c98197df74f5cac28634369ce9d3a6b026ecc100",
+        "bench/request.php": "bd7d23a3900157ee3afefffd42a627b02520b7a386191e56f3638530156f5d80",
+        "bench/mutations.php": "daf88c3b942e7f79b3fb2dc940acf1635f1c8feceb84e37ef6f3895c5d3477fc",
+        "bench/oom.php": "04ecc34e3927929cd68514015e69803ff79f9f1dd61cb656b7eb9c3f22293e88",
+        "bench/limit.c": "c9d45a4f416f038a38144aca5be644ed68a06250bce2bf754fdb1cc7469112ed",
+        "bench/sanitizer_probe.c": "aef78287defbbcb46af27c686e34f52f732aa96b3c04e337acc473052c78b903",
+        "bench/verify.php": "aac4d14a5b22599a1034100793fb69ab5042977c4e78f99ac0b42f4c96e04804",
+        "bench/allocation_probe.c": "5382f413e59d4222d1b63d18b7cf6e99d54843039871e5af2bef976edd203aea",
+        "bench/workload.php": "cf3842317833e8a724add6c55b29877e12ee33552cc1104f9da4b41e1da0c7a2",
+        "bench/config.json": "e7652d3f85d1b0bf0f5bca1a63f4e9a74a905c9b6808139b6088cc63315f78f8"
+    },
+    "utc": "2026-10-24T20:13:41+00:00"
+}

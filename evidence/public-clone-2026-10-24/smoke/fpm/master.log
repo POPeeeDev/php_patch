@@ -1,0 +1,34 @@
+[24-Oct-2026 15:37:26] NOTICE: fpm is running, pid 59772
+[24-Oct-2026 15:37:26] NOTICE: ready to handle connections
+[24-Oct-2026 15:37:27] WARNING: [pool guard] child 59826 said into stderr: "Hard memory limit of 33554432 bytes exhausted (tried to allocate 67108864 bytes) in <CLONE>/work/releases/8.2/candidate/release-tests/20261024T193715Z-smoke-000ebb/fpm/request.php on line 18"
+[24-Oct-2026 15:37:27] WARNING: [pool guard] child 59826 exited with code 137 after 0.660558 seconds from start
+[24-Oct-2026 15:37:27] NOTICE: [pool guard] child 59839 started
+[24-Oct-2026 15:37:27] WARNING: [pool guard] child 59839 said into stderr: "Hard memory limit of 33554432 bytes exhausted (tried to allocate 67108864 bytes) in <CLONE>/work/releases/8.2/candidate/release-tests/20261024T193715Z-smoke-000ebb/fpm/request.php on line 18"
+[24-Oct-2026 15:37:27] WARNING: [pool guard] child 59839 exited with code 137 after 0.018804 seconds from start
+[24-Oct-2026 15:37:27] NOTICE: [pool guard] child 59840 started
+[24-Oct-2026 15:37:27] WARNING: [pool guard] child 59840 said into stderr: "Hard memory limit of 33554432 bytes exhausted (tried to allocate 67108864 bytes) in <CLONE>/work/releases/8.2/candidate/release-tests/20261024T193715Z-smoke-000ebb/fpm/request.php on line 18"
+[24-Oct-2026 15:37:27] WARNING: [pool guard] child 59840 exited with code 137 after 0.020369 seconds from start
+[24-Oct-2026 15:37:27] NOTICE: [pool guard] child 59841 started
+[24-Oct-2026 15:37:27] WARNING: [pool guard] child 59841 said into stderr: "Hard memory limit of 33554432 bytes exhausted (tried to allocate 67108864 bytes) in <CLONE>/work/releases/8.2/candidate/release-tests/20261024T193715Z-smoke-000ebb/fpm/request.php on line 18"
+[24-Oct-2026 15:37:27] WARNING: [pool guard] child 59841 exited with code 137 after 0.019185 seconds from start
+[24-Oct-2026 15:37:27] NOTICE: [pool guard] child 59842 started
+[24-Oct-2026 15:37:27] WARNING: [pool guard] child 59842 said into stderr: "Hard memory limit of 33554432 bytes exhausted (tried to allocate 67108864 bytes) in <CLONE>/work/releases/8.2/candidate/release-tests/20261024T193715Z-smoke-000ebb/fpm/request.php on line 18"
+[24-Oct-2026 15:37:27] WARNING: [pool guard] child 59842 exited with code 137 after 0.017430 seconds from start
+[24-Oct-2026 15:37:27] NOTICE: [pool guard] child 59843 started
+[24-Oct-2026 15:37:27] WARNING: [pool guard] child 59843 said into stderr: "Hard memory limit of 33554432 bytes exhausted (tried to allocate 67108864 bytes) in <CLONE>/work/releases/8.2/candidate/release-tests/20261024T193715Z-smoke-000ebb/fpm/request.php on line 18"
+[24-Oct-2026 15:37:27] WARNING: [pool guard] child 59843 exited with code 137 after 0.019670 seconds from start
+[24-Oct-2026 15:37:27] NOTICE: [pool guard] child 59844 started
+[24-Oct-2026 15:37:27] WARNING: [pool guard] child 59844 said into stderr: "Hard memory limit of 33554432 bytes exhausted (tried to allocate 67108864 bytes) in <CLONE>/work/releases/8.2/candidate/release-tests/20261024T193715Z-smoke-000ebb/fpm/request.php on line 18"
+[24-Oct-2026 15:37:27] WARNING: [pool guard] child 59844 exited with code 137 after 0.018818 seconds from start
+[24-Oct-2026 15:37:27] NOTICE: [pool guard] child 59845 started
+[24-Oct-2026 15:37:27] WARNING: [pool guard] child 59845 said into stderr: "Hard memory limit of 33554432 bytes exhausted (tried to allocate 67108864 bytes) in <CLONE>/work/releases/8.2/candidate/release-tests/20261024T193715Z-smoke-000ebb/fpm/request.php on line 18"
+[24-Oct-2026 15:37:27] WARNING: [pool guard] child 59845 exited with code 137 after 0.018969 seconds from start
+[24-Oct-2026 15:37:27] NOTICE: [pool guard] child 59846 started
+[24-Oct-2026 15:37:27] WARNING: [pool guard] child 59846 said into stderr: "Hard memory limit of 33554432 bytes exhausted (tried to allocate 67108864 bytes) in <CLONE>/work/releases/8.2/candidate/release-tests/20261024T193715Z-smoke-000ebb/fpm/request.php on line 18"
+[24-Oct-2026 15:37:27] WARNING: [pool guard] child 59846 exited with code 137 after 0.018839 seconds from start
+[24-Oct-2026 15:37:27] NOTICE: [pool guard] child 59849 started
+[24-Oct-2026 15:37:27] WARNING: [pool guard] child 59849 said into stderr: "Hard memory limit of 33554432 bytes exhausted (tried to allocate 67108864 bytes) in <CLONE>/work/releases/8.2/candidate/release-tests/20261024T193715Z-smoke-000ebb/fpm/request.php on line 18"
+[24-Oct-2026 15:37:27] WARNING: [pool guard] child 59849 exited with code 137 after 0.016911 seconds from start
+[24-Oct-2026 15:37:27] NOTICE: [pool guard] child 59850 started
+[24-Oct-2026 15:37:27] NOTICE: Terminating ...
+[24-Oct-2026 15:37:27] NOTICE: exiting, bye-bye!

@@ -1,0 +1,64 @@
+001+ Fatal error: Uncaught Error: Call to undefined function zend_new_singleton_array() in work/releases/8.2/unpatched/release-corpus/Zend/tests/singleton_array.php:3
+002+ Stack trace:
+003+ #0 {main}
+004+   thrown in work/releases/8.2/unpatched/release-corpus/Zend/tests/singleton_array.php on line 3
+001- array(0) {
+002- }
+003- int(0)
+004- bool(true)
+005- array(3) {
+006-   ["foo"]=>
+007-   int(1)
+008-   ["bar"]=>
+009-   int(2)
+010-   ["baz"]=>
+011-   int(3)
+012- }
+013- array(2) {
+014-   [0]=>
+015-   string(5) "first"
+016-   ["key"]=>
+017-   string(6) "second"
+018- }
+019- array(2) {
+020-   [100]=>
+021-   string(7) "hundred"
+022-   [0]=>
+023-   string(4) "zero"
+024- }
+025- array(2) {
+026-   ["c"]=>
+027-   int(3)
+028-   ["d"]=>
+029-   int(4)
+030- }
+031- array(1) {
+032-   ["x"]=>
+033-   int(1)
+034- }
+035- array(2) {
+036-   ["x"]=>
+037-   int(1)
+038-   ["y"]=>
+039-   int(2)
+040- }
+041- array(3) {
+042-   ["a"]=>
+043-   int(1)
+044-   ["b"]=>
+045-   int(2)
+046-   ["c"]=>
+047-   int(3)
+048- }
+049- array(3) {
+050-   [0]=>
+051-   int(1)
+052-   [1]=>
+053-   int(2)
+054-   [2]=>
+055-   int(3)
+056- }
+057- bool(true)
+058- bool(true)
+059- 0 => a
+060- 1 => b

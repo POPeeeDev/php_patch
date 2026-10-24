@@ -1,0 +1,10 @@
+
+---- EXPECTED OUTPUT
+Fatal error: Allowed memory size of %d bytes exhausted %S(tried to allocate %d bytes) in %s on line %d
+array(1) {
+  [0]=>
+  *RECURSION*
+}
+---- ACTUAL OUTPUT
+** ERROR: process timed out **
+---- FAILED

@@ -1,0 +1,79 @@
+
+--- STDERR ---
+=================================================================
+==83922==ERROR: AddressSanitizer: heap-use-after-free on address 0x602000003290 at pc 0x0001165c5dd8 bp 0x7ff7b0018910 sp 0x7ff7b0018908
+WRITE of size 1 at 0x602000003290 thread T0
+    #0 0x0001165c5dd7  (work/releases/8.3/candidate/sanitized-tests/20261024T184729Z-all-30647b/sanitizer_probe.so:x86_64+0xdd7)
+    #1 0x000111c2c4d8  (work/releases/8.3/candidate/sanitized-build/sapi/cli/php:x86_64+0x101d484d8)
+    #2 0x0001117fcd8b  (work/releases/8.3/candidate/sanitized-build/sapi/cli/php:x86_64+0x101918d8b)
+    #3 0x0001117fe26e  (work/releases/8.3/candidate/sanitized-build/sapi/cli/php:x86_64+0x10191a26e)
+    #4 0x0001115a971b  (work/releases/8.3/candidate/sanitized-build/sapi/cli/php:x86_64+0x1016c571b)
+    #5 0x0001115aa294  (work/releases/8.3/candidate/sanitized-build/sapi/cli/php:x86_64+0x1016c6294)
+    #6 0x0001115aa48b  (work/releases/8.3/candidate/sanitized-build/sapi/cli/php:x86_64+0x1016c648b)
+    #7 0x0001124a8b53  (work/releases/8.3/candidate/sanitized-build/sapi/cli/php:x86_64+0x1025c4b53)
+    #8 0x0001124a5a56  (work/releases/8.3/candidate/sanitized-build/sapi/cli/php:x86_64+0x1025c1a56)
+    #9 0x7ff805c571c7  (/usr/lib/dyld:x86_64+0x131c7)
+
+0x602000003290 is located 0 bytes inside of 16-byte region [0x602000003290,0x6020000032a0)
+freed by thread T0 here:
+    #0 0x000114a4289b  (/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/21/lib/darwin/libclang_rt.asan_osx_dynamic.dylib:x86_64h+0xa689b)
+    #1 0x0001165c5b37  (work/releases/8.3/candidate/sanitized-tests/20261024T184729Z-all-30647b/sanitizer_probe.so:x86_64+0xb37)
+    #2 0x000111c2c4d8  (work/releases/8.3/candidate/sanitized-build/sapi/cli/php:x86_64+0x101d484d8)
+    #3 0x0001117fcd8b  (work/releases/8.3/candidate/sanitized-build/sapi/cli/php:x86_64+0x101918d8b)
+    #4 0x0001117fe26e  (work/releases/8.3/candidate/sanitized-build/sapi/cli/php:x86_64+0x10191a26e)
+    #5 0x0001115a971b  (work/releases/8.3/candidate/sanitized-build/sapi/cli/php:x86_64+0x1016c571b)
+    #6 0x0001115aa294  (work/releases/8.3/candidate/sanitized-build/sapi/cli/php:x86_64+0x1016c6294)
+    #7 0x0001115aa48b  (work/releases/8.3/candidate/sanitized-build/sapi/cli/php:x86_64+0x1016c648b)
+    #8 0x0001124a8b53  (work/releases/8.3/candidate/sanitized-build/sapi/cli/php:x86_64+0x1025c4b53)
+    #9 0x0001124a5a56  (work/releases/8.3/candidate/sanitized-build/sapi/cli/php:x86_64+0x1025c1a56)
+    #10 0x7ff805c571c7  (/usr/lib/dyld:x86_64+0x131c7)
+
+previously allocated by thread T0 here:
+    #0 0x000114a42792  (/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/21/lib/darwin/libclang_rt.asan_osx_dynamic.dylib:x86_64h+0xa6792)
+    #1 0x0001165c5a25  (work/releases/8.3/candidate/sanitized-tests/20261024T184729Z-all-30647b/sanitizer_probe.so:x86_64+0xa25)
+    #2 0x000111c2c4d8  (work/releases/8.3/candidate/sanitized-build/sapi/cli/php:x86_64+0x101d484d8)
+    #3 0x0001117fcd8b  (work/releases/8.3/candidate/sanitized-build/sapi/cli/php:x86_64+0x101918d8b)
+    #4 0x0001117fe26e  (work/releases/8.3/candidate/sanitized-build/sapi/cli/php:x86_64+0x10191a26e)
+    #5 0x0001115a971b  (work/releases/8.3/candidate/sanitized-build/sapi/cli/php:x86_64+0x1016c571b)
+    #6 0x0001115aa294  (work/releases/8.3/candidate/sanitized-build/sapi/cli/php:x86_64+0x1016c6294)
+    #7 0x0001115aa48b  (work/releases/8.3/candidate/sanitized-build/sapi/cli/php:x86_64+0x1016c648b)
+    #8 0x0001124a8b53  (work/releases/8.3/candidate/sanitized-build/sapi/cli/php:x86_64+0x1025c4b53)
+    #9 0x0001124a5a56  (work/releases/8.3/candidate/sanitized-build/sapi/cli/php:x86_64+0x1025c1a56)
+    #10 0x7ff805c571c7  (/usr/lib/dyld:x86_64+0x131c7)
+
+SUMMARY: AddressSanitizer: heap-use-after-free (work/releases/8.3/candidate/sanitized-tests/20261024T184729Z-all-30647b/sanitizer_probe.so:x86_64+0xdd7) 
+Shadow bytes around the buggy address:
+  0x602000003000: fa fa 00 00 fa fa fd fd fa fa fd fd fa fa fd fd
+  0x602000003080: fa fa fd fd fa fa fd fd fa fa fd fd fa fa fd fd
+  0x602000003100: fa fa fd fd fa fa fd fd fa fa fd fd fa fa 00 04
+  0x602000003180: fa fa 00 05 fa fa 00 05 fa fa fd fd fa fa fd fd
+  0x602000003200: fa fa 04 fa fa fa 00 fa fa fa fd fa fa fa 00 fa
+=>0x602000003280: fa fa[fd]fd fa fa fa fa fa fa fa fa fa fa fa fa
+  0x602000003300: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x602000003380: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x602000003400: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x602000003480: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x602000003500: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==83922==ABORTING
+
+--- METRICS ---
+{"wall_ms":1901.243,"user_ms":190.812,"system_ms":576.404,"peak_rss_bytes":55992320,"exit":134,"signal":6,"termination":"completed"}

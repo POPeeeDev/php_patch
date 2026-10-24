@@ -1,0 +1,8 @@
+
+--- STDERR ---
+=================================================================
+==10172==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x6020000032a0 at pc 0x00010a4f4dc0 bp 0x7ff7bc0b7870 sp 0x7ff7bc0b7868
+WRITE of size 1 at 0x6020000032a0 thread T0
+
+--- METRICS ---
+{"wall_ms":20295.432,"user_ms":173.949,"system_ms":546.048,"peak_rss_bytes":56045568,"exit":137,"signal":9,"termination":"timeout"}

@@ -1,0 +1,4 @@
+001- Hard memory limit of 20971520 bytes %s (tried to allocate %d bytes) in %s on line %d
+002- 
+003- Termsig=9
+001+ Fatal error: Allowed memory size of 10485760 bytes exhausted (tried to allocate 69632 bytes) in work/releases/8.5/unpatched/release-corpus/Zend/tests/OOM_hard_limit_exceeded_during_complilation.test.php on line 6897

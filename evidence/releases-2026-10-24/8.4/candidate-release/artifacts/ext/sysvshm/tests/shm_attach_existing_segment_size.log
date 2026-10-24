@@ -1,0 +1,21 @@
+
+---- EXPECTED OUTPUT
+bool(true)
+
+Warning: shm_put_var(): Not enough shared memory left in %s on line %d
+bool(false)
+bool(true)
+string(2) "ok"
+bool(true)
+---- ACTUAL OUTPUT
+Warning: shmop_open(): Unable to attach or create shared memory segment "No space left on device" in work/releases/8.4/candidate/release-corpus/ext/sysvshm/tests/shm_attach_existing_segment_size.php on line 4
+
+Warning: shm_attach(): Failed for key 0x53484d31: Invalid argument in work/releases/8.4/candidate/release-corpus/ext/sysvshm/tests/shm_attach_existing_segment_size.php on line 6
+bool(false)
+
+Fatal error: Uncaught TypeError: shm_put_var(): Argument #1 ($shm) must be of type SysvSharedMemory, false given in work/releases/8.4/candidate/release-corpus/ext/sysvshm/tests/shm_attach_existing_segment_size.php:9
+Stack trace:
+#0 work/releases/8.4/candidate/release-corpus/ext/sysvshm/tests/shm_attach_existing_segment_size.php(9): shm_put_var(false, 1, 'AAAAAAAAAAAAAAA...')
+#1 {main}
+  thrown in work/releases/8.4/candidate/release-corpus/ext/sysvshm/tests/shm_attach_existing_segment_size.php on line 9
+---- FAILED

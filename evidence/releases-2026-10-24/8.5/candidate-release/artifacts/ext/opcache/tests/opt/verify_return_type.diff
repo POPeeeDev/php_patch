@@ -1,0 +1,38 @@
+--
+     0000 RETURN int(42)
+     
+     Test2::getInt2:
+049-      ; (lines=3, args=0, vars=0, tmps=1)
+049+      ; (lines=4, args=0, vars=0, tmps=1)
+          ; (after optimizer)
+          ; work/releases/8.5/candidate/release-corpus/ext/opcache/tests/opt/verify_return_type.php:16-18
+     0000 INIT_METHOD_CALL 0 THIS string("getInt")
+053- 0001 V0 = DO_FCALL
+054- 0002 RETURN V0
+053+ 0001 V0 = DO_UCALL
+054+ 0002 VERIFY_RETURN_TYPE V0
+055+ 0003 RETURN V0
+056+ LIVE RANGES:
+057+      0: 0002 - 0003 (tmp/var)
+     
+     Test2::getIntOrFloat:
+          ; (lines=2, args=1, vars=1, tmps=0)
+--
+     0000 CV0($i) = RECV 1
+     0001 INIT_METHOD_CALL 1 THIS string("getIntOrFloat")
+     0002 SEND_VAR CV0($i) 1
+070- 0003 V1 = DO_FCALL
+073+ 0003 V1 = DO_UCALL
+     0004 VERIFY_RETURN_TYPE V1
+     0005 RETURN V1
+076+ LIVE RANGES:
+077+      1: 0004 - 0005 (tmp/var)
+     
+     Test3::getBool:
+          ; (lines=1, args=0, vars=0, tmps=0)
+--
+          ; (after optimizer)
+          ; work/releases/8.5/candidate/release-corpus/ext/opcache/tests/opt/verify_return_type.php:34-36
+     0000 V0 = QM_ASSIGN bool(true)
+085- 0001 RETURN bool(true)
+090+ 0001 RETURN V0

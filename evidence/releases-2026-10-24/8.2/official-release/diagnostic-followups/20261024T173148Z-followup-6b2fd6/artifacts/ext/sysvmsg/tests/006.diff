@@ -1,0 +1,44 @@
+001+ Warning: msg_get_queue(): Failed for key 0x7204685a: No space left on device in work/releases/8.2/official/release-corpus/ext/sysvmsg/tests/006.php on line 3
+     Sending/receiving 'foo':
+003+ msg_send(): Argument #1 ($queue) must be of type SysvMessageQueue, bool given
+004+ 
+005+ Fatal error: Uncaught TypeError: msg_receive(): Argument #1 ($queue) must be of type SysvMessageQueue, bool given in work/releases/8.2/official/release-corpus/ext/sysvmsg/tests/006.php:16
+006+ Stack trace:
+007+ #0 work/releases/8.2/official/release-corpus/ext/sysvmsg/tests/006.php(16): msg_receive(false, 1, NULL, 1024, NULL, false, 1)
+008+ #1 {main}
+009+   thrown in work/releases/8.2/official/release-corpus/ext/sysvmsg/tests/006.php on line 16
+002- bool(true)
+003- bool(true)
+004- bool(true)
+005- bool(true)
+006- Sending/receiving '123':
+007- bool(true)
+008- bool(true)
+009- bool(true)
+010- bool(false)
+011- Sending/receiving '%s':
+012- bool(true)
+013- bool(true)
+014- bool(true)
+015- bool(false)
+016- Sending/receiving '1':
+017- bool(true)
+018- bool(true)
+019- bool(true)
+020- bool(false)
+021- Sending/receiving '1.01':
+022- bool(true)
+023- bool(true)
+024- bool(true)
+025- bool(false)
+026- Sending/receiving '':
+027- msg_send(): Argument #3 ($message) must be of type string|int|float|bool, null given
+028- bool(false)
+029- bool(true)
+030- bool(false)
+031- Sending/receiving 'Array':
+032- msg_send(): Argument #3 ($message) must be of type string|int|float|bool, array given
+033- bool(false)
+034- bool(false)
+035- bool(false)
+036- Done

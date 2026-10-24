@@ -1,0 +1,4 @@
+Fatal error: Uncaught Error: Call to undefined function zend_test_handle_post_data() in work/releases/8.3/unpatched/release-corpus/tests/basic/GHSA-2cv3-554h-jpmh_multipart.php:19
+Stack trace:
+#0 {main}
+  thrown in work/releases/8.3/unpatched/release-corpus/tests/basic/GHSA-2cv3-554h-jpmh_multipart.php on line 19

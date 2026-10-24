@@ -1,0 +1,13 @@
+
+---- EXPECTED OUTPUT
+int(5010)
+string(12) "xn--9caaaaaa"
+string(6) "aa.com"
+int(5000)
+bool(true)
+---- ACTUAL OUTPUT
+Fatal error: Uncaught Error: Call to a member function getAsciiHost() on null in work/releases/8.5/unpatched/release-corpus/ext/uri/tests/whatwg/parsing/host_success_multibyte_long.php:4
+Stack trace:
+#0 {main}
+  thrown in work/releases/8.5/unpatched/release-corpus/ext/uri/tests/whatwg/parsing/host_success_multibyte_long.php on line 4
+---- FAILED

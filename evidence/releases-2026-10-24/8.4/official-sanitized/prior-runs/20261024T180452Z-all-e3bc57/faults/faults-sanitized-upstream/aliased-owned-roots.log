@@ -1,0 +1,5 @@
+GUARD_ALIAS_CLEAR
+--- STDERR ---
+
+--- METRICS ---
+{"wall_ms":1550.523,"user_ms":142.512,"system_ms":452.721,"peak_rss_bytes":54394880,"exit":0,"signal":0,"termination":"completed"}

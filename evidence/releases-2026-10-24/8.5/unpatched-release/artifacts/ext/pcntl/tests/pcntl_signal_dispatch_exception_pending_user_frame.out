@@ -1,0 +1,6 @@
+Fatal error: Uncaught TypeError: register_tick_function(): Argument #1 ($callback) must be a valid callback, function "zend_test_raise_and_throw" not found or invalid function name in work/releases/8.5/unpatched/release-corpus/ext/pcntl/tests/pcntl_signal_dispatch_exception_pending_user_frame.php:11
+Stack trace:
+#0 work/releases/8.5/unpatched/release-corpus/ext/pcntl/tests/pcntl_signal_dispatch_exception_pending_user_frame.php(11): register_tick_function('zend_test_raise...', 30)
+#1 work/releases/8.5/unpatched/release-corpus/ext/pcntl/tests/pcntl_signal_dispatch_exception_pending_user_frame.php(16): test()
+#2 {main}
+  thrown in work/releases/8.5/unpatched/release-corpus/ext/pcntl/tests/pcntl_signal_dispatch_exception_pending_user_frame.php on line 11

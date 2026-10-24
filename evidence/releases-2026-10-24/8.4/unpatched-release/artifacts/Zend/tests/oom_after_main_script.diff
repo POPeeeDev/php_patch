@@ -1,0 +1,4 @@
+001- Done
+002- 
+     Fatal error: Allowed memory size of 8388608 bytes exhausted %S(tried to allocate %d bytes) in %s on line %d
+     Shutdown function called

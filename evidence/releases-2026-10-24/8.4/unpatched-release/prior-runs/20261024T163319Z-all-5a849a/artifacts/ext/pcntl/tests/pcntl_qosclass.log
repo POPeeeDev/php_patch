@@ -1,0 +1,15 @@
+
+---- EXPECTED OUTPUT
+bool(true)
+bool(true)
+bool(true)
+---- ACTUAL OUTPUT
+bool(true)
+bool(true)
+
+Fatal error: Uncaught ArgumentCountError: pcntl_setqos_class() expects exactly 1 argument, 0 given in work/releases/8.4/unpatched/release-corpus/ext/pcntl/tests/pcntl_qosclass.php:8
+Stack trace:
+#0 work/releases/8.4/unpatched/release-corpus/ext/pcntl/tests/pcntl_qosclass.php(8): pcntl_setqos_class()
+#1 {main}
+  thrown in work/releases/8.4/unpatched/release-corpus/ext/pcntl/tests/pcntl_qosclass.php on line 8
+---- FAILED

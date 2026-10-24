@@ -1,0 +1,6 @@
+
+--- STDERR ---
+./bench/sanitizer_probe.c:34:15: runtime error: signed integer overflow: 2147483647 + 1 cannot be represented in type 'int'
+
+--- METRICS ---
+{"wall_ms":20281.082,"user_ms":207.572,"system_ms":644.977,"peak_rss_bytes":68141056,"exit":137,"signal":9,"termination":"timeout"}

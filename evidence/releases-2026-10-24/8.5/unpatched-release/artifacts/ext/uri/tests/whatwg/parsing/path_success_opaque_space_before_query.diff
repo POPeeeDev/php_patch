@@ -1,0 +1,8 @@
+001- string(4) "x%20"
+002- string(4) "x%20"
+003- string(6) "a b%20"
+004- string(5) "x %20"
+001+ string(2) "x "
+002+ string(2) "x "
+003+ string(4) "a b "
+004+ string(3) "x  "

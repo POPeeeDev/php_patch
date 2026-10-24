@@ -1,0 +1,8 @@
+"abc\n\n"
+"ab\ncd\n"
+"abc\nd\n"
+"abc\nabc\n\n"
+"abc--"
+"abc\r\n\r\n"
+"\r\r\n\n"
+"ab\r\ncd\r\n"

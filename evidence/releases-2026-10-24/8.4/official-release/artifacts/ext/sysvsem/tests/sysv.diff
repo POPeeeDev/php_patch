@@ -1,0 +1,15 @@
+     Start.
+     Got semaphore.
+     Success acquire semaphore.
+004- Success to attach shared memory.
+005- Write var1 to shared memory.
+006- Write var2 to shared memory.
+007- Read var1=Variable 1.
+008- Read var2=Variable 2.
+009- Semaphore released.
+010- Shared memory successfully removed from SysV.
+011- semaphore removed successfully from SysV.
+012- End.
+004+ 
+005+ Warning: shm_attach(): Failed for key 0x51049a2d: No space left on device in work/releases/8.4/official/release-corpus/ext/sysvsem/tests/sysv.php on line 23
+006+ Fail to attach shared memory.

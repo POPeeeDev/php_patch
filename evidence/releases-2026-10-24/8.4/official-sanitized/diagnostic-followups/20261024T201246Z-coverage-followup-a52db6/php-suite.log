@@ -1,0 +1,37 @@
+
+=====================================================================
+PHP         : work/releases/8.4/official/sanitized-build/sapi/cli/php 
+PHP_SAPI    : cli
+PHP_VERSION : 8.4.27
+ZEND_VERSION: 4.4.27
+PHP_OS      : Darwin - Darwin <USER>.local 25.6.0 Darwin Kernel Version 25.6.0: Tue Aug 18 17:46:40 PDT 2026; root:xnu-12377.161.15.700.19~2/RELEASE_X86_64 x86_64
+INI actual  : work/releases/8.4/official/sanitized-corpus
+More .INIs  :  
+---------------------------------------------------------------------
+PHP         : work/releases/8.4/official/sanitized-build/sapi/cgi/php-cgi 
+PHP_SAPI    : cgi-fcgi
+PHP_VERSION : 8.4.27
+ZEND_VERSION: 4.4.27
+PHP_OS      : Darwin - Darwin <USER>.local 25.6.0 Darwin Kernel Version 25.6.0: Tue Aug 18 17:46:40 PDT 2026; root:xnu-12377.161.15.700.19~2/RELEASE_X86_64 x86_64
+INI actual  : work/releases/8.4/official/sanitized-corpus
+More .INIs  : 
+--------------------------------------------------------------------- 
+CWD         : work/releases/8.4/official/sanitized-corpus
+Extra dirs  : 
+VALGRIND    : Not used
+=====================================================================
+Running selected tests.
+=====================================================================
+Number of tests :     1                 1
+Tests skipped   :     0 (  0.0%) --------
+Tests warned    :     0 (  0.0%) (  0.0%)
+Tests failed    :     0 (  0.0%) (  0.0%)
+Tests passed    :     1 (100.0%) (100.0%)
+---------------------------------------------------------------------
+Time taken      : 22.265 seconds
+=====================================================================
+
+--- STDERR ---
+
+--- METRICS ---
+{"wall_ms":23352.216,"user_ms":21507.805,"system_ms":1577.283,"peak_rss_bytes":1018507264,"exit":0,"signal":0,"termination":"completed"}

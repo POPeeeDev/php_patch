@@ -1,0 +1,6 @@
+001- Handler called
+002- Exception after raise()
+001+ Fatal error: Uncaught Error: Call to undefined function zend_test_raise_and_throw() in work/releases/8.5/unpatched/release-corpus/ext/pcntl/tests/pcntl_signal_dispatch_exception_pending.php:10
+002+ Stack trace:
+003+ #0 {main}
+004+   thrown in work/releases/8.5/unpatched/release-corpus/ext/pcntl/tests/pcntl_signal_dispatch_exception_pending.php on line 10

@@ -1,0 +1,12 @@
+
+---- EXPECTED OUTPUT
+string(4) "x%20"
+string(4) "x%20"
+string(6) "a b%20"
+string(5) "x %20"
+---- ACTUAL OUTPUT
+string(2) "x "
+string(2) "x "
+string(4) "a b "
+string(3) "x  "
+---- FAILED

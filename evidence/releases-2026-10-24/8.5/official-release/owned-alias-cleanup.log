@@ -1,0 +1,5 @@
+
+--- STDERR ---
+
+--- METRICS ---
+{"wall_ms":58.813,"user_ms":28.742,"system_ms":18.952,"peak_rss_bytes":5963776,"exit":0,"signal":0,"termination":"completed"}

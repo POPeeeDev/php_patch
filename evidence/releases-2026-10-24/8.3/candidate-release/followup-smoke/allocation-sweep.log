@@ -1,0 +1,8 @@
+aliased-roots-recoverable: pass
+fault-sweep-recoverable: pass
+report=work/releases/8.3/candidate/release-tests/20261024T165841Z-smoke-deb346/faults/report.md
+
+--- STDERR ---
+
+--- METRICS ---
+{"wall_ms":48869.187,"user_ms":17541.737,"system_ms":13718.919,"peak_rss_bytes":49602560,"exit":0,"signal":0,"termination":"completed"}

@@ -1,0 +1,8 @@
+string(5) "/c:/x"
+array(2) {
+  [0]=>
+  string(14) "InvalidUrlUnit"
+  [1]=>
+  string(29) "FileInvalidWindowsDriveLetter"
+}
+string(5) "/c:/x"

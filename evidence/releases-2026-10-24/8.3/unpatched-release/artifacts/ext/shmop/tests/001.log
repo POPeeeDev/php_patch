@@ -1,0 +1,18 @@
+
+---- EXPECTED OUTPUT
+shm open for create: ok
+shm size is: %d
+shm write test #1: ok
+data in memory is: test #1 of the shmop() extension
+shm open for read only: ok
+data in memory is: test #1 of the shmop() extension
+Read-only segment cannot be written
+shm open for read only: ok
+shm write test #2: ok
+data in memory is: test #1 of the shmop() extensiontest #2 append data to shared memory segment
+deletion of shm segment: ok
+---- ACTUAL OUTPUT
+shm open for create: 
+Warning: shmop_open(): Unable to attach or create shared memory segment "No space left on device" in work/releases/8.3/unpatched/release-corpus/ext/shmop/tests/001.php on line 7
+failed
+---- FAILED

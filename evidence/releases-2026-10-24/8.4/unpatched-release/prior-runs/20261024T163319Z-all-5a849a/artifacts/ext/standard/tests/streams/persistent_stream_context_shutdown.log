@@ -1,0 +1,6 @@
+
+---- EXPECTED OUTPUT
+int(0)
+---- ACTUAL OUTPUT
+int(11)
+---- FAILED

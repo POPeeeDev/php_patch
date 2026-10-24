@@ -1,0 +1,18 @@
+work/releases/8.3/official/source/ext/sockets/sockaddr_conv.c:112:35: runtime error: load of misaligned address 0x60f000000bda for type 'char *', which requires 8 byte alignment
+0x60f000000bda: note: pointer points here
+ 00 00  00 00 12 0c 00 00 f0 60  00 00 16 0c 00 00 f0 60  00 00 1a 0c 00 00 f0 60  00 00 1e 0c 00 00
+              ^ 
+    #0 0x000106a60de5 in php_set_inet_addr sockaddr_conv.c:112
+    #1 0x000106a1d35a in zif_socket_connect sockets.c:1176
+    #2 0x000107c54ca2 in ZEND_DO_ICALL_SPEC_RETVAL_USED_HANDLER zend_vm_execute.h:1337
+    #3 0x000107823d3b in execute_ex zend_vm_execute.h:57076
+    #4 0x00010782521e in zend_execute zend_vm_execute.h:61673
+    #5 0x0001076883fb in zend_execute_scripts zend.c:1900
+    #6 0x000107242682 in php_execute_script main.c:2577
+    #7 0x0001084cf8f6 in do_cli php_cli.c:966
+    #8 0x0001084cca06 in main php_cli.c:1341
+    #9 0x7ff805c571c7 in start+0xca7 (dyld:x86_64+0x131c7)
+
+SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior work/releases/8.3/official/source/ext/sockets/sockaddr_conv.c:112:35 
+
+Termsig=6

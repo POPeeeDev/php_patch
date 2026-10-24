@@ -1,0 +1,179 @@
+
+---- EXPECTED OUTPUT
+$_main:
+     ; (lines=1, args=0, vars=0, tmps=0)
+     ; (after optimizer)
+     ; %s
+0000 RETURN int(1)
+
+getClassUnion:
+     ; (lines=3, args=0, vars=0, tmps=1)
+     ; (after optimizer)
+     ; %s
+0000 V0 = NEW 0 string("stdClass")
+0001 DO_FCALL
+0002 RETURN V0
+LIVE RANGES:
+     0: 0001 - 0002 (new)
+
+getClassIntersection:
+     ; (lines=3, args=0, vars=0, tmps=1)
+     ; (after optimizer)
+     ; %s
+0000 V0 = NEW 0 string("ArrayObject")
+0001 DO_FCALL
+0002 RETURN V0
+LIVE RANGES:
+     0: 0001 - 0002 (new)
+
+Test1::getIntOrFloat:
+     ; (lines=2, args=1, vars=1, tmps=0)
+     ; (after optimizer)
+     ; %s
+0000 CV0($i) = RECV 1
+0001 RETURN CV0($i)
+
+Test1::getInt:
+     ; (lines=3, args=0, vars=0, tmps=1)
+     ; (after optimizer)
+     ; %s
+0000 INIT_METHOD_CALL 0 THIS string("getIntOrFloat")
+0001 V0 = DO_UCALL
+0002 RETURN V0
+
+Test2::getInt:
+     ; (lines=1, args=0, vars=0, tmps=0)
+     ; (after optimizer)
+     ; %s
+0000 RETURN int(42)
+
+Test2::getInt2:
+     ; (lines=3, args=0, vars=0, tmps=1)
+     ; (after optimizer)
+     ; %s
+0000 INIT_METHOD_CALL 0 THIS string("getInt")
+0001 V0 = DO_FCALL
+0002 RETURN V0
+
+Test2::getIntOrFloat:
+     ; (lines=2, args=1, vars=1, tmps=0)
+     ; (after optimizer)
+     ; %s
+0000 CV0($i) = RECV 1
+0001 RETURN CV0($i)
+
+Test2::getInt3:
+     ; (lines=6, args=1, vars=1, tmps=1)
+     ; (after optimizer)
+     ; %s
+0000 CV0($i) = RECV 1
+0001 INIT_METHOD_CALL 1 THIS string("getIntOrFloat")
+0002 SEND_VAR CV0($i) 1
+0003 V1 = DO_FCALL
+0004 VERIFY_RETURN_TYPE V1
+0005 RETURN V1
+
+Test3::getBool:
+     ; (lines=1, args=0, vars=0, tmps=0)
+     ; (after optimizer)
+     ; %s
+0000 RETURN bool(true)
+
+Test3::getBool2:
+     ; (lines=2, args=0, vars=0, tmps=1)
+     ; (after optimizer)
+     ; %s
+0000 V0 = QM_ASSIGN bool(true)
+0001 RETURN bool(true)
+---- ACTUAL OUTPUT
+$_main:
+     ; (lines=1, args=0, vars=0, tmps=0)
+     ; (after optimizer)
+     ; work/releases/8.5/unpatched/release-corpus/ext/opcache/tests/opt/verify_return_type.php:1-48
+0000 RETURN int(1)
+
+getClassUnion:
+     ; (lines=3, args=0, vars=0, tmps=1)
+     ; (after optimizer)
+     ; work/releases/8.5/unpatched/release-corpus/ext/opcache/tests/opt/verify_return_type.php:39-41
+0000 V0 = NEW 0 string("stdClass")
+0001 DO_FCALL
+0002 RETURN V0
+LIVE RANGES:
+     0: 0001 - 0002 (new)
+
+getClassIntersection:
+     ; (lines=3, args=0, vars=0, tmps=1)
+     ; (after optimizer)
+     ; work/releases/8.5/unpatched/release-corpus/ext/opcache/tests/opt/verify_return_type.php:43-45
+0000 V0 = NEW 0 string("ArrayObject")
+0001 DO_FCALL
+0002 RETURN V0
+LIVE RANGES:
+     0: 0001 - 0002 (new)
+
+Test1::getIntOrFloat:
+     ; (lines=2, args=1, vars=1, tmps=0)
+     ; (after optimizer)
+     ; work/releases/8.5/unpatched/release-corpus/ext/opcache/tests/opt/verify_return_type.php:4-6
+0000 CV0($i) = RECV 1
+0001 RETURN CV0($i)
+
+Test1::getInt:
+     ; (lines=3, args=0, vars=0, tmps=1)
+     ; (after optimizer)
+     ; work/releases/8.5/unpatched/release-corpus/ext/opcache/tests/opt/verify_return_type.php:7-9
+0000 INIT_METHOD_CALL 0 THIS string("getIntOrFloat")
+0001 V0 = DO_UCALL
+0002 RETURN V0
+
+Test2::getInt:
+     ; (lines=1, args=0, vars=0, tmps=0)
+     ; (after optimizer)
+     ; work/releases/8.5/unpatched/release-corpus/ext/opcache/tests/opt/verify_return_type.php:13-15
+0000 RETURN int(42)
+
+Test2::getInt2:
+     ; (lines=4, args=0, vars=0, tmps=1)
+     ; (after optimizer)
+     ; work/releases/8.5/unpatched/release-corpus/ext/opcache/tests/opt/verify_return_type.php:16-18
+0000 INIT_METHOD_CALL 0 THIS string("getInt")
+0001 V0 = DO_UCALL
+0002 VERIFY_RETURN_TYPE V0
+0003 RETURN V0
+LIVE RANGES:
+     0: 0002 - 0003 (tmp/var)
+
+Test2::getIntOrFloat:
+     ; (lines=2, args=1, vars=1, tmps=0)
+     ; (after optimizer)
+     ; work/releases/8.5/unpatched/release-corpus/ext/opcache/tests/opt/verify_return_type.php:19-21
+0000 CV0($i) = RECV 1
+0001 RETURN CV0($i)
+
+Test2::getInt3:
+     ; (lines=6, args=1, vars=1, tmps=1)
+     ; (after optimizer)
+     ; work/releases/8.5/unpatched/release-corpus/ext/opcache/tests/opt/verify_return_type.php:22-26
+0000 CV0($i) = RECV 1
+0001 INIT_METHOD_CALL 1 THIS string("getIntOrFloat")
+0002 SEND_VAR CV0($i) 1
+0003 V1 = DO_UCALL
+0004 VERIFY_RETURN_TYPE V1
+0005 RETURN V1
+LIVE RANGES:
+     1: 0004 - 0005 (tmp/var)
+
+Test3::getBool:
+     ; (lines=1, args=0, vars=0, tmps=0)
+     ; (after optimizer)
+     ; work/releases/8.5/unpatched/release-corpus/ext/opcache/tests/opt/verify_return_type.php:30-32
+0000 RETURN bool(true)
+
+Test3::getBool2:
+     ; (lines=2, args=0, vars=0, tmps=1)
+     ; (after optimizer)
+     ; work/releases/8.5/unpatched/release-corpus/ext/opcache/tests/opt/verify_return_type.php:34-36
+0000 V0 = QM_ASSIGN bool(true)
+0001 RETURN V0
+---- FAILED

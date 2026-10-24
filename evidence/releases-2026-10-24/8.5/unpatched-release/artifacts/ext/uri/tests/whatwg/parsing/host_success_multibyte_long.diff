@@ -1,0 +1,9 @@
+001- int(5010)
+002- string(12) "xn--9caaaaaa"
+003- string(6) "aa.com"
+004- int(5000)
+005- bool(true)
+001+ Fatal error: Uncaught Error: Call to a member function getAsciiHost() on null in work/releases/8.5/unpatched/release-corpus/ext/uri/tests/whatwg/parsing/host_success_multibyte_long.php:4
+002+ Stack trace:
+003+ #0 {main}
+004+   thrown in work/releases/8.5/unpatched/release-corpus/ext/uri/tests/whatwg/parsing/host_success_multibyte_long.php on line 4

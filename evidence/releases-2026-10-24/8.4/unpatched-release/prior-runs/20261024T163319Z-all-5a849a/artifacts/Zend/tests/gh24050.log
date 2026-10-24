@@ -1,0 +1,7 @@
+
+---- EXPECTED OUTPUT
+object(stdClass)#1 (0) {
+}
+---- ACTUAL OUTPUT
+Termsig=11
+---- FAILED

@@ -1,0 +1,1 @@
+Fatal error: Allowed memory size of 67108864 bytes exhausted (tried to allocate 4096 bytes) in work/releases/8.2/unpatched/release-corpus/ext/date/tests/oom_dateperiod_construct.php on line 3

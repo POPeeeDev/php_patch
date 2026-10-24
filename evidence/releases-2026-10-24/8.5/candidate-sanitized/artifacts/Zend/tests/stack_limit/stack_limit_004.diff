@@ -1,0 +1,12 @@
+--
+       ["EG(stack_limit)"]=>
+       string(%d) "0x%x"
+     }
+011- bool(true)
+011+ 
+012+ Fatal error: Uncaught Error: Maximum call stack size of 0 bytes (zend.max_allowed_stack_size - zend.reserved_stack_size) reached. Infinite recursion? in work/releases/8.5/candidate/sanitized-corpus/Zend/tests/stack_limit/stack_limit_004.php:13
+013+ Stack trace:
+014+ #0 [internal function]: {closure:work/releases/8.5/candidate/sanitized-corpus/Zend/tests/stack_limit/stack_limit_004.php:11}()
+015+ #1 work/releases/8.5/candidate/sanitized-corpus/Zend/tests/stack_limit/stack_limit_004.php(28): Fiber->start()
+016+ #2 {main}
+017+   thrown in work/releases/8.5/candidate/sanitized-corpus/Zend/tests/stack_limit/stack_limit_004.php on line 13

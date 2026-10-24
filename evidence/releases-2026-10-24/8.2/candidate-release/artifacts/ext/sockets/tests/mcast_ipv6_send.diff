@@ -1,0 +1,12 @@
+--
+     int(1)
+     
+     Setting IPV6_MULTICAST_IF
+013+ 
+014+ Warning: socket_set_option(): Unable to set socket option [22]: Invalid argument in work/releases/8.2/candidate/release-corpus/ext/sockets/tests/mcast_ipv6_send.php on line 26
+015+ bool(false)
+013- bool(true)
+     int(0)
+     interface 1:
+     bool(true)
+--

@@ -1,0 +1,5 @@
+okey
+
+Warning: socket_send(): Unable to write to socket [22]: Invalid argument in work/releases/8.3/official/release-corpus/ext/sockets/tests/socket_send.php on line 14
+okey
+okey

@@ -1,0 +1,19 @@
+## shmop_open function tests ##
+shmop_open(): Argument #2 ($mode) must be a valid access mode
+shmop_open(): Argument #2 ($mode) must be a valid access mode
+
+Warning: shmop_open(): Unable to attach or create shared memory segment "Invalid argument" in work/releases/8.5/official/release-corpus/ext/shmop/tests/002.php on line 19
+bool(false)
+
+Warning: shmop_open(): Unable to attach or create shared memory segment "Invalid argument" in work/releases/8.5/official/release-corpus/ext/shmop/tests/002.php on line 23
+shmop_open(): Argument #4 ($size) must be greater than 0 for the "c" and "n" access modes
+
+## shmop_read function tests ##
+
+Warning: shmop_open(): Unable to attach or create shared memory segment "No space left on device" in work/releases/8.5/official/release-corpus/ext/shmop/tests/002.php on line 37
+
+Fatal error: Uncaught TypeError: shmop_read(): Argument #1 ($shmop) must be of type Shmop, false given in work/releases/8.5/official/release-corpus/ext/shmop/tests/002.php:39
+Stack trace:
+#0 work/releases/8.5/official/release-corpus/ext/shmop/tests/002.php(39): shmop_read(false, -10, 0)
+#1 {main}
+  thrown in work/releases/8.5/official/release-corpus/ext/shmop/tests/002.php on line 39

@@ -1,0 +1,45 @@
+001- Exception: create_sid failed
+002- NULL
+001+ Error: Session id must be a string
+002+ object(Exception)#2 (7) {
+003+   ["message":protected]=>
+004+   string(17) "create_sid failed"
+005+   ["string":"Exception":private]=>
+006+   string(0) ""
+007+   ["code":protected]=>
+008+   int(0)
+009+   ["file":protected]=>
+010+   string(153) "work/releases/8.5/unpatched/release-corpus/ext/session/tests/user_session_module/session_create_id_create_sid_throws.php"
+011+   ["line":protected]=>
+012+   int(12)
+013+   ["trace":"Exception":private]=>
+014+   array(2) {
+015+     [0]=>
+016+     array(4) {
+017+       ["function"]=>
+018+       string(10) "create_sid"
+019+       ["class"]=>
+020+       string(16) "MySessionHandler"
+021+       ["type"]=>
+022+       string(2) "->"
+023+       ["args"]=>
+024+       array(0) {
+025+       }
+026+     }
+027+     [1]=>
+028+     array(4) {
+029+       ["file"]=>
+030+       string(153) "work/releases/8.5/unpatched/release-corpus/ext/session/tests/user_session_module/session_create_id_create_sid_throws.php"
+031+       ["line"]=>
+032+       int(27)
+033+       ["function"]=>
+034+       string(17) "session_create_id"
+035+       ["args"]=>
+036+       array(0) {
+037+       }
+038+     }
+039+   }
+040+   ["previous":"Exception":private]=>
+041+   NULL
+042+ }
+     bool(true)

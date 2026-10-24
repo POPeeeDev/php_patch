@@ -106,6 +106,9 @@ FAILED/BORKED/LEAKED status difference among tests observed in both rows, in eit
 direction, with one worker. Run it separately for both
 profiles to investigate differences; its results never replace full-suite counts.
 Tests missing from a timed-out row remain unobserved, not successful controls.
+The separate `coverage-followup` phase runs adverse cases recorded in only one
+full row on both profiles (invoke it once per profile). It does not retroactively
+fill gaps in the original timed-out runs or change their paired comparisons.
 
 To investigate sanitizer reporting separately, after the instrumented native
 checks have produced probe modules, run `php -n tools/release-detectors.php 8.5`

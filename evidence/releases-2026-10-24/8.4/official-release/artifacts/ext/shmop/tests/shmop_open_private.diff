@@ -1,0 +1,8 @@
+001- bool(true)
+001+ Warning: shmop_open(): Unable to attach or create shared memory segment "No space left on device" in work/releases/8.4/official/release-corpus/ext/shmop/tests/shmop_open_private.php on line 4
+002+ 
+003+ Fatal error: Uncaught TypeError: shmop_write(): Argument #1 ($shmop) must be of type Shmop, false given in work/releases/8.4/official/release-corpus/ext/shmop/tests/shmop_open_private.php:5
+004+ Stack trace:
+005+ #0 work/releases/8.4/official/release-corpus/ext/shmop/tests/shmop_open_private.php(5): shmop_write(false, 'test', 0)
+006+ #1 {main}
+007+   thrown in work/releases/8.4/official/release-corpus/ext/shmop/tests/shmop_open_private.php on line 5

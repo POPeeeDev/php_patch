@@ -1,0 +1,10 @@
+--
+     int(%d)
+     int(%d)
+     
+013- Warning: symlink(): open_basedir restriction in effect. File(%s/test/bad/bad.txt) is not within the allowed path(s): (.) in %s on line %d
+013+ Warning: symlink(): File exists in work/releases/8.5/official/sanitized-corpus/tests/security/open_basedir_linkinfo.php on line 24
+     bool(false)
+     int(%d)
+     bool(true)
+--

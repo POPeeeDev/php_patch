@@ -1,0 +1,6 @@
+
+---- EXPECTED OUTPUT
+Fatal error: Allowed memory size of 104857600 bytes exhausted %S(tried to allocate %d bytes) in %s on line 13
+---- ACTUAL OUTPUT
+** ERROR: process timed out **
+---- FAILED

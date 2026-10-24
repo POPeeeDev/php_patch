@@ -1,0 +1,49 @@
+
+---- EXPECTED OUTPUT
+Sending/receiving 'foo':
+bool(true)
+bool(true)
+bool(true)
+bool(true)
+Sending/receiving '123':
+bool(true)
+bool(true)
+bool(true)
+bool(false)
+Sending/receiving '%s':
+bool(true)
+bool(true)
+bool(true)
+bool(false)
+Sending/receiving '1':
+bool(true)
+bool(true)
+bool(true)
+bool(false)
+Sending/receiving '1.01':
+bool(true)
+bool(true)
+bool(true)
+bool(false)
+Sending/receiving '':
+msg_send(): Argument #3 ($message) must be of type string|int|float|bool, null given
+bool(false)
+bool(true)
+bool(false)
+Sending/receiving 'Array':
+msg_send(): Argument #3 ($message) must be of type string|int|float|bool, array given
+bool(false)
+bool(false)
+bool(false)
+Done
+---- ACTUAL OUTPUT
+Warning: msg_get_queue(): Failed for key 0x7204ef09: No space left on device in work/releases/8.2/candidate/release-corpus/ext/sysvmsg/tests/006.php on line 3
+Sending/receiving 'foo':
+msg_send(): Argument #1 ($queue) must be of type SysvMessageQueue, bool given
+
+Fatal error: Uncaught TypeError: msg_receive(): Argument #1 ($queue) must be of type SysvMessageQueue, bool given in work/releases/8.2/candidate/release-corpus/ext/sysvmsg/tests/006.php:16
+Stack trace:
+#0 work/releases/8.2/candidate/release-corpus/ext/sysvmsg/tests/006.php(16): msg_receive(false, 1, NULL, 1024, NULL, false, 1)
+#1 {main}
+  thrown in work/releases/8.2/candidate/release-corpus/ext/sysvmsg/tests/006.php on line 16
+---- FAILED

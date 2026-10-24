@@ -1,0 +1,6 @@
+001- Fatal error: Allowed memory size of 10485760 bytes exhausted %S(tried to allocate %d bytes) in %s on line 4
+001+ Fatal error: Uncaught Error: Call to undefined function zend_test_callback() in work/releases/8.3/unpatched/release-corpus/Zend/tests/oom_soft_limit_in_callback.php:13
+002+ Stack trace:
+003+ #0 {main}
+004+   thrown in work/releases/8.3/unpatched/release-corpus/Zend/tests/oom_soft_limit_in_callback.php on line 13
+     Executed

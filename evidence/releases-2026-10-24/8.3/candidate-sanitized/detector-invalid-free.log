@@ -1,0 +1,35 @@
+
+--- STDERR ---
+=================================================================
+==25174==ERROR: AddressSanitizer: attempting free on address which was not malloc()-ed: 0x6020000032b1 in thread T0
+    #0 0x00010f1cc89b in free+0x8b (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0xa689b)
+    #1 0x000111952c49 in zif_guard_memory_fault sanitizer_probe.c:30
+    #2 0x00010c3b64d8 in ZEND_DO_ICALL_SPEC_RETVAL_UNUSED_HANDLER zend_vm_execute.h:1275
+    #3 0x00010bf86d8b in execute_ex zend_vm_execute.h:57076
+    #4 0x00010bf8826e in zend_execute zend_vm_execute.h:61673
+    #5 0x00010bd3371b in zend_eval_stringl zend_execute_API.c:1337
+    #6 0x00010bd34294 in zend_eval_stringl_ex zend_execute_API.c:1379
+    #7 0x00010bd3448b in zend_eval_string_ex zend_execute_API.c:1389
+    #8 0x00010cc32b53 in do_cli php_cli.c:996
+    #9 0x00010cc2fa56 in main php_cli.c:1341
+    #10 0x7ff805c571c7 in start+0xca7 (dyld:x86_64+0x131c7)
+
+0x6020000032b1 is located 1 bytes inside of 16-byte region [0x6020000032b0,0x6020000032c0)
+allocated by thread T0 here:
+    #0 0x00010f1cc792 in malloc+0x82 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0xa6792)
+    #1 0x000111952a25 in zif_guard_memory_fault sanitizer_probe.c:18
+    #2 0x00010c3b64d8 in ZEND_DO_ICALL_SPEC_RETVAL_UNUSED_HANDLER zend_vm_execute.h:1275
+    #3 0x00010bf86d8b in execute_ex zend_vm_execute.h:57076
+    #4 0x00010bf8826e in zend_execute zend_vm_execute.h:61673
+    #5 0x00010bd3371b in zend_eval_stringl zend_execute_API.c:1337
+    #6 0x00010bd34294 in zend_eval_stringl_ex zend_execute_API.c:1379
+    #7 0x00010bd3448b in zend_eval_string_ex zend_execute_API.c:1389
+    #8 0x00010cc32b53 in do_cli php_cli.c:996
+    #9 0x00010cc2fa56 in main php_cli.c:1341
+    #10 0x7ff805c571c7 in start+0xca7 (dyld:x86_64+0x131c7)
+
+SUMMARY: AddressSanitizer: bad-free sanitizer_probe.c:30 in zif_guard_memory_fault
+==25174==ABORTING
+
+--- METRICS ---
+{"wall_ms":596.872,"user_ms":64.227,"system_ms":148.408,"peak_rss_bytes":56025088,"exit":134,"signal":6,"termination":"completed"}

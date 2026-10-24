@@ -1,0 +1,24 @@
+--
+     shm_attach(): Argument #2 ($size) must be greater than 0
+     shm_attach(): Argument #2 ($size) must be greater than 0
+     shm_attach(): Argument #2 ($size) must be greater than 0
+006- object(SysvSharedMemory)#%d (0) {
+007- }
+008- object(SysvSharedMemory)#%d (0) {
+009- }
+010- object(SysvSharedMemory)#%d (0) {
+011- }
+012- object(SysvSharedMemory)#%d (0) {
+013- }
+014- object(SysvSharedMemory)#%d (0) {
+015- }
+016- Done
+006+ 
+007+ Warning: shm_attach(): Failed for key 0x74049f8c: No space left on device in work/releases/8.5/candidate/release-corpus/ext/sysvshm/tests/002.php on line 35
+008+ bool(false)
+009+ 
+010+ Fatal error: Uncaught TypeError: shm_remove(): Argument #1 ($shm) must be of type SysvSharedMemory, false given in work/releases/8.5/candidate/release-corpus/ext/sysvshm/tests/002.php:36
+011+ Stack trace:
+012+ #0 work/releases/8.5/candidate/release-corpus/ext/sysvshm/tests/002.php(36): shm_remove(false)
+013+ #1 {main}
+014+   thrown in work/releases/8.5/candidate/release-corpus/ext/sysvshm/tests/002.php on line 36

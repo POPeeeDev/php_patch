@@ -60,6 +60,12 @@ unsupported platforms remain outside the exercised scope. Definitions are in
 [GLOSSARY.md](GLOSSARY.md); published mitigation guidance is compared in
 [MITIGATIONS.md](MITIGATIONS.md).
 
+The [release evidence](evidence/releases-2026-10-24/README.md) records all 20
+build/test attempts, including failed normal suites and time-bounded partial
+instrumented suites. A [fresh public-clone build and smoke test](evidence/public-clone-2026-10-24/README.md)
+is recorded separately. These are experimental findings, not a production-ready
+or all-tests-passing certification.
+
 The original 8.7 development experiment, its bounded TLA+ model, and recorded
 results remain in [DEVELOPMENT_README.md](DEVELOPMENT_README.md). They are not
 substituted for release-branch results.

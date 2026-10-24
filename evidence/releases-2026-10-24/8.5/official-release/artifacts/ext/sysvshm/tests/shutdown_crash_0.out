@@ -1,0 +1,8 @@
+Warning: shm_attach(): Failed for key 0x2a: No space left on device in work/releases/8.5/official/release-corpus/ext/sysvshm/tests/shutdown_crash_0.php on line 7
+bool(false)
+
+Fatal error: Uncaught TypeError: shm_remove(): Argument #1 ($shm) must be of type SysvSharedMemory, false given in work/releases/8.5/official/release-corpus/ext/sysvshm/tests/shutdown_crash_0.php:8
+Stack trace:
+#0 work/releases/8.5/official/release-corpus/ext/sysvshm/tests/shutdown_crash_0.php(8): shm_remove(false)
+#1 {main}
+  thrown in work/releases/8.5/official/release-corpus/ext/sysvshm/tests/shutdown_crash_0.php on line 8

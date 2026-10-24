@@ -1,0 +1,38 @@
+
+---- EXPECTED OUTPUT
+*** Testing open_basedir configuration [linkinfo] ***
+bool(true)
+bool(true)
+bool(true)
+bool(true)
+bool(true)
+int(%d)
+int(%d)
+int(%d)
+int(%d)
+int(%d)
+
+Warning: symlink(): open_basedir restriction in effect. File(%s/test/bad/bad.txt) is not within the allowed path(s): (.) in %s on line %d
+bool(false)
+int(%d)
+bool(true)
+*** Finished testing open_basedir configuration [linkinfo] ***
+---- ACTUAL OUTPUT
+*** Testing open_basedir configuration [linkinfo] ***
+bool(true)
+bool(true)
+bool(true)
+bool(true)
+bool(true)
+int(16777220)
+int(16777220)
+int(16777220)
+int(16777220)
+int(16777220)
+
+Warning: symlink(): File exists in work/releases/8.3/candidate/release-corpus/tests/security/open_basedir_linkinfo.php on line 24
+bool(false)
+int(16777220)
+bool(true)
+*** Finished testing open_basedir configuration [linkinfo] ***
+---- FAILED

@@ -1,0 +1,21 @@
+{
+    "schema": "php-public-clone-reproduction/1",
+    "repository": "https://github.com/POPeeeDev/php_patch.git",
+    "build_commit": "af025e56bf9477c4337bed0439da8631b1981578",
+    "test_commit": "fac756e209e273e8f6d7be8d3afc4e3250585be6",
+    "source_reuse": "Existing upstream Git object checkout through documented PHP_GIT option; fresh prepared source and build directory; no prior build products reused",
+    "build_command": "php -n tools/release-build.php 8.2 candidate",
+    "build_exit": 0,
+    "reported_version": "PHP 8.2.35 NTS",
+    "test_command": "php -n tools/release-test.php 8.2 candidate release smoke",
+    "test_exit": 0,
+    "package_checks": {
+        "initial_clone_files": 290,
+        "after_fast_forward_files": 293
+    },
+    "jobs": 4,
+    "scope": "one fresh release-build reproduction;20-row matrix is separate;not clean-machine dependency provisioning",
+    "instructions": "README.md and BUILD.md",
+    "private_paths": "normalized placeholders",
+    "utc": "2026-10-24T19:41:34+00:00"
+}

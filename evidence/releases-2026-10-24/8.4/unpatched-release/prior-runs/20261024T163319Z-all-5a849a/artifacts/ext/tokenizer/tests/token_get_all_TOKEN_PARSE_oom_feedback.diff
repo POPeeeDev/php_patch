@@ -1,0 +1,2 @@
+001- Fatal error: Allowed memory size of %d bytes exhausted %S(tried to allocate %d bytes) in %s on line %d
+001+ Fatal error: Allowed memory size of 407063 bytes exhausted (tried to allocate 32768 bytes) in  on line 1

@@ -1,0 +1,25 @@
+001- bool(true)
+002- bool(true)
+003- bool(true)
+001+ work/releases/8.3/official/source/ext/sockets/sockaddr_conv.c:112:35: runtime error: load of misaligned address 0x60f000000dba for type 'char *', which requires 8 byte alignment
+002+ 0x60f000000dba: note: pointer points here
+003+  00 00  00 00 f2 0d 00 00 f0 60  00 00 f6 0d 00 00 f0 60  00 00 fa 0d 00 00 f0 60  00 00 fe 0d 00 00
+004+               ^ 
+005+     #0 0x00010fe36de5 in php_set_inet_addr sockaddr_conv.c:112
+006+     #1 0x00010fdf335a in zif_socket_connect sockets.c:1176
+007+     #2 0x00011102aca2 in ZEND_DO_ICALL_SPEC_RETVAL_USED_HANDLER zend_vm_execute.h:1337
+008+     #3 0x000110bf9d3b in execute_ex zend_vm_execute.h:57076
+009+     #4 0x000110bfb21e in zend_execute zend_vm_execute.h:61673
+010+     #5 0x000110a5e3fb in zend_execute_scripts zend.c:1900
+011+     #6 0x000110618682 in php_execute_script main.c:2577
+012+     #7 0x0001118a58f6 in do_cli php_cli.c:966
+013+     #8 0x0001118a2a06 in main php_cli.c:1341
+014+     #9 0x7ff805c571c7 in start+0xca7 (dyld:x86_64+0x131c7)
+     
+005- Warning: socket_shutdown(): Unable to shutdown socket [%d]: %s in %s on line %d
+006- bool(false)
+016+ SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior work/releases/8.3/official/source/ext/sockets/sockaddr_conv.c:112:35 
+     
+008- Warning: socket_shutdown(): Unable to shutdown socket [%d]: Invalid argument in %s on line %d
+009- bool(false)
+018+ Termsig=6

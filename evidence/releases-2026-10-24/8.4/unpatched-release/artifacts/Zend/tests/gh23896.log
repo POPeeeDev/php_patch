@@ -1,0 +1,21 @@
+
+---- EXPECTED OUTPUT
+Use of "parent" in callables is deprecated
+NULL
+Cannot load Loader
+NULL
+---- ACTUAL OUTPUT
+Fatal error: Uncaught Exception: Use of "parent" in callables is deprecated in work/releases/8.4/unpatched/release-corpus/Zend/tests/gh23896.php:3
+Stack trace:
+#0 [internal function]: {closure:work/releases/8.4/unpatched/release-corpus/Zend/tests/gh23896.php:2}(8192, 'Use of "parent"...', '<HOME>/...', 13)
+#1 work/releases/8.4/unpatched/release-corpus/Zend/tests/gh23896.php(13): unserialize('O:3:"FOO":0:{}')
+#2 work/releases/8.4/unpatched/release-corpus/Zend/tests/gh23896.php(19): C->u('O:3:"FOO":0:{}')
+#3 {main}
+
+Next Error: Invalid callback parent::my_unserialize, (null) in work/releases/8.4/unpatched/release-corpus/Zend/tests/gh23896.php:13
+Stack trace:
+#0 work/releases/8.4/unpatched/release-corpus/Zend/tests/gh23896.php(13): unserialize('O:3:"FOO":0:{}')
+#1 work/releases/8.4/unpatched/release-corpus/Zend/tests/gh23896.php(19): C->u('O:3:"FOO":0:{}')
+#2 {main}
+  thrown in work/releases/8.4/unpatched/release-corpus/Zend/tests/gh23896.php on line 13
+---- FAILED

@@ -1,0 +1,5 @@
+001- RuntimeException: create_sid failed
+001+ Error: Session id must be a string
+     bool(false)
+003- bool(false)
+003+ bool(true)

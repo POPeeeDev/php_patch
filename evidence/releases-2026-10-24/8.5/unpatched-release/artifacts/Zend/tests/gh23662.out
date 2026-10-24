@@ -1,0 +1,7 @@
+Warning: unexpected NAN value was coerced to string in work/releases/8.5/unpatched/release-corpus/Zend/tests/gh23662.php on line 2
+NAN
+Warning: unexpected NAN value was coerced to string in work/releases/8.5/unpatched/release-corpus/Zend/tests/gh23662.php on line 3
+Array
+(
+    [0] => NAN
+)

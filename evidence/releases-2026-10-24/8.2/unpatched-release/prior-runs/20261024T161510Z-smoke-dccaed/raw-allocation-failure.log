@@ -1,0 +1,6 @@
+
+--- STDERR ---
+Out of memory
+
+--- METRICS ---
+{"wall_ms":57.769,"user_ms":23.221,"system_ms":18.816,"peak_rss_bytes":5902336,"exit":1,"signal":0,"termination":"completed"}

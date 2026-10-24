@@ -1,0 +1,4 @@
+Fatal error: Uncaught Error: Call to undefined function zend_new_singleton_array() in work/releases/8.4/unpatched/release-corpus/Zend/tests/singleton_array.php:3
+Stack trace:
+#0 {main}
+  thrown in work/releases/8.4/unpatched/release-corpus/Zend/tests/singleton_array.php on line 3

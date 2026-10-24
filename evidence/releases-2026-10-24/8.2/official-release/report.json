@@ -1,0 +1,4052 @@
+{
+    "schema": "php-release-comparison/1",
+    "branch": "8.2",
+    "profile": "official",
+    "variant": "release",
+    "phase": "all",
+    "build": {
+        "schema": "php-release-build/1",
+        "branch": "8.2",
+        "profile": "official",
+        "variant": "release",
+        "source": {
+            "branch": "8.2",
+            "profile": "official",
+            "manifest": {
+                "schema": "php-release-guard/1",
+                "branch": "8.2",
+                "affected_version": "8.2.34",
+                "official_version": "8.2.35",
+                "affected_revision": "0be211a0cf752780881a9611224f8adc516af573",
+                "official_revision": "09a9f29a0402bb87bb448cb2e3149ccbec1699c6",
+                "official_tree": "c2ea164b066ca8895fb5aeb3c1c9552ea7aa57c1",
+                "upstream_patch_sha256": "e430737ed607d61d6ec8d276f94506d159c95b4b797de3426933d469b3b1d32a",
+                "guard_patch_sha256": "dd1f232ff89ee774c87d242f2b5aa8edcaa14eecf08075bd5b05b9b27e18dbc8",
+                "guard_files": {
+                    "Zend/zend_alloc.h": {
+                        "official_sha256": "f25e34422c6f45d030ea50201bf496ac12514a8b6652d06d6b5f7c1895f463ae",
+                        "candidate_sha256": "9384c04eea47b7fdf4445b150de2b11135ed528cf5c57a4dca851bb1b5a6df65"
+                    },
+                    "Zend/zend_alloc.c": {
+                        "official_sha256": "8a21582121a332271969c520edcbfe97df61f8db25774b8ffb8f9688209deb7f",
+                        "candidate_sha256": "0c5af4cd8c34ac1ed2144762ba487c6a569a037c7127fef4a8e0b52006ee42ad"
+                    },
+                    "main/main.c": {
+                        "official_sha256": "5953c9acc7c57fcf017c5adb59e386e829b99b90874ad27d14916b6f030c0457",
+                        "candidate_sha256": "79a9f81585dc62a2211a91ab75a04599172aff9250bd9653d93c3eb8c3cd220a"
+                    }
+                },
+                "kind": "complete-official-release-update-plus-additive-guard",
+                "upstream_security_commits": [
+                    "01a40e89fbfc499936e3b05888d8f00bfde886df"
+                ]
+            },
+            "starting_revision": "09a9f29a0402bb87bb448cb2e3149ccbec1699c6",
+            "prepared_tree": "c2ea164b066ca8895fb5aeb3c1c9552ea7aa57c1"
+        },
+        "configure": [
+            "--disable-all",
+            "--enable-cli",
+            "--enable-fpm",
+            "--enable-cgi",
+            "--disable-phpdbg",
+            "--without-pear",
+            "--enable-session",
+            "--enable-filter",
+            "--enable-tokenizer",
+            "--enable-ctype",
+            "--enable-fileinfo",
+            "--enable-posix",
+            "--enable-sockets",
+            "--enable-pcntl",
+            "--enable-shmop",
+            "--enable-sysvmsg",
+            "--enable-sysvsem",
+            "--enable-sysvshm",
+            "--enable-zend-test"
+        ],
+        "jobs": 4,
+        "binary_sha256": {
+            "cli/php": "bb9310e95f94a6b8a936325d771ab1f76f4e7cb7369313bbc19cdfac21b6a503",
+            "fpm/php-fpm": "d8d081575480367c40f8b31173ccc9d2f985202c1db49b9d6004e400835fbd33",
+            "cgi/php-cgi": "48e8da513fb60b9e07e464b34542ab390c06d292ab3222d501bb8a1d88978489"
+        },
+        "platform": "Darwin-x86_64",
+        "utc": "2026-10-24T16:30:30+00:00"
+    },
+    "tests": {
+        "version": {
+            "id": "version",
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 75.301,
+                "user_ms": 31.501,
+                "system_ms": 23.001,
+                "peak_rss_bytes": 5959680,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "command": [
+                "env",
+                "USE_ZEND_ALLOC=1",
+                "USE_TRACKED_ALLOC=0",
+                "ZEND_MM_MAX_ALLOCS=0",
+                "ASAN_OPTIONS=detect_leaks=0:abort_on_error=1:allocator_may_return_null=1",
+                "UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1",
+                "work/releases/8.2/official/release-build/sapi/cli/php",
+                "-n",
+                "-r",
+                "echo PHP_VERSION;"
+            ],
+            "log": "version.log",
+            "status": "pass",
+            "details": {
+                "reported": "8.2.35"
+            }
+        },
+        "compile-release_probe": {
+            "id": "compile-release_probe",
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 4659.932,
+                "user_ms": 934.059,
+                "system_ms": 389.15,
+                "peak_rss_bytes": 46977024,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "command": [
+                "env",
+                "USE_ZEND_ALLOC=1",
+                "USE_TRACKED_ALLOC=0",
+                "ZEND_MM_MAX_ALLOCS=0",
+                "ASAN_OPTIONS=detect_leaks=0:abort_on_error=1:allocator_may_return_null=1",
+                "UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1",
+                "cc",
+                "-bundle",
+                "-undefined",
+                "dynamic_lookup",
+                "-fPIC",
+                "-O1",
+                "-g",
+                "-Iwork/releases/8.2/official/release-build",
+                "-Iwork/releases/8.2/official/release-build/main",
+                "-Iwork/releases/8.2/official/release-build/Zend",
+                "-Iwork/releases/8.2/official/source",
+                "-Iwork/releases/8.2/official/source/main",
+                "-Iwork/releases/8.2/official/source/Zend",
+                "-Iwork/releases/8.2/official/source/TSRM",
+                "./bench/release_probe.c",
+                "-o",
+                "work/releases/8.2/official/release-tests/20261024T165256Z-all-0537cb/release_probe.so"
+            ],
+            "log": "compile-release_probe.log",
+            "status": "pass",
+            "details": []
+        },
+        "compile-service_probe": {
+            "id": "compile-service_probe",
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 3762.334,
+                "user_ms": 873.314,
+                "system_ms": 375.982,
+                "peak_rss_bytes": 43151360,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "command": [
+                "env",
+                "USE_ZEND_ALLOC=1",
+                "USE_TRACKED_ALLOC=0",
+                "ZEND_MM_MAX_ALLOCS=0",
+                "ASAN_OPTIONS=detect_leaks=0:abort_on_error=1:allocator_may_return_null=1",
+                "UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1",
+                "cc",
+                "-bundle",
+                "-undefined",
+                "dynamic_lookup",
+                "-fPIC",
+                "-O1",
+                "-g",
+                "-Iwork/releases/8.2/official/release-build",
+                "-Iwork/releases/8.2/official/release-build/main",
+                "-Iwork/releases/8.2/official/release-build/Zend",
+                "-Iwork/releases/8.2/official/source",
+                "-Iwork/releases/8.2/official/source/main",
+                "-Iwork/releases/8.2/official/source/Zend",
+                "-Iwork/releases/8.2/official/source/TSRM",
+                "./bench/service_probe.c",
+                "-o",
+                "work/releases/8.2/official/release-tests/20261024T165256Z-all-0537cb/service_probe.so"
+            ],
+            "log": "compile-service_probe.log",
+            "status": "pass",
+            "details": []
+        },
+        "guard-symbol": {
+            "id": "guard-symbol",
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 3826.624,
+                "user_ms": 33.783,
+                "system_ms": 25.143,
+                "peak_rss_bytes": 6119424,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "command": [
+                "env",
+                "USE_ZEND_ALLOC=1",
+                "USE_TRACKED_ALLOC=0",
+                "ZEND_MM_MAX_ALLOCS=0",
+                "ASAN_OPTIONS=detect_leaks=0:abort_on_error=1:allocator_may_return_null=1",
+                "UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1",
+                "work/releases/8.2/official/release-build/sapi/cli/php",
+                "-n",
+                "-d",
+                "extension=work/releases/8.2/official/release-tests/20261024T165256Z-all-0537cb/release_probe.so",
+                "-r",
+                "echo guard_release_probe(\"policy\") ? \"guard\" : \"upstream\";"
+            ],
+            "log": "guard-symbol.log",
+            "status": "pass",
+            "details": []
+        },
+        "owned-alias-cleanup": {
+            "id": "owned-alias-cleanup",
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 91.863,
+                "user_ms": 33.308,
+                "system_ms": 22.657,
+                "peak_rss_bytes": 6213632,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "command": [
+                "env",
+                "USE_ZEND_ALLOC=1",
+                "USE_TRACKED_ALLOC=0",
+                "ZEND_MM_MAX_ALLOCS=0",
+                "ASAN_OPTIONS=detect_leaks=0:abort_on_error=1:allocator_may_return_null=1",
+                "UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1",
+                "work/releases/8.2/official/release-build/sapi/cli/php",
+                "-n",
+                "-d",
+                "extension=work/releases/8.2/official/release-tests/20261024T165256Z-all-0537cb/release_probe.so",
+                "-r",
+                "error_clear_last(); guard_release_probe(\"alias\"); error_clear_last(); exit(guard_release_probe(\"clear\") ? 0 : 8);"
+            ],
+            "log": "owned-alias-cleanup.log",
+            "status": "pass",
+            "details": []
+        },
+        "raw-allocation-failure": {
+            "id": "raw-allocation-failure",
+            "exit": 1,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 80.492,
+                "user_ms": 28.802,
+                "system_ms": 24.284,
+                "peak_rss_bytes": 6098944,
+                "exit": 1,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "command": [
+                "env",
+                "USE_ZEND_ALLOC=1",
+                "USE_TRACKED_ALLOC=0",
+                "ZEND_MM_MAX_ALLOCS=0",
+                "ASAN_OPTIONS=detect_leaks=0:abort_on_error=1:allocator_may_return_null=1",
+                "UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1",
+                "work/releases/8.2/official/release-build/sapi/cli/php",
+                "-n",
+                "-d",
+                "extension=work/releases/8.2/official/release-tests/20261024T165256Z-all-0537cb/release_probe.so",
+                "-r",
+                "guard_release_probe(\"raw\"); echo \"RETURNED\";"
+            ],
+            "log": "raw-allocation-failure.log",
+            "status": "pass",
+            "details": {
+                "expected_terminal_failure": true
+            }
+        },
+        "soft-oom": {
+            "id": "soft-oom",
+            "exit": 255,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 83.827,
+                "user_ms": 35.997,
+                "system_ms": 28.906,
+                "peak_rss_bytes": 10350592,
+                "exit": 255,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "command": [
+                "env",
+                "USE_ZEND_ALLOC=1",
+                "USE_TRACKED_ALLOC=0",
+                "ZEND_MM_MAX_ALLOCS=0",
+                "ASAN_OPTIONS=detect_leaks=0:abort_on_error=1:allocator_may_return_null=1",
+                "UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1",
+                "work/releases/8.2/official/release-build/sapi/cli/php",
+                "-n",
+                "-d",
+                "memory_limit=8M",
+                "-d",
+                "memory_hard_limit_percent=-1",
+                "-d",
+                "display_errors=0",
+                "-d",
+                "log_errors=0",
+                "./bench/oom.php"
+            ],
+            "log": "soft-oom.log",
+            "status": "pass",
+            "details": []
+        },
+        "mutations-malloc": {
+            "id": "mutations-malloc",
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 8337.814,
+                "user_ms": 441.307,
+                "system_ms": 1562.798,
+                "peak_rss_bytes": 6828032,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "command": [
+                "env",
+                "USE_ZEND_ALLOC=0",
+                "USE_TRACKED_ALLOC=0",
+                "ZEND_MM_MAX_ALLOCS=0",
+                "ASAN_OPTIONS=detect_leaks=0:abort_on_error=1:allocator_may_return_null=1",
+                "UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1",
+                "work/releases/8.2/official/release-build/sapi/cli/php",
+                "-n",
+                "-d",
+                "display_errors=0",
+                "-d",
+                "log_errors=0",
+                "./bench/mutations.php",
+                "work/releases/8.2/official/release-tests/20261024T165256Z-all-0537cb/mutations-malloc"
+            ],
+            "log": "mutations-malloc.log",
+            "status": "pass",
+            "details": {
+                "measurement": {
+                    "seed": 104729,
+                    "mutations": {
+                        "json": 2048,
+                        "serialization": 2048,
+                        "session": 2048
+                    },
+                    "valid_roundtrips": 4096,
+                    "status": "completed",
+                    "scope": "deterministic-local-input-mutations-not-exhaustive-fuzzing"
+                }
+            }
+        },
+        "mutations-zend": {
+            "id": "mutations-zend",
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 6380.989,
+                "user_ms": 314.87,
+                "system_ms": 1526.172,
+                "peak_rss_bytes": 6684672,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "command": [
+                "env",
+                "USE_ZEND_ALLOC=1",
+                "USE_TRACKED_ALLOC=0",
+                "ZEND_MM_MAX_ALLOCS=0",
+                "ASAN_OPTIONS=detect_leaks=0:abort_on_error=1:allocator_may_return_null=1",
+                "UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1",
+                "work/releases/8.2/official/release-build/sapi/cli/php",
+                "-n",
+                "-d",
+                "display_errors=0",
+                "-d",
+                "log_errors=0",
+                "./bench/mutations.php",
+                "work/releases/8.2/official/release-tests/20261024T165256Z-all-0537cb/mutations-zend"
+            ],
+            "log": "mutations-zend.log",
+            "status": "pass",
+            "details": {
+                "measurement": {
+                    "seed": 104729,
+                    "mutations": {
+                        "json": 2048,
+                        "serialization": 2048,
+                        "session": 2048
+                    },
+                    "valid_roundtrips": 4096,
+                    "status": "completed",
+                    "scope": "deterministic-local-input-mutations-not-exhaustive-fuzzing"
+                }
+            }
+        },
+        "service": {
+            "id": "service",
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 7005.364,
+                "user_ms": 488.6,
+                "system_ms": 759.509,
+                "peak_rss_bytes": 17448960,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "command": [
+                "env",
+                "GUARD_FPM_BINARY=work/releases/8.2/official/release-build/sapi/fpm/php-fpm",
+                "USE_ZEND_ALLOC=1",
+                "USE_TRACKED_ALLOC=0",
+                "ZEND_MM_MAX_ALLOCS=0",
+                "ASAN_OPTIONS=detect_leaks=0:abort_on_error=1:allocator_may_return_null=1",
+                "UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1",
+                "<PHP_CONTROLLER>",
+                "-n",
+                "./bench/fpm_bench.php",
+                "official",
+                "work/releases/8.2/official/release-tests/20261024T165256Z-all-0537cb/fpm",
+                "0",
+                "work/releases/8.2/official/release-tests/20261024T165256Z-all-0537cb/service_probe.so"
+            ],
+            "log": "service.log",
+            "status": "pass",
+            "details": {
+                "measurement": {
+                    "profile": "official",
+                    "max_requests": 0,
+                    "workers": 1,
+                    "transport": "private-unix-socket-fastcgi",
+                    "scenarios": {
+                        "healthy": {
+                            "requests": 81,
+                            "fault_requests": 0,
+                            "normal_failures": 0,
+                            "unexpected_fault_successes": 0,
+                            "shutdown_callbacks": 81,
+                            "unique_workers": 1,
+                            "worker_changes": 0,
+                            "elapsed_ms": 495.155953,
+                            "normal_latency_ms": {
+                                "p50": 2.739567,
+                                "p95": 8.864752,
+                                "max": 144.802931
+                            },
+                            "next_normal_after_fault_ms": {
+                                "p50": null,
+                                "p95": null,
+                                "max": null
+                            },
+                            "samples": [
+                                {
+                                    "id": "healthy-1",
+                                    "kind": "gc",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.415671,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-2",
+                                    "kind": "session",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.877528,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-3",
+                                    "kind": "serialization",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.268365,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-4",
+                                    "kind": "fiber",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.309622,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-5",
+                                    "kind": "json",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.084044,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-6",
+                                    "kind": "array",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.299687,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-7",
+                                    "kind": "normal",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 1.746581,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-8",
+                                    "kind": "gc",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.193676,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-9",
+                                    "kind": "session",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.981734,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-10",
+                                    "kind": "serialization",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.003696,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-11",
+                                    "kind": "fiber",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.018819,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-12",
+                                    "kind": "json",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 1.79316,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-13",
+                                    "kind": "array",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 3.091963,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-14",
+                                    "kind": "normal",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 3.210834,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-15",
+                                    "kind": "gc",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 1.910718,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-16",
+                                    "kind": "session",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 3.784575,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-17",
+                                    "kind": "serialization",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 4.822624,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-18",
+                                    "kind": "fiber",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 3.102268,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-19",
+                                    "kind": "json",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.700496,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-20",
+                                    "kind": "array",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 5.790992,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-21",
+                                    "kind": "normal",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 3.201319,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-22",
+                                    "kind": "gc",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 5.246458,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-23",
+                                    "kind": "session",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 3.180664,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-24",
+                                    "kind": "serialization",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.956535,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-25",
+                                    "kind": "fiber",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.323723,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-26",
+                                    "kind": "json",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 1.783783,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-27",
+                                    "kind": "array",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 3.336649,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-28",
+                                    "kind": "normal",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.017701,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-29",
+                                    "kind": "gc",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 3.438936,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-30",
+                                    "kind": "session",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.506326,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-31",
+                                    "kind": "serialization",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.02302,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-32",
+                                    "kind": "fiber",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.871383,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-33",
+                                    "kind": "json",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 1.960149,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-34",
+                                    "kind": "array",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 3.235935,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-35",
+                                    "kind": "normal",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.260578,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-36",
+                                    "kind": "gc",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.241552,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-37",
+                                    "kind": "session",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.242038,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-38",
+                                    "kind": "serialization",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.353298,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-39",
+                                    "kind": "fiber",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 1.891384,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-40",
+                                    "kind": "json",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.260068,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-41",
+                                    "kind": "array",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.462476,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-42",
+                                    "kind": "normal",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.611675,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-43",
+                                    "kind": "gc",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.260163,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-44",
+                                    "kind": "session",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 3.00712,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-45",
+                                    "kind": "serialization",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.388055,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-46",
+                                    "kind": "fiber",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.60198,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-47",
+                                    "kind": "json",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.876223,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-48",
+                                    "kind": "array",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.602357,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-49",
+                                    "kind": "normal",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.766774,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-50",
+                                    "kind": "gc",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.801284,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-51",
+                                    "kind": "session",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.768809,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-52",
+                                    "kind": "serialization",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.944855,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-53",
+                                    "kind": "fiber",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.290695,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-54",
+                                    "kind": "json",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.17294,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-55",
+                                    "kind": "array",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 144.802931,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-56",
+                                    "kind": "normal",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 15.345143,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-57",
+                                    "kind": "gc",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 8.864752,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-58",
+                                    "kind": "session",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 10.894517,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-59",
+                                    "kind": "serialization",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 6.095587,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-60",
+                                    "kind": "fiber",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.009501,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-61",
+                                    "kind": "json",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 4.124441,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-62",
+                                    "kind": "array",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.739567,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-63",
+                                    "kind": "normal",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 6.459776,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-64",
+                                    "kind": "gc",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 3.098105,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-65",
+                                    "kind": "session",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.79258,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-66",
+                                    "kind": "serialization",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 4.152334,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-67",
+                                    "kind": "fiber",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 3.781335,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-68",
+                                    "kind": "json",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 1.77435,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-69",
+                                    "kind": "array",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 3.557504,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-70",
+                                    "kind": "normal",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.318447,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-71",
+                                    "kind": "gc",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.599769,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-72",
+                                    "kind": "session",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.193792,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-73",
+                                    "kind": "serialization",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 4.040572,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-74",
+                                    "kind": "fiber",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 4.272167,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-75",
+                                    "kind": "json",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.131366,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-76",
+                                    "kind": "array",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.7285,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-77",
+                                    "kind": "normal",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 3.060743,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-78",
+                                    "kind": "gc",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 1.880591,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-79",
+                                    "kind": "session",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 91.503633,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-80",
+                                    "kind": "serialization",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 4.243342,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "healthy-recovery",
+                                    "kind": "normal",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 4.671316,
+                                    "error": null,
+                                    "shutdown": true
+                                }
+                            ]
+                        },
+                        "soft": {
+                            "requests": 81,
+                            "fault_requests": 10,
+                            "normal_failures": 0,
+                            "unexpected_fault_successes": 0,
+                            "shutdown_callbacks": 81,
+                            "unique_workers": 1,
+                            "worker_changes": 0,
+                            "elapsed_ms": 1261.893104,
+                            "normal_latency_ms": {
+                                "p50": 3.601608,
+                                "p95": 18.447224,
+                                "max": 26.235523
+                            },
+                            "next_normal_after_fault_ms": {
+                                "p50": 8.226158,
+                                "p95": 23.62896,
+                                "max": 23.62896
+                            },
+                            "samples": [
+                                {
+                                    "id": "soft-1",
+                                    "kind": "gc",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 3.943128,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-2",
+                                    "kind": "session",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 3.948279,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-3",
+                                    "kind": "serialization",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 1.968673,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-4",
+                                    "kind": "fiber",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 3.838957,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-5",
+                                    "kind": "json",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.103554,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-6",
+                                    "kind": "array",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 4.123436,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-7",
+                                    "kind": "normal",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.585345,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-8",
+                                    "kind": "soft",
+                                    "status": 500,
+                                    "ok": false,
+                                    "pid": 18095,
+                                    "ms": 68.426653,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-9",
+                                    "kind": "session",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 23.62896,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-10",
+                                    "kind": "serialization",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 5.442804,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-11",
+                                    "kind": "fiber",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 3.915632,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-12",
+                                    "kind": "json",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 3.818135,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-13",
+                                    "kind": "array",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.394917,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-14",
+                                    "kind": "normal",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.373794,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-15",
+                                    "kind": "gc",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.107512,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-16",
+                                    "kind": "soft",
+                                    "status": 500,
+                                    "ok": false,
+                                    "pid": 18095,
+                                    "ms": 123.198909,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-17",
+                                    "kind": "serialization",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 3.83374,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-18",
+                                    "kind": "fiber",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 3.258818,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-19",
+                                    "kind": "json",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 5.485154,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-20",
+                                    "kind": "array",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.329144,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-21",
+                                    "kind": "normal",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 5.889281,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-22",
+                                    "kind": "gc",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 26.235523,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-23",
+                                    "kind": "session",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 13.71039,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-24",
+                                    "kind": "soft",
+                                    "status": 500,
+                                    "ok": false,
+                                    "pid": 18095,
+                                    "ms": 111.972285,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-25",
+                                    "kind": "fiber",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 8.226158,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-26",
+                                    "kind": "json",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 4.084661,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-27",
+                                    "kind": "array",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.947844,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-28",
+                                    "kind": "normal",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 3.30839,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-29",
+                                    "kind": "gc",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.100705,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-30",
+                                    "kind": "session",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 3.601608,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-31",
+                                    "kind": "serialization",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.32287,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-32",
+                                    "kind": "soft",
+                                    "status": 500,
+                                    "ok": false,
+                                    "pid": 18095,
+                                    "ms": 135.910501,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-33",
+                                    "kind": "json",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 18.447224,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-34",
+                                    "kind": "array",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 3.984171,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-35",
+                                    "kind": "normal",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.596332,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-36",
+                                    "kind": "gc",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 3.620428,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-37",
+                                    "kind": "session",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 3.882663,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-38",
+                                    "kind": "serialization",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.796013,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-39",
+                                    "kind": "fiber",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.077446,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-40",
+                                    "kind": "soft",
+                                    "status": 500,
+                                    "ok": false,
+                                    "pid": 18095,
+                                    "ms": 77.840149,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-41",
+                                    "kind": "array",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 18.663292,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-42",
+                                    "kind": "normal",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.692787,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-43",
+                                    "kind": "gc",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 4.740029,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-44",
+                                    "kind": "session",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 9.368718,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-45",
+                                    "kind": "serialization",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 5.8111,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-46",
+                                    "kind": "fiber",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 6.235684,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-47",
+                                    "kind": "json",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 5.433262,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-48",
+                                    "kind": "soft",
+                                    "status": 500,
+                                    "ok": false,
+                                    "pid": 18095,
+                                    "ms": 57.519437,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-49",
+                                    "kind": "normal",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 11.754985,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-50",
+                                    "kind": "gc",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 3.112801,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-51",
+                                    "kind": "session",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 3.322507,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-52",
+                                    "kind": "serialization",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 3.397386,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-53",
+                                    "kind": "fiber",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.083673,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-54",
+                                    "kind": "json",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.27725,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-55",
+                                    "kind": "array",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 4.173702,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-56",
+                                    "kind": "soft",
+                                    "status": 500,
+                                    "ok": false,
+                                    "pid": 18095,
+                                    "ms": 88.119671,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-57",
+                                    "kind": "gc",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 3.871358,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-58",
+                                    "kind": "session",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 4.188695,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-59",
+                                    "kind": "serialization",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 10.16325,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-60",
+                                    "kind": "fiber",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.209807,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-61",
+                                    "kind": "json",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.118427,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-62",
+                                    "kind": "array",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.591819,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-63",
+                                    "kind": "normal",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 1.896446,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-64",
+                                    "kind": "soft",
+                                    "status": 500,
+                                    "ok": false,
+                                    "pid": 18095,
+                                    "ms": 25.832851,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-65",
+                                    "kind": "session",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 6.725702,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-66",
+                                    "kind": "serialization",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.98138,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-67",
+                                    "kind": "fiber",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.346166,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-68",
+                                    "kind": "json",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 1.955752,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-69",
+                                    "kind": "array",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.14512,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-70",
+                                    "kind": "normal",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 1.932774,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-71",
+                                    "kind": "gc",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.660552,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-72",
+                                    "kind": "soft",
+                                    "status": 500,
+                                    "ok": false,
+                                    "pid": 18095,
+                                    "ms": 167.377789,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-73",
+                                    "kind": "serialization",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 6.72939,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-74",
+                                    "kind": "fiber",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 10.21684,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-75",
+                                    "kind": "json",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 3.569211,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-76",
+                                    "kind": "array",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 5.962707,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-77",
+                                    "kind": "normal",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 3.537635,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-78",
+                                    "kind": "gc",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.394778,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-79",
+                                    "kind": "session",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.266622,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-80",
+                                    "kind": "soft",
+                                    "status": 500,
+                                    "ok": false,
+                                    "pid": 18095,
+                                    "ms": 36.626553,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "soft-recovery",
+                                    "kind": "normal",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 8.41718,
+                                    "error": null,
+                                    "shutdown": true
+                                }
+                            ]
+                        },
+                        "fatal": {
+                            "requests": 81,
+                            "fault_requests": 10,
+                            "normal_failures": 0,
+                            "unexpected_fault_successes": 0,
+                            "shutdown_callbacks": 81,
+                            "unique_workers": 1,
+                            "worker_changes": 0,
+                            "elapsed_ms": 611.599815,
+                            "normal_latency_ms": {
+                                "p50": 2.621282,
+                                "p95": 50.365925,
+                                "max": 127.411807
+                            },
+                            "next_normal_after_fault_ms": {
+                                "p50": 2.621282,
+                                "p95": 3.412652,
+                                "max": 3.412652
+                            },
+                            "samples": [
+                                {
+                                    "id": "fatal-1",
+                                    "kind": "gc",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.53673,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-2",
+                                    "kind": "session",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 3.744138,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-3",
+                                    "kind": "serialization",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 4.068296,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-4",
+                                    "kind": "fiber",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 50.365925,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-5",
+                                    "kind": "json",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 8.594738,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-6",
+                                    "kind": "array",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 15.19126,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-7",
+                                    "kind": "normal",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.443166,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-8",
+                                    "kind": "fatal",
+                                    "status": 500,
+                                    "ok": false,
+                                    "pid": 18095,
+                                    "ms": 4.447708,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-9",
+                                    "kind": "session",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.621282,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-10",
+                                    "kind": "serialization",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.68983,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-11",
+                                    "kind": "fiber",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.3314,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-12",
+                                    "kind": "json",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 5.830567,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-13",
+                                    "kind": "array",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.883467,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-14",
+                                    "kind": "normal",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 4.3593,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-15",
+                                    "kind": "gc",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 1.965954,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-16",
+                                    "kind": "fatal",
+                                    "status": 500,
+                                    "ok": false,
+                                    "pid": 18095,
+                                    "ms": 5.683863,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-17",
+                                    "kind": "serialization",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.649476,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-18",
+                                    "kind": "fiber",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.260851,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-19",
+                                    "kind": "json",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.432407,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-20",
+                                    "kind": "array",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 4.28479,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-21",
+                                    "kind": "normal",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 1.982715,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-22",
+                                    "kind": "gc",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.043057,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-23",
+                                    "kind": "session",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 127.411807,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-24",
+                                    "kind": "fatal",
+                                    "status": 500,
+                                    "ok": false,
+                                    "pid": 18095,
+                                    "ms": 4.900502,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-25",
+                                    "kind": "fiber",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.262045,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-26",
+                                    "kind": "json",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 3.452913,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-27",
+                                    "kind": "array",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 1.826418,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-28",
+                                    "kind": "normal",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 1.699704,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-29",
+                                    "kind": "gc",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.466969,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-30",
+                                    "kind": "session",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 3.445916,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-31",
+                                    "kind": "serialization",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 1.916465,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-32",
+                                    "kind": "fatal",
+                                    "status": 500,
+                                    "ok": false,
+                                    "pid": 18095,
+                                    "ms": 2.706632,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-33",
+                                    "kind": "json",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 3.309022,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-34",
+                                    "kind": "array",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.958387,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-35",
+                                    "kind": "normal",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 3.608865,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-36",
+                                    "kind": "gc",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.256571,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-37",
+                                    "kind": "session",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.174732,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-38",
+                                    "kind": "serialization",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.882059,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-39",
+                                    "kind": "fiber",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.237937,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-40",
+                                    "kind": "fatal",
+                                    "status": 500,
+                                    "ok": false,
+                                    "pid": 18095,
+                                    "ms": 2.61253,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-41",
+                                    "kind": "array",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 3.412652,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-42",
+                                    "kind": "normal",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.830762,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-43",
+                                    "kind": "gc",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.121065,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-44",
+                                    "kind": "session",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.117727,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-45",
+                                    "kind": "serialization",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.043915,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-46",
+                                    "kind": "fiber",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.319498,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-47",
+                                    "kind": "json",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.306336,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-48",
+                                    "kind": "fatal",
+                                    "status": 500,
+                                    "ok": false,
+                                    "pid": 18095,
+                                    "ms": 2.872754,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-49",
+                                    "kind": "normal",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.318081,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-50",
+                                    "kind": "gc",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.009924,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-51",
+                                    "kind": "session",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 3.781576,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-52",
+                                    "kind": "serialization",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.656736,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-53",
+                                    "kind": "fiber",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.040589,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-54",
+                                    "kind": "json",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.393791,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-55",
+                                    "kind": "array",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.233046,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-56",
+                                    "kind": "fatal",
+                                    "status": 500,
+                                    "ok": false,
+                                    "pid": 18095,
+                                    "ms": 3.576005,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-57",
+                                    "kind": "gc",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.726146,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-58",
+                                    "kind": "session",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.435164,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-59",
+                                    "kind": "serialization",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.570961,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-60",
+                                    "kind": "fiber",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 3.173898,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-61",
+                                    "kind": "json",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 1.966184,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-62",
+                                    "kind": "array",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.979876,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-63",
+                                    "kind": "normal",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 3.259395,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-64",
+                                    "kind": "fatal",
+                                    "status": 500,
+                                    "ok": false,
+                                    "pid": 18095,
+                                    "ms": 2.903262,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-65",
+                                    "kind": "session",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 3.244259,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-66",
+                                    "kind": "serialization",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 5.976093,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-67",
+                                    "kind": "fiber",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.353045,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-68",
+                                    "kind": "json",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 87.290477,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-69",
+                                    "kind": "array",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 20.35486,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-70",
+                                    "kind": "normal",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.464743,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-71",
+                                    "kind": "gc",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 6.347563,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-72",
+                                    "kind": "fatal",
+                                    "status": 500,
+                                    "ok": false,
+                                    "pid": 18095,
+                                    "ms": 4.851155,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-73",
+                                    "kind": "serialization",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.59903,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-74",
+                                    "kind": "fiber",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 57.638178,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-75",
+                                    "kind": "json",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 23.899216,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-76",
+                                    "kind": "array",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 3.27414,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-77",
+                                    "kind": "normal",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 1.897913,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-78",
+                                    "kind": "gc",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 1.832226,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-79",
+                                    "kind": "session",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 4.04464,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-80",
+                                    "kind": "fatal",
+                                    "status": 500,
+                                    "ok": false,
+                                    "pid": 18095,
+                                    "ms": 5.67155,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "fatal-recovery",
+                                    "kind": "normal",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.09551,
+                                    "error": null,
+                                    "shutdown": true
+                                }
+                            ]
+                        },
+                        "hard": {
+                            "requests": 81,
+                            "fault_requests": 10,
+                            "normal_failures": 0,
+                            "unexpected_fault_successes": 0,
+                            "shutdown_callbacks": 71,
+                            "unique_workers": 11,
+                            "worker_changes": 10,
+                            "elapsed_ms": 382.114117,
+                            "normal_latency_ms": {
+                                "p50": 2.248303,
+                                "p95": 10.237814,
+                                "max": 30.974843
+                            },
+                            "next_normal_after_fault_ms": {
+                                "p50": 9.572195,
+                                "p95": 12.524145,
+                                "max": 12.524145
+                            },
+                            "samples": [
+                                {
+                                    "id": "hard-1",
+                                    "kind": "gc",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 4.182286,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-2",
+                                    "kind": "session",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 4.898213,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-3",
+                                    "kind": "serialization",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 2.215378,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-4",
+                                    "kind": "fiber",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 8.4465,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-5",
+                                    "kind": "json",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 3.290404,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-6",
+                                    "kind": "array",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 30.974843,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-7",
+                                    "kind": "normal",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18095,
+                                    "ms": 8.067375,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-8",
+                                    "kind": "hard",
+                                    "status": 0,
+                                    "ok": false,
+                                    "pid": 18095,
+                                    "ms": 19.68087,
+                                    "error": "Adoy\\FastCGI\\ForbiddenException: Not in white list. Check listen.allowed_clients.",
+                                    "shutdown": false
+                                },
+                                {
+                                    "id": "hard-9",
+                                    "kind": "session",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18787,
+                                    "ms": 12.524145,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-10",
+                                    "kind": "serialization",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18787,
+                                    "ms": 2.661901,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-11",
+                                    "kind": "fiber",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18787,
+                                    "ms": 2.390968,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-12",
+                                    "kind": "json",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18787,
+                                    "ms": 2.012101,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-13",
+                                    "kind": "array",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18787,
+                                    "ms": 2.197224,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-14",
+                                    "kind": "normal",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18787,
+                                    "ms": 1.924824,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-15",
+                                    "kind": "gc",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18787,
+                                    "ms": 1.78867,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-16",
+                                    "kind": "hard",
+                                    "status": 0,
+                                    "ok": false,
+                                    "pid": 18787,
+                                    "ms": 3.211828,
+                                    "error": "Adoy\\FastCGI\\ForbiddenException: Not in white list. Check listen.allowed_clients.",
+                                    "shutdown": false
+                                },
+                                {
+                                    "id": "hard-17",
+                                    "kind": "serialization",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18796,
+                                    "ms": 10.904334,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-18",
+                                    "kind": "fiber",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18796,
+                                    "ms": 2.529831,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-19",
+                                    "kind": "json",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18796,
+                                    "ms": 2.168784,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-20",
+                                    "kind": "array",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18796,
+                                    "ms": 2.063734,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-21",
+                                    "kind": "normal",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18796,
+                                    "ms": 1.770592,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-22",
+                                    "kind": "gc",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18796,
+                                    "ms": 2.066268,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-23",
+                                    "kind": "session",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18796,
+                                    "ms": 2.438534,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-24",
+                                    "kind": "hard",
+                                    "status": 0,
+                                    "ok": false,
+                                    "pid": 18796,
+                                    "ms": 2.695305,
+                                    "error": "Adoy\\FastCGI\\ForbiddenException: Not in white list. Check listen.allowed_clients.",
+                                    "shutdown": false
+                                },
+                                {
+                                    "id": "hard-25",
+                                    "kind": "fiber",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18807,
+                                    "ms": 10.0076,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-26",
+                                    "kind": "json",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18807,
+                                    "ms": 2.64068,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-27",
+                                    "kind": "array",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18807,
+                                    "ms": 2.086956,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-28",
+                                    "kind": "normal",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18807,
+                                    "ms": 2.768374,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-29",
+                                    "kind": "gc",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18807,
+                                    "ms": 1.788657,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-30",
+                                    "kind": "session",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18807,
+                                    "ms": 2.568684,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-31",
+                                    "kind": "serialization",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18807,
+                                    "ms": 2.010916,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-32",
+                                    "kind": "hard",
+                                    "status": 0,
+                                    "ok": false,
+                                    "pid": 18807,
+                                    "ms": 2.405578,
+                                    "error": "Adoy\\FastCGI\\ForbiddenException: Not in white list. Check listen.allowed_clients.",
+                                    "shutdown": false
+                                },
+                                {
+                                    "id": "hard-33",
+                                    "kind": "json",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18819,
+                                    "ms": 10.237814,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-34",
+                                    "kind": "array",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18819,
+                                    "ms": 2.282028,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-35",
+                                    "kind": "normal",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18819,
+                                    "ms": 1.937392,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-36",
+                                    "kind": "gc",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18819,
+                                    "ms": 1.853425,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-37",
+                                    "kind": "session",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18819,
+                                    "ms": 3.031992,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-38",
+                                    "kind": "serialization",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18819,
+                                    "ms": 1.913958,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-39",
+                                    "kind": "fiber",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18819,
+                                    "ms": 2.659739,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-40",
+                                    "kind": "hard",
+                                    "status": 0,
+                                    "ok": false,
+                                    "pid": 18819,
+                                    "ms": 3.025733,
+                                    "error": "Adoy\\FastCGI\\ForbiddenException: Not in white list. Check listen.allowed_clients.",
+                                    "shutdown": false
+                                },
+                                {
+                                    "id": "hard-41",
+                                    "kind": "array",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18829,
+                                    "ms": 9.269203,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-42",
+                                    "kind": "normal",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18829,
+                                    "ms": 2.228647,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-43",
+                                    "kind": "gc",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18829,
+                                    "ms": 2.827924,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-44",
+                                    "kind": "session",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18829,
+                                    "ms": 2.895023,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-45",
+                                    "kind": "serialization",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18829,
+                                    "ms": 2.248303,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-46",
+                                    "kind": "fiber",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18829,
+                                    "ms": 2.315019,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-47",
+                                    "kind": "json",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18829,
+                                    "ms": 1.894231,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-48",
+                                    "kind": "hard",
+                                    "status": 0,
+                                    "ok": false,
+                                    "pid": 18829,
+                                    "ms": 2.73648,
+                                    "error": "Adoy\\FastCGI\\ForbiddenException: Not in white list. Check listen.allowed_clients.",
+                                    "shutdown": false
+                                },
+                                {
+                                    "id": "hard-49",
+                                    "kind": "normal",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18842,
+                                    "ms": 9.572195,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-50",
+                                    "kind": "gc",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18842,
+                                    "ms": 2.325892,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-51",
+                                    "kind": "session",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18842,
+                                    "ms": 2.488,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-52",
+                                    "kind": "serialization",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18842,
+                                    "ms": 2.163079,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-53",
+                                    "kind": "fiber",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18842,
+                                    "ms": 2.292019,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-54",
+                                    "kind": "json",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18842,
+                                    "ms": 1.762053,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-55",
+                                    "kind": "array",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18842,
+                                    "ms": 2.558026,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-56",
+                                    "kind": "hard",
+                                    "status": 0,
+                                    "ok": false,
+                                    "pid": 18842,
+                                    "ms": 56.07471,
+                                    "error": "Adoy\\FastCGI\\ForbiddenException: Not in white list. Check listen.allowed_clients.",
+                                    "shutdown": false
+                                },
+                                {
+                                    "id": "hard-57",
+                                    "kind": "gc",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18854,
+                                    "ms": 8.488206,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-58",
+                                    "kind": "session",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18854,
+                                    "ms": 2.437408,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-59",
+                                    "kind": "serialization",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18854,
+                                    "ms": 2.010395,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-60",
+                                    "kind": "fiber",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18854,
+                                    "ms": 2.020749,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-61",
+                                    "kind": "json",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18854,
+                                    "ms": 2.110439,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-62",
+                                    "kind": "array",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18854,
+                                    "ms": 2.115861,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-63",
+                                    "kind": "normal",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18854,
+                                    "ms": 1.714446,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-64",
+                                    "kind": "hard",
+                                    "status": 0,
+                                    "ok": false,
+                                    "pid": 18854,
+                                    "ms": 2.536406,
+                                    "error": "Adoy\\FastCGI\\ForbiddenException: Not in white list. Check listen.allowed_clients.",
+                                    "shutdown": false
+                                },
+                                {
+                                    "id": "hard-65",
+                                    "kind": "session",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18864,
+                                    "ms": 9.487923,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-66",
+                                    "kind": "serialization",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18864,
+                                    "ms": 2.026152,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-67",
+                                    "kind": "fiber",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18864,
+                                    "ms": 1.864503,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-68",
+                                    "kind": "json",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18864,
+                                    "ms": 2.000218,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-69",
+                                    "kind": "array",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18864,
+                                    "ms": 1.996362,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-70",
+                                    "kind": "normal",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18864,
+                                    "ms": 1.596245,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-71",
+                                    "kind": "gc",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18864,
+                                    "ms": 1.630218,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-72",
+                                    "kind": "hard",
+                                    "status": 0,
+                                    "ok": false,
+                                    "pid": 18864,
+                                    "ms": 2.692777,
+                                    "error": "Adoy\\FastCGI\\ForbiddenException: Not in white list. Check listen.allowed_clients.",
+                                    "shutdown": false
+                                },
+                                {
+                                    "id": "hard-73",
+                                    "kind": "serialization",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18869,
+                                    "ms": 9.836424,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-74",
+                                    "kind": "fiber",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18869,
+                                    "ms": 2.016193,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-75",
+                                    "kind": "json",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18869,
+                                    "ms": 1.446115,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-76",
+                                    "kind": "array",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18869,
+                                    "ms": 2.199918,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-77",
+                                    "kind": "normal",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18869,
+                                    "ms": 1.768976,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-78",
+                                    "kind": "gc",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18869,
+                                    "ms": 1.4819,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-79",
+                                    "kind": "session",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18869,
+                                    "ms": 2.617241,
+                                    "error": null,
+                                    "shutdown": true
+                                },
+                                {
+                                    "id": "hard-80",
+                                    "kind": "hard",
+                                    "status": 0,
+                                    "ok": false,
+                                    "pid": 18869,
+                                    "ms": 3.433214,
+                                    "error": "Adoy\\FastCGI\\ForbiddenException: Not in white list. Check listen.allowed_clients.",
+                                    "shutdown": false
+                                },
+                                {
+                                    "id": "hard-recovery",
+                                    "kind": "normal",
+                                    "status": 200,
+                                    "ok": true,
+                                    "pid": 18878,
+                                    "ms": 9.26025,
+                                    "error": null,
+                                    "shutdown": true
+                                }
+                            ]
+                        }
+                    }
+                },
+                "hard_case": "identical-64MiB-native-allocation;unpatched-has-no-second-limit"
+            }
+        },
+        "allocation-sweep": {
+            "id": "allocation-sweep",
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 49670.423,
+                "user_ms": 17151.187,
+                "system_ms": 14097.952,
+                "peak_rss_bytes": 46714880,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "command": [
+                "env",
+                "PHP_BUILD_ROOT=work/releases/8.2/official/release-tests/20261024T165256Z-all-0537cb/build-alias",
+                "GUARD_FAULT_PROFILES=upstream",
+                "GUARD_SAFETY_OUT=work/releases/8.2/official/release-tests/20261024T165256Z-all-0537cb/faults",
+                "USE_ZEND_ALLOC=1",
+                "USE_TRACKED_ALLOC=0",
+                "ZEND_MM_MAX_ALLOCS=0",
+                "ASAN_OPTIONS=detect_leaks=0:abort_on_error=1:allocator_may_return_null=1",
+                "UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1",
+                "<PHP_CONTROLLER>",
+                "-n",
+                "./bench/verify.php",
+                "faults"
+            ],
+            "log": "allocation-sweep.log",
+            "status": "pass",
+            "details": {
+                "measurement": {
+                    "schema": "guard-general-memory-tests/1",
+                    "limits": {
+                        "PolicyVersion": 2,
+                        "RecoverableMode": 2,
+                        "TestWorkers": 8,
+                        "CaseSeconds": 20,
+                        "SuiteSeconds": 2400,
+                        "AllocationCases": 192,
+                        "AllocationPhases": 2,
+                        "MaxAllocationOrdinal": 8192,
+                        "MutationCases": 2048,
+                        "ServiceRequests": 80,
+                        "ServiceFaultEvery": 8
+                    },
+                    "results": {
+                        "aliased-roots-upstream": {
+                            "id": "aliased-roots-upstream",
+                            "exit": 0,
+                            "termination": "completed",
+                            "metrics": {
+                                "wall_ms": 3257.49,
+                                "user_ms": 32.94,
+                                "system_ms": 25.04,
+                                "peak_rss_bytes": 6000640,
+                                "exit": 0,
+                                "signal": 0,
+                                "termination": "completed"
+                            },
+                            "command": [
+                                "env",
+                                "USE_ZEND_ALLOC=0",
+                                "USE_TRACKED_ALLOC=0",
+                                "ZEND_MM_MAX_ALLOCS=0",
+                                "ASAN_OPTIONS=detect_leaks=0:abort_on_error=1:allocator_may_return_null=1",
+                                "UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1",
+                                "work/releases/8.2/official/release-tests/20261024T165256Z-all-0537cb/build-alias/upstream/sapi/cli/php",
+                                "-n",
+                                "-d",
+                                "extension=work/releases/8.2/official/release-tests/20261024T165256Z-all-0537cb/faults/faults-upstream/allocation_probe.so",
+                                "-r",
+                                "error_clear_last(); guard_test_alias_roots(); error_clear_last(); if (!guard_test_roots_clear()) { exit(8); } echo \"GUARD_ALIAS_CLEAR\";"
+                            ],
+                            "log": "aliased-owned-roots.log",
+                            "status": "pass",
+                            "details": {
+                                "scope": "two-valid-owned-references-to-one-allocation-detached-and-released"
+                            }
+                        },
+                        "fault-sweep-upstream": {
+                            "id": "fault-sweep-upstream",
+                            "exit": 0,
+                            "termination": "completed",
+                            "metrics": {
+                                "wall_ms": 49593.242926
+                            },
+                            "log": "faults-upstream/results.json",
+                            "status": "pass",
+                            "details": {
+                                "cases": 384,
+                                "passed": 384,
+                                "entered": 303,
+                                "exits": {
+                                    "121": 258,
+                                    "0": 126
+                                },
+                                "calibrated_upper_ordinals": {
+                                    "startup": {
+                                        "array": 2048,
+                                        "session": 512,
+                                        "callbacks": 1024
+                                    },
+                                    "body": {
+                                        "array": 2048,
+                                        "session": 64,
+                                        "callbacks": 512
+                                    }
+                                },
+                                "scope": "64-spaced-ordinals-per-workload-per-startup-or-body-phase;121-is-upstream-injected-OOM-status"
+                            }
+                        }
+                    },
+                    "scope": {
+                        "evidence": "dynamic-tests-and-bounded-lifecycle-model",
+                        "general_memory_safety_proof": "not-established",
+                        "vendor_fixes": "required",
+                        "production_deployment": "none",
+                        "leak_sanitizer": "disabled",
+                        "platform": "Darwin-POSIX-NTS",
+                        "full_C_refinement": "open",
+                        "sanitizer_custom_allocator_blind_spots": "explicit"
+                    },
+                    "artifact_sha256": {
+                        "config.json": "e7652d3f85d1b0bf0f5bca1a63f4e9a74a905c9b6808139b6088cc63315f78f8",
+                        "verify.php": "02c373245032ce9df5b98fc3a51e2650dfba25119e80ee7e094b702d02064345",
+                        "common.php": "203fed90db98ed6ec723f9aeb20fc561ddeac2d46c46005e9c6a37da2050d269",
+                        "../models/RequestCleanup.tla": "54dec469a2ac0831cdfe208d3ad5f56ff0a63c56108d1fb15fceb03ccc335703",
+                        "sanitizer_probe.c": "aef78287defbbcb46af27c686e34f52f732aa96b3c04e337acc473052c78b903",
+                        "allocation_probe.c": "5382f413e59d4222d1b63d18b7cf6e99d54843039871e5af2bef976edd203aea",
+                        "service_probe.c": "58a5e78c18c3596ec9a51651c98197df74f5cac28634369ce9d3a6b026ecc100",
+                        "workload.php": "cf3842317833e8a724add6c55b29877e12ee33552cc1104f9da4b41e1da0c7a2",
+                        "mutations.php": "daf88c3b942e7f79b3fb2dc940acf1635f1c8feceb84e37ef6f3895c5d3477fc",
+                        "fpm_bench.php": "775f6da550d3ddeb6f7f21089e89620c44a3a0c695b5a48a6ece38bb9fb395e3",
+                        "request.php": "bd7d23a3900157ee3afefffd42a627b02520b7a386191e56f3638530156f5d80"
+                    },
+                    "utc": "2026-10-24T16:54:20+00:00",
+                    "status": "tested-scoped-cases"
+                },
+                "baseline_limitation": "allocation-counter API absent in unpatched releases"
+            }
+        },
+        "php-suite": {
+            "id": "php-suite",
+            "exit": 1,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 925247.143,
+                "user_ms": 576588.674,
+                "system_ms": 633028.695,
+                "peak_rss_bytes": 300601344,
+                "exit": 1,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "command": [
+                "env",
+                "NO_INTERACTION=1",
+                "REPORT_EXIT_STATUS=1",
+                "TEST_PHP_EXECUTABLE=work/releases/8.2/official/release-build/sapi/cli/php",
+                "TEST_PHP_CGI_EXECUTABLE=work/releases/8.2/official/release-build/sapi/cgi/php-cgi",
+                "TEST_PHP_FPM_EXECUTABLE=work/releases/8.2/official/release-build/sapi/fpm/php-fpm",
+                "TEST_PHP_SRCDIR=work/releases/8.2/official/release-corpus",
+                "SKIP_ASAN=0",
+                "USE_ZEND_ALLOC=1",
+                "USE_TRACKED_ALLOC=0",
+                "ZEND_MM_MAX_ALLOCS=0",
+                "ASAN_OPTIONS=detect_leaks=0:abort_on_error=1:allocator_may_return_null=1",
+                "UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1",
+                "work/releases/8.2/official/release-build/sapi/cli/php",
+                "-n",
+                "work/releases/8.2/official/release-corpus/run-tests.php",
+                "-q",
+                "-n",
+                "-j2",
+                "--no-progress",
+                "--set-timeout",
+                "20",
+                "-g",
+                "FAIL,XFAIL,BORK,WARN,LEAK,SKIP",
+                "-p",
+                "work/releases/8.2/official/release-build/sapi/cli/php",
+                "-w",
+                "work/releases/8.2/official/release-tests/20261024T165256Z-all-0537cb/failed.txt",
+                "-W",
+                "work/releases/8.2/official/release-tests/20261024T165256Z-all-0537cb/status.txt"
+            ],
+            "log": "php-suite.log",
+            "status": "fail",
+            "details": {
+                "counts": {
+                    "Number of tests": 18792,
+                    "Tests skipped": 7723,
+                    "Tests warned": 3,
+                    "Tests failed": 18,
+                    "Tests passed": 11040,
+                    "Tests borked": 2,
+                    "Expected fail": 6
+                },
+                "adverse": {
+                    "tests/output/stream_isatty_err.phpt": "FAILED",
+                    "tests/output/stream_isatty_in-err.phpt": "FAILED",
+                    "tests/output/stream_isatty_in-out.phpt": "FAILED",
+                    "tests/output/stream_isatty_out-err.phpt": "FAILED",
+                    "tests/output/stream_isatty_out.phpt": "FAILED",
+                    "tests/security/open_basedir_linkinfo.phpt": "XFAILED",
+                    "Zend/tests/interface_constructor_prototype_002.phpt": "XFAILED",
+                    "ext/filter/tests/bug49184.phpt": "XFAILED",
+                    "ext/filter/tests/bug42718.phpt": "XFAILED",
+                    "ext/filter/tests/bug67167.02.phpt": "XFAILED",
+                    "ext/pcntl/tests/bug81577_3.phpt": "WARNED",
+                    "ext/session/tests/bug71162.phpt": "XFAILED",
+                    "ext/shmop/tests/001.phpt": "FAILED",
+                    "ext/shmop/tests/002.phpt": "FAILED",
+                    "ext/shmop/tests/shmop_open_private.phpt": "FAILED",
+                    "ext/sockets/tests/mcast_ipv6_recv.phpt": "BORKED",
+                    "ext/sockets/tests/mcast_ipv6_recv_limited.phpt": "BORKED",
+                    "ext/sockets/tests/mcast_ipv6_send.phpt": "FAILED",
+                    "ext/sockets/tests/socket_send.phpt": "FAILED",
+                    "ext/standard/tests/file/bug36365.phpt": "WARNED",
+                    "ext/sysvsem/tests/sysv.phpt": "FAILED",
+                    "ext/sysvshm/tests/002.phpt": "FAILED",
+                    "ext/sysvshm/tests/003.phpt": "FAILED",
+                    "ext/sysvshm/tests/004.phpt": "FAILED",
+                    "ext/sysvshm/tests/005.phpt": "FAILED",
+                    "ext/sysvshm/tests/006.phpt": "FAILED",
+                    "ext/sysvshm/tests/007.phpt": "FAILED",
+                    "ext/sysvshm/tests/shutdown_crash_0.phpt": "FAILED",
+                    "sapi/fpm/tests/log-bwd-multiple-msgs-stdout-stderr.phpt": "WARNED"
+                },
+                "timeouts": [],
+                "corpus_revision": "09a9f29a0402bb87bb448cb2e3149ccbec1699c6",
+                "corpus_inventory": 18792,
+                "selection": "full-official-release-corpus;upstream-discovery-for-built-extensions",
+                "test_timeouts_are_inconclusive_safety_results": true,
+                "slow_tests_excluded": false,
+                "controller": "tested-runtime"
+            }
+        }
+    },
+    "scope": {
+        "general_memory_safety_proof": false,
+        "exploit_prevention_demonstrated": false,
+        "upstream_fixes_in_candidate": true,
+        "posix_nts_only": true,
+        "leak_sanitizer": "disabled",
+        "sanitizer_custom_allocator_blind_spots": "malloc-for-probes-and-suites;Zend-for-memory-limit-and-service-tests",
+        "service_load": "one-worker-sequential-local-only"
+    },
+    "artifact_sha256": {
+        "tools/release-test.php": "fc8031b441b7a4f1386dc02617281c40a9e3b59c60ae9962389d3586b291f9ff",
+        "bench/releases.php": "8c385eafc398fb7c1efb4bf6011a771bb653849a3b1dfcb621958bb592fc9b1e",
+        "bench/common.php": "203fed90db98ed6ec723f9aeb20fc561ddeac2d46c46005e9c6a37da2050d269",
+        "bench/release_probe.c": "bcae82ab829a0ddc20c8b7fd038fad0bdcc167f2daa0fc895a71d4aa5d73ba21",
+        "bench/fpm_bench.php": "775f6da550d3ddeb6f7f21089e89620c44a3a0c695b5a48a6ece38bb9fb395e3",
+        "bench/service_probe.c": "58a5e78c18c3596ec9a51651c98197df74f5cac28634369ce9d3a6b026ecc100",
+        "bench/request.php": "bd7d23a3900157ee3afefffd42a627b02520b7a386191e56f3638530156f5d80",
+        "bench/mutations.php": "daf88c3b942e7f79b3fb2dc940acf1635f1c8feceb84e37ef6f3895c5d3477fc",
+        "bench/oom.php": "04ecc34e3927929cd68514015e69803ff79f9f1dd61cb656b7eb9c3f22293e88",
+        "bench/limit.c": "850cfe2f5f8fce45a37c7c32af85e6295965b6ab7d6a9286a09ccaf498f9d500",
+        "bench/sanitizer_probe.c": "aef78287defbbcb46af27c686e34f52f732aa96b3c04e337acc473052c78b903",
+        "bench/verify.php": "02c373245032ce9df5b98fc3a51e2650dfba25119e80ee7e094b702d02064345",
+        "bench/allocation_probe.c": "5382f413e59d4222d1b63d18b7cf6e99d54843039871e5af2bef976edd203aea",
+        "bench/workload.php": "cf3842317833e8a724add6c55b29877e12ee33552cc1104f9da4b41e1da0c7a2",
+        "bench/config.json": "e7652d3f85d1b0bf0f5bca1a63f4e9a74a905c9b6808139b6088cc63315f78f8"
+    },
+    "utc": "2026-10-24T17:09:51+00:00"
+}

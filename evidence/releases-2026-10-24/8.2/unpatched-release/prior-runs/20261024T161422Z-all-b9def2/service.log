@@ -1,0 +1,11 @@
+
+Fatal error: Uncaught Error: Class "FPM\FastCGI\Client" not found in ./bench/fpm_bench.php:29
+Stack trace:
+#0 ./bench/fpm_bench.php(67): fpm_request('/var/folders/g5...', '<HOME>/...', 'warmup-0', 'normal')
+#1 {main}
+  thrown in ./bench/fpm_bench.php on line 29
+
+--- STDERR ---
+
+--- METRICS ---
+{"wall_ms":2452.834,"user_ms":50.409,"system_ms":49.941,"peak_rss_bytes":5767168,"exit":255,"signal":0,"termination":"completed"}

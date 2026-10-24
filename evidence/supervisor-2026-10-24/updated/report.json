@@ -1,0 +1,116 @@
+{
+    "schema": "php-guard-supervisor-check/1",
+    "binary_sha256": "b57b394545abe1f42411ea5024d543fe3ca217884cd950fc9cac22bfe32fd81a",
+    "checks": {
+        "private-group": {
+            "id": "private-group",
+            "exit": 0,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 51.443,
+                "user_ms": 14.628,
+                "system_ms": 23.605,
+                "peak_rss_bytes": 1122304,
+                "exit": 0,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "command": [
+                "/bin/sh",
+                "-c",
+                "test \"$(ps -o pgid= -p $$)\" -eq \"$$\""
+            ],
+            "log": "private-group.log",
+            "pass": true
+        },
+        "exit-137": {
+            "id": "exit-137",
+            "exit": 137,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 64.934,
+                "user_ms": 9.019,
+                "system_ms": 13.422,
+                "peak_rss_bytes": 1064960,
+                "exit": 137,
+                "signal": 0,
+                "termination": "completed"
+            },
+            "command": [
+                "/bin/sh",
+                "-c",
+                "exit 137"
+            ],
+            "log": "exit-137.log",
+            "pass": true
+        },
+        "signal-9": {
+            "id": "signal-9",
+            "exit": 137,
+            "termination": "completed",
+            "metrics": {
+                "wall_ms": 28.345,
+                "user_ms": 9.007,
+                "system_ms": 12.505,
+                "peak_rss_bytes": 1134592,
+                "exit": 137,
+                "signal": 9,
+                "termination": "completed"
+            },
+            "command": [
+                "/bin/sh",
+                "-c",
+                "kill -KILL $$"
+            ],
+            "log": "signal-9.log",
+            "pass": true
+        },
+        "timeout": {
+            "id": "timeout",
+            "exit": 124,
+            "termination": "timeout",
+            "metrics": {
+                "wall_ms": 2008.668,
+                "user_ms": 12.669,
+                "system_ms": 17.333,
+                "peak_rss_bytes": 651264,
+                "exit": 137,
+                "signal": 9,
+                "termination": "timeout"
+            },
+            "command": [
+                "/bin/sh",
+                "-c",
+                "sleep 10"
+            ],
+            "log": "timeout.log",
+            "pass": true
+        },
+        "descendant-timeout": {
+            "id": "descendant-timeout",
+            "exit": 124,
+            "termination": "timeout",
+            "metrics": {
+                "wall_ms": 2006.064,
+                "user_ms": 9.023,
+                "system_ms": 13.622,
+                "peak_rss_bytes": 1122304,
+                "exit": 137,
+                "signal": 9,
+                "termination": "timeout"
+            },
+            "command": [
+                "/bin/sh",
+                "-c",
+                "sleep 10 & wait"
+            ],
+            "log": "descendant-timeout.log",
+            "pass": true
+        }
+    },
+    "launch_stress": {
+        "attempts": 1000,
+        "failures": []
+    },
+    "pass": true
+}

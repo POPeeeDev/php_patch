@@ -1,0 +1,7 @@
+control          warnings: 0, decode refused: false record kept: true
+Class_Name       warnings: 0, decode refused: false record kept: true
+Class_Serialized warnings: 0, decode refused: false record kept: true
+Enum_Case        warnings: 0, decode refused: false record kept: true
+nested           warnings: 0, decode refused: false record kept: true
+mangled          warnings: 0, decode refused: false record kept: true
+corrupt          warnings: 2, decode refused: true  record kept: false

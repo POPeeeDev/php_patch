@@ -1,0 +1,15 @@
+--
+       array(0) {
+       }
+       ["error_count"]=>
+060-   int(1)
+060+   int(0)
+       ["errors"]=>
+062-   array(1) {
+063-     [0]=>
+064-     string(12) "Empty string"
+062+   array(0) {
+       }
+       ["is_localtime"]=>
+       bool(false)
+--

@@ -1,0 +1,7 @@
+
+---- EXPECTED OUTPUT
+Fatal error: Allowed memory size of 2097152 bytes exhausted %S(tried to allocate %d bytes) in %s on line %d
+---- ACTUAL OUTPUT
+Success
+Fatal error: Allowed memory size of 2097152 bytes exhausted (tried to allocate 1310720 bytes) in work/releases/8.3/unpatched/release-corpus/Zend/tests/gh11189_1.php on line 14
+---- FAILED

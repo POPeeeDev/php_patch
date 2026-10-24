@@ -1,0 +1,4 @@
+Error: Session id must be a string
+create_sid calls: 2
+Error: Session id must be a string
+create_sid calls: 3

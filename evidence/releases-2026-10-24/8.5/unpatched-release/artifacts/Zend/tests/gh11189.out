@@ -1,0 +1,2 @@
+Success
+Fatal error: Allowed memory size of 10485760 bytes exhausted (tried to allocate 8388616 bytes) in work/releases/8.5/unpatched/release-corpus/Zend/tests/gh11189.php on line 15

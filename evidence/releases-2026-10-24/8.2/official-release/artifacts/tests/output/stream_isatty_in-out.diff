@@ -1,0 +1,16 @@
+--
+     STDIN (php://fd/0): bool(false)
+     STDOUT (constant): bool(false)
+     STDOUT (fopen): bool(false)
+007+ STDERR (constant): bool(false)
+008+ STDERR (fopen): bool(false)
+     STDERR (constant): bool(true)
+     STDERR (fopen): bool(true)
+009+ STDERR (php://fd/2): bool(false)
+007- STDERR (constant): bool(true)
+008- STDERR (fopen): bool(true)
+009- STDERR (php://fd/2): bool(true)
+     Invalid stream (php://temp): bool(false)
+     Invalid stream (php://input): bool(false)
+     Invalid stream (php://memory): bool(false)
+--

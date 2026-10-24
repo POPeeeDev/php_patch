@@ -1,0 +1,8 @@
+{
+    "ext/sysvmsg/tests/001.phpt": "FAILED",
+    "ext/sysvmsg/tests/002.phpt": "FAILED",
+    "ext/sysvmsg/tests/003.phpt": "FAILED",
+    "ext/sysvmsg/tests/004.phpt": "FAILED",
+    "ext/sysvmsg/tests/005.phpt": "FAILED",
+    "ext/sysvmsg/tests/006.phpt": "FAILED"
+}

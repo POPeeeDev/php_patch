@@ -1,0 +1,12 @@
+
+---- EXPECTED OUTPUT
+RuntimeException: create_sid failed
+create_sid calls: 2
+RuntimeException: create_sid failed
+create_sid calls: 3
+---- ACTUAL OUTPUT
+Error: Session id must be a string
+create_sid calls: 2
+Error: Session id must be a string
+create_sid calls: 3
+---- FAILED

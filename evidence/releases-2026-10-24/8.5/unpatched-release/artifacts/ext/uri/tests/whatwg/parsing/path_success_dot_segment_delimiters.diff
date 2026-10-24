@@ -1,0 +1,20 @@
+001- string(1) "/"
+001+ string(5) "/frag"
+     NULL
+003- string(4) "frag"
+004- string(1) "/"
+     NULL
+006- string(4) "frag"
+007- string(1) "/"
+008- string(3) "q=1"
+004+ string(5) "/frag"
+     NULL
+010- string(2) "/%"
+011- string(1) "q"
+006+ NULL
+007+ string(4) "/q=1"
+008+ NULL
+009+ NULL
+010+ string(4) "/%?q"
+011+ NULL
+     NULL

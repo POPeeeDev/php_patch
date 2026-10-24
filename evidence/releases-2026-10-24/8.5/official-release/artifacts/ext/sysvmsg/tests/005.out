@@ -1,0 +1,2 @@
+Warning: msg_get_queue(): Failed for key 0x290402e4: No space left on device in work/releases/8.5/official/release-corpus/ext/sysvmsg/tests/005.php on line 12
+Failed to create queue

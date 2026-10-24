@@ -1,0 +1,8 @@
+aliased-roots-sanitized: pass
+fault-sweep-sanitized: pass
+report=work/releases/8.3/candidate/sanitized-tests/20261024T180825Z-all-7a33e1/faults/report.md
+
+--- STDERR ---
+
+--- METRICS ---
+{"wall_ms":309333.791,"user_ms":73744.608,"system_ms":218860.62,"peak_rss_bytes":57319424,"exit":0,"signal":0,"termination":"completed"}

@@ -1,0 +1,8 @@
+
+--- STDERR ---
+=================================================================
+==72684==ERROR: AddressSanitizer: heap-use-after-free on address 0x602000003230 at pc 0x0001092f2dd8 bp 0x7ff7bfec24d0 sp 0x7ff7bfec24c8
+WRITE of size 1 at 0x602000003230 thread T0
+
+--- METRICS ---
+{"wall_ms":20246.579,"user_ms":173.992,"system_ms":569.842,"peak_rss_bytes":68177920,"exit":137,"signal":9,"termination":"timeout"}

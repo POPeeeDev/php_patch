@@ -1,0 +1,6 @@
+Fatal error: Uncaught Error: Call to undefined function zend_test_emalloc() in work/releases/8.3/unpatched/release-corpus/Zend/tests/oom_hard_limit_exceeded.php:5
+Stack trace:
+#0 work/releases/8.3/unpatched/release-corpus/Zend/tests/oom_hard_limit_exceeded.php(13): f()
+#1 {main}
+  thrown in work/releases/8.3/unpatched/release-corpus/Zend/tests/oom_hard_limit_exceeded.php on line 5
+Not executed

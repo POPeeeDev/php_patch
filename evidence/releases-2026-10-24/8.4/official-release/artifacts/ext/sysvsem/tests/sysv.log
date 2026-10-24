@@ -1,0 +1,22 @@
+
+---- EXPECTED OUTPUT
+Start.
+Got semaphore.
+Success acquire semaphore.
+Success to attach shared memory.
+Write var1 to shared memory.
+Write var2 to shared memory.
+Read var1=Variable 1.
+Read var2=Variable 2.
+Semaphore released.
+Shared memory successfully removed from SysV.
+semaphore removed successfully from SysV.
+End.
+---- ACTUAL OUTPUT
+Start.
+Got semaphore.
+Success acquire semaphore.
+
+Warning: shm_attach(): Failed for key 0x51049a2d: No space left on device in work/releases/8.4/official/release-corpus/ext/sysvsem/tests/sysv.php on line 23
+Fail to attach shared memory.
+---- FAILED

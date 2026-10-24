@@ -1,0 +1,8 @@
+
+---- EXPECTED OUTPUT
+Fatal error: Allowed memory size of 10485760 bytes exhausted %S(tried to allocate %d bytes) in %s on line 7
+---- ACTUAL OUTPUT
+Fatal error: Allowed memory size of 10485760 bytes exhausted (tried to allocate 1048576 bytes) in work/releases/8.2/unpatched/release-corpus/Zend/tests/oom_SplFixedArray_copy_ctor.php on line 7
+
+Termsig=11
+---- FAILED

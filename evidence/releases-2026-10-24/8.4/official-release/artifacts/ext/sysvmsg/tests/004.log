@@ -1,0 +1,29 @@
+
+---- EXPECTED OUTPUT
+Set mode:
+bool(true)
+Did really work:
+bool(true)
+Set uid:
+bool(true)
+Did really work:
+bool(true)
+Set gid:
+bool(true)
+Did really work:
+bool(true)
+Set smaller qbytes:
+bool(true)
+Did really work:
+bool(true)
+Done
+---- ACTUAL OUTPUT
+Warning: msg_get_queue(): Failed for key 0x72049a0e: No space left on device in work/releases/8.4/official/release-corpus/ext/sysvmsg/tests/004.php on line 4
+Set mode:
+
+Fatal error: Uncaught TypeError: msg_set_queue(): Argument #1 ($queue) must be of type SysvMessageQueue, false given in work/releases/8.4/official/release-corpus/ext/sysvmsg/tests/004.php:8
+Stack trace:
+#0 work/releases/8.4/official/release-corpus/ext/sysvmsg/tests/004.php(8): msg_set_queue(false, Array)
+#1 {main}
+  thrown in work/releases/8.4/official/release-corpus/ext/sysvmsg/tests/004.php on line 8
+---- FAILED

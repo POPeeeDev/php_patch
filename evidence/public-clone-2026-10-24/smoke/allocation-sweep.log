@@ -1,0 +1,8 @@
+aliased-roots-recoverable: pass
+fault-sweep-recoverable: pass
+report=<CLONE>/work/releases/8.2/candidate/release-tests/20261024T193715Z-smoke-000ebb/faults/report.md
+
+--- STDERR ---
+
+--- METRICS ---
+{"wall_ms":35689.813,"user_ms":15257.444,"system_ms":11805.287,"peak_rss_bytes":47255552,"exit":0,"signal":0,"termination":"completed"}

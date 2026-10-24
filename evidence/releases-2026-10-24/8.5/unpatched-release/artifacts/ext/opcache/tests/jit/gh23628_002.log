@@ -1,0 +1,14 @@
+
+---- EXPECTED OUTPUT
+int(100)
+int(100)
+int(100)
+---- ACTUAL OUTPUT
+int(100)
+
+Fatal error: Uncaught RuntimeException: isset false at 0 in work/releases/8.5/unpatched/release-corpus/ext/opcache/tests/jit/gh23628_002.php:10
+Stack trace:
+#0 work/releases/8.5/unpatched/release-corpus/ext/opcache/tests/jit/gh23628_002.php(24): Table->parse(100)
+#1 {main}
+  thrown in work/releases/8.5/unpatched/release-corpus/ext/opcache/tests/jit/gh23628_002.php on line 10
+---- FAILED

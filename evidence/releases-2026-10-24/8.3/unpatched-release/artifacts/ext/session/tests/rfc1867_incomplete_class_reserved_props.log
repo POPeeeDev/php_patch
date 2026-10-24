@@ -1,0 +1,18 @@
+
+---- EXPECTED OUTPUT
+control          warnings: 0, decode refused: false record kept: true
+Class_Name       warnings: 1, decode refused: true  record kept: false
+Class_Serialized warnings: 1, decode refused: true  record kept: false
+Enum_Case        warnings: 1, decode refused: true  record kept: false
+nested           warnings: 1, decode refused: true  record kept: false
+mangled          warnings: 0, decode refused: false record kept: true
+corrupt          warnings: 1, decode refused: true  record kept: false
+---- ACTUAL OUTPUT
+control          warnings: 0, decode refused: false record kept: true
+Class_Name       warnings: 0, decode refused: false record kept: true
+Class_Serialized warnings: 0, decode refused: false record kept: true
+Enum_Case        warnings: 0, decode refused: false record kept: true
+nested           warnings: 0, decode refused: false record kept: true
+mangled          warnings: 0, decode refused: false record kept: true
+corrupt          warnings: 2, decode refused: true  record kept: false
+---- FAILED

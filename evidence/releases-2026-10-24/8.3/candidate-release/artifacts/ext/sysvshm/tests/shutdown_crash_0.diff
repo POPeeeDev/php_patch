@@ -1,0 +1,12 @@
+001- object(SysvSharedMemory)#1 (0) {
+002- }
+003- object(SysvSharedMemory)#2 (0) {
+004- }
+001+ Warning: shm_attach(): Failed for key 0x2a: No space left on device in work/releases/8.3/candidate/release-corpus/ext/sysvshm/tests/shutdown_crash_0.php on line 7
+002+ bool(false)
+003+ 
+004+ Fatal error: Uncaught TypeError: shm_remove(): Argument #1 ($shm) must be of type SysvSharedMemory, false given in work/releases/8.3/candidate/release-corpus/ext/sysvshm/tests/shutdown_crash_0.php:8
+005+ Stack trace:
+006+ #0 work/releases/8.3/candidate/release-corpus/ext/sysvshm/tests/shutdown_crash_0.php(8): shm_remove(false)
+007+ #1 {main}
+008+   thrown in work/releases/8.3/candidate/release-corpus/ext/sysvshm/tests/shutdown_crash_0.php on line 8

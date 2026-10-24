@@ -1,0 +1,10 @@
+
+---- EXPECTED OUTPUT
+RuntimeException: create_sid failed
+bool(false)
+bool(false)
+---- ACTUAL OUTPUT
+Error: Session id must be a string
+bool(false)
+bool(true)
+---- FAILED

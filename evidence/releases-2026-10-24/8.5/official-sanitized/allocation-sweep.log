@@ -1,0 +1,8 @@
+aliased-roots-sanitized-upstream: pass
+fault-sweep-sanitized-upstream: inconclusive
+report=work/releases/8.5/official/sanitized-tests/20261024T191703Z-all-a278f6/faults/report.md
+
+--- STDERR ---
+
+--- METRICS ---
+{"wall_ms":436049.643,"user_ms":92685.177,"system_ms":255770.594,"peak_rss_bytes":70496256,"exit":2,"signal":0,"termination":"completed"}

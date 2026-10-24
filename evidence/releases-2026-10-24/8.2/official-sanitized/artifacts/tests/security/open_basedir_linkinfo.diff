@@ -1,0 +1,9 @@
+--
+     
+     Warning: symlink(): open_basedir restriction in effect. File(%s/test/bad/bad.txt) is not within the allowed path(s): (.) in %s on line %d
+     bool(false)
+016+ 
+017+ Warning: unlink(): open_basedir restriction in effect. File(work/releases/8.2/official/sanitized-corpus/tests/security/test/ok/symlink.txt) is not within the allowed path(s): (.) in work/releases/8.2/official/sanitized-corpus/tests/security/open_basedir_linkinfo.php on line 26
+018+ bool(false)
+016- bool(true)
+     *** Finished testing open_basedir configuration [linkinfo] ***

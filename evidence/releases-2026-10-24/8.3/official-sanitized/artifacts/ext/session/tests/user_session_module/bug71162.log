@@ -1,0 +1,22 @@
+
+---- EXPECTED OUTPUT
+string(40) "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+bool(true)
+write
+string(40) "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+bool(true)
+updateTimestamp
+string(40) "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+bool(true)
+write
+---- ACTUAL OUTPUT
+string(40) "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+bool(true)
+write
+string(40) "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+bool(true)
+write
+string(40) "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+bool(true)
+write
+---- FAILED

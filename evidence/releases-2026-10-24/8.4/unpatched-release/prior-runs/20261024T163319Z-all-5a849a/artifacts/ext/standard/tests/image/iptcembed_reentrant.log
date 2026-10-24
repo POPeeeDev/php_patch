@@ -1,0 +1,10 @@
+
+---- EXPECTED OUTPUT
+Nested call: bool(true)
+APP13 length: int(30)
+Outer payload: string(2) "AA"
+---- ACTUAL OUTPUT
+Nested call: bool(true)
+APP13 length: int(284)
+Outer payload: string(2) "AA"
+---- FAILED

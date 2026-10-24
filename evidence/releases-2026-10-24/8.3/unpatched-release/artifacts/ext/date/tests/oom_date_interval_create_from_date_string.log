@@ -1,0 +1,7 @@
+
+---- EXPECTED OUTPUT
+Warning: date_interval_create_from_date_string(): Unknown or bad format (%s) at position 0 (%s): Unexpected character in %s on line %d
+bool(false)
+---- ACTUAL OUTPUT
+Fatal error: Allowed memory size of 67108864 bytes exhausted (tried to allocate 50331648 bytes) in work/releases/8.3/unpatched/release-corpus/ext/date/tests/oom_date_interval_create_from_date_string.php on line 2
+---- FAILED

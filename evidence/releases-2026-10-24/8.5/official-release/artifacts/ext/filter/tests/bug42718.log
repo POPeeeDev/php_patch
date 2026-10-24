@@ -1,0 +1,12 @@
+
+---- EXPECTED OUTPUT
+unsafe_raw
+4
+bool(true)
+1
+---- ACTUAL OUTPUT
+unsafe_raw
+4
+bool(true)
+1\000
+---- FAILED

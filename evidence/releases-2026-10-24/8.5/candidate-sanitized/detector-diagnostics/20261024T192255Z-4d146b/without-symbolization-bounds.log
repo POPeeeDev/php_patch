@@ -1,0 +1,66 @@
+
+--- STDERR ---
+=================================================================
+==86740==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x602000003220 at pc 0x000116e22dc0 bp 0x7ff7b2f6a5b0 sp 0x7ff7b2f6a5a8
+WRITE of size 1 at 0x602000003220 thread T0
+    #0 0x000116e22dbf  (work/releases/8.5/candidate/sanitized-tests/20261024T191834Z-all-654d25/sanitizer_probe.so:x86_64+0xdbf)
+    #1 0x00011095aa9c  (work/releases/8.5/candidate/sanitized-build/sapi/cli/php:x86_64+0x1039c8a9c)
+    #2 0x00010ff24b70  (work/releases/8.5/candidate/sanitized-build/sapi/cli/php:x86_64+0x102f92b70)
+    #3 0x00010ff2617e  (work/releases/8.5/candidate/sanitized-build/sapi/cli/php:x86_64+0x102f9417e)
+    #4 0x00010fed717b  (work/releases/8.5/candidate/sanitized-build/sapi/cli/php:x86_64+0x102f4517b)
+    #5 0x00010fed7e94  (work/releases/8.5/candidate/sanitized-build/sapi/cli/php:x86_64+0x102f45e94)
+    #6 0x00010fed808b  (work/releases/8.5/candidate/sanitized-build/sapi/cli/php:x86_64+0x102f4608b)
+    #7 0x000110ffe6d6  (work/releases/8.5/candidate/sanitized-build/sapi/cli/php:x86_64+0x10406c6d6)
+    #8 0x000110ffb4f6  (work/releases/8.5/candidate/sanitized-build/sapi/cli/php:x86_64+0x1040694f6)
+    #9 0x7ff805c571c7  (/usr/lib/dyld:x86_64+0x131c7)
+
+0x602000003220 is located 0 bytes after 16-byte region [0x602000003210,0x602000003220)
+allocated by thread T0 here:
+    #0 0x000114739792  (/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/21/lib/darwin/libclang_rt.asan_osx_dynamic.dylib:x86_64h+0xa6792)
+    #1 0x000116e22a25  (work/releases/8.5/candidate/sanitized-tests/20261024T191834Z-all-654d25/sanitizer_probe.so:x86_64+0xa25)
+    #2 0x00011095aa9c  (work/releases/8.5/candidate/sanitized-build/sapi/cli/php:x86_64+0x1039c8a9c)
+    #3 0x00010ff24b70  (work/releases/8.5/candidate/sanitized-build/sapi/cli/php:x86_64+0x102f92b70)
+    #4 0x00010ff2617e  (work/releases/8.5/candidate/sanitized-build/sapi/cli/php:x86_64+0x102f9417e)
+    #5 0x00010fed717b  (work/releases/8.5/candidate/sanitized-build/sapi/cli/php:x86_64+0x102f4517b)
+    #6 0x00010fed7e94  (work/releases/8.5/candidate/sanitized-build/sapi/cli/php:x86_64+0x102f45e94)
+    #7 0x00010fed808b  (work/releases/8.5/candidate/sanitized-build/sapi/cli/php:x86_64+0x102f4608b)
+    #8 0x000110ffe6d6  (work/releases/8.5/candidate/sanitized-build/sapi/cli/php:x86_64+0x10406c6d6)
+    #9 0x000110ffb4f6  (work/releases/8.5/candidate/sanitized-build/sapi/cli/php:x86_64+0x1040694f6)
+    #10 0x7ff805c571c7  (/usr/lib/dyld:x86_64+0x131c7)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow (work/releases/8.5/candidate/sanitized-tests/20261024T191834Z-all-654d25/sanitizer_probe.so:x86_64+0xdbf) 
+Shadow bytes around the buggy address:
+  0x602000002f80: fa fa 00 00 fa fa fd fd fa fa fd fd fa fa fd fd
+  0x602000003000: fa fa fd fd fa fa fd fd fa fa fd fd fa fa fd fd
+  0x602000003080: fa fa fd fd fa fa fd fd fa fa fd fd fa fa 00 04
+  0x602000003100: fa fa 00 05 fa fa 00 05 fa fa fd fd fa fa fd fd
+  0x602000003180: fa fa 04 fa fa fa 00 fa fa fa fd fa fa fa 00 fa
+=>0x602000003200: fa fa 00 00[fa]fa fa fa fa fa fa fa fa fa fa fa
+  0x602000003280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x602000003300: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x602000003380: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x602000003400: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x602000003480: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==86740==ABORTING
+
+--- METRICS ---
+{"wall_ms":895.519,"user_ms":191.795,"system_ms":343.976,"peak_rss_bytes":68173824,"exit":134,"signal":6,"termination":"completed"}

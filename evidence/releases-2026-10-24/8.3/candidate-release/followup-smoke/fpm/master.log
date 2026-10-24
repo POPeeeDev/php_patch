@@ -1,0 +1,34 @@
+[24-Oct-2026 12:59:09] NOTICE: fpm is running, pid 18480
+[24-Oct-2026 12:59:09] NOTICE: ready to handle connections
+[24-Oct-2026 12:59:11] WARNING: [pool guard] child 19486 said into stderr: "Hard memory limit of 33554432 bytes exhausted (tried to allocate 67108864 bytes) in work/releases/8.3/candidate/release-tests/20261024T165841Z-smoke-deb346/fpm/request.php on line 18"
+[24-Oct-2026 12:59:11] WARNING: [pool guard] child 19486 exited with code 137 after 1.798481 seconds from start
+[24-Oct-2026 12:59:11] NOTICE: [pool guard] child 19911 started
+[24-Oct-2026 12:59:11] WARNING: [pool guard] child 19911 said into stderr: "Hard memory limit of 33554432 bytes exhausted (tried to allocate 67108864 bytes) in work/releases/8.3/candidate/release-tests/20261024T165841Z-smoke-deb346/fpm/request.php on line 18"
+[24-Oct-2026 12:59:11] WARNING: [pool guard] child 19911 exited with code 137 after 0.024880 seconds from start
+[24-Oct-2026 12:59:11] NOTICE: [pool guard] child 19925 started
+[24-Oct-2026 12:59:11] WARNING: [pool guard] child 19925 said into stderr: "Hard memory limit of 33554432 bytes exhausted (tried to allocate 67108864 bytes) in work/releases/8.3/candidate/release-tests/20261024T165841Z-smoke-deb346/fpm/request.php on line 18"
+[24-Oct-2026 12:59:11] WARNING: [pool guard] child 19925 exited with code 137 after 0.023936 seconds from start
+[24-Oct-2026 12:59:11] NOTICE: [pool guard] child 19940 started
+[24-Oct-2026 12:59:11] WARNING: [pool guard] child 19940 said into stderr: "Hard memory limit of 33554432 bytes exhausted (tried to allocate 67108864 bytes) in work/releases/8.3/candidate/release-tests/20261024T165841Z-smoke-deb346/fpm/request.php on line 18"
+[24-Oct-2026 12:59:11] WARNING: [pool guard] child 19940 exited with code 137 after 0.023583 seconds from start
+[24-Oct-2026 12:59:11] NOTICE: [pool guard] child 19950 started
+[24-Oct-2026 12:59:11] WARNING: [pool guard] child 19950 said into stderr: "Hard memory limit of 33554432 bytes exhausted (tried to allocate 67108864 bytes) in work/releases/8.3/candidate/release-tests/20261024T165841Z-smoke-deb346/fpm/request.php on line 18"
+[24-Oct-2026 12:59:11] WARNING: [pool guard] child 19950 exited with code 137 after 0.023351 seconds from start
+[24-Oct-2026 12:59:11] NOTICE: [pool guard] child 19967 started
+[24-Oct-2026 12:59:11] WARNING: [pool guard] child 19967 said into stderr: "Hard memory limit of 33554432 bytes exhausted (tried to allocate 67108864 bytes) in work/releases/8.3/candidate/release-tests/20261024T165841Z-smoke-deb346/fpm/request.php on line 18"
+[24-Oct-2026 12:59:11] WARNING: [pool guard] child 19967 exited with code 137 after 0.023837 seconds from start
+[24-Oct-2026 12:59:11] NOTICE: [pool guard] child 19980 started
+[24-Oct-2026 12:59:11] WARNING: [pool guard] child 19980 said into stderr: "Hard memory limit of 33554432 bytes exhausted (tried to allocate 67108864 bytes) in work/releases/8.3/candidate/release-tests/20261024T165841Z-smoke-deb346/fpm/request.php on line 18"
+[24-Oct-2026 12:59:11] WARNING: [pool guard] child 19980 exited with code 137 after 0.021580 seconds from start
+[24-Oct-2026 12:59:11] NOTICE: [pool guard] child 19990 started
+[24-Oct-2026 12:59:11] WARNING: [pool guard] child 19990 said into stderr: "Hard memory limit of 33554432 bytes exhausted (tried to allocate 67108864 bytes) in work/releases/8.3/candidate/release-tests/20261024T165841Z-smoke-deb346/fpm/request.php on line 18"
+[24-Oct-2026 12:59:11] WARNING: [pool guard] child 19990 exited with code 137 after 0.024178 seconds from start
+[24-Oct-2026 12:59:11] NOTICE: [pool guard] child 20006 started
+[24-Oct-2026 12:59:11] WARNING: [pool guard] child 20006 said into stderr: "Hard memory limit of 33554432 bytes exhausted (tried to allocate 67108864 bytes) in work/releases/8.3/candidate/release-tests/20261024T165841Z-smoke-deb346/fpm/request.php on line 18"
+[24-Oct-2026 12:59:11] WARNING: [pool guard] child 20006 exited with code 137 after 0.024135 seconds from start
+[24-Oct-2026 12:59:11] NOTICE: [pool guard] child 20020 started
+[24-Oct-2026 12:59:11] WARNING: [pool guard] child 20020 said into stderr: "Hard memory limit of 33554432 bytes exhausted (tried to allocate 67108864 bytes) in work/releases/8.3/candidate/release-tests/20261024T165841Z-smoke-deb346/fpm/request.php on line 18"
+[24-Oct-2026 12:59:11] WARNING: [pool guard] child 20020 exited with code 137 after 0.023591 seconds from start
+[24-Oct-2026 12:59:11] NOTICE: [pool guard] child 20030 started
+[24-Oct-2026 12:59:11] NOTICE: Terminating ...
+[24-Oct-2026 12:59:11] NOTICE: exiting, bye-bye!

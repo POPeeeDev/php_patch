@@ -1,0 +1,8 @@
+strict mode: 0, invalid return: 0
+Error: Session id must be a string
+strict mode: 0, invalid return: 1
+Error: Session id must be a string
+strict mode: 1, invalid return: 0
+Error: Session id must be a string
+strict mode: 1, invalid return: 1
+Error: Session id must be a string

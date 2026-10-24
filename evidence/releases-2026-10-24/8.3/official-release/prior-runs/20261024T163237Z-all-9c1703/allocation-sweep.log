@@ -1,0 +1,8 @@
+aliased-roots-upstream: pass
+fault-sweep-upstream: pass
+report=work/releases/8.3/official/release-tests/20261024T163237Z-all-9c1703/faults/report.md
+
+--- STDERR ---
+
+--- METRICS ---
+{"wall_ms":41020.811,"user_ms":16670.852,"system_ms":13492.093,"peak_rss_bytes":48971776,"exit":0,"signal":0,"termination":"completed"}

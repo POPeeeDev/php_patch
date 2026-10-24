@@ -1,0 +1,2 @@
+001- Fatal error: Type declaration 'static' must be unqualified in %s on line %d
+001+ Fatal error: '\static' is an invalid class name in work/releases/8.5/unpatched/release-corpus/Zend/tests/type_declarations/relative_types/static/fully_qualified_static.php on line 3

@@ -1,0 +1,6 @@
+001- string(11) "user%40name"
+001+ string(4) "user"
+     string(11) "pass%40word"
+     string(9) "localhost"
+004- string(41) "http://user%40name:pass%40word@localhost/"
+004+ string(34) "http://user:pass%40word@localhost/"

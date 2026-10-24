@@ -3,7 +3,8 @@ declare(strict_types=1);
 require_once dirname(__DIR__) . '/bench/releases.php';
 require_once dirname(__DIR__) . '/bench/common.php';
 $branch = $argv[1] ?? ''; $profile = $argv[2] ?? ''; $variant = $argv[3] ?? 'release'; $phase = $argv[4] ?? 'all';
-if (!in_array($phase, ['all', 'smoke', 'suite', 'regressions', 'followup'], true)) { throw new RuntimeException('Phase must be all, smoke, suite, regressions, or followup'); }
+if (!in_array($phase, ['all', 'smoke', 'suite', 'regressions', 'followup', 'coverage-followup'], true)) { throw new RuntimeException('Unknown test phase; see BUILD.md'); }
+$isFollowup = in_array($phase, ['followup', 'coverage-followup'], true);
 $paths = release_paths($branch, $profile, $variant); $m = release_manifest($branch); $package = dirname(__DIR__);
 $source = $paths['source']; $build = $paths['build']; $php = "$build/sapi/cli/php";
 if (!is_file($paths['record']) || !is_executable($php)) { throw new RuntimeException('Build this row first'); }
@@ -119,7 +120,7 @@ if ($phase === 'all' || $phase === 'smoke') {
             ['measurement' => $faultData, 'baseline_limitation' => 'allocation-counter API absent in unpatched releases']);
     }
 }
-if (in_array($phase, ['all', 'suite', 'regressions', 'followup'], true)) {
+if (in_array($phase, ['all', 'suite', 'regressions', 'followup', 'coverage-followup'], true)) {
     // Use the identical official-release corpus for all three profiles, with isolated working copies.
     $corpus = $paths['row'] . "/$variant-corpus";
     if (!is_dir($corpus)) {
@@ -133,10 +134,10 @@ if (in_array($phase, ['all', 'suite', 'regressions', 'followup'], true)) {
     }
     sort($inventory, SORT_STRING); file_put_contents("$out/inventory.txt", implode("\n", $inventory) . "\n");
     // The runner uses PHP constants such as E_ALL; its version must match the target.
-    $args = [$php, '-n', "$corpus/run-tests.php", '-q', '-n', '-j' . ($phase === 'followup' ? 1 : release_jobs()), '--no-progress', '--set-timeout', '20',
+    $args = [$php, '-n', "$corpus/run-tests.php", '-q', '-n', '-j' . ($isFollowup ? 1 : release_jobs()), '--no-progress', '--set-timeout', '20',
         '-g', 'FAIL,XFAIL,BORK,WARN,LEAK,SKIP', '-p', $php, '-w', "$out/failed.txt", '-W', "$out/status.txt"];
     $selection = 'full-official-release-corpus;upstream-discovery-for-built-extensions';
-    if ($phase === 'followup') {
+    if ($isFollowup) {
         $comparison = [];
         foreach (['official', 'candidate'] as $other) {
             $otherPaths = release_paths($branch, $other, $variant);
@@ -147,8 +148,11 @@ if (in_array($phase, ['all', 'suite', 'regressions', 'followup'], true)) {
             $comparison[$other] = json_decode(file_get_contents(dirname(end($prior)) . '/statuses.json'), true, 32, JSON_THROW_ON_ERROR);
         }
         $selected = [];
-        foreach (array_keys(array_intersect_key($comparison['official'], $comparison['candidate'])) as $file) {
+        $files = $phase === 'coverage-followup' ? array_unique(array_merge(array_keys($comparison['official']), array_keys($comparison['candidate']))) :
+            array_keys(array_intersect_key($comparison['official'], $comparison['candidate']));
+        foreach ($files as $file) {
             $a = $comparison['official'][$file] ?? null; $b = $comparison['candidate'][$file] ?? null;
+            if ($phase === 'coverage-followup' && $a !== null && $b !== null) { continue; }
             if ($a !== $b && (in_array($a, ['FAILED', 'BORKED', 'LEAKED'], true) || in_array($b, ['FAILED', 'BORKED', 'LEAKED'], true))) { $selected[] = $file; }
         }
         sort($selected, SORT_STRING);
@@ -156,6 +160,7 @@ if (in_array($phase, ['all', 'suite', 'regressions', 'followup'], true)) {
         file_put_contents("$out/followup.txt", implode("\n", $selected) . "\n");
         array_push($args, ...$selected);
         $selection = 'all-paired-adverse-status-differences-in-both-directions;diagnostic-only;does-not-replace-full-suite';
+        if ($phase === 'coverage-followup') { $selection = 'adverse-tests-unobserved-in-other-full-run;diagnostic-only;does-not-fill-original-coverage'; }
     }
     if ($phase === 'regressions') {
         $selected = [];

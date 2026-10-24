@@ -1,0 +1,6 @@
+Start.
+Got semaphore.
+Success acquire semaphore.
+
+Warning: shm_attach(): Failed for key 0x510402fd: No space left on device in work/releases/8.5/official/release-corpus/ext/sysvsem/tests/sysv.php on line 23
+Fail to attach shared memory.

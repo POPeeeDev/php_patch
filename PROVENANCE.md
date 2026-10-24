@@ -1,10 +1,37 @@
 # Source and evidence provenance
 
-This document records the historical 8.7 package. Release manifests under
+## Release matrix and public reproduction
+
+Release manifests under
 `releases/` identify the affected and official commits, complete upstream update,
 guard hashes, and upstream licenses. The release preparation checks the complete
 official Git tree before applying the guard; new run records retain build and
 test identities separately. See [RELEASE_DESIGN.md](RELEASE_DESIGN.md).
+
+The [release evidence](evidence/releases-2026-10-24/README.md) contains all 20
+bounded row outcomes, earlier attempts, paired follow-ups, and detector-reporting
+diagnostics. Source indexes, tracked source contents, and built executable hashes
+are checked again at export. Test reports include harness/probe source hashes;
+the supervisor binary has its own hash. Different attempts can therefore be
+identified even where later harness corrections changed classification.
+
+The exporter replaces private paths with logical placeholders. It retains
+failures, timeouts, partial upstream statuses, and all allocation case results;
+it omits passing per-allocation logs and executable/module files. These are
+normalized evidence extracts, not byte-identical raw logs. Missing observations
+are not successes, and diagnostic reruns do not overwrite full-suite results.
+The summary classifies allocation cases individually so an earlier aggregate
+inconclusive label cannot hide a recorded assertion failure.
+
+The [fresh public-clone record](evidence/public-clone-2026-10-24/README.md)
+separately identifies the GitHub commits used for the fresh PHP 8.2 build and
+smoke test. Reusing an upstream Git object checkout is documented and does not
+reuse compiled outputs. Dependency provisioning on a new operating system was
+not tested.
+
+## Historical development experiment
+
+The following sections describe the earlier 8.7 package, not the release matrix.
 
 ## Source identity
 
